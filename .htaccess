@@ -15,7 +15,11 @@
 ### github.com/h5bp/server-configs
 ###
 
-
+# ------------------------------------------------------------
+# MEDIA TEMPLE
+# ------------------------------------------------------------
+AddHandler php-stable .php
+php_value upload_max_filesize 8M
 
 # ----------------------------------------------------------------------
 # Better website experience for IE users
@@ -435,6 +439,8 @@ AddDefaultCharset utf-8
 # Force UTF-8 for a number of file formats
 AddCharset utf-8 .css .js .xml .json .rss .atom
 
+# Some servers, like MediaTemple, ignore the above statements.
+php_value default_charset UTF-8
 
 
 # ----------------------------------------------------------------------
