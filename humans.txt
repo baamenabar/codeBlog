@@ -3,10 +3,15 @@
 
 
 /* TEAM */
-  <your title>: <your name>
-  Site:
+  Developer: Agustín Amenabar
+  Site: http://medula.cl/
+  Twitter: @baamenabar (es) @ImINaBAR (en)
+  Location: Santiago Chile
+
+  Designer: Violeta Sánchez
+  Site: http://medula.cl
   Twitter:
-  Location:
+  Location: Santiago Chile
 
 /* THANKS */
   Names (& URL):
@@ -14,30 +19,4 @@
 /* SITE */
   Standards: HTML5, CSS3
   Components: Modernizr, jQuery
-  Software:
-
-
-
-                               -o/-
-                               +oo//-
-                              :ooo+//:
-                             -ooooo///-
-                             /oooooo//:
-                            :ooooooo+//-
-                           -+oooooooo///-
-           -://////////////+oooooooooo++////////////::
-            :+ooooooooooooooooooooooooooooooooooooo+:::-
-              -/+ooooooooooooooooooooooooooooooo+/::////:-
-                -:+oooooooooooooooooooooooooooo/::///////:-
-                  --/+ooooooooooooooooooooo+::://////:-
-                     -:+ooooooooooooooooo+:://////:--
-                       /ooooooooooooooooo+//////:-
-                      -ooooooooooooooooooo////-
-                      /ooooooooo+oooooooooo//:
-                     :ooooooo+/::/+oooooooo+//-
-                    -oooooo/::///////+oooooo///-
-                    /ooo+::://////:---:/+oooo//:
-                   -o+/::///////:-      -:/+o+//-
-                   :-:///////:-            -:/://
-                     -////:-                 --//:
-                       --                       -:
+  Software: Sublime Text 2, Tortoise Git, Compass
