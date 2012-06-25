@@ -8,15 +8,15 @@ audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-html, button, input, select, textarea { font-family: "PT Sans",sans-serif; color: #222; }
-body { margin: 0; font-size: 1em; line-height: 1.4; }
+html, button, input, select, textarea { font-family: "PT Sans",sans-serif; color: #333; }
+body { margin: 0; font-size: 1em; line-height: 1.4em; }
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #45BCD2; color: #fff; text-shadow: none; }
+::selection { background: #45BCD2; color: #fff; text-shadow: none; }
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a { color: #0065CC; }
+a:visited { color: #0088FF; }
+a:hover { color: $azulHover; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 
@@ -27,7 +27,7 @@ dfn { font-style: italic; }
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
 ins { background: #ff9; color: #000; text-decoration: none; }
 mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
-pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+pre, code, kbd, samp { font-family: "ubuntu-mono", monospace, serif; _font-family: 'courier new', monospace; font-size: 1.125em; }
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 q { quotes: none; }
 q:before, q:after { content: ""; content: none; }
@@ -73,7 +73,7 @@ td { vertical-align: top; }
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
 
-body{ font:16px/26px Helvetica, Helvetica Neue, Arial; }
+body{ font:16px/26px "PT Sans",sans-serif, Helvetica, Helvetica Neue, Arial; }
 
 .wrapper{
 	width:90%;
