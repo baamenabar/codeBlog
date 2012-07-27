@@ -228,6 +228,13 @@ git push -u origin master
 								</q>
 								.
 							</p>
+							<p>Así que debo borrar recursivamente la carpeta que se creó, para eso usamos el siguiente comando:</p>
+							<figure>
+								<pre><kbd>
+									rm -r -f nombreProyecto
+								</kbd></pre>
+								<figcaption>En mi caso escribo: <q><kbd>rm -r -f codeBlog</kbd></q> </figcaption>
+							</figure>
 							<p>
 								Al hacer una búsqueda en Google por &ldquo;git clone empty directory&rdquo; llegué a un grupo de Google donde se toca el tema, y <b>Lee Henson</b>
 								<a href="https://groups.google.com/group/github/browse_thread/thread/1c9a5d6c823607aa?pli=1#msg_99022fb5dd2b2bb4">da la respuesta que necesitaba</a>
