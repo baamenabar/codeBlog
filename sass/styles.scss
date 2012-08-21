@@ -28,6 +28,21 @@ h2, h3{
 h3{
 	font-size:24px;
 }
+kbd{
+    background-color:#333;
+    border:1px solid #ccc;
+    @include border-radius(3px);
+    @include single-box-shadow(rgba(0,0,0,1), 1px, 1px, 3px, 0, true);
+    color:#DDD;
+    display:inline-block;
+    margin:0 .1em;
+    padding:.1em .6em;
+    text-shadow:0 -1px 0 #000;
+}
+figure pre{
+	word-wrap: none;
+	overflow-x: scroll;
+}
 article {
 	max-width:595px;
 	header {

@@ -137,12 +137,10 @@ git commit -m 'primer commit'
 							</p>
 							<h3>SSH</h3>
 							<figure>
-								<pre>
-<kbd>
+								<kbd><pre>
 git remote add origin git@github.com:nombreUsuario/nombreProyecto.git
 git push -u origin master
-</kbd>
-</pre>
+</pre></kbd>
 							</figure>
 							<h3>GUI, como TortoiseGIT</h3>
 							<p>
@@ -332,12 +330,12 @@ git push -u origin master
 									Los iconitos delatan que aún tengo a Dreamweaver como editor predeterminado para PHP :$
 								</figcaption>
 							</figure>
-							<p>Abrimos el archivo y escribilos lo siguiente:</p>
+							<p>Abrimos el archivo y escribimos lo siguiente:</p>
 							<figure>
 								<pre><code>
- 		&lt;?php
- 		`git pull`;
- 		?>
+&lt;?php
+`git pull`;
+?>
  	</code></pre>
 								<figcaption>Si, eso es todo.</figcaption>
 							</figure>

@@ -362,37 +362,62 @@ h3 {
 }
 
 /* line 31, ../sass/styles.scss */
+kbd {
+  background-color: #333;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 1px 1px 3px 0 black;
+  -moz-box-shadow: inset 1px 1px 3px 0 black;
+  box-shadow: inset 1px 1px 3px 0 black;
+  color: #DDD;
+  display: inline-block;
+  margin: 0 .1em;
+  padding: .1em .6em;
+  text-shadow: 0 -1px 0 black;
+}
+
+/* line 42, ../sass/styles.scss */
+figure pre {
+  word-wrap: none;
+  overflow-x: scroll;
+}
+
+/* line 46, ../sass/styles.scss */
 article {
   max-width: 595px;
 }
-/* line 33, ../sass/styles.scss */
+/* line 48, ../sass/styles.scss */
 article header {
   border-bottom: 1px solid #B3B3B3;
 }
-/* line 35, ../sass/styles.scss */
+/* line 50, ../sass/styles.scss */
 article header h2, article header h3 {
   color: #45BCD2;
   font-size: 20px;
   margin: 0;
 }
-/* line 40, ../sass/styles.scss */
+/* line 55, ../sass/styles.scss */
 article header h3 {
   font-style: italic;
 }
-/* line 42, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 article a {
   text-decoration: none;
   border-bottom: 1px solid #ddd;
 }
-/* line 45, ../sass/styles.scss */
+/* line 60, ../sass/styles.scss */
 article a:link, article a:visited {
   border-bottom-color: #ddd;
 }
-/* line 48, ../sass/styles.scss */
+/* line 63, ../sass/styles.scss */
 article a:hover, article a:active, article a:focus {
   border-bottom-color: #0066ee;
 }
-/* line 52, ../sass/styles.scss */
+/* line 67, ../sass/styles.scss */
 article figure {
   font-family: "pt-serif","PT Sans",sans-serif;
   background: #FFF;
@@ -400,14 +425,14 @@ article figure {
   border: 1px solid #CCC;
   margin: 0 -1em 1em -1em;
 }
-/* line 58, ../sass/styles.scss */
+/* line 73, ../sass/styles.scss */
 .boxshadow article figure {
   border: none;
   -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
-/* line 62, ../sass/styles.scss */
+/* line 77, ../sass/styles.scss */
 article figure img {
   max-width: 100%;
   border: 1px dotted #DDD;
