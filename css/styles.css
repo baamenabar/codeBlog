@@ -1,3 +1,4 @@
+@charset "CP850";
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
 /* =============================================================================
    HTML5 Boilerplate CSS: h5bp.com/css
@@ -334,13 +335,13 @@ body {
   margin: 0 5%;
 }
 
-/* line 9, ../sass/styles.scss */
+/* line 14, ../sass/styles.scss */
 i {
   font-family: "pt-serif",serif;
   font-style: italic;
 }
 
-/* line 16, ../sass/styles.scss */
+/* line 21, ../sass/styles.scss */
 h1, h2, h3 {
   font-family: "museo-sans","PT Sans",sans-serif;
   font-style: italic;
@@ -350,18 +351,18 @@ h1, h2, h3 {
   line-height: 1em;
 }
 
-/* line 24, ../sass/styles.scss */
+/* line 29, ../sass/styles.scss */
 h2, h3 {
   font-style: normal;
   font-size: 28px;
 }
 
-/* line 28, ../sass/styles.scss */
+/* line 33, ../sass/styles.scss */
 h3 {
   font-size: 24px;
 }
 
-/* line 31, ../sass/styles.scss */
+/* line 36, ../sass/styles.scss */
 kbd {
   background-color: #333;
   border: 1px solid #ccc;
@@ -380,44 +381,43 @@ kbd {
   text-shadow: 0 -1px 0 black;
 }
 
-/* line 42, ../sass/styles.scss */
+/* line 47, ../sass/styles.scss */
 figure pre {
   word-wrap: none;
-  overflow-x: scroll;
 }
 
-/* line 46, ../sass/styles.scss */
+/* line 51, ../sass/styles.scss */
 article {
   max-width: 595px;
 }
-/* line 48, ../sass/styles.scss */
+/* line 53, ../sass/styles.scss */
 article header {
   border-bottom: 1px solid #B3B3B3;
 }
-/* line 50, ../sass/styles.scss */
+/* line 55, ../sass/styles.scss */
 article header h2, article header h3 {
-  color: #45BCD2;
+  color: #45bcd2;
   font-size: 20px;
   margin: 0;
 }
-/* line 55, ../sass/styles.scss */
+/* line 60, ../sass/styles.scss */
 article header h3 {
   font-style: italic;
 }
-/* line 57, ../sass/styles.scss */
+/* line 62, ../sass/styles.scss */
 article a {
   text-decoration: none;
   border-bottom: 1px solid #ddd;
 }
-/* line 60, ../sass/styles.scss */
+/* line 65, ../sass/styles.scss */
 article a:link, article a:visited {
   border-bottom-color: #ddd;
 }
-/* line 63, ../sass/styles.scss */
+/* line 68, ../sass/styles.scss */
 article a:hover, article a:active, article a:focus {
   border-bottom-color: #0066ee;
 }
-/* line 67, ../sass/styles.scss */
+/* line 72, ../sass/styles.scss */
 article figure {
   font-family: "pt-serif","PT Sans",sans-serif;
   background: #FFF;
@@ -425,19 +425,150 @@ article figure {
   border: 1px solid #CCC;
   margin: 0 -1em 1em -1em;
 }
-/* line 73, ../sass/styles.scss */
+/* line 78, ../sass/styles.scss */
 .boxshadow article figure {
   border: none;
   -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
-/* line 77, ../sass/styles.scss */
+/* line 82, ../sass/styles.scss */
 article figure img {
   max-width: 100%;
   border: 1px dotted #DDD;
 }
 
+/* line 88, ../sass/styles.scss */
+.contiene-logo {
+  padding: 0.5em 1em;
+}
+
+/* line 91, ../sass/styles.scss */
+.otros-post {
+  background-color: #f0f0f0;
+}
+/* line 92, ../sass/styles.scss */
+.boxshadow .otros-post {
+  -webkit-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+/* line 99, ../sass/styles.scss */
+.otros-post .caluga {
+  width: auto;
+  margin-right: 9px;
+  padding-top: 18px;
+}
+/* line 103, ../sass/styles.scss */
+.otros-post .caluga header {
+  background-color: #FFF;
+  min-height: 44px;
+  padding-top: 22px;
+  margin-right: 5px;
+}
+/* line 108, ../sass/styles.scss */
+.otros-post .caluga header.primero {
+  margin-right: 0;
+}
+/* line 109, ../sass/styles.scss */
+.boxshadow .otros-post .caluga header {
+  -webkit-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+/* line 112, ../sass/styles.scss */
+.otros-post .caluga header h2 {
+  font-size: 24px;
+  font-style: italic;
+  margin: 0 0.5em 0 0.5em;
+}
+/* line 117, ../sass/styles.scss */
+.otros-post .caluga header h2.estrella:before {
+  content: '★';
+  font-style: normal;
+  color: #fac116;
+}
+/* line 125, ../sass/styles.scss */
+.otros-post .caluga.recomendados {
+  background-color: #45bcd2;
+}
+/* line 128, ../sass/styles.scss */
+.otros-post .caluga.anteriores {
+  background-color: #fcc212;
+}
+/* line 131, ../sass/styles.scss */
+.otros-post .caluga.acerca-de {
+  background-color: #e6e6e6;
+}
+
+@media screen and (min-width: 900px) {
+  /* line 138, ../sass/styles.scss */
+  .wrapper {
+    width: auto;
+    display: -moz-inline-box;
+    -moz-box-orient: vertical;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    margin: 0 2%;
+  }
+  /* line 7, ../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+  .wrapper {
+    *display: inline;
+  }
+
+  /* line 143, ../sass/styles.scss */
+  .contiene-logo {
+    display: -moz-inline-box;
+    -moz-box-orient: vertical;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    vertical-align: top;
+    padding: 1em;
+  }
+  /* line 7, ../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+  .contiene-logo {
+    *display: inline;
+  }
+
+  /* line 148, ../sass/styles.scss */
+  .otros-post, .otros-post .grupo, article {
+    display: -moz-inline-box;
+    -moz-box-orient: vertical;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    vertical-align: top;
+  }
+  /* line 7, ../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+  .otros-post, .otros-post .grupo, article {
+    *display: inline;
+  }
+
+  /* line 152, ../sass/styles.scss */
+  .otros-post {
+    background-color: #f0f0f0;
+    width: 269px;
+    padding: 13px 0 13px 9px;
+  }
+  /* line 156, ../sass/styles.scss */
+  .otros-post .grupo {
+    margin-bottom: 18px;
+  }
+  /* line 159, ../sass/styles.scss */
+  .otros-post .caluga {
+    width: 260px;
+    margin-right: 9px;
+    padding-top: 18px;
+  }
+}
+@media screen and (min-width: 1276px) {
+  /* line 167, ../sass/styles.scss */
+  .otros-post {
+    width: 538px;
+  }
+}
 /* Welcome to Compass. Use this file to define print styles.
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */

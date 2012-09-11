@@ -39,9 +39,8 @@
 				<![endif]-->
 
 				<div class="mainContainer">
-					<header>
-						<img src="img/content/logo-blog-medula-code.png" alt="Logotipo Médula Diseño Code Blog"></header>
-					<div class="wrapper clearfix">
+					<header class="contiene-logo">
+						<img src="img/content/logo-blog-medula-code.png" alt="Logotipo Médula Diseño Code Blog"></header><div class="wrapper clearfix">
 
 						<article>
 							<header>
@@ -52,7 +51,7 @@
 									<h2>Reemplazando el uso de FTP por Git + github</h2>
 									<h3>&hellip;or Bitbucket</h3>
 								</hgroup>
-								<p>yyy-mm-dd: 2012-05-28 | servidor, DNS | Por: Agutín Amenabar</p>
+								<p>yyy-mm-dd: 2012-05-28 | Por: Agutín Amenabar</p>
 							</header>
 							<p>
 								Finalmente me he sentado a aprender cómo usar Git y particularmente cómo conectar git a mi servidor, para que se vayan publicando inmediatamente los cambios hechos.
@@ -389,6 +388,7 @@ git push -u origin master
 								</li>
 							</ul>
 							<footer>
+								<h2>Tags: servidor, DNS</h2>
 								<h2>Comments</h2>
 								<div id="disqus_thread"></div>
 								<script type="text/javascript">
@@ -411,11 +411,11 @@ git push -u origin master
 									<span class="logo-disqus">Disqus</span>
 								</a>
 							</footer>
-						</article>
-
-						<aside>
-							<section>
-								<h2>Recomendados</h2>
+						</article><aside class="otros-post">
+							<section class="grupo caluga recomendados">
+								<header class="primero">
+									<h2 class="estrella">Recomendados</h2>
+								</header>
 								<ul>
 									<li>
 										<a href="#">
@@ -445,10 +445,11 @@ git push -u origin master
 										</a>
 									</li>
 								</ul>
-							</section>
-							<div class="grupo">
-								<section>
-									<h2>Anteriores</h2>
+							</section><div class="grupo">
+								<section class="caluga anteriores">
+									<header>
+										<h2>Anteriores</h2>
+									</header>
 									<ul>
 										<li>
 											<a href="#">
@@ -474,9 +475,10 @@ git push -u origin master
 											</a>
 										</li>
 									</ul>
-								</section>
-								<section>
-									<h2>Acerca de&hellip;</h2>
+								</section><section class="caluga acerca-de">
+									<header>
+										<h2>Acerca de&hellip;</h2>
+									</header>
 									<p>En este blog publicamos cosas que descubrimos trabajando en proyectos de <a href="http://medula.cl" target="_blank">Médula Diseño</a>  y nos gustaría compartir.</p>
 <p>El tema principal es código en los diferentes sabores que trabajamos o vamos descubriendo.</p>
 <p>Este blog en particular lo llevamos como sitio estático (o casi) y está publicado en Github, así que si cometo un error  se puede hacer un “bug report” en el pryecto del sitio.</p>

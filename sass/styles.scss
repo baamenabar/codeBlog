@@ -1,4 +1,9 @@
 $azulHover:#06e;
+$amarilloMedula:#FAC116;
+$amarilloMedulaFondo:#FCC212;
+$cyanMedula:#45BCD2;
+$grisClaro0:#F0F0F0;
+$grisClaro1:#E6E6E6;
 
 //"museo-sans", "PT Sans", "ubuntu-mono", "pt-serif"
 
@@ -41,14 +46,14 @@ kbd{
 }
 figure pre{
 	word-wrap: none;
-	overflow-x: scroll;
+	//overflow-x: scroll;
 }
 article {
 	max-width:595px;
 	header {
 		border-bottom:1px solid #B3B3B3;
 		h2, h3{
-			color:#45BCD2;
+			color:$cyanMedula;
 			font-size:20px;
 			margin:0;
 		}
@@ -80,6 +85,90 @@ article {
 		}
 	}
 }
+.contiene-logo{
+	padding:0.5em 1em;
+}
+.otros-post{
+	.boxshadow &{
+		@include single-box-shadow(rgba(0,0,0,0.2),3px, 3px, 6px, 0);
+	}
+	background-color:$grisClaro0;
+	.grupo{
+
+	}
+	.caluga{
+		width:auto;
+		margin-right: 9px;
+		padding-top: 18px;
+		header{
+			background-color: #FFF;
+			min-height: 44px;
+			padding-top: 22px;
+			margin-right:5px;
+			&.primero{margin-right:0}
+			.boxshadow &{
+				@include single-box-shadow(rgba(0,0,0,0.2),3px, 3px, 6px, 0);
+			}
+			h2{
+				font-size:24px;
+				font-style:italic;
+				margin:0 0.5em 0 0.5em;
+				&.estrella{
+					&:before{
+						content:'★';
+						font-style:normal;
+						color:$amarilloMedula;
+					}
+				}
+			}
+		}
+		&.recomendados{
+			background-color: $cyanMedula;
+		}
+		&.anteriores{
+			background-color: $amarilloMedulaFondo;
+		}
+		&.acerca-de{
+			background-color: $grisClaro1;
+		}
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.wrapper{
+		width:auto;
+		@include inline-block;
+		margin:0 2%;
+	}
+	.contiene-logo{
+		@include inline-block;
+		vertical-align:top;
+		padding:1em;
+	}
+	.otros-post, .otros-post .grupo, article{
+		@include inline-block;
+		vertical-align: top;
+	}
+	.otros-post{
+		background-color:$grisClaro0;
+		width:269px;
+		padding:13px 0 13px 9px;
+		.grupo{
+			margin-bottom: 18px;
+		}
+		.caluga{
+			width:260px;
+			margin-right: 9px;
+			padding-top: 18px;
+		}
+	}
+}
+@media screen and (min-width: 1276px) {
+    .otros-post{
+    	width:538px;
+	}
+}
+
 
 @import "_print";
 @import "_helpers";
