@@ -40,18 +40,16 @@
 
 				<div class="mainContainer">
 					<header class="contiene-logo">
-						<img src="img/content/logo-blog-medula-code.png" alt="Logotipo Médula Diseño Code Blog"></header><div class="wrapper clearfix">
-
-						<article>
+						<img src="img/content/logo-blog-medula-code.png" alt="Logotipo Médula Diseño Code Blog"></header><article>
 							<header>
 								<hgroup>
 									<h1>
 										Git + github + Service Hooks = renovado flujo de trabajo en PHP
 									</h1>
 									<h2>Reemplazando el uso de FTP por Git + github</h2>
-									<h3>&hellip;or Bitbucket</h3>
+									<h3>&hellip;o Bitbucket</h3>
 								</hgroup>
-								<p>yyy-mm-dd: 2012-05-28 | Por: Agutín Amenabar</p>
+								<p>aaaa-mm-dd: 2012-05-28 | Por: Agutín Amenabar</p>
 							</header>
 							<p>
 								Finalmente me he sentado a aprender cómo usar Git y particularmente cómo conectar git a mi servidor, para que se vayan publicando inmediatamente los cambios hechos.
@@ -82,7 +80,7 @@
 							</ul>
 
 							<p>
-								Y aunque aún entiendo muy poco de esas cosas esotéricas han pasado a ser parte de mi flujo de trabajo y no entiendo cómo vivía sin ellos. todo es mucho más rápido y lo mejorde todo es que son gratis!
+								Y aunque aún entiendo muy poco de esas cosas esotéricas, han pasado a ser parte de mi flujo de trabajo y no entiendo cómo vivía sin ellos. Todo es mucho más rápido y lo mejorde todo es que son gratis!
 							</p>
 
 							<p>
@@ -95,14 +93,13 @@
 							</p>
 							<figure>
 								<blockquote>
-									<kbd>
-										<pre>
+									<pre><kbd>
 cd carpeta/de/proyecto
 git init
 git add .
 git commit -m 'primer commit'
-									</pre>
-									</kbd>
+									</kbd></pre>
+									
 
 								</blockquote>
 								<figcaption>Cómo hacerlo desde la línea de comando.</figcaption>
@@ -136,10 +133,13 @@ git commit -m 'primer commit'
 							</p>
 							<h3>SSH</h3>
 							<figure>
-								<kbd><pre>
+								<blockquote>
+								<pre><kbd>
 git remote add origin git@github.com:nombreUsuario/nombreProyecto.git
 git push -u origin master
-</pre></kbd>
+
+</kbd></pre>
+								</blockquote>
 							</figure>
 							<h3>GUI, como TortoiseGIT</h3>
 							<p>
@@ -225,12 +225,17 @@ git push -u origin master
 								</q>
 								.
 							</p>
-							<p>Así que debo borrar recursivamente la carpeta que se creó, para eso usamos el siguiente comando:</p>
+							<p>
+								Así que debo borrar recursivamente la carpeta que se creó, para eso usamos el siguiente comando:
+							</p>
 							<figure>
-								<pre><kbd>
-									rm -r -f nombreProyecto
-								</kbd></pre>
-								<figcaption>En mi caso escribo: <q><kbd>rm -r -f codeBlog</kbd></q> </figcaption>
+								<pre><kbd>rm -r -f nombreProyecto</kbd></pre>
+								<figcaption>
+									En mi caso escribo:
+									<q>
+										<kbd>rm -r -f codeBlog</kbd>
+									</q>
+								</figcaption>
 							</figure>
 							<p>
 								Al hacer una búsqueda en Google por &ldquo;git clone empty directory&rdquo; llegué a un grupo de Google donde se toca el tema, y <b>Lee Henson</b>
@@ -384,7 +389,7 @@ git push -u origin master
 								</li>
 
 								<li>
-									http://www.geekgumbo.com/2010/05/16/removing-deleted-files-from-your-git-working-directory/ (sacar arhivos eliminados)//git add -A && git add -u
+									http://www.geekgumbo.com/2010/05/16/removing-deleted-files-from-your-git-working-directory/ (sacar arhivos eliminados)//git add -A &amp;&amp; git add -u
 								</li>
 							</ul>
 							<footer>
@@ -420,68 +425,71 @@ git push -u origin master
 									<li>
 										<a href="#">
 											<h4>Cómo hostear sólo un sub-dominio en tu servidor</h4>
-										<p>Una buena opción para mini sitios cuando no podemos trabajar en el servidor oficial.</p>
+											<p>
+												Una buena opción para mini sitios cuando no podemos trabajar en el servidor oficial.
+											</p>
 										</a>
 									</li>
 									<li>
 
 										<a href="#">
 											<h4>Primeros pasos con Sencha Touch 2</h4>
-	<p>Y los típicos errores con los que uno se encuentra.</p>
+											<p>Y los típicos errores con los que uno se encuentra.</p>
 										</a>
 									</li>
 									<li>
 
 										<a href="#">
 											<h4>Integración webpay de transbank</h4>
-	<p>Para el Kit de Conexión de Comercio v. 6.0</p>
+											<p>Para el Kit de Conexión de Comercio v. 6.0</p>
 										</a>
 									</li>
 									<li>
 
 										<a href="#">
 											<h4>Git + github + Service Hooks = new workflow in PHP</h4>
-	<p>Replacing FTP for GIT+github (noob tutorial for noobs by a noob)</p>
+											<p>
+												Replacing FTP for GIT+github (noob tutorial for noobs by a noob)
+											</p>
 										</a>
 									</li>
 								</ul>
-							</section><div class="grupo">
-								<section class="caluga anteriores">
+							</section><div class="grupo"><section class="caluga anteriores">
 									<header>
 										<h2>Anteriores</h2>
 									</header>
 									<ul>
 										<li>
-											<a href="#">
-												Cómo hostear sólo un sub-dominio en tu servidor
-											</a>
+											<a href="#">Cómo hostear sólo un sub-dominio en tu servidor</a>
 										</li>
 										<li>
 
-											<a href="#">
-												Primeros pasos con Sencha Touch 2
-											</a>
+											<a href="#">Primeros pasos con Sencha Touch 2</a>
 										</li>
 										<li>
 
-											<a href="#">
-												Integración webpay de transbank
-											</a>
+											<a href="#">Integración webpay de transbank</a>
 										</li>
 										<li>
 
-											<a href="#">
-												Git + github + Service Hooks = new workflow in PHP
-											</a>
+											<a href="#">Git + github + Service Hooks = new workflow in PHP</a>
 										</li>
 									</ul>
 								</section><section class="caluga acerca-de">
 									<header>
 										<h2>Acerca de&hellip;</h2>
 									</header>
-									<p>En este blog publicamos cosas que descubrimos trabajando en proyectos de <a href="http://medula.cl" target="_blank">Médula Diseño</a>  y nos gustaría compartir.</p>
-<p>El tema principal es código en los diferentes sabores que trabajamos o vamos descubriendo.</p>
-<p>Este blog en particular lo llevamos como sitio estático (o casi) y está publicado en Github, así que si cometo un error  se puede hacer un “bug report” en el pryecto del sitio.</p>
+									<p>
+										En este blog publicamos cosas que descubrimos trabajando en proyectos de
+										<a href="http://medula.cl" target="_blank">Médula Diseño</a>
+										y nos gustaría compartir.
+									</p>
+									<p>
+										El tema principal es código en los diferentes sabores que trabajamos o vamos descubriendo.
+									</p>
+									<p>
+										Este blog en particular lo llevamos como sitio estático (o casi) y está publicado en Github, así que si cometo un error  se puede hacer un “bug report” en el pryecto del sitio.
+									</p>
 								</section>
 							</div>
 						</aside>

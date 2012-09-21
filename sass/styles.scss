@@ -10,6 +10,7 @@ $grisClaro1:#E6E6E6;
 @import "compass/css3";
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
 @import "_normals";
+@import "_prism";
 
 i{
 	font-family: "pt-serif",serif;
@@ -44,12 +45,21 @@ kbd{
     padding:.1em .6em;
     text-shadow:0 -1px 0 #000;
 }
-figure pre{
-	word-wrap: none;
-	//overflow-x: scroll;
-}
+figure{
+	pre{
+		word-break: normal;
+		-webkit-hyphens: none;
+		-moz-hyphens: none;
+		-ms-hyphens: none;
+		hyphens: none;
+		overflow: auto;
+		overflow-y:hidden;
+		white-space: pre;
+	}
+} 
 article {
 	max-width:595px;
+	margin:0 1.25em;
 	header {
 		border-bottom:1px solid #B3B3B3;
 		h2, h3{
