@@ -336,7 +336,7 @@ git push -u origin master
 							</figure>
 							<p>Abrimos el archivo y escribimos lo siguiente:</p>
 							<figure>
-								<pre><code>
+								<pre><code class="language-markup">
 &lt;?php
 `git pull`;
 ?>
