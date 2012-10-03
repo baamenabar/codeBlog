@@ -139,7 +139,7 @@ class SlypCore{
 						$oneArticle['intro'] = trim( $introParagraph->innertext );
 					}
 				}
-				if( @file_put_contents( $articleCachedUrl, $articleHtml ) ){
+				if( @file_put_contents( $articleCachedUrl, $articleHtml ) === false ){
 					$this->_errors['2']=true;
 				}
 

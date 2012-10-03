@@ -13,10 +13,9 @@ if( !isset( $g['t'] ) )$g['t']='home';//the default template is home
 if(isset($g['a'])){
 	$theArticle = $sly->getArticle($g['a']);
 }
+if($sly->getError())print_r($sly->getErrorList());
 
 include $sly->getTemplateFile($g['t']);
-
-if($sly->getError())print_r($sly->getErrorList());
 
 exit();
 
