@@ -713,7 +713,7 @@ article figure img {
   }
 
   /* line 181, ../sass/styles.scss */
-  .otros-post, .otros-post .grupo, article {
+  .otros-post, .otros-post .grupo, article, .articleGroup {
     display: -moz-inline-box;
     -moz-box-orient: vertical;
     display: inline-block;
@@ -722,21 +722,26 @@ article figure img {
     vertical-align: top;
   }
   /* line 7, ../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-  .otros-post, .otros-post .grupo, article {
+  .otros-post, .otros-post .grupo, article, .articleGroup {
     *display: inline;
   }
 
   /* line 185, ../sass/styles.scss */
+  .articleGroup article {
+    display: block;
+  }
+
+  /* line 186, ../sass/styles.scss */
   .otros-post {
     background-color: #f0f0f0;
     width: 269px;
     padding: 13px 0 13px 9px;
   }
-  /* line 189, ../sass/styles.scss */
+  /* line 190, ../sass/styles.scss */
   .otros-post .grupo {
     margin-bottom: 18px;
   }
-  /* line 192, ../sass/styles.scss */
+  /* line 193, ../sass/styles.scss */
   .otros-post .caluga {
     width: 260px;
     margin-right: 9px;
@@ -745,7 +750,7 @@ article figure img {
   }
 }
 @media screen and (min-width: 1276px) {
-  /* line 201, ../sass/styles.scss */
+  /* line 202, ../sass/styles.scss */
   .otros-post {
     width: 538px;
   }

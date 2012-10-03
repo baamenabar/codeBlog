@@ -1,2 +1,6 @@
 
 /.sass-cache
+/articulos/cached
+
+# Do not ignore these files...
+/articulos/cached/.htaccess

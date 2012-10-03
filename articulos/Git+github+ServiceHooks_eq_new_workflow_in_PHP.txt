@@ -1,223 +1,216 @@
-<!doctype html>
-<!--[if lt IE 8 ]>    <html class="ie ie7 no-js" lang="es"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="es"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="es"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="es"><!--<![endif]-->
-<!-- the "no-js" class is for Modernizr. Ojo con el lang-->
-<head>
-	<meta charset="utf-8"> 
-	<title> </title>
-</head>
-<body>
+title: Git + github + Service Hooks = renovado flujo de trabajo en PHP
+subtitle: Reemplazando el uso de FTP por Git + github &hellip;o Bitbucket
+pubDate:2012-10-02 17:13:42
 
-<article>
-<header>
-								<hgroup>
-									<h1>
-										Git + github + Service Hooks = renovado flujo de trabajo en PHP
-									</h1>
-									<h2>Reemplazando el uso de FTP por Git + github</h2>
-									<h3>&hellip;or Bitbucket</h3>
-								</hgroup>
-								<p>yyy-mm-dd: 2012-05-28 | Por: Agutín Amenabar</p>
-							</header>
-							<p>
-								Finalmente me he sentado a aprender cómo usar Git y particularmente cómo conectar git a mi servidor, para que se vayan publicando inmediatamente los cambios hechos.
-							</p>
-							<p>La verdad me ha tomado varios intentos y fracasos.</p>
-							<p>
-								La mayor parte la logré siguiendo el tutorial
-								<a href="http://net.tutsplus.com/tutorials/other/the-perfect-workflow-with-git-github-and-ssh/" title="visitar el artículo" target="_blank">The Perfect Workflow, with Git, GitHub, and SSH</a>
-								de net tut+ que tiene hasta un video.
-							</p>
-							<p>
-								Sólo lo he traducido y he agregado algunas cosas que me complicaron al seguir el tutorial.
-							</p>
+ <header>
+ <hgroup>
 
-							<p>
-								Hace tiempo tengo una cuenta en github, pero más que nada la usaba para estar pendiente de algunos proyectos y reportar <i>bugs</i>
-								, lo mismo con la línea de comando y SSH, siempre con un ojo en el tutorial y el otro en la consola. Pero hace un par de días estoy batallando con las múltiples cosas que hay que echar a andar y finalmente lo he logrado, no fue tan terrible como pensé originalmente, dado que Chris Coyier había comentado lo complicado que era hacer esto.
-							</p>
+h1. Git + github + Service Hooks = renovado flujo de trabajo en PHP
 
-							<p>
-								Debo aclarar que soy un diseñador, que hasta hace un mes no tenía idea sobre:
-							</p>
-							<ul>
-								<li>SSH</li>
-								<li>Línea de comando</li>
-								<li>PuTTY</li>
-								<li>GIT</li>
-							</ul>
+h2. Reemplazando el uso de FTP por Git + github
 
-							<p>
-								Y aunque aún entiendo muy poco de esas cosas esotéricas han pasado a ser parte de mi flujo de trabajo y no entiendo cómo vivía sin ellos. todo es mucho más rápido y lo mejorde todo es que son gratis!
-							</p>
+h3. &hellip;o Bitbucket
 
-							<p>
-								Voy a hacer el ejemplo con el código de este mismo blog mientras lo construyo.
-							</p>
-							<p>Paso por paso.</p>
-							<h2>Repositorio local</h2>
-							<p>
-								OK, asumiendo que ya está GIT instalado, corriendo localmente (con tortoise en mi caso) y tenemos una cuenta github, hacemos un nuevo repositorio en la carpeta del sitio, agregamos los archivos del sitio y hacemos el primer commit.
-							</p>
+ </hgroup>
+
+aaaa-mm-dd: 2012-05-28 | Por: Agutín Amenabar
+
+ </header>
+
+p(intro). Finalmente me he sentado a aprender cómo usar Git y particularmente cómo conectar git a mi servidor, para que se vayan publicando inmediatamente los cambios hechos.
+
+La verdad me ha tomado varios intentos y fracasos.
+
+La mayor parte la logré siguiendo el tutorial
+<a href="http://net.tutsplus.com/tutorials/other/the-perfect-workflow-with-git-github-and-ssh/" title="visitar el artículo" target="_blank">The Perfect Workflow, with Git, GitHub, and SSH</a>
+de net tut+ que tiene hasta un video.
+
+
+Sólo lo he traducido y he agregado algunas cosas que me complicaron al seguir el tutorial.
+
+
+
+Hace tiempo tengo una cuenta en github, pero más que nada la usaba para estar pendiente de algunos proyectos y reportar <i>bugs</i>
+, lo mismo con la línea de comando y SSH, siempre con un ojo en el tutorial y el otro en la consola. Pero hace un par de días estoy batallando con las múltiples cosas que hay que echar a andar y finalmente lo he logrado, no fue tan terrible como pensé originalmente, dado que Chris Coyier había comentado lo complicado que era hacer esto.
+
+
+
+Debo aclarar que soy un diseñador, que hasta hace un mes no tenía idea sobre:
+
+* SSH
+* Línea de comando
+* PuTTY
+* GIT
+
+
+Y aunque aún entiendo muy poco de esas cosas esotéricas, han pasado a ser parte de mi flujo de trabajo y no entiendo cómo vivía sin ellos. Todo es mucho más rápido y lo mejorde todo es que son gratis!
+
+
+
+Voy a hacer el ejemplo con el código de este mismo blog mientras lo construyo.
+
+Paso por paso.
+<h2>Repositorio local</h2>
+
+OK, asumiendo que ya está GIT instalado, corriendo localmente (con tortoise en mi caso) y tenemos una cuenta github, hacemos un nuevo repositorio en la carpeta del sitio, agregamos los archivos del sitio y hacemos el primer commit.
+							
 							<figure>
 								<blockquote>
-									<kbd>
-										<pre>
+									<pre><kbd>
 cd carpeta/de/proyecto
 git init
 git add .
 git commit -m 'primer commit'
-									</pre>
-									</kbd>
+									</kbd></pre>
+									
 
 								</blockquote>
 								<figcaption>Cómo hacerlo desde la línea de comando.</figcaption>
 							</figure>
 							<figure>
-								<img src="../img/content/git-workflow-01.png" alt="Menú contextual, Crear repositorio aquí">
+								<img src="img/content/git-workflow-01.png" alt="Menú contextual, Crear repositorio aquí">
 								<figcaption>Nuevo repositorio con tortoise.</figcaption>
 							</figure>
 
-							<h2>Subirlo a github</h2>
-							<p>Ahora a hacer un nuevo repositorio en github.</p>
+							h2. Subirlo a github
+
+							Ahora a hacer un nuevo repositorio en github.
 							<figure>
-								<img src="../img/content/git-workflow-03.png">
+								<img src="img/content/git-workflow-03.png">
 								<figcaption>Clic en "nuevo Repositorio"</figcaption>
 							</figure>
 							<figure>
-								<img src="../img/content/git-workflow-04.png">
+								<img src="img/content/git-workflow-04.png">
 								<figcaption>Se llena el simple formulario y se crea el proyecto.</figcaption>
 							</figure>
-							<p>
+							
 								En la página que aparece luego sale la dirección HTTP del proyecto, hay que buscar la dirección SSH.
-							</p>
+							
 							<figure>
-								<img src="../img/content/git-workflow-05.png">
+								<img src="img/content/git-workflow-05.png">
 								<figcaption>
 									El formato de la dirección es: git@github.com:nombreUsuario/nombreProyecto.git
 								</figcaption>
 							</figure>
-							<p>
+							
 								Esta dirección es útil porque nos permitirá hacer push desde nuestro repositorio local, como siempre se puede hacer de 2 maneras:
-							</p>
-							<h3>SSH</h3>
+							
+							h3. SSH
+
 							<figure>
-								<kbd><pre>
+								<blockquote>
+								<pre><kbd>
 git remote add origin git@github.com:nombreUsuario/nombreProyecto.git
 git push -u origin master
-</pre></kbd>
+
+</kbd></pre>
+								</blockquote>
 							</figure>
-							<h3>GUI, como TortoiseGIT</h3>
-							<p>
+							h3. GUI, como TortoiseGIT
+
+							
 								Haciendo click derecho en la carpeta del proyecto se abre TortoiseGIT &rquo; Push...
-							</p>
-							<p>
+							
+							
 								En la ventana que aparece, en el grupo
 								<q>Destination</q>
 								haceer click en
 								<q class="boton">Manage</q>
 								.
-							</p>
+							
 							<figure>
-								<img src="../img/content/git-workflow-06.png"></figure>
-							<p>
+								<img src="img/content/git-workflow-06.png"></figure>
+							
 								Ojo que en el primer push hay que marcar la opción
 								<q> <i>Force Overwrite Existing Branch (May discard changes)</i>
 								</q>
 								para que no entre en conflicto con la versión del repositorio que tiene github.
-							</p>
-							<p>
+							
+							
 								En la ventana que aparece hay que llenar los campos con: el nombre del proyecto, la URL de SSH que copiamos de Github y cargamos la
 								<i>putty key, navegando hasta donde esté guardada.</i>
-							</p>
+							
 							<figure>
-								<img src="../img/content/git-workflow-07.png">
+								<img src="img/content/git-workflow-07.png">
 								<figcaption>
 									Esta configuración es práctico guardarla apretando el botón:
 									<q class="boton">Add new/Save</q>
 								</figcaption>
 							</figure>
-							<p>
+							
 								Ahora sólo hay que apretar
 								<q class="boton">OK</q>
 								, probablemente va a pedir la contraseña de la llave putty.
-							</p>
-							<p>Si revisamos en github, está todo arriba.</p>
+							
+							Si revisamos en github, está todo arriba.
 
 							<h2>Actualizar el servidor desde GIT</h2>
-							<p>
+							
 								Hasta ahora no hay nada nuevo, ninguna ventaja sobre FTP (aparte del versionamiento), pero ahora haremos que el servidor cargue los archivos desde github, o sea que haga un
 								<i>pull</i>
 								.
-							</p>
-							<h3>Requisitos</h3>
-							<ul>
-								<li>Conectarse al servidor via SSH. Personalmente uso PuTTY</li>
-								<li>
-									Tener Git instalado en el servidor. Media Temple viene con Git instalado
-								</li>
-								<li>
-									<a href="http://oreilly.com/pub/h/66" target="_blank" title="Cómo autenticar un servidor con llaves ssh y sin clave.">Tener autentificado el servidor con github</a>
+							
+							h3. Requisitos
+
+								* Conectarse al servidor via SSH. Personalmente uso PuTTY
+								* Tener Git instalado en el servidor. Media Temple viene con Git instalado
+								* <a href="http://oreilly.com/pub/h/66" target="_blank" title="Cómo autenticar un servidor con llaves ssh y sin clave.">Tener autentificado el servidor con github</a>
 									<a href="http://www.endreywalder.com/blog/authenticate-github-on-mediatemple-grid-shared-server/" title="Ver artículo de cómo hacerlo en Mediatemple">Aqí un tutorial para Media Temple</a>
-								</li>
-							</ul>
-							<h3>Empecemos</h3>
+								
+							h3. Empecemos
+
 							<figure>
-								<img src="../img/content/git-workflow-08.png">
+								<img src="img/content/git-workflow-08.png">
 								<figcaption>Entrando por SSH con PuTTY</figcaption>
 							</figure>
-							<p>
+							
 								Luego navegamos hasta nuestro directorio, que en este caso es
 								<kbd>cd domains/code.medula.cl/html</kbd>
-							</p>
-							<p>Desde ahí podemos clonar el repositorio de github.</p>
+							
+							Desde ahí podemos clonar el repositorio de github.
 							<figure>
-								<img src="../img/content/git-workflow-09.png">
+								<img src="img/content/git-workflow-09.png">
 								<figcaption>
 									<kbd>git clone git@github.com:nombreUsuario/nombreProyecto.git</kbd>
 								</figcaption>
 							</figure>
-							<p>
+							
 								Toma unos segundos y ya tenemos una carpeta con el nombre del repositorio.
-							</p>
-							<p>
-								En este caso eso es un problema, yo quería que el index quedara directo en el sub-dominio
-								<q>
-									<code>code.medula.cl</code>
-								</q>
-								y no dentro de la carpeta
-								<q>
-									<code>code.medula.cl/codeBlog</code>
-								</q>
-								.
-							</p>
-							<p>Así que debo borrar recursivamente la carpeta que se creó, para eso usamos el siguiente comando:</p>
+							
+							
+								En este caso eso es un problema, yo quería que el index quedara directo en el sub-dominio @code.medula.cl@
+								y no dentro de la carpeta @code.medula.cl/codeBlog @.
+							
+							
+								Así que debo borrar recursivamente la carpeta que se creó, para eso usamos el siguiente comando:
+							
 							<figure>
-								<pre><kbd>
-									rm -r -f nombreProyecto
-								</kbd></pre>
-								<figcaption>En mi caso escribo: <q><kbd>rm -r -f codeBlog</kbd></q> </figcaption>
+								<pre><kbd>rm -r -f nombreProyecto</kbd></pre>
+								<figcaption>
+									En mi caso escribo:
+									<q>
+										<kbd>rm -r -f codeBlog</kbd>
+									</q>
+								</figcaption>
 							</figure>
-							<p>
+							
 								Al hacer una búsqueda en Google por &ldquo;git clone empty directory&rdquo; llegué a un grupo de Google donde se toca el tema, y <b>Lee Henson</b>
 								<a href="https://groups.google.com/group/github/browse_thread/thread/1c9a5d6c823607aa?pli=1#msg_99022fb5dd2b2bb4">da la respuesta que necesitaba</a>
-							</p>
+							
 							<figure>
-								<img src="../img/content/git-workflow-10.png">
+								<img src="img/content/git-workflow-10.png">
 								<figcaption>
 									<kbd>git clone git@github.com:nombreUsuario/nombreProyecto.git ./</kbd>
 								</figcaption>
 							</figure>
-							<p>
+							
 								Al parecer el comando
 								<q>
 									<kbd>git clone</kbd>
 								</q>
 								acepta un segundo parámetro que es la dirección donde clonar (estoy suponiendo).
-							</p>
-							<p>
+							
+							
 								De aquí en adelante no hay que hacer
 								<q>
 									<kbd>git clone git@github...</kbd>
@@ -226,28 +219,28 @@ git push -u origin master
 								<q>
 									<kbd>git pull</kbd>
 								</q>
-							</p>
+							
 							<h2>Automatizar</h2>
-							<p>
+							
 								Todo esto está muy bien, pero sigue siendo bastante más aparatoso que FTP ¿no?
-							</p>
-							<p>
+							
+							
 								Bueno, aquí viene la magia, vamos a automatizar el proceso para que cada vez que hagamos un push a Github queden inmediatamente publicados los cambios en el servidor con el sitio.
-							</p>
-							<h3>En github</h3>
-							<p>
+							
+							h3. En github
+
+							
 								En la página del proyecto en github, hay que apretar el botón admin.
-							</p>
+							
 							<figure>
-								<img src="../img/content/git-workflow-11.png">
+								<img src="img/content/git-workflow-11.png">
 								<figcaption>Este botón nos llevará a la página de admin del proyecto.</figcaption>
 							</figure>
-							<p>
-								En la página de admin hay que apretar <strong>Service Hooks</strong>
-								.
-							</p>
+							
+								En la página de admin hay que apretar <strong>Service Hooks</strong>.
+							
 							<figure>
-								<img src="../img/content/git-workflow-12.png">
+								<img src="img/content/git-workflow-12.png">
 								<figcaption>
 									En el campo URL hay que poner la dirección del archivo que ejecutará el
 									<i>pull</i>
@@ -257,57 +250,55 @@ git push -u origin master
 									(no lo hemos hecho aún, pero le inventamos el nombre ahora)
 								</figcaption>
 							</figure>
-							<p>
+							
 								Esto hará que Github envíe un POST a la dirección escrita ahí, en el post irá info asociada al push, pero en este caso no nos interesa.
-							</p>
-							<p>
+							
+							
 								Apretamos
 								<q class="boton">Update Settings</q>
 								y estamos con github.
-							</p>
+							
 
-							<h3>En Bitbucket</h3>
-							<p>
+							h3. En Bitbucket
+
+							
 								En la página del repositorio ir a la pestaña
 								<q class="boton">Admin</q>
-								, apretar
-								<i>Services</i>
-								a la izquierda y en el select que aparece, seleccionar
-								<i>POST</i>
-								de la lista, y apretar
+								, apretar __Services__ a la izquierda y en el select que aparece, seleccionar __POST__ de la lista, y apretar
 								<q class="boton">Add Service</q>
 								donde aparecerá un campo para llenar con una URL, se usa la misma que usaríamos en github
 								<q>
 									<kbd>http://code.medula.cl/gitpull.php</kbd>
 								</q>
 								.
-							</p>
+							
 
-							<h3>El archivo PHP</h3>
-							<p>
+							h3. El archivo PHP
+
+							
 								Ahora, en la raíz del proyecto haremos un nuevo archivo
 								<q>
 									<code>gitpull.php</code>
 								</q>
 								y lo agregamos a git.
-							</p>
+							
 							<figure>
-								<img src="../img/content/git-workflow-13.png">
+								<img src="img/content/git-workflow-13.png">
 								<figcaption>
 									Los iconitos delatan que aún tengo a Dreamweaver como editor predeterminado para PHP :$
 								</figcaption>
 							</figure>
-							<p>Abrimos el archivo y escribimos lo siguiente:</p>
+							Abrimos el archivo y escribimos lo siguiente:
 							<figure>
-								<pre><code>
+								<pre><code class="language-markup">
 &lt;?php
 `git pull`;
 ?>
  	</code></pre>
 								<figcaption>Si, eso es todo.</figcaption>
 							</figure>
-							<p>
-								Ojo que no es una cadena, el caracter que lo envuekve no es
+							
+								Ojo que no es una cadena, el caracter que lo envuelve no es
 								<q>
 									<kbd>&#39;</kbd>
 								</q>
@@ -319,23 +310,23 @@ git push -u origin master
 								<q>
 									<code>bash_exec(); </code>
 								</q>
-								.
-							</p>
-							<p>Se hace un nuevo commit y push a Github.</p>
-							<p>
+								. +EDIT: hasta el monento no me ha resultado hacer esto automatizado en Dreamhost+
+							
+							Se hace un nuevo commit y push a Github.
+							
 								Entramos una última vez al servidor por SSH, navegamos hasta la carpeta y hacemos un último
 								<q>
 									<kbd>git pull</kbd>
 								</q>
-							</p>
-							<p>
+							
+							
 								En mi caso el servidor me pide el
 								<i>pass phrase</i>
 								de la llave, pero igual funciona automáticamente, creo que es porque tengo otra llave sin clave para Github (eso lo veré en otro artículo).
-							</p>
-							<p>
+							
+							
 								Y eso es todo, ya podemos ver los cambios reflejados en este sitio a penas hago un push a Github o Bitbucket.
-							</p>
+							
 							<h2>Fuentes:</h2>
 							<ul>
 								<li>
@@ -352,11 +343,6 @@ git push -u origin master
 								</li>
 
 								<li>
-									http://www.geekgumbo.com/2010/05/16/removing-deleted-files-from-your-git-working-directory/ (sacar arhivos eliminados)//git add -A && git add -u
+									http://www.geekgumbo.com/2010/05/16/removing-deleted-files-from-your-git-working-directory/ (sacar arhivos eliminados)//git add -A &amp;&amp; git add -u
 								</li>
 							</ul>
-</article>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script><!-- -->  
-</body>
-</html>

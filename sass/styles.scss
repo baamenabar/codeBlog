@@ -178,10 +178,11 @@ article {
 		vertical-align:top;
 		padding:1em;
 	}
-	.otros-post, .otros-post .grupo, article{
+	.otros-post, .otros-post .grupo, article, .articleGroup{
 		@include inline-block;
 		vertical-align: top;
 	}
+	.articleGroup article{display:block;}
 	.otros-post{
 		background-color:$grisClaro0;
 		width:269px;
