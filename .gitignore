@@ -1,6 +1,7 @@
 
+# Do ignore these
 /.sass-cache
-/articulos/cached
+/articulos/cached/*
 
 # Do not ignore these files...
-/articulos/cached/.htaccess
+!/articulos/cached/.htaccess

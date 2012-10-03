@@ -1,13 +1,11 @@
 title: LocalStorage through Store.sync() on Sencha Touch 2
-markdown
 pubDate:2012-10-02 17:13:46
 
-LocalStorage through Store.sync() on Sencha Touch 2
-===================================================
+h1. LocalStorage through Store.sync() on Sencha Touch 2
 
-Storing persisten information in a sencha app, cookies aren't available for all devices, localstorege has wonderful support with Phonegap (Cordova).
+Storing persisten information in a sencha app. Cookies aren't available for all devices, while localstorege has wonderful support with Phonegap (Cordova) that converts it in a very stable storing sistem.
 
-
+bc.. 
 	Ext.define('MyApp.store.LocalStuff',{
 		extend: 'Ext.data.Store',
 		xtype:'localstuff',
@@ -26,8 +24,9 @@ Storing persisten information in a sencha app, cookies aren't available for all 
 		}
 	});
 
-Assuming you´ve populated the store with something like:
+p. Assuming you´ve populated the store with something like:
 
+bc.. 
 	{'stuffArray':[
 		{'stuffId':'130',	'stuffName':'floob',	'stuffArray':[	
 																	'first',
@@ -61,24 +60,26 @@ Assuming you´ve populated the store with something like:
 		}
 	}
 
-/*If you tried this there will be no errors on the console, so, all is ok. Right?
+p. If you tried this there will be no errors on the console, so, all is ok. Right?
 wrong! The changes won't persist on restart. Why? 
 Because the records are “clean”. 
 How can we “dirty” them up?
 The only way I found (I'm sure there are plenty more) is by using the method **.set()** from the Model to update the record, that'll tell the store it's dirty
 That sounds odd to my untrained brain on MVC, better fixing the above example.
 
-*/
-{//in a given controller or view
-	someEventHandler:function(){
-		var stor = Ext.getStore('LocalStuffId');
-		var firstRecord = stor.getAt(0);//which will get you a record in the form of a Model
-		//you might go around the following 2 lines in many ways, the important part is .set() after that
-		var theArrayToFix = firstRecord.get('stuffArray');
-		theArrayToFix[2]='third';
+bc.. 
+	{//in a given controller or view
+		someEventHandler:function(){
+			var stor = Ext.getStore('LocalStuffId');
+			var firstRecord = stor.getAt(0);//which will get you a record in the form of a Model
+			//you might go around the following 2 lines in many ways, the important part is .set() after that
+			var theArrayToFix = firstRecord.get('stuffArray');
+			theArrayToFix[2]='third';
 
-		firstRecord.set('stuffArray',theArrayToFix);//set() dirties the record
-		//NOW we sync() to make the change persist when we close the app
-		stor.sync();
+			firstRecord.set('stuffArray',theArrayToFix);//set() dirties the record
+			//NOW we sync() to make the change persist when we close the app
+			stor.sync();
+		}
 	}
-}
+
+p. These are just snippets, I'l be documenting full examples soon.

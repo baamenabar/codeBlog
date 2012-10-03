@@ -40,7 +40,7 @@
 
 				<div class="mainContainer">
 					<header class="contiene-logo">
-						<img src="img/content/logo-blog-medula-code.png" alt="Logotipo Médula Diseño Code Blog"></header><article>
+						<a href="./"><img src="img/content/logo-blog-medula-code.png" alt="Logotipo Médula Diseño Code Blog"></a></header><article>
 						<?php require $theArticle->path; ?>
 							<footer>
 								<?php if ( isset($theArticle->tags) && $theArticle->tags ): ?>
