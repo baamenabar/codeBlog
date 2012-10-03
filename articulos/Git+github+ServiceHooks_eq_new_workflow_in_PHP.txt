@@ -50,23 +50,21 @@ Y aunque aún entiendo muy poco de esas cosas esotéricas, han pasado a ser part
 Voy a hacer el ejemplo con el código de este mismo blog mientras lo construyo.
 
 Paso por paso.
-<h2>Repositorio local</h2>
 
-OK, asumiendo que ya está GIT instalado, corriendo localmente (con tortoise en mi caso) y tenemos una cuenta github, hacemos un nuevo repositorio en la carpeta del sitio, agregamos los archivos del sitio y hacemos el primer commit.
+h2. Repositorio local
+
+OK, asumiendo que ya está GIT instalado, corriendo localmente (con __Tortoise__ en mi caso) y tenemos una cuenta Github, hacemos un nuevo repositorio en la carpeta del sitio, agregamos los archivos del sitio y hacemos el primer commit.
 							
-							<figure>
-								<blockquote>
-									<pre><kbd>
+<figure>
+	<pre><kbd>
 cd carpeta/de/proyecto
 git init
 git add .
 git commit -m 'primer commit'
-									</kbd></pre>
-									
 
-								</blockquote>
-								<figcaption>Cómo hacerlo desde la línea de comando.</figcaption>
-							</figure>
+</kbd></pre>
+	<figcaption>Cómo hacerlo desde la línea de comando.</figcaption>
+</figure>
 							<figure>
 								<img src="img/content/git-workflow-01.png" alt="Menú contextual, Crear repositorio aquí">
 								<figcaption>Nuevo repositorio con tortoise.</figcaption>
@@ -95,69 +93,59 @@ git commit -m 'primer commit'
 							
 								Esta dirección es útil porque nos permitirá hacer push desde nuestro repositorio local, como siempre se puede hacer de 2 maneras:
 							
-							h3. SSH
+h3. SSH
 
 							<figure>
-								<blockquote>
 								<pre><kbd>
 git remote add origin git@github.com:nombreUsuario/nombreProyecto.git
 git push -u origin master
 
 </kbd></pre>
-								</blockquote>
 							</figure>
-							h3. GUI, como TortoiseGIT
+
+h3. GUI, como TortoiseGIT
 
 							
-								Haciendo click derecho en la carpeta del proyecto se abre TortoiseGIT &rquo; Push...
-							
-							
-								En la ventana que aparece, en el grupo
-								<q>Destination</q>
-								haceer click en
-								<q class="boton">Manage</q>
-								.
-							
-							<figure>
-								<img src="img/content/git-workflow-06.png"></figure>
-							
-								Ojo que en el primer push hay que marcar la opción
-								<q> <i>Force Overwrite Existing Branch (May discard changes)</i>
-								</q>
-								para que no entre en conflicto con la versión del repositorio que tiene github.
-							
-							
-								En la ventana que aparece hay que llenar los campos con: el nombre del proyecto, la URL de SSH que copiamos de Github y cargamos la
-								<i>putty key, navegando hasta donde esté guardada.</i>
-							
-							<figure>
-								<img src="img/content/git-workflow-07.png">
-								<figcaption>
-									Esta configuración es práctico guardarla apretando el botón:
-									<q class="boton">Add new/Save</q>
-								</figcaption>
-							</figure>
-							
-								Ahora sólo hay que apretar
-								<q class="boton">OK</q>
-								, probablemente va a pedir la contraseña de la llave putty.
-							
-							Si revisamos en github, está todo arriba.
+Haciendo click derecho en la carpeta del proyecto se abre TortoiseGIT &rquo; Push...
 
-							<h2>Actualizar el servidor desde GIT</h2>
+En la ventana que aparece, en el grupo <q>Destination</q> haceer click en <q class="boton">Manage</q>.
 							
-								Hasta ahora no hay nada nuevo, ninguna ventaja sobre FTP (aparte del versionamiento), pero ahora haremos que el servidor cargue los archivos desde github, o sea que haga un
-								<i>pull</i>
-								.
-							
-							h3. Requisitos
+	<figure>
+		<img src="img/content/git-workflow-06.png"></figure>
 
-								* Conectarse al servidor via SSH. Personalmente uso PuTTY
-								* Tener Git instalado en el servidor. Media Temple viene con Git instalado
-								* <a href="http://oreilly.com/pub/h/66" target="_blank" title="Cómo autenticar un servidor con llaves ssh y sin clave.">Tener autentificado el servidor con github</a>
-									<a href="http://www.endreywalder.com/blog/authenticate-github-on-mediatemple-grid-shared-server/" title="Ver artículo de cómo hacerlo en Mediatemple">Aqí un tutorial para Media Temple</a>
-								
-							h3. Empecemos
+		Ojo que en el primer push hay que marcar la opción
+		<q> <i>Force Overwrite Existing Branch (May discard changes)</i>
+		</q>
+		para que no entre en conflicto con la versión del repositorio que tiene github.
+
+
+		En la ventana que aparece hay que llenar los campos con: el nombre del proyecto, la URL de SSH que copiamos de Github y cargamos la
+		<i>putty key, navegando hasta donde esté guardada.</i>
+
+	<figure>
+		<img src="img/content/git-workflow-07.png">
+		<figcaption>
+			Esta configuración es práctico guardarla apretando el botón:
+			<q class="boton">Add new/Save</q>
+		</figcaption>
+	</figure>
+
+Ahora sólo hay que apretar <q class="boton">OK</q>, probablemente va a pedir la contraseña de la llave putty.
+
+Si revisamos en github, está todo arriba.
+
+h2. Actualizar el servidor desde GIT
+
+Hasta ahora no hay nada nuevo, ninguna ventaja sobre FTP (aparte del versionamiento), pero ahora haremos que el servidor cargue los archivos desde github, o sea que haga un __pull__.
+
+h3. Requisitos
+
+* Conectarse al servidor via SSH. Personalmente uso PuTTY
+* Tener Git instalado en el servidor. Media Temple viene con Git instalado
+* <a href="http://oreilly.com/pub/h/66" target="_blank" title="Cómo autenticar un servidor con llaves ssh y sin clave.">Tener autentificado el servidor con github</a>
+	<a href="http://www.endreywalder.com/blog/authenticate-github-on-mediatemple-grid-shared-server/" title="Ver artículo de cómo hacerlo en Mediatemple">Aqí un tutorial para Media Temple</a>
+
+h3. Empecemos
 
 							<figure>
 								<img src="img/content/git-workflow-08.png">
@@ -227,7 +215,7 @@ git push -u origin master
 							
 								Bueno, aquí viene la magia, vamos a automatizar el proceso para que cada vez que hagamos un push a Github queden inmediatamente publicados los cambios en el servidor con el sitio.
 							
-							h3. En github
+h3. En github
 
 							
 								En la página del proyecto en github, hay que apretar el botón admin.
@@ -259,7 +247,7 @@ git push -u origin master
 								y estamos con github.
 							
 
-							h3. En Bitbucket
+h3. En Bitbucket
 
 							
 								En la página del repositorio ir a la pestaña
@@ -273,7 +261,7 @@ git push -u origin master
 								.
 							
 
-							h3. El archivo PHP
+h3. El archivo PHP
 
 							
 								Ahora, en la raíz del proyecto haremos un nuevo archivo

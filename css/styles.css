@@ -133,7 +133,7 @@ mark {
 pre, code, kbd, samp {
   font-family: "ubuntu-mono", monospace, serif;
   _font-family: 'courier new', monospace;
-  font-size: 1.125em;
+  /*font-size: 1.125em;*/
 }
 
 /* line 31, ../sass/_normals.scss */
@@ -345,7 +345,6 @@ code[class*="language-"],
 pre[class*="language-"] {
   color: black;
   text-shadow: 0 1px white;
-  font-family: Consolas, Monaco, 'Andale Mono', monospace;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -570,22 +569,27 @@ article figure img {
   border: 1px dotted #DDD;
 }
 
-/* line 98, ../sass/styles.scss */
+/* line 99, ../sass/styles.scss */
+.articleGroup article h1 {
+  margin-bottom: 0.2em;
+}
+
+/* line 101, ../sass/styles.scss */
 .contiene-logo {
   padding: 0.5em 1em;
 }
 
-/* line 101, ../sass/styles.scss */
+/* line 104, ../sass/styles.scss */
 .otros-post {
   background-color: #f0f0f0;
 }
-/* line 102, ../sass/styles.scss */
+/* line 105, ../sass/styles.scss */
 .boxshadow .otros-post {
   -webkit-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
-/* line 109, ../sass/styles.scss */
+/* line 112, ../sass/styles.scss */
 .otros-post .caluga {
   width: auto;
   margin-right: 9px;
@@ -593,69 +597,69 @@ article figure img {
   padding-bottom: 1px;
   line-height: 1.125em;
 }
-/* line 115, ../sass/styles.scss */
+/* line 118, ../sass/styles.scss */
 .otros-post .caluga header {
   background-color: #FFF;
   min-height: 44px;
   padding-top: 22px;
   margin-right: 5px;
 }
-/* line 120, ../sass/styles.scss */
+/* line 123, ../sass/styles.scss */
 .otros-post .caluga header.primero {
   margin-right: 0;
 }
-/* line 121, ../sass/styles.scss */
+/* line 124, ../sass/styles.scss */
 .boxshadow .otros-post .caluga header {
   -webkit-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
-/* line 124, ../sass/styles.scss */
+/* line 127, ../sass/styles.scss */
 .otros-post .caluga header h2 {
   font-size: 24px;
   font-style: italic;
   margin: 0 0.5em 0 0.5em;
 }
-/* line 129, ../sass/styles.scss */
+/* line 132, ../sass/styles.scss */
 .otros-post .caluga header h2.estrella:before {
   content: '★';
   font-style: normal;
   color: #fac116;
 }
-/* line 137, ../sass/styles.scss */
+/* line 140, ../sass/styles.scss */
 .otros-post .caluga.recomendados {
   background-color: #45bcd2;
 }
-/* line 140, ../sass/styles.scss */
+/* line 143, ../sass/styles.scss */
 .otros-post .caluga.anteriores {
   background-color: #fcc212;
 }
-/* line 143, ../sass/styles.scss */
+/* line 146, ../sass/styles.scss */
 .otros-post .caluga.acerca-de {
   background-color: #e6e6e6;
 }
-/* line 145, ../sass/styles.scss */
+/* line 148, ../sass/styles.scss */
 .otros-post .caluga.acerca-de p {
   margin: 1.5em;
 }
-/* line 150, ../sass/styles.scss */
+/* line 153, ../sass/styles.scss */
 .otros-post ul {
   padding: 0;
 }
-/* line 151, ../sass/styles.scss */
+/* line 154, ../sass/styles.scss */
 .otros-post li {
   list-style: none;
   margin: 1.5em;
 }
-/* line 154, ../sass/styles.scss */
+/* line 157, ../sass/styles.scss */
 .otros-post li h4 {
   margin: 0;
 }
-/* line 155, ../sass/styles.scss */
+/* line 158, ../sass/styles.scss */
 .otros-post li p {
   margin: 0;
 }
-/* line 156, ../sass/styles.scss */
+/* line 159, ../sass/styles.scss */
 .otros-post li a {
   color: #FFF;
   text-decoration: none;
@@ -675,14 +679,14 @@ article figure img {
 .otros-post li a {
   *display: inline;
 }
-/* line 162, ../sass/styles.scss */
+/* line 165, ../sass/styles.scss */
 .otros-post li a:hover, .otros-post li a:active, .otros-post li a:focus {
   text-decoration: underline;
   color: #565656;
 }
 
 @media screen and (min-width: 900px) {
-  /* line 171, ../sass/styles.scss */
+  /* line 174, ../sass/styles.scss */
   .wrapper {
     width: auto;
     display: -moz-inline-box;
@@ -697,7 +701,7 @@ article figure img {
     *display: inline;
   }
 
-  /* line 176, ../sass/styles.scss */
+  /* line 179, ../sass/styles.scss */
   .contiene-logo {
     display: -moz-inline-box;
     -moz-box-orient: vertical;
@@ -712,7 +716,7 @@ article figure img {
     *display: inline;
   }
 
-  /* line 181, ../sass/styles.scss */
+  /* line 184, ../sass/styles.scss */
   .otros-post, .otros-post .grupo, article, .articleGroup {
     display: -moz-inline-box;
     -moz-box-orient: vertical;
@@ -726,22 +730,22 @@ article figure img {
     *display: inline;
   }
 
-  /* line 185, ../sass/styles.scss */
+  /* line 188, ../sass/styles.scss */
   .articleGroup article {
     display: block;
   }
 
-  /* line 186, ../sass/styles.scss */
+  /* line 189, ../sass/styles.scss */
   .otros-post {
     background-color: #f0f0f0;
     width: 269px;
     padding: 13px 0 13px 9px;
   }
-  /* line 190, ../sass/styles.scss */
+  /* line 193, ../sass/styles.scss */
   .otros-post .grupo {
     margin-bottom: 18px;
   }
-  /* line 193, ../sass/styles.scss */
+  /* line 196, ../sass/styles.scss */
   .otros-post .caluga {
     width: 260px;
     margin-right: 9px;
@@ -750,7 +754,7 @@ article figure img {
   }
 }
 @media screen and (min-width: 1276px) {
-  /* line 202, ../sass/styles.scss */
+  /* line 205, ../sass/styles.scss */
   .otros-post {
     width: 538px;
   }

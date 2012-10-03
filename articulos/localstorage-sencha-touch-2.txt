@@ -1,64 +1,64 @@
 title: LocalStorage through Store.sync() on Sencha Touch 2
+classes: language-javascript
 pubDate:2012-10-02 17:13:46
 
 h1. LocalStorage through Store.sync() on Sencha Touch 2
 
-Storing persisten information in a sencha app. Cookies aren't available for all devices, while localstorege has wonderful support with Phonegap (Cordova) that converts it in a very stable storing sistem.
+Storing persistent information in a sencha app. Cookies aren't available for all devices, while localstorege has wonderful support with Phonegap (Cordova) that converts it in a very stable storing system.
 
-bc.. 
-	Ext.define('MyApp.store.LocalStuff',{
-		extend: 'Ext.data.Store',
-		xtype:'localstuff',
-
-		config: {
-			fields:['stuffId','stuffName','stuffArray'],
-			storeId:'LocalStuffId',
-			proxy:{
-				type:'localstorage',
-				id:'idForLocalStorage',
-				reader: {
-					type: 'json',
-					rootProperty: 'stuffArray'
-				}
+bc(language-javascript).. 
+Ext.define('MyApp.store.LocalStuff',{
+	extend: 'Ext.data.Store',
+	xtype:'localstuff',
+	config: {
+		fields:['stuffId','stuffName','stuffArray'],
+		storeId:'LocalStuffId',
+		proxy:{
+			type:'localstorage',
+			id:'idForLocalStorage',
+			reader: {
+				type: 'json',
+				rootProperty: 'stuffArray'
 			}
 		}
-	});
+	}
+});
 
-p. Assuming you´ve populated the store with something like:
+p. Assuming you've populated the store with something like:
 
 bc.. 
-	{'stuffArray':[
-		{'stuffId':'130',	'stuffName':'floob',	'stuffArray':[	
-																	'first',
-																	'second',
-																	'tird' //here be a typo (on purpose)
-																	]
-																},
-		{'stuffId':'131',	'stuffName':'sateo',	'stuffArray':[	
-																	'primero',
-																	'segundo',
-																	'tercero'
-																	]
-																},
-		{'stuffId':'133',	'stuffName':'tolus',	'stuffArray':[	
-																	'prima',
-																	'secunda',
-																	'tertia'
-																	]
-																}
-		]
-	}
-	// to fix the first's record misspelling you might be tempted to do the following
+{'stuffArray':[
+	{'stuffId':'130',	'stuffName':'floob',	'stuffArray':[	
+																'first',
+																'second',
+																'tird' //here be a typo (on purpose)
+																]
+															},
+	{'stuffId':'131',	'stuffName':'sateo',	'stuffArray':[	
+																'primero',
+																'segundo',
+																'tercero'
+																]
+															},
+	{'stuffId':'133',	'stuffName':'tolus',	'stuffArray':[	
+																'prima',
+																'secunda',
+																'tertia'
+																]
+															}
+	]
+}
+// to fix the first's record misspelling you might be tempted to do the following
 
-	{//in a given controller or view
-		someEventHandler:function(){
-			var stor = Ext.getStore('LocalStuffId');
-			var firstRecord = stor.getAt(0);//which will get you a record in the form of a Model
-			firstRecord.get('stuffArray')[2]='third';//that will fix it
-			//now we just sync() to make the change persist when we close the app
-			stor.sync();
-		}
+{//in a given controller or view
+	someEventHandler:function(){
+		var stor = Ext.getStore('LocalStuffId');
+		var firstRecord = stor.getAt(0);//which will get you a record in the form of a Model
+		firstRecord.get('stuffArray')[2]='third';//that will fix it
+		//now we just sync() to make the change persist when we close the app
+		stor.sync();
 	}
+}
 
 p. If you tried this there will be no errors on the console, so, all is ok. Right?
 wrong! The changes won't persist on restart. Why? 
@@ -68,18 +68,18 @@ The only way I found (I'm sure there are plenty more) is by using the method **.
 That sounds odd to my untrained brain on MVC, better fixing the above example.
 
 bc.. 
-	{//in a given controller or view
-		someEventHandler:function(){
-			var stor = Ext.getStore('LocalStuffId');
-			var firstRecord = stor.getAt(0);//which will get you a record in the form of a Model
-			//you might go around the following 2 lines in many ways, the important part is .set() after that
-			var theArrayToFix = firstRecord.get('stuffArray');
-			theArrayToFix[2]='third';
+{//in a given controller or view
+	someEventHandler:function(){
+		var stor = Ext.getStore('LocalStuffId');
+		var firstRecord = stor.getAt(0);//which will get you a record in the form of a Model
+		//you might go around the following 2 lines in many ways, the important part is .set() after that
+		var theArrayToFix = firstRecord.get('stuffArray');
+		theArrayToFix[2]='third';
 
-			firstRecord.set('stuffArray',theArrayToFix);//set() dirties the record
-			//NOW we sync() to make the change persist when we close the app
-			stor.sync();
-		}
+		firstRecord.set('stuffArray',theArrayToFix);//set() dirties the record
+		//NOW we sync() to make the change persist when we close the app
+		stor.sync();
 	}
+}
 
-p. These are just snippets, I'l be documenting full examples soon.
+p. These are just snippets, I'll be documenting full examples soon.

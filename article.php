@@ -10,7 +10,7 @@
 			<![endif]-->
 			<!--[if gt IE 8]>
 			<!-->
-			<html class="no-js" lang="en">
+			<html class="no-js<?php if(isset($theArticle->classes))echo ' '.$theArticle->classes ;?>" lang="en">
 				<!--<![endif]-->
 <head>
 				<meta charset="utf-8">
