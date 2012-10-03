@@ -185,15 +185,6 @@ class SlypCore{
 			$this->processContents();
 		}
 	}
-
-	protected function activaAcciones(){
-		$algunaActivada=false;
-		if(isset($_GET['a'])&& $_GET['a'] && isset($this->acciones[$_GET['a']])){
-			$this->{$this->acciones[$_GET['a']]}();
-			$algunaActivada=true;
-		}
-		return $algunaActivada;
-	}
 	
 	protected function avisaWebmaster($message=''){
 		$message.="\r\n\r\nen la fecha:".date('Y-m-d H:i:s');
@@ -253,6 +244,10 @@ class SlypCore{
 			return (bool) $this->_errors[$nombre];
 		}
 		return false;
+	}
+
+	public function getErrorList(){
+		return $this->_errors;
 	}
 }
 

@@ -16,6 +16,8 @@ if(isset($g['a'])){
 
 include $sly->getTemplateFile($g['t']);
 
+if($sly->getError())print_r($sly->getErrorList());
+
 exit();
 
 ?>
