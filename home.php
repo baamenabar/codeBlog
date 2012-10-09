@@ -53,6 +53,7 @@ header('Pragma: no-cache'); ?><!doctype html>
 									<?php if (isset($oneArticle['intro'])): ?>
 										<p><?php echo $oneArticle['intro'] ?></p>
 									<?php endif ?>
+									<p><a href="?t=article&a=<?php echo urlencode( $oneArticle['filename'] ); ?>">Leer más / <i>Read more</i></a></p>
 								</article>
 							<?php endforeach ?>
 						</div><?php include "inc/template/aside-gral.php"; ?>

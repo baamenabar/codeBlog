@@ -27,7 +27,7 @@ We are going to combine two main pieces of code; the Camera controller from the 
 
 h2(#hid_2). Setting up Sencha
 
-But first we must set a button with an action to open the camera, so we change the contents of the Main view (<kbd>app/views/Main.js</kbd>) to:
+But first we must set a button with an action to open the camera, so we change the contents of the Main view (<kbd>app/views/Main.js</kbd>) to: 
 
 bc.. 
 Ext.define("MIUp.view.Main", {
