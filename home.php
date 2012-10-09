@@ -50,10 +50,10 @@ header('Pragma: no-cache'); ?><!doctype html>
 									<?php if (isset($oneArticle['pubDate'])): ?>
 										<p class="pubDate">Publicado: <time datetime="<?php echo $oneArticle['pubDate'] ?>"><?php echo $oneArticle['pubDate'] ?></time><?php if (isset($oneArticle['author'])): ?> | <?php echo $oneArticle['author'] ?> <?php endif ?></p>
 									<?php endif ?>
-									<?php if (isset($oneArticle['intro'])): ?>
-										<p><?php echo $oneArticle['intro'] ?></p>
+									<p><?php if (isset($oneArticle['intro'])): ?>
+										<?php echo $oneArticle['intro'] ?>
 									<?php endif ?>
-									<p><a href="?t=article&a=<?php echo urlencode( $oneArticle['filename'] ); ?>">Leer más / <i>Read more</i></a></p>
+									<a href="?t=article&a=<?php echo urlencode( $oneArticle['filename'] ); ?>"><i lang="en">Read more</i> / Leer más</a></p>
 								</article>
 							<?php endforeach ?>
 						</div><?php include "inc/template/aside-gral.php"; ?>
