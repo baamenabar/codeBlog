@@ -588,28 +588,32 @@ article figure img {
   max-width: 100%;
   border: 1px dotted #DDD;
 }
+/* line 108, ../sass/styles.scss */
+article img {
+  max-width: 100%;
+}
 
-/* line 110, ../sass/styles.scss */
+/* line 113, ../sass/styles.scss */
 .articleGroup article h1 {
   margin-bottom: 0.2em;
 }
 
-/* line 112, ../sass/styles.scss */
+/* line 115, ../sass/styles.scss */
 .contiene-logo {
   padding: 0.5em 1em;
 }
 
-/* line 115, ../sass/styles.scss */
+/* line 118, ../sass/styles.scss */
 .otros-post {
   background-color: #f0f0f0;
 }
-/* line 116, ../sass/styles.scss */
+/* line 119, ../sass/styles.scss */
 .boxshadow .otros-post {
   -webkit-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
-/* line 123, ../sass/styles.scss */
+/* line 126, ../sass/styles.scss */
 .otros-post .caluga {
   width: auto;
   margin-right: 9px;
@@ -617,69 +621,69 @@ article figure img {
   padding-bottom: 1px;
   line-height: 1.125em;
 }
-/* line 129, ../sass/styles.scss */
+/* line 132, ../sass/styles.scss */
 .otros-post .caluga header {
   background-color: #FFF;
   min-height: 44px;
   padding-top: 22px;
   margin-right: 5px;
 }
-/* line 134, ../sass/styles.scss */
+/* line 137, ../sass/styles.scss */
 .otros-post .caluga header.primero {
   margin-right: 0;
 }
-/* line 135, ../sass/styles.scss */
+/* line 138, ../sass/styles.scss */
 .boxshadow .otros-post .caluga header {
   -webkit-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
-/* line 138, ../sass/styles.scss */
+/* line 141, ../sass/styles.scss */
 .otros-post .caluga header h2 {
   font-size: 24px;
   font-style: italic;
   margin: 0 0.5em 0 0.5em;
 }
-/* line 143, ../sass/styles.scss */
+/* line 146, ../sass/styles.scss */
 .otros-post .caluga header h2.estrella:before {
   content: '★';
   font-style: normal;
   color: #fac116;
 }
-/* line 151, ../sass/styles.scss */
+/* line 154, ../sass/styles.scss */
 .otros-post .caluga.recomendados {
   background-color: #45bcd2;
 }
-/* line 154, ../sass/styles.scss */
+/* line 157, ../sass/styles.scss */
 .otros-post .caluga.anteriores {
   background-color: #fcc212;
 }
-/* line 157, ../sass/styles.scss */
+/* line 160, ../sass/styles.scss */
 .otros-post .caluga.acerca-de {
   background-color: #e6e6e6;
 }
-/* line 159, ../sass/styles.scss */
+/* line 162, ../sass/styles.scss */
 .otros-post .caluga.acerca-de p {
   margin: 1.5em;
 }
-/* line 164, ../sass/styles.scss */
+/* line 167, ../sass/styles.scss */
 .otros-post ul {
   padding: 0;
 }
-/* line 165, ../sass/styles.scss */
+/* line 168, ../sass/styles.scss */
 .otros-post li {
   list-style: none;
   margin: 1.5em;
 }
-/* line 168, ../sass/styles.scss */
+/* line 171, ../sass/styles.scss */
 .otros-post li h4 {
   margin: 0;
 }
-/* line 169, ../sass/styles.scss */
+/* line 172, ../sass/styles.scss */
 .otros-post li p {
   margin: 0;
 }
-/* line 170, ../sass/styles.scss */
+/* line 173, ../sass/styles.scss */
 .otros-post li a {
   color: #FFF;
   text-decoration: none;
@@ -699,13 +703,13 @@ article figure img {
 .otros-post li a {
   *display: inline;
 }
-/* line 176, ../sass/styles.scss */
+/* line 179, ../sass/styles.scss */
 .otros-post li a:hover, .otros-post li a:active, .otros-post li a:focus {
   text-decoration: underline;
   color: #565656;
 }
 
-/* line 183, ../sass/styles.scss */
+/* line 186, ../sass/styles.scss */
 .button, .boton {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
   background-image: -webkit-linear-gradient(#eeeeee, #cccccc);
@@ -723,23 +727,26 @@ article figure img {
   padding: 0 0.25em;
 }
 
-/* line 190, ../sass/styles.scss */
+/* line 193, ../sass/styles.scss */
 .pubDate {
   margin-top: 0;
   color: #777;
 }
-/* line 193, ../sass/styles.scss */
+/* line 196, ../sass/styles.scss */
 .pubDate time {
   font-style: italic;
 }
 
-/* line 198, ../sass/styles.scss */
+/* line 201, ../sass/styles.scss */
 .mainContainer *[lang] {
   font-style: italic;
+  display: inline-block;
+  line-height: 1.25em;
+  margin-top: 0.25em;
 }
 
 @media screen and (min-width: 900px) {
-  /* line 204, ../sass/styles.scss */
+  /* line 210, ../sass/styles.scss */
   .wrapper {
     width: auto;
     display: -moz-inline-box;
@@ -754,7 +761,7 @@ article figure img {
     *display: inline;
   }
 
-  /* line 209, ../sass/styles.scss */
+  /* line 215, ../sass/styles.scss */
   .contiene-logo {
     display: -moz-inline-box;
     -moz-box-orient: vertical;
@@ -769,7 +776,7 @@ article figure img {
     *display: inline;
   }
 
-  /* line 214, ../sass/styles.scss */
+  /* line 220, ../sass/styles.scss */
   .otros-post, .otros-post .grupo, article, .articleGroup {
     display: -moz-inline-box;
     -moz-box-orient: vertical;
@@ -783,22 +790,22 @@ article figure img {
     *display: inline;
   }
 
-  /* line 218, ../sass/styles.scss */
+  /* line 224, ../sass/styles.scss */
   .articleGroup article {
     display: block;
   }
 
-  /* line 219, ../sass/styles.scss */
+  /* line 225, ../sass/styles.scss */
   .otros-post {
     background-color: #f0f0f0;
     width: 269px;
     padding: 13px 0 13px 9px;
   }
-  /* line 223, ../sass/styles.scss */
+  /* line 229, ../sass/styles.scss */
   .otros-post .grupo {
     margin-bottom: 18px;
   }
-  /* line 226, ../sass/styles.scss */
+  /* line 232, ../sass/styles.scss */
   .otros-post .caluga {
     width: 260px;
     margin-right: 9px;
@@ -807,7 +814,7 @@ article figure img {
   }
 }
 @media screen and (min-width: 1276px) {
-  /* line 235, ../sass/styles.scss */
+  /* line 241, ../sass/styles.scss */
   .otros-post {
     width: 538px;
   }

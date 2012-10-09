@@ -7,4 +7,4 @@ __[en]In this blog we publish stuff we discover working at <a href="http://medul
 El tema principal es código en los diferentes sabores que trabajamos o vamos descubriendo. 
 __[en]The main theme of this blog is code in the different flavours we encounter.__
 
-Este blog en particular lo llevamos como sitio estático (o casi) sin base de datos y "está publicado en Github":https://github.com/baamenabar/codeBlog , así que si cometo un error  se puede hacer un “bug report” en el proyecto del sitio.
+Este blog en particular lo llevamos como sitio estático (o casi) sin base de datos y "está publicado en Github":https://github.com/baamenabar/codeBlog , así que si cometo un error  se puede hacer un “bug report” en el proyecto del sitio. Aún tiene varios temas pendientes, de back-end y estilos, pero de a poco lo vamos armando.

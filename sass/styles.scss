@@ -105,6 +105,9 @@ article {
 			border: 1px dotted #DDD;
 		}
 	}
+	img{ 
+		max-width:100%;
+	}
 }
 .articleGroup article{
 	h1{margin-bottom:0.2em;}
@@ -197,6 +200,9 @@ article {
 .mainContainer{
 	*[lang]{
 		font-style: italic;
+		display: inline-block;
+		line-height: 1.25em;
+		margin-top: 0.25em;
 	}
 }
 
