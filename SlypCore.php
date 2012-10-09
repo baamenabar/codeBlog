@@ -55,7 +55,7 @@ class SlypCore{
 		return $this->articleList;
 	}
 
-	function getArticle($filename){
+	public function getArticle($filename){
 		//$this->processContents();
 		//print_r($this->articleList);
 		$ao = new stdClass();
@@ -83,6 +83,10 @@ class SlypCore{
 		if( is_file( $this->_templateDir . $bname . '.php') )return $this->_templateDir . $bname . '.php';
 		if( is_file( $this->_templateDir . $bname . '.html') )return $this->_templateDir . $bname . '.html';
 		return '';
+	}
+
+	public function processFile(){
+		
 	}
 
 	public function processContents($forceRewrite=false){

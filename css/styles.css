@@ -733,8 +733,13 @@ article figure img {
   font-style: italic;
 }
 
+/* line 198, ../sass/styles.scss */
+.mainContainer *[lang] {
+  font-style: italic;
+}
+
 @media screen and (min-width: 900px) {
-  /* line 199, ../sass/styles.scss */
+  /* line 204, ../sass/styles.scss */
   .wrapper {
     width: auto;
     display: -moz-inline-box;
@@ -749,7 +754,7 @@ article figure img {
     *display: inline;
   }
 
-  /* line 204, ../sass/styles.scss */
+  /* line 209, ../sass/styles.scss */
   .contiene-logo {
     display: -moz-inline-box;
     -moz-box-orient: vertical;
@@ -764,7 +769,7 @@ article figure img {
     *display: inline;
   }
 
-  /* line 209, ../sass/styles.scss */
+  /* line 214, ../sass/styles.scss */
   .otros-post, .otros-post .grupo, article, .articleGroup {
     display: -moz-inline-box;
     -moz-box-orient: vertical;
@@ -778,22 +783,22 @@ article figure img {
     *display: inline;
   }
 
-  /* line 213, ../sass/styles.scss */
+  /* line 218, ../sass/styles.scss */
   .articleGroup article {
     display: block;
   }
 
-  /* line 214, ../sass/styles.scss */
+  /* line 219, ../sass/styles.scss */
   .otros-post {
     background-color: #f0f0f0;
     width: 269px;
     padding: 13px 0 13px 9px;
   }
-  /* line 218, ../sass/styles.scss */
+  /* line 223, ../sass/styles.scss */
   .otros-post .grupo {
     margin-bottom: 18px;
   }
-  /* line 221, ../sass/styles.scss */
+  /* line 226, ../sass/styles.scss */
   .otros-post .caluga {
     width: 260px;
     margin-right: 9px;
@@ -802,7 +807,7 @@ article figure img {
   }
 }
 @media screen and (min-width: 1276px) {
-  /* line 230, ../sass/styles.scss */
+  /* line 235, ../sass/styles.scss */
   .otros-post {
     width: 538px;
   }

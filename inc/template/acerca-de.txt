@@ -1,0 +1,10 @@
+
+<header> <h2>Acerca de&hellip; About</h2> </header>
+
+En este blog publicamos cosas que descubrimos trabajando en proyectos de <a href="http://medula.cl" target="_blank">Médula Diseño</a> y nos gustaría compartir. 
+__[en]In this blog we publish stuff we discover working at <a href="http://medula.cl" target="_blank">Médula Diseño</a> and we'd like to share.__
+
+El tema principal es código en los diferentes sabores que trabajamos o vamos descubriendo. 
+__[en]The main theme of this blog is code in the different flavours we encounter.__
+
+Este blog en particular lo llevamos como sitio estático (o casi) sin base de datos y "está publicado en Github":https://github.com/baamenabar/codeBlog , así que si cometo un error  se puede hacer un “bug report” en el proyecto del sitio.

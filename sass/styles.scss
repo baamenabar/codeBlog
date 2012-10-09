@@ -194,6 +194,11 @@ article {
 		font-style:italic;
 	}
 }
+.mainContainer{
+	*[lang]{
+		font-style: italic;
+	}
+}
 
 @media screen and (min-width: 900px) {
 	.wrapper{

@@ -119,6 +119,7 @@ Now, if we test this, when you click the *(button)SNAP!* button the console shou
 h2(#hid_4). Storing the pictures locally
 
 So far so good, we are taking pictures with the app, no biggie. Up next is the storing of the list of pictures we will upload, and that we will do with a _localstorage_ Store we will create now, we will not define a Model in a separate file for such a simple Store.
+
 bc.. 
 Ext.define('MIUp.store.ImageQueue',{
 	extend: 'Ext.data.Store',
