@@ -150,7 +150,7 @@ class SlypCore{
 		//benchmarkUnserialization($this->articleList);
 		//print_r($this->articleList);
 		usort($this->articleList, function($a, $b) {
-			return $b['pubDate'] - $a['pubDate'];
+			return implode('', explode('-', $b['pubDate'])) - implode('', explode('-', $a['pubDate']));
 		});
 		if( @file_put_contents( $this->_cachedHtml.'contents.enc', serialize($this->articleList) ) === false)$this->_errors['3'] = true;
 		return $this->articleList;

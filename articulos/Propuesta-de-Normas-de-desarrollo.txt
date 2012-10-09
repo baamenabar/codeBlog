@@ -18,8 +18,8 @@ Aunque no todos los proyectos serán "mobile first" en alguna medida deben consi
 
 h2. SASS, COMPASS y LESS
 
-* De preferencia SASS o COMPASS con mesura.
-* Deberemos investigar OOCSS para ser aplicado en pre-procesadores.
+# De preferencia SASS o COMPASS con mesura.
+# Deberemos investigar OOCSS para ser aplicado en pre-procesadores.
 
 h2. Concatenación y Compresión de CSS y JS
 

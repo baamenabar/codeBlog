@@ -71,8 +71,6 @@
 						</article><?php include "inc/template/aside-gral.php"; ?>
 
 					</div>
-					<!-- #main -->
-				</div>
 				<!-- #main-container -->
 
 				<div id="footer-container">

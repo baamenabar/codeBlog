@@ -45,6 +45,17 @@ kbd{
     padding:.1em .6em;
     text-shadow:0 -1px 0 #000;
 }
+samp{
+    background-color:$grisClaro1;
+    border:1px solid #ccc;
+    @include border-radius(3px);
+    @include single-box-shadow(rgba(0,0,0,0.3), 1px, 1px, 3px, 0, true);
+    color:#333;
+    display:inline-block;
+    margin:0 .1em;
+    padding:.1em .6em;
+    text-shadow:0 -1px 0 #FFF;
+}
 figure{
 	pre{
 		word-break: normal;
@@ -167,6 +178,20 @@ article {
 				color:#565656;
 			}
 		}
+	}
+}
+.button, .boton {
+  @include background-image(linear-gradient(#EEE, #ccc));
+  @include border-radius(4px);
+  text-shadow: -1px -1px 0 rgba(255,255,255,0.5);
+  border: 1px solid #666;
+  padding: 0 0.25em;
+}
+.pubDate{
+	margin-top:0;
+	color:#777;
+	time{
+		font-style:italic;
 	}
 }
 

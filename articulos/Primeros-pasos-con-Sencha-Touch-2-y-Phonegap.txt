@@ -4,7 +4,7 @@ pubDate:2012-10-02 17:13:37
 
 h1. Primeros tropiezos con Sencha Touch 2
 
-Estoy armando un app (por primera vez), ya me he decantado por phoneGap y hoy tuve qe hacer la selección entre Sencha, XUI y jQuery Mobile. Cuando me di cuenta que jQuey Mobile es un plugin sobre jQuery lo descarté, en <i>mobile</i> no necesito ni la mitad de todo lo que trae jQuery. +EDIT: Cuando escribí esto y elegí Sencha Touch 2 jQuery aún no peritía hacer <q>__builds__</q> personalizados.+
+Estoy armando un app (por primera vez), ya me he decantado por phoneGap y hoy tuve qe hacer la selección entre Sencha, XUI y jQuery Mobile. Cuando me di cuenta que jQuey Mobile es un plugin sobre jQuery lo descarté, en <i>mobile</i> no necesito ni la mitad de todo lo que trae jQuery. +EDIT: Cuando escribí esto y elegí Sencha Touch 2, jQuery aún no peritía hacer <q>__builds__</q> personalizados.+
 
 Cuando vi el <a href="http://dev.sencha.com/deploy/touch/examples/production/kitchensink/">demo</a> de "Kitchen Sink" de Sencha Touch 2, lo elegí.
 

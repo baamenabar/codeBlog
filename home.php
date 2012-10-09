@@ -1,4 +1,5 @@
-<!doctype html>
+<?php header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Pragma: no-cache'); ?><!doctype html>
 <!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
 	<![endif]-->
@@ -41,11 +42,14 @@
 							<?php foreach ($articleList as $oneArticle): ?>
 								<article>
 									<header>
-										<a href="?t=article&a=<?php echo $oneArticle['filename']; ?>"><h1><?php echo $oneArticle['title']; ?></h1>
+										<a href="?t=article&a=<?php echo urlencode( $oneArticle['filename'] ); ?>"><h1><?php echo $oneArticle['title']; ?></h1>
 											<?php if (isset($oneArticle['subtitle'])): ?>
 											<h2><?php echo $oneArticle['subtitle']; ?></h2>	
 											<?php endif ?></a>
 									</header>
+									<?php if (isset($oneArticle['pubDate'])): ?>
+										<p class="pubDate">Publicado: <time datetime="<?php echo $oneArticle['pubDate'] ?>"><?php echo $oneArticle['pubDate'] ?></time><?php if (isset($oneArticle['author'])): ?> | <?php echo $oneArticle['author'] ?> <?php endif ?></p>
+									<?php endif ?>
 									<?php if (isset($oneArticle['intro'])): ?>
 										<p><?php echo $oneArticle['intro'] ?></p>
 									<?php endif ?>
@@ -54,8 +58,6 @@
 						</div><?php include "inc/template/aside-gral.php"; ?>
 
 					</div>
-					<!-- #main -->
-				</div>
 				<!-- #main-container -->
 
 				<div id="footer-container">

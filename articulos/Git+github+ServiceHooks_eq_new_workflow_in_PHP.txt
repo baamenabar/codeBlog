@@ -70,9 +70,10 @@ git commit -m 'primer commit'
 								<figcaption>Nuevo repositorio con tortoise.</figcaption>
 							</figure>
 
-							h2. Subirlo a github
+h2. Subirlo a github
 
-							Ahora a hacer un nuevo repositorio en github.
+Ahora a hacer un nuevo repositorio en github.
+
 							<figure>
 								<img src="img/content/git-workflow-03.png">
 								<figcaption>Clic en "nuevo Repositorio"</figcaption>
@@ -82,7 +83,7 @@ git commit -m 'primer commit'
 								<figcaption>Se llena el simple formulario y se crea el proyecto.</figcaption>
 							</figure>
 							
-								En la página que aparece luego sale la dirección HTTP del proyecto, hay que buscar la dirección SSH.
+En la página que aparece luego sale la dirección HTTP del proyecto, hay que buscar la dirección SSH.
 							
 							<figure>
 								<img src="img/content/git-workflow-05.png">
@@ -91,7 +92,7 @@ git commit -m 'primer commit'
 								</figcaption>
 							</figure>
 							
-								Esta dirección es útil porque nos permitirá hacer push desde nuestro repositorio local, como siempre se puede hacer de 2 maneras:
+Esta dirección es útil porque nos permitirá hacer push desde nuestro repositorio local, como siempre se puede hacer de 2 maneras:
 							
 h3. SSH
 
@@ -113,14 +114,10 @@ En la ventana que aparece, en el grupo <q>Destination</q> haceer click en <q cla
 	<figure>
 		<img src="img/content/git-workflow-06.png"></figure>
 
-		Ojo que en el primer push hay que marcar la opción
-		<q> <i>Force Overwrite Existing Branch (May discard changes)</i>
-		</q>
-		para que no entre en conflicto con la versión del repositorio que tiene github.
+Ojo que en el primer push hay que marcar la opción <q> <i>Force Overwrite Existing Branch (May discard changes)</i>		</q>		para que no entre en conflicto con la versión del repositorio que tiene github.
 
 
-		En la ventana que aparece hay que llenar los campos con: el nombre del proyecto, la URL de SSH que copiamos de Github y cargamos la
-		<i>putty key, navegando hasta donde esté guardada.</i>
+En la ventana que aparece hay que llenar los campos con: el nombre del proyecto, la URL de SSH que copiamos de Github y cargamos la _putty key_, navegando hasta donde esté guardada.
 
 	<figure>
 		<img src="img/content/git-workflow-07.png">
@@ -152,10 +149,10 @@ h3. Empecemos
 								<figcaption>Entrando por SSH con PuTTY</figcaption>
 							</figure>
 							
-								Luego navegamos hasta nuestro directorio, que en este caso es
-								<kbd>cd domains/code.medula.cl/html</kbd>
+Luego navegamos hasta nuestro directorio, que en este caso es <kbd>cd domains/code.medula.cl/html</kbd>
 							
-							Desde ahí podemos clonar el repositorio de github.
+Desde ahí podemos clonar el repositorio de github.
+
 							<figure>
 								<img src="img/content/git-workflow-09.png">
 								<figcaption>
@@ -163,14 +160,13 @@ h3. Empecemos
 								</figcaption>
 							</figure>
 							
-								Toma unos segundos y ya tenemos una carpeta con el nombre del repositorio.
-							
-							
-								En este caso eso es un problema, yo quería que el index quedara directo en el sub-dominio @code.medula.cl@
-								y no dentro de la carpeta @code.medula.cl/codeBlog @.
-							
-							
-								Así que debo borrar recursivamente la carpeta que se creó, para eso usamos el siguiente comando:
+Toma unos segundos y ya tenemos una carpeta con el nombre del repositorio.
+
+
+En este caso eso es un problema, yo quería que el index quedara directo en el sub-dominio @code.medula.cl@ y no dentro de la carpeta @code.medula.cl/codeBlog @.
+
+
+Así que debo borrar recursivamente la carpeta que se creó, para eso usamos el siguiente comando:
 							
 							<figure>
 								<pre><kbd>rm -r -f nombreProyecto</kbd></pre>
@@ -182,8 +178,7 @@ h3. Empecemos
 								</figcaption>
 							</figure>
 							
-								Al hacer una búsqueda en Google por &ldquo;git clone empty directory&rdquo; llegué a un grupo de Google donde se toca el tema, y <b>Lee Henson</b>
-								<a href="https://groups.google.com/group/github/browse_thread/thread/1c9a5d6c823607aa?pli=1#msg_99022fb5dd2b2bb4">da la respuesta que necesitaba</a>
+Al hacer una búsqueda en Google por &ldquo;git clone empty directory&rdquo; llegué a un grupo de Google donde se toca el tema, y <b>Lee Henson</b> "da la respuesta que necesitaba":https://groups.google.com/group/github/browse_thread/thread/1c9a5d6c823607aa?pli=1#msg_99022fb5dd2b2bb4
 							
 							<figure>
 								<img src="img/content/git-workflow-10.png">
@@ -192,52 +187,38 @@ h3. Empecemos
 								</figcaption>
 							</figure>
 							
-								Al parecer el comando
-								<q>
-									<kbd>git clone</kbd>
-								</q>
-								acepta un segundo parámetro que es la dirección donde clonar (estoy suponiendo).
+Al parecer el comando <kbd>git clone</kbd> acepta un segundo parámetro que es la dirección donde clonar (estoy suponiendo).
+
+De aquí en adelante no hay que hacer <kbd>git clone git@github...</kbd> si no que usaremos <kbd>git pull</kbd>
 							
-							
-								De aquí en adelante no hay que hacer
-								<q>
-									<kbd>git clone git@github...</kbd>
-								</q>
-								si no que usaremos
-								<q>
-									<kbd>git pull</kbd>
-								</q>
-							
-							<h2>Automatizar</h2>
-							
-								Todo esto está muy bien, pero sigue siendo bastante más aparatoso que FTP ¿no?
-							
-							
-								Bueno, aquí viene la magia, vamos a automatizar el proceso para que cada vez que hagamos un push a Github queden inmediatamente publicados los cambios en el servidor con el sitio.
+h2. Automatizar
+
+Todo esto está muy bien, pero sigue siendo bastante más aparatoso que FTP ¿no?
+
+Bueno, aquí viene la magia, vamos a automatizar el proceso para que cada vez que hagamos un push a Github queden inmediatamente publicados los cambios en el servidor con el sitio.
 							
 h3. En github
-
 							
-								En la página del proyecto en github, hay que apretar el botón admin.
+En la página del proyecto en github, hay que apretar el botón admin.
 							
-							<figure>
-								<img src="img/content/git-workflow-11.png">
-								<figcaption>Este botón nos llevará a la página de admin del proyecto.</figcaption>
-							</figure>
+	<figure>
+		<img src="img/content/git-workflow-11.png">
+		<figcaption>Este botón nos llevará a la página de admin del proyecto.</figcaption>
+	</figure>
 							
-								En la página de admin hay que apretar <strong>Service Hooks</strong>.
+En la página de admin hay que apretar <strong>Service Hooks</strong>.
 							
-							<figure>
-								<img src="img/content/git-workflow-12.png">
-								<figcaption>
-									En el campo URL hay que poner la dirección del archivo que ejecutará el
-									<i>pull</i>
-									<q>
-										<kbd>http://code.medula.cl/gitpull.php</kbd>
-									</q>
-									(no lo hemos hecho aún, pero le inventamos el nombre ahora)
-								</figcaption>
-							</figure>
+	<figure>
+		<img src="img/content/git-workflow-12.png">
+		<figcaption>
+			En el campo URL hay que poner la dirección del archivo que ejecutará el
+			<i>pull</i>
+			<q>
+				<kbd>http://code.medula.cl/gitpull.php</kbd>
+			</q>
+			(no lo hemos hecho aún, pero le inventamos el nombre ahora)
+		</figcaption>
+	</figure>
 							
 								Esto hará que Github envíe un POST a la dirección escrita ahí, en el post irá info asociada al push, pero en este caso no nos interesa.
 							

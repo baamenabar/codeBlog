@@ -4,14 +4,14 @@
 									<h2 class="estrella">Recomendados</h2>
 								</header>
 								<ul>
-									<!--<li>
-										<a href="#">
-											<h4>Cómo hostear sólo un sub-dominio en tu servidor</h4>
+									<li>
+										<a href="?t=article&a=Picture-capture-and-uploader-app-with-ST2.txt">
+											<h4>Upload camera pictures with Sencha Touch 2</h4>
 											<p>
-												Una buena opción para mini sitios cuando no podemos trabajar en el servidor oficial.
+												Using Apache Cordova (Phonegap) and ST2 to compile a native Android image uploader.
 											</p>
 										</a>
-									</li>-->
+									</li>
 									<li>
 
 										<a href="?t=article&a=Primeros-pasos-con-Sencha-Touch-2-y-Phonegap.txt">
@@ -43,18 +43,18 @@
 									<?php include "inc/template/recientes.php"; ?>
 								</section><section class="caluga acerca-de">
 									<header>
-										<h2>Acerca de&hellip;</h2>
+										<h2>Acerca de&hellip; About</h2>
 									</header>
 									<p>
 										En este blog publicamos cosas que descubrimos trabajando en proyectos de
 										<a href="http://medula.cl" target="_blank">Médula Diseño</a>
-										y nos gustaría compartir.
+										y nos gustaría compartir. <i>In this blog we publish stuff we discover working at <a href="http://medula.cl" target="_blank">Médula Diseño</a> and we'd like to share.</i>
 									</p>
 									<p>
-										El tema principal es código en los diferentes sabores que trabajamos o vamos descubriendo.
+										El tema principal es código en los diferentes sabores que trabajamos o vamos descubriendo. <i>The main theme of this blog is code in the different flavours we encounter</i>
 									</p>
 									<p>
-										Este blog en particular lo llevamos como sitio estático (o casi) y está publicado en Github, así que si cometo un error  se puede hacer un “bug report” en el pryecto del sitio.
+										Este blog en particular lo llevamos como sitio estático (o casi) sin base de datos y "está publicado en Github":https://github.com/baamenabar/codeBlog , así que si cometo un error  se puede hacer un “bug report” en el proyecto del sitio.
 									</p>
 								</section>
 							</div>
