@@ -13,7 +13,7 @@ h2. How to avoid closing a Sencha Touch 2 or Phonegap (Cordova) app when someone
 
 p(pubDate). __Published__ / Publicado : <time datetime="2012-10-11 02:09:46">2012-10-11 02:09:46</time> | __By__: Agustín Amenabar L.
 
-The ideal would be to have it working along the in-app *back button*, but sometimes one has time (or budget) only for a quick hack, in my case a confirmation for closing the app before exiting is exactly what was needed.
+p(intro). The ideal would be to have it working along the in-app *back button*, but sometimes one has time (or budget) only for a quick hack, in my case a confirmation for closing the app before exiting is exactly what was needed.
 
 Sencha Touch 2 has no way of closing the app, so to close the app we must rely on Phonegap, so here is the code... Plainly ripped off and hacked small from "Michael Ritchie":http://thanksmister.com/2012/07/06/handle-android-hardware-back-button-using-phonegap-and-sencha-touch-2/ and "The Cordova Docs":http://docs.phonegap.com/en/2.1.0/cordova_events_events.md.html#backbutton 
 
