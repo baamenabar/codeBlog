@@ -66,6 +66,7 @@ header('Pragma: no-cache'); ?><!doctype html>
 				<div id="footer-container">
 					<footer class="wrapper">
 						<h3>footer</h3>
+						<p>Todavía no tengo claro qué quiero poner aquí.</p>
 					</footer>
 				</div>
 

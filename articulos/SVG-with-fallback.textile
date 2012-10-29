@@ -1,5 +1,5 @@
-title: En la práctica: ¿Se puede SVG en el DOM? Si, podemos.
-subtitle: Nuestra respuesta, durante mucho tiempo, había sido: NO, porque IE y Android no lo ven, se podía en CSS como una mejora de CSS. Pero estábamos equivocados.
+title: En la práctica: ¿Se puede SVG confiablemente en el DOM?
+subtitle: Nuestra respuesta, durante mucho tiempo, había sido: NO, porque IE y Android no lo ven; sólo se podía en los estilos como una mejora de CSS. Pero estábamos equivocados.
 author: Agustín Amenabar
 classes: language-markup
 pubDate:2012-10-29 10:46:25
@@ -125,4 +125,4 @@ Si te interesa que escriba sobre cómo hacerlo en JS sin CSS, pues me lo comenta
 
 He estado trabajando en un artículo sobre cómo usar **Picturefill** para tener imágenes responsivas en un sitio; pero en la mitad se me ocurrió esto así que lo publico primero.
 
-Por favor, si te sirve esto, coméntame cómo lo quieres usar o lo has usado o si se he escrito puras cabezas de pescado.
+Por favor, si te sirve esto, coméntame cómo lo quieres usar o lo has usado o si he escrito puras cabezas de pescado.
