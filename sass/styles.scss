@@ -44,16 +44,16 @@ h1,h2,h3{
 	font-family:"museo-sans","PT Sans",sans-serif;
 	font-style:italic;
 	font-weight:900;
-	font-size:48px;
+	font-size:2em;
 	color:#565656;
 	line-height:1em;
 }
 h2, h3{
 	font-style:normal;
-	font-size:28px;
+	font-size:1.725em;
 }
 h3{
-	font-size:24px;
+	font-size:1.5em;
 }
 kbd{
     background-color:#333;
@@ -91,7 +91,7 @@ figure{
 } 
 article {
 	max-width:595px;
-	margin:0 1.25em;
+	margin:0 2%;
 	header {
 		border-bottom:1px solid #B3B3B3;
 		h2, h3{
@@ -226,7 +226,14 @@ article {
 		margin-top: 0.25em;
 	}
 }
-
+@media (min-width: 31em){//desde 31ems hacia arriba
+	h1{
+		font-size: 3em;
+	}
+	article{
+		margin: 0 1.25em;
+	}
+}
 @media screen and (min-width: 900px) {
 	.wrapper{
 		width:auto;

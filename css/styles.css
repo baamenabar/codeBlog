@@ -494,7 +494,7 @@ h1, h2, h3 {
   font-family: "museo-sans","PT Sans",sans-serif;
   font-style: italic;
   font-weight: 900;
-  font-size: 48px;
+  font-size: 2em;
   color: #565656;
   line-height: 1em;
 }
@@ -502,12 +502,12 @@ h1, h2, h3 {
 /* line 51, ../sass/styles.scss */
 h2, h3 {
   font-style: normal;
-  font-size: 28px;
+  font-size: 1.725em;
 }
 
 /* line 55, ../sass/styles.scss */
 h3 {
-  font-size: 24px;
+  font-size: 1.5em;
 }
 
 /* line 58, ../sass/styles.scss */
@@ -563,7 +563,7 @@ figure pre {
 /* line 92, ../sass/styles.scss */
 article {
   max-width: 595px;
-  margin: 0 1.25em;
+  margin: 0 2%;
 }
 /* line 95, ../sass/styles.scss */
 article header {
@@ -764,8 +764,19 @@ article img {
   margin-top: 0.25em;
 }
 
+@media (min-width: 31em) {
+  /* line 230, ../sass/styles.scss */
+  h1 {
+    font-size: 3em;
+  }
+
+  /* line 233, ../sass/styles.scss */
+  article {
+    margin: 0 1.25em;
+  }
+}
 @media screen and (min-width: 900px) {
-  /* line 231, ../sass/styles.scss */
+  /* line 238, ../sass/styles.scss */
   .wrapper {
     width: auto;
     display: -moz-inline-stack;
@@ -777,7 +788,7 @@ article img {
     margin: 0 2%;
   }
 
-  /* line 236, ../sass/styles.scss */
+  /* line 243, ../sass/styles.scss */
   .contiene-logo {
     display: -moz-inline-stack;
     display: inline-block;
@@ -789,7 +800,7 @@ article img {
     padding: 1em;
   }
 
-  /* line 241, ../sass/styles.scss */
+  /* line 248, ../sass/styles.scss */
   .otros-post, .otros-post .grupo, article, .articleGroup {
     display: -moz-inline-stack;
     display: inline-block;
@@ -800,22 +811,22 @@ article img {
     vertical-align: top;
   }
 
-  /* line 245, ../sass/styles.scss */
+  /* line 252, ../sass/styles.scss */
   .articleGroup article {
     display: block;
   }
 
-  /* line 246, ../sass/styles.scss */
+  /* line 253, ../sass/styles.scss */
   .otros-post {
     background-color: #f0f0f0;
     width: 269px;
     padding: 13px 0 13px 9px;
   }
-  /* line 250, ../sass/styles.scss */
+  /* line 257, ../sass/styles.scss */
   .otros-post .grupo {
     margin-bottom: 18px;
   }
-  /* line 253, ../sass/styles.scss */
+  /* line 260, ../sass/styles.scss */
   .otros-post .caluga {
     width: 260px;
     margin-right: 9px;
@@ -824,7 +835,7 @@ article img {
   }
 }
 @media screen and (min-width: 1276px) {
-  /* line 262, ../sass/styles.scss */
+  /* line 269, ../sass/styles.scss */
   .otros-post {
     width: 538px;
   }

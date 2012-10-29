@@ -4,8 +4,8 @@ author: Agustín Amenabar
 classes: language-markup
 pubDate:2012-10-29 10:46:25
 
-<header><hgroup>
-
+ <header><hgroup> 
+ 	
 h1. ¿Se puede usar SVG con una imagen alternativa en un documento HTML?
 
 h2. Claro que si! Usando una combinación de @<noscript>@, Modernizr y CSS.
