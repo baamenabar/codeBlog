@@ -5,7 +5,7 @@ classes: language-markup
 pubDate:2012-10-29 10:46:25
 
  <header><hgroup> 
- 	
+
 h1. ¿Se puede usar SVG con una imagen alternativa en un documento HTML?
 
 h2. Claro que si! Usando una combinación de @<noscript>@, Modernizr y CSS.
@@ -17,7 +17,7 @@ h2(#ac1). Preámbulo
 
 p(intro). Cualquiera que halla llegado aquí sabrá ya de los beneficios de "SVG(Scalable Vector Graphics)":http://es.wikipedia.org/wiki/Scalable_Vector_Graphics, así que no explicaré qué es. Hace tiempo hay polyfills de SVG para IE o Android y algunos otros pero siguen siendo parches que requieren el uso de Flash u otras bibliotecas de javascript, como si ya hubiese poco javascript del que preocuparse en nuestras páginas. Así que nosotros habíamos evitado su uso, fuera de uno que otro gráfico de fondo en CSS como _mejoras progresivas_; mas, el uso que siempre quise darle era para el logo de un sitio web, que según "nuestras políticas de diseño":?t=article&a=Propuesta-de-Normas-de-desarrollo.txt el logo va en el DOM. Desde la salida de las pantallas _retina_ y otras de alta resolución, SVG tiene más sentido que nunca.
 
-Como muchos logos ni siquiera tienen gradientes, son muy buenos candidatos para ser puestos como SVG en los sitios web, pero como no conocíamos una manera de incrustar SVG con confianza, pues no lo hacíamos. Según "HTML5 please":http://html5please.com/ y "Can I use":http://caniuse.com/#feat=svg-img SVG tiene bastante buen soporte, pero IE 8, FF 3.6 y el navegador de "Android 2.3(Notas sobre soporte para Android)":#ac7 no tienen soporte. Resulta que en Chile, Internet Explorer 8 o menor, aún es una gran parte de los navegadores usados, particularmente en oficinas.
+Como muchos logos ni siquiera tienen gradientes, son muy buenos candidatos para ser puestos como SVG en los sitios web, pero como no conocíamos una manera de incrustar SVG con confianza, pues no lo hacíamos. Según "HTML5 please":http://html5please.com/ y "Can I use":http://caniuse.com/#feat=svg-img SVG tiene bastante buen soporte, pero IE 8, FF 3.6 y el navegador de Android 2.3 no tienen soporte. Resulta que en Chile, Internet Explorer 8 o menor, aún es una gran parte de los navegadores usados, particularmente en oficinas.
 
 El otro día vi un post de Chris Coyier en smashing magazine que usaba "Modernizr":http://modernizr.com/ para detectar soporte, pero desestima el soporte de IE8 como si nadie lo usara y deja el tema ahí. Pero como nosotros hemos estamos trabajando con "picturefill(Haz click para ver el sitio del proyecto en Github)":https://github.com/scottjehl/picturefill que usa @<noscript>@ exitosamente se me ocurrió cómo abordarlo simple e infaliblemente. 
 
@@ -126,6 +126,4 @@ Si te interesa que escriba sobre cómo hacerlo en JS sin CSS, pues me lo comenta
 He estado trabajando en un artículo sobre cómo usar **Picturefill** para tener imágenes responsivas en un sitio; pero en la mitad se me ocurrió esto así que lo publico primero.
 
 Por favor, si te sirve esto, coméntame cómo lo quieres usar o lo has usado o si he escrito puras cabezas de pescado.
-
-p(#ac7). *EDIT:* Hice pruebas en un Galaxy SII (con Gingerbread) y resulta que no sólo el navegador de Android no tiene soporte en ese teléfono, Firefox para Android, Opera mobile y Dolphin fallaron las pruebas, lo que me hace pensar que es un problema del sistema operativo. Ya haré más pruebas de soporte.
 
