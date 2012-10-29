@@ -67,6 +67,7 @@ header('Pragma: no-cache'); ?><!doctype html>
 					<footer class="wrapper">
 						<h3>footer</h3>
 						<p>Todavía no tengo claro qué quiero poner aquí.</p>
+						<p class="rtest"> </p>
 					</footer>
 				</div>
 
@@ -76,6 +77,10 @@ header('Pragma: no-cache'); ?><!doctype html>
 				<script type="text/javascript">try{Typekit.load();}catch(e){}</script><!---->
 			<script src="js/script.js"></script>
 			<script>
+$(document).ready(function(){
+$('.rtest').html('<ul><li>'+$('html').attr('class').split(' ').join('</li><li>')+'</li></ul>' );
+});
+
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-23469330-1']);
