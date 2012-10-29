@@ -470,25 +470,26 @@ i {
   display: block;
   min-width: 281px;
   min-height: 120px;
+  background-repeat: no-repeat;
 }
-/* line 27, ../sass/styles.scss */
+/* line 28, ../sass/styles.scss */
 .no-svg .contiene-logo a {
   background-image: url(../img/content/logo-blog-medula-code.png);
 }
-/* line 30, ../sass/styles.scss */
+/* line 31, ../sass/styles.scss */
 .svg .contiene-logo a {
   background-image: url(../img/content/logo-code-medula-diseno-sprite.svg);
 }
-/* line 32, ../sass/styles.scss */
+/* line 33, ../sass/styles.scss */
 .svg .contiene-logo a:hover, .svg .contiene-logo a:active, .svg .contiene-logo a:focus {
   background-position: 0 -120px;
 }
-/* line 35, ../sass/styles.scss */
+/* line 36, ../sass/styles.scss */
 .svg .contiene-logo a:link, .svg .contiene-logo a:visited {
   background-position: 0 0;
 }
 
-/* line 42, ../sass/styles.scss */
+/* line 43, ../sass/styles.scss */
 h1, h2, h3 {
   font-family: "museo-sans","PT Sans",sans-serif;
   font-style: italic;
@@ -498,18 +499,18 @@ h1, h2, h3 {
   line-height: 1em;
 }
 
-/* line 50, ../sass/styles.scss */
+/* line 51, ../sass/styles.scss */
 h2, h3 {
   font-style: normal;
   font-size: 28px;
 }
 
-/* line 54, ../sass/styles.scss */
+/* line 55, ../sass/styles.scss */
 h3 {
   font-size: 24px;
 }
 
-/* line 57, ../sass/styles.scss */
+/* line 58, ../sass/styles.scss */
 kbd {
   background-color: #333;
   border: 1px solid #ccc;
@@ -528,7 +529,7 @@ kbd {
   text-shadow: 0 -1px 0 black;
 }
 
-/* line 68, ../sass/styles.scss */
+/* line 69, ../sass/styles.scss */
 samp {
   background-color: #e6e6e6;
   border: 1px solid #ccc;
@@ -547,7 +548,7 @@ samp {
   text-shadow: 0 -1px 0 white;
 }
 
-/* line 80, ../sass/styles.scss */
+/* line 81, ../sass/styles.scss */
 figure pre {
   word-break: normal;
   -webkit-hyphens: none;
@@ -559,39 +560,39 @@ figure pre {
   white-space: pre;
 }
 
-/* line 91, ../sass/styles.scss */
+/* line 92, ../sass/styles.scss */
 article {
   max-width: 595px;
   margin: 0 1.25em;
 }
-/* line 94, ../sass/styles.scss */
+/* line 95, ../sass/styles.scss */
 article header {
   border-bottom: 1px solid #B3B3B3;
 }
-/* line 96, ../sass/styles.scss */
+/* line 97, ../sass/styles.scss */
 article header h2, article header h3 {
   color: #45bcd2;
   font-size: 20px;
   margin: 0;
 }
-/* line 101, ../sass/styles.scss */
+/* line 102, ../sass/styles.scss */
 article header h3 {
   font-style: italic;
 }
-/* line 103, ../sass/styles.scss */
+/* line 104, ../sass/styles.scss */
 article a {
   text-decoration: none;
   border-bottom: 1px solid #ddd;
 }
-/* line 106, ../sass/styles.scss */
+/* line 107, ../sass/styles.scss */
 article a:link, article a:visited {
   border-bottom-color: #ddd;
 }
-/* line 109, ../sass/styles.scss */
+/* line 110, ../sass/styles.scss */
 article a:hover, article a:active, article a:focus {
   border-bottom-color: #0066ee;
 }
-/* line 113, ../sass/styles.scss */
+/* line 114, ../sass/styles.scss */
 article figure {
   font-family: "pt-serif","PT Sans",sans-serif;
   background: #FFF;
@@ -599,44 +600,44 @@ article figure {
   border: 1px solid #CCC;
   margin: 0 -1em 1em -1em;
 }
-/* line 119, ../sass/styles.scss */
+/* line 120, ../sass/styles.scss */
 .boxshadow article figure {
   border: none;
   -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
-/* line 123, ../sass/styles.scss */
+/* line 124, ../sass/styles.scss */
 article figure img {
   max-width: 100%;
   border: 1px dotted #DDD;
 }
-/* line 128, ../sass/styles.scss */
+/* line 129, ../sass/styles.scss */
 article img {
   max-width: 100%;
 }
 
-/* line 133, ../sass/styles.scss */
+/* line 134, ../sass/styles.scss */
 .articleGroup article h1 {
   margin-bottom: 0.2em;
 }
 
-/* line 135, ../sass/styles.scss */
+/* line 136, ../sass/styles.scss */
 .contiene-logo {
   padding: 0.5em 1em;
 }
 
-/* line 138, ../sass/styles.scss */
+/* line 139, ../sass/styles.scss */
 .otros-post {
   background-color: #f0f0f0;
 }
-/* line 139, ../sass/styles.scss */
+/* line 140, ../sass/styles.scss */
 .boxshadow .otros-post {
   -webkit-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
-/* line 146, ../sass/styles.scss */
+/* line 147, ../sass/styles.scss */
 .otros-post .caluga {
   width: auto;
   margin-right: 9px;
@@ -644,69 +645,69 @@ article img {
   padding-bottom: 1px;
   line-height: 1.125em;
 }
-/* line 152, ../sass/styles.scss */
+/* line 153, ../sass/styles.scss */
 .otros-post .caluga header {
   background-color: #FFF;
   min-height: 44px;
   padding-top: 22px;
   margin-right: 5px;
 }
-/* line 157, ../sass/styles.scss */
+/* line 158, ../sass/styles.scss */
 .otros-post .caluga header.primero {
   margin-right: 0;
 }
-/* line 158, ../sass/styles.scss */
+/* line 159, ../sass/styles.scss */
 .boxshadow .otros-post .caluga header {
   -webkit-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
-/* line 161, ../sass/styles.scss */
+/* line 162, ../sass/styles.scss */
 .otros-post .caluga header h2 {
   font-size: 24px;
   font-style: italic;
   margin: 0 0.5em 0 0.5em;
 }
-/* line 166, ../sass/styles.scss */
+/* line 167, ../sass/styles.scss */
 .otros-post .caluga header h2.estrella:before {
   content: '★';
   font-style: normal;
   color: #fac116;
 }
-/* line 174, ../sass/styles.scss */
+/* line 175, ../sass/styles.scss */
 .otros-post .caluga.recomendados {
   background-color: #45bcd2;
 }
-/* line 177, ../sass/styles.scss */
+/* line 178, ../sass/styles.scss */
 .otros-post .caluga.anteriores {
   background-color: #fcc212;
 }
-/* line 180, ../sass/styles.scss */
+/* line 181, ../sass/styles.scss */
 .otros-post .caluga.acerca-de {
   background-color: #e6e6e6;
 }
-/* line 182, ../sass/styles.scss */
+/* line 183, ../sass/styles.scss */
 .otros-post .caluga.acerca-de p {
   margin: 1.5em;
 }
-/* line 187, ../sass/styles.scss */
+/* line 188, ../sass/styles.scss */
 .otros-post ul {
   padding: 0;
 }
-/* line 188, ../sass/styles.scss */
+/* line 189, ../sass/styles.scss */
 .otros-post li {
   list-style: none;
   margin: 1.5em;
 }
-/* line 191, ../sass/styles.scss */
+/* line 192, ../sass/styles.scss */
 .otros-post li h4 {
   margin: 0;
 }
-/* line 192, ../sass/styles.scss */
+/* line 193, ../sass/styles.scss */
 .otros-post li p {
   margin: 0;
 }
-/* line 193, ../sass/styles.scss */
+/* line 194, ../sass/styles.scss */
 .otros-post li a {
   color: #FFF;
   text-decoration: none;
@@ -722,13 +723,13 @@ article img {
   -o-transition: color 0.2s ease-in-out 0;
   transition: color 0.2s ease-in-out 0;
 }
-/* line 199, ../sass/styles.scss */
+/* line 200, ../sass/styles.scss */
 .otros-post li a:hover, .otros-post li a:active, .otros-post li a:focus {
   text-decoration: underline;
   color: #565656;
 }
 
-/* line 206, ../sass/styles.scss */
+/* line 207, ../sass/styles.scss */
 .button, .boton {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
   background-image: -webkit-linear-gradient(#eeeeee, #cccccc);
@@ -745,17 +746,17 @@ article img {
   padding: 0 0.25em;
 }
 
-/* line 213, ../sass/styles.scss */
+/* line 214, ../sass/styles.scss */
 .pubDate {
   margin-top: 0;
   color: #777;
 }
-/* line 216, ../sass/styles.scss */
+/* line 217, ../sass/styles.scss */
 .pubDate time {
   font-style: italic;
 }
 
-/* line 221, ../sass/styles.scss */
+/* line 222, ../sass/styles.scss */
 .mainContainer *[lang] {
   font-style: italic;
   display: inline-block;
@@ -764,7 +765,7 @@ article img {
 }
 
 @media screen and (min-width: 900px) {
-  /* line 230, ../sass/styles.scss */
+  /* line 231, ../sass/styles.scss */
   .wrapper {
     width: auto;
     display: -moz-inline-stack;
@@ -776,7 +777,7 @@ article img {
     margin: 0 2%;
   }
 
-  /* line 235, ../sass/styles.scss */
+  /* line 236, ../sass/styles.scss */
   .contiene-logo {
     display: -moz-inline-stack;
     display: inline-block;
@@ -788,7 +789,7 @@ article img {
     padding: 1em;
   }
 
-  /* line 240, ../sass/styles.scss */
+  /* line 241, ../sass/styles.scss */
   .otros-post, .otros-post .grupo, article, .articleGroup {
     display: -moz-inline-stack;
     display: inline-block;
@@ -799,22 +800,22 @@ article img {
     vertical-align: top;
   }
 
-  /* line 244, ../sass/styles.scss */
+  /* line 245, ../sass/styles.scss */
   .articleGroup article {
     display: block;
   }
 
-  /* line 245, ../sass/styles.scss */
+  /* line 246, ../sass/styles.scss */
   .otros-post {
     background-color: #f0f0f0;
     width: 269px;
     padding: 13px 0 13px 9px;
   }
-  /* line 249, ../sass/styles.scss */
+  /* line 250, ../sass/styles.scss */
   .otros-post .grupo {
     margin-bottom: 18px;
   }
-  /* line 252, ../sass/styles.scss */
+  /* line 253, ../sass/styles.scss */
   .otros-post .caluga {
     width: 260px;
     margin-right: 9px;
@@ -823,7 +824,7 @@ article img {
   }
 }
 @media screen and (min-width: 1276px) {
-  /* line 261, ../sass/styles.scss */
+  /* line 262, ../sass/styles.scss */
   .otros-post {
     width: 538px;
   }
