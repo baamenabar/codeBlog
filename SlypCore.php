@@ -98,6 +98,12 @@ class SlypCore{
 			$articleRawFilesize = filesize( $articleRawFile );
 			$fhandl = fopen($articleRawFile, 'r+b');
 			$lastpos = 0;
+			// ==================================================================
+			//
+			// lee y procesa meta del encabezado
+			//
+			// ------------------------------------------------------------------
+			
 			while (($buffer = fgets($fhandl)) !== false) {
 				//echo "\nbuff=".trim($buffer).';';
 				if(!trim($buffer)){
@@ -112,6 +118,12 @@ class SlypCore{
 						//$leyendoEncabezados=false;
 						continue;
 					}
+
+					if (isset($oneArticle['draft'])) {
+						//$leyendoEncabezados=false;
+						$oneArticle=null;
+						break;
+					}
 					$leyendoEncabezados=false;
 					break;
 				}
@@ -124,6 +136,12 @@ class SlypCore{
 				if( strtolower( trim( $key ) ) == 'not_article' )continue;
 				$oneArticle[trim($key)] = trim($value);
 			}
+			// ==================================================================
+			//
+			// cuerpo del documento
+			//
+			// ------------------------------------------------------------------
+			
 			if(!$leyendoEncabezados){//ya leímos los encabezados ahora, procesamos el cuerpo de texto.
 				$articleCachedUrl = $this->_cachedHtml.$oneArticle['filename'].$oneArticle['modDate'].'.html';
 				//if( true ){
@@ -148,7 +166,7 @@ class SlypCore{
 				}
 
 			}
-			$this->articleList[] = $oneArticle;
+			if($oneArticle!==null)$this->articleList[] = $oneArticle;
 			fclose($fhandl);
 		}
 		//benchmarkUnserialization($this->articleList);
@@ -167,7 +185,7 @@ class SlypCore{
 		    if ($fileinfo->isFile()) {
 		        $extension = pathinfo($fileinfo->getFilename(), PATHINFO_EXTENSION);
 		        //echo "<br>". $fileinfo->getFilename() . ' -> ' . $extension;
-		        if(strtolower($extension) === 'txt'){
+		        if(strtolower($extension) === 'txt' || strtolower($extension) === 'textile' || strtolower($extension) === 'md' ){
 		        	$oneArticle = array(
 		        		'filename' => $fileinfo->getFilename(),
 		        		'modDate' => $fileinfo->getMTime()

@@ -1,18 +1,19 @@
 title: Propuesta de Normas de desarrollo web
 subtitle: Criterios y normas generales, no absolutas, de buenas prácticas para el desarrollo web en Médula Diseño
+classes: language-markup
 pubDate:2012-10-02 18:06:53
 
 h1. Propuesta de Normas de desarrollo
 
-En Médula Diseño estamos definiendo poíticas y estándares de desarrollo para nuestros proyectos, desde cosas tan simples como cuerpos mínimos de texto, hasta criterios de selección para frameworks de trabajo o pre-procesadores de css.
+En Médula Diseño estamos definiendo poíticas y estándares de desarrollo para nuestros proyectos, desde cosas tan simples como cuerpos mínimos de texto, hasta criterios de selección para frameworks de trabajo o pre-procesadores de css. Nada de esto está escrito en piedra, son guías generales hasta que haya una buena razón para romperlas.
 
 h2. Boilerplate:
 
-Por defecto usaremos el boileplate de Médula Diseño que viene configurado para desarrollo
+Por defecto usaremos el "boileplate de Médula Diseño":https://github.com/baamenabar/HTML5-ReMo-Boil que viene configurado para desarrollo
 * humans.txt debe ir en UTF-8 sin BOM
 * robots.txt debe partir ocultando la carpeta /temp
 
-h2. Responsive:
+h2. __[en]Responsive__:
 
 Aunque no todos los proyectos serán "mobile first" en alguna medida deben considerar usabilidad para smartphones, en general no consideramos navegadores móviles antiguos, como el de blackberry OS 4.x
 
@@ -24,7 +25,7 @@ h2. SASS, COMPASS y LESS
 h2. Concatenación y Compresión de CSS y JS
 
 * En CSS OK
-* JS siempre minificado, no comprimido, no usar eval(), usar primariamente CDNs externas
+* JS siempre minificado, no comprimido, no usar @eval()@, usar primariamente CDNs externas
 * Concatenar JS sólo para scripts que se usan a lo largo de la página, si no la carga de la primera página es brutal.
 
 h2. GIT 
@@ -38,9 +39,6 @@ h2. Formatos de imágen
 * PNG 8 para alta compresión sin pérdida de colores ni ruido.
 * GIF no usar, a menos que necesitemos GIFs animados.
 
-
-###NOTAS JOSUÉ:
-
 h2. CSS
 
 * NUNCA usar !important, es muy difícil de ver herencia en el inspector cuando hay important.
@@ -49,9 +47,13 @@ h2. CSS
 
 h2. HTML / Markup
 
-* label no se usa fuera de un <form></form>
-* aside es contenido lateral, anexo al contenido principal, no porque un texto esté a la izquierda de una foto es aside. ###(como en las fichas de abogados).
+* El logotipo o logo de un sitio web no es el título (no va dentro @<h1></h1>@)
+* El logotipo debe ir en el DOM (no puede ser un DIV vacío con una imagen de fondo)
+* @label@ no se usa fuera de un @<form></form>@
+* @aside@ es contenido lateral, anexo al contenido principal, no porque un texto esté a la izquierda de una foto es @aside@. 
+<!--### (como en las fichas de abogados).-->
 
 h2. Diseño
 
-* Respetar los cuerpos de texto definidos en los documentos, no son por que sí. En LOMG en el menú y el pie de página estaban a 14 y no 16.
+* Respetar los cuerpos de texto definidos en los documentos de diseño, no son por que sí. <!--En LOMG en el menú y el pie de página estaban a 14 y no 16.-->
+* Si las maquetas en Illustrator o Photoshop presentan puntos de quiebre en la diagramación, el Maquetado debe hacerse fluido entre estos puntos.

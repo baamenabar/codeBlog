@@ -1,0 +1,41 @@
+title: Imágenes responsivas con Picturefill
+subtitle: Diagramar un sitio de modo “responsive“ es sólo una parte, no menos importante es el manejo de imágenes, con picturefill tenemos una herramienta para controlar las imágenes en diferentes formatos y resoluciones.
+author: Agustín Amenabar
+classes: language-markup
+pubDate:2012-10-23 11:06:27
+draft: true
+
+ <header><hgroup>
+
+h1. Imágenes __[en]responsive__ con Picturefill
+
+h2. Cómo entregar diferentes imágenes de acuerdo al tamaño de pantalla del dispositivo.
+</hgroup></header>
+
+p(pubDate). __Published__ / Publicado : <time datetime="2012-10-11 02:09:46">2012-10-11 02:09:46</time> | __By__: Agustín Amenabar L.
+
+h2(#ac1). Preámbulo
+
+h3. Teoría de lo que vamos a usar
+
+p(intro). Como no todas las pantallas son iguales, no tienen el mismo tamaño, o resolución, ni tienen la misma orientación; en muy poco casos es necesario cargar la *imagen de súper resolución HD para pantallas _retina_ de 2800 pixeles de ancho*. ¿Por qué entonces entregársela a todos los dispositivos sin discriminación de tamaño? A veces sólo necesitamos la imágen a 240px de ancho. Para eso usaremos *Picturefill* y generaremos imágenes __[en]responsive__.
+
+Asumiendo que todo el concepto _Responsive Web Design_, o diseño web responsivo está entendido, un aspecto práctico bien importante es el manejo de imágenes. En este caso elegimos Picturefill, dado que es de las pocas soluciones relativamente semánticas que contempla el caso de uso de *dirección de arte* en las imágenes responsivas. Además que "Scott Jehl":https://twitter.com/scottjehl y "Mat Marquis":https://twitter.com/wilto han sido muy persuasivos y polémicos promoviendo este "_polyfill_(definición de polyfill en la wikipedia)":http://en.wikipedia.org/wiki/Polyfill por lo que estaba buscando la excusa de probarlo.
+
+Desde que salió el _polyfill_ original se ha incluido @<picture>@ como una “propuesta de extensión” de la especificación HTML con algunas modificaciones a la propuesta inicial que incluyen el atributo @srcset@; Mat hizo un buen ejemplo con una "corta pero buena explicación(Visitar la página del ejemplo explicado)":http://wil.to/picturefill/ del uso de los atributos @srcset@ y @media@ propuestos y como funcionaría de estar implementado. 
+
+Inicialmente estaba muy emocionado de poder usar el nuevo elemento @<picture>@ pero es "*tan* complicado":https://github.com/scottjehl/picturefill/issues/29#issuecomment-6880729 que no vale la pena en esta etapa, así que nos quedaremos con los DIVs. 
+
+También existe la opción de usar el __[en]branch__ @div-markup-currentprop@ del repositorio de picturefill y así jugar con srcset incluso en imágenes, pero es agregar una variable más al tema, prefiero partir por lo simple. Llegar a esta conclusión me tomó un día entero metido leyendo repositorios, comparaciones de códigos, escasa documentación y reportes de bugs.
+
+h2(#ac2). __[fr]Mise en place__, utensilios de trabajo
+
+Vamos a replicar un poco el @index.html@ del repositorio de **picturefill** para hacer una pueba de concepto, para eso necesitaremos:
+
+* Un HTML para contener todo.
+* La biblioteca "Picturefill(Página del proyecto en Github)":https://github.com/scottjehl/picturefill
+* Un "build base de Modernizr":http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-flexboxlegacy-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-canvas-localstorage-shiv-teststyles-testprop-testallprops-prefixes-domprefixes-load para tomar los shivs y mini ayudas que trae, que uno usa siempre, ojo que tiene que ir sin detección de de mediaQueries, porque vamos a cargar una especial para IE a continuación.
+* La "rama especial de matchMedia.js(Página del repositorio en github)":https://github.com/benschwarz/matchMedia.js/tree/IE7-8 para IE7 y 8, "sin la cual picturefill será ignorado en IE7 y 8(Página del issue nº 33)":https://github.com/scottjehl/picturefill/issues/33
+* Una serie de imágenes en diferentes tamaños y recortes.
+* Otras cosas que iremos agregando si las necesitamos.
+

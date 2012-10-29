@@ -38,7 +38,9 @@ header('Pragma: no-cache'); ?><!doctype html>
 
 				<div class="mainContainer">
 					<header class="contiene-logo">
-						<img src="img/content/logo-blog-medula-code.png" alt="Logotipo Médula Diseño Code Blog"></header><div class="articleGroup">
+						<a href="./"><noscript>
+							<img src="img/content/logo-blog-medula-code.png" alt="Logotipo Médula Diseño Code Blog">
+						</noscript></a></header><div class="articleGroup">
 							<?php foreach ($articleList as $oneArticle): ?>
 								<article>
 									<header>

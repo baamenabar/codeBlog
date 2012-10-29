@@ -19,6 +19,26 @@ i{
 	//color:#444;
 }
 
+.contiene-logo{
+	a{
+		display: block;
+		min-width: 281px;
+		min-height: 120px;
+		.no-svg &{
+			background-image: url(../img/content/logo-blog-medula-code.png);
+		}
+		.svg &{
+			background-image: url(../img/content/logo-code-medula-diseno-sprite.svg);
+			&:hover, &:active, &:focus{
+				background-position: 0 -120px;
+			}
+			&:link, &:visited{
+				background-position: 0 0;
+			}
+		}
+	}
+}
+
 h1,h2,h3{
 	font-family:"museo-sans","PT Sans",sans-serif;
 	font-style:italic;

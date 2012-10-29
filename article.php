@@ -40,7 +40,9 @@
 
 				<div class="mainContainer">
 					<header class="contiene-logo">
-						<a href="./"><img src="img/content/logo-blog-medula-code.png" alt="Logotipo Médula Diseño Code Blog"></a></header><article>
+						<a href="./"><noscript>
+							<img src="img/content/logo-blog-medula-code.png" alt="Logotipo Médula Diseño Code Blog">
+						</noscript></a></header><article>
 						<?php require $theArticle->path; ?>
 							<footer>
 								<?php if ( isset($theArticle->tags) && $theArticle->tags ): ?>
@@ -75,7 +77,8 @@
 
 				<div id="footer-container">
 					<footer class="wrapper">
-						<h3>footer</h3>
+						<h3>Artículos recientes</h3>
+						<?php include "inc/template/recientes.php"; ?>
 					</footer>
 				</div>
 
