@@ -1,8 +1,8 @@
-title: En la práctica: ¿Se puede usar SVG confiablemente como imagen?
-subtitle: Nuestra respuesta, durante mucho tiempo, había sido: NO, porque IE y Android no lo ven; sólo se podía en los estilos como una mejora de CSS. Pero estábamos equivocados. Sólo necesitamos un poco de Modenizr.
+title: In practice: ¿Can SVG be used as an img with a fallback?
+subtitle: Our answer was for a while had been NO, beacuse IE and Android have trouble with it; one can use it only as an enhancement on the styles. But we were wrong. We just need a bit of Modernizr.
 author: Agustín Amenabar
 classes: language-markup
-pubDate:2012-10-29 10:46:25
+draft: true
 
  <header><hgroup> 
 
@@ -11,9 +11,9 @@ h1. En la práctica: ¿Se puede usar SVG confiablemente como imagen?
 h2. Claro que si! Usando una combinación de __noscript__, Modernizr y CSS.
 </hgroup></header>
 
-h2(#ac1). Preámbulo
+h2(#ac1). Preamble
 
-"Saltarse esta lata":#ac2
+"Skip to the meat":#ac2
 
 p(intro). Cualquiera que halla llegado aquí sabrá ya de los beneficios de "SVG(Scalable Vector Graphics)":http://es.wikipedia.org/wiki/Scalable_Vector_Graphics, así que no explicaré qué es. Hace tiempo hay polyfills de SVG para IE o Android y algunos otros pero siguen siendo parches que requieren el uso de Flash u otras bibliotecas de javascript, como si ya hubiese poco javascript del que preocuparse en nuestras páginas. Así que nosotros habíamos evitado su uso, fuera de uno que otro gráfico de fondo en CSS como _mejoras progresivas_; mas, el uso que siempre quise darle era para el logo de un sitio web, que según "nuestras políticas de diseño":?t=article&a=Propuesta-de-Normas-de-desarrollo.txt el logo va en el DOM. Desde la salida de las pantallas _retina_ y otras de alta resolución, SVG tiene más sentido que nunca.
 
