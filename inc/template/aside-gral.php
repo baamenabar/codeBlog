@@ -14,6 +14,15 @@
 									</li>
 									<li>
 
+										<a href="?t=article&a=Git%2Bgithub%2BServiceHooks_eq_new_workflow_in_PHP.txt">
+											<h4>¿Se puede usar SVG confiablemente como imagen?</h4>
+											<p>
+												Antes pensábamos que NO, porque IE y Android no leen SVG y degrada mal. Pero estábamos equivocados. Sólo necesitamos un poco de Modenizr.
+											</p>
+										</a>
+									</li>
+									<li>
+
 										<a href="?t=article&a=Primeros-pasos-con-Sencha-Touch-2-y-Phonegap.txt">
 											<h4>Primeros pasos con Sencha Touch 2</h4>
 											<p>Y los típicos errores con los que uno se encuentra.</p>

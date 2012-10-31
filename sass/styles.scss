@@ -10,7 +10,8 @@ $grisClaro1:#E6E6E6;
 @import "compass/css3";
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
 @import "_normals";
-@import "_prism";
+//@import "_prism";
+@import "_monokai";
 
 i{
 	font-family: "pt-serif",serif;
@@ -30,11 +31,11 @@ i{
 		}
 		.svg &{
 			background-image: url(../img/content/logo-code-medula-diseno-sprite.svg);
-			&:hover, &:active, &:focus{
-				background-position: 0 -120px;
-			}
 			&:link, &:visited{
 				background-position: 0 0;
+			}
+			&:hover, &:active, &:focus{
+				background-position: 0 -120px;
 			}
 		}
 	}

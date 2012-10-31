@@ -37,6 +37,7 @@ class SlypCore{
 	protected $mailAministrador = 'agustin@fliin.com';
 	protected $_templateDir = '';
 	protected $_cachedHtml = './articulos/cached/';
+	protected $_possibleExtensions = array('textile','txt','md');
 	protected $articleList;
 	const noventa = 7776000;
 	const treinta = 2592000;
@@ -58,10 +59,14 @@ class SlypCore{
 	public function getArticle($filename){
 		//$this->processContents();
 		//print_r($this->articleList);
+		if( substr( $filename, -5 ) == '.html' )$filename = substr( $filename, 0, ( strlen( $filename ) - 5 ) );
+		if( substr( $filename, -4 ) == '.txt' )$filename = substr( $filename, 0, ( strlen( $filename ) - 4 ) );
 		$ao = new stdClass();
 		$arl = $this->getArticleList();
+		$articleFilename='';
 		foreach ($arl as $onea) {
-			if( $onea['filename'] == $filename ){
+			if( $onea['cleanname'] == $filename ){
+				$articleFilename = $onea['filename'];
 				foreach ($onea as $key => $value) {
 					$ao->{$key} = $value;
 				}
@@ -72,7 +77,7 @@ class SlypCore{
 			$this->_errors['5']=true;
 			return false;
 		}
-		$ao->path = $this->_cachedHtml.($filename).$ao->modDate.'.html';
+		$ao->path = $this->_cachedHtml.($articleFilename).$ao->modDate.'.html';
 		if(!is_file($ao->path))echo 'NO ENCUENTRO: '.$ao->path;
 		//var_dump($ao);
 		return $ao;
@@ -185,9 +190,12 @@ class SlypCore{
 		    if ($fileinfo->isFile()) {
 		        $extension = pathinfo($fileinfo->getFilename(), PATHINFO_EXTENSION);
 		        //echo "<br>". $fileinfo->getFilename() . ' -> ' . $extension;
+		        $sufix = '';
+		        if($extension)$sufix='.'.$extension;
 		        if(strtolower($extension) === 'txt' || strtolower($extension) === 'textile' || strtolower($extension) === 'md' ){
 		        	$oneArticle = array(
 		        		'filename' => $fileinfo->getFilename(),
+		        		'cleanname'=> $fileinfo->getBasename($sufix),
 		        		'modDate' => $fileinfo->getMTime()
 		        		);
 		        	$fileList[]=$oneArticle;

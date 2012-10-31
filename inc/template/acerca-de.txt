@@ -1,10 +1,11 @@
 
 <header> <h2>Acerca de&hellip; About</h2> </header>
 
-En este blog publicamos cosas que descubrimos trabajando en proyectos de <a href="http://medula.cl" target="_blank">Médula Diseño</a> y nos gustaría compartir. 
-__[en]In this blog we publish stuff we discover working at <a href="http://medula.cl" target="_blank">Médula Diseño</a> and we'd like to share.__
+En este blog publicamos cosas que descubrimos trabajando en proyectos de <a href="http://medula.cl" title="Nuestro sitio hecho en 8 horas hace 2 años." target="_blank">Médula Diseño</a> y nos gustaría compartir. 
+__[en]In this blog we publish stuff we discover working at <a href="http://medula.cl" title="Our website done in 8 hours 2 years ago." target="_blank">Médula Diseño</a> and we'd like to share.__
 
 El tema principal es código en los diferentes sabores que trabajamos o vamos descubriendo. 
 __[en]The main theme of this blog is code in the different flavours we encounter.__
 
-Este blog en particular lo llevamos como sitio estático (o casi) sin base de datos y "está publicado en Github":https://github.com/baamenabar/codeBlog , así que si cometo un error  se puede hacer un “bug report” en el proyecto del sitio. Aún tiene varios temas pendientes, de back-end y estilos, pero de a poco lo vamos armando.
+Este blog en particular lo llevamos como sitio estático (o casi) sin base de datos y "está publicado en Github":https://github.com/baamenabar/codeBlog , así que si cometo un error  se puede hacer un “bug report” en el proyecto del sitio. Aún tiene varios temas pendientes, de back-end y estilos __[en]responsive__, pero de a poco lo vamos armando.
+__[en]This blog we keep as a static site (or nearly) without a database articles can be written in Textile or Markdown and it has "it's own repo on Github":https://github.com/baamenabar/codeBlog , so if we mess up, you can file an issue on github and, of course, comment. This still has a lot pending on the server and on the front-end like the responsiveness, which is buggy still.__

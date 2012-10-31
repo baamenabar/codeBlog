@@ -44,7 +44,7 @@ header('Pragma: no-cache'); ?><!doctype html>
 							<?php foreach ($articleList as $oneArticle): ?>
 								<article>
 									<header>
-										<a href="?t=article&a=<?php echo urlencode( $oneArticle['filename'] ); ?>"><h1><?php echo $oneArticle['title']; ?></h1>
+										<a href="?t=article&a=<?php echo urlencode( $oneArticle['cleanname'] ); ?>"><h1><?php echo $oneArticle['title']; ?></h1>
 											<?php if (isset($oneArticle['subtitle'])): ?>
 											<h2><?php echo $oneArticle['subtitle']; ?></h2>	
 											<?php endif ?></a>
@@ -55,7 +55,7 @@ header('Pragma: no-cache'); ?><!doctype html>
 									<p><?php if (isset($oneArticle['intro'])): ?>
 										<?php echo $oneArticle['intro'] ?>
 									<?php endif ?>
-									<a href="?t=article&a=<?php echo urlencode( $oneArticle['filename'] ); ?>"><i lang="en">Read more</i> / Leer más</a></p>
+									<a href="?t=article&a=<?php echo urlencode( $oneArticle['cleanname'] ); ?>"><i lang="en">Read more</i> / Leer más</a></p>
 								</article>
 							<?php endforeach ?>
 						</div><?php include "inc/template/aside-gral.php"; ?>

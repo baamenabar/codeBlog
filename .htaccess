@@ -19,7 +19,7 @@
 # MEDIA TEMPLE
 # ------------------------------------------------------------
 #AddHandler php-stable .php
-php_value upload_max_filesize 8M
+php_value upload_max_filesize 16M
 
 # ----------------------------------------------------------------------
 # Better website experience for IE users
@@ -327,8 +327,11 @@ FileETag None
 # FollowSymLinks must be enabled for this to work.
 
 <IfModule mod_rewrite.c>
-  Options +FollowSymlinks
-  RewriteEngine On
+#  Options +FollowSymlinks
+#  RewriteEngine On
+#  RewriteOptions MaxRedirects=10
+#  RewriteRule ^\.css$ - [S=1]
+#  RewriteRule ^(.*)_(.*)?(.*)$ ?t=$1&a=$2&$3 [NC]
 </IfModule>
 
 

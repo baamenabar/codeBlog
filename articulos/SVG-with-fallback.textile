@@ -1,12 +1,12 @@
 title: En la práctica: ¿Se puede usar SVG confiablemente como imagen?
-subtitle: Nuestra respuesta, durante mucho tiempo, había sido: NO, porque IE y Android no lo ven; sólo se podía en los estilos como una mejora de CSS. Pero estábamos equivocados.
+subtitle: Nuestra respuesta, durante mucho tiempo, había sido: NO, porque IE y Android no lo ven; sólo se podía en los estilos como una mejora de CSS. Pero estábamos equivocados. Sólo necesitamos un poco de Modenizr.
 author: Agustín Amenabar
 classes: language-markup
 pubDate:2012-10-29 10:46:25
 
  <header><hgroup> 
 
-h1. ¿Se puede usar SVG con una imagen alternativa en un documento HTML?
+h1. En la práctica: ¿Se puede usar SVG confiablemente como imagen?
 
 h2. Claro que si! Usando una combinación de @<noscript>@, Modernizr y CSS.
 </hgroup></header>
@@ -83,7 +83,7 @@ bc(language-css).
 
 Entonces si probamos esto ahora cargará el SVG sin problemas y si lo abro en IE8 carga el PNG. Resultó tan fácil que ahora haré que el logo sea un "sprite SVG(ver el sprite SVG aquí)":img/content/logo-code-medula-diseno-sprite.svg y como es un poco más de texto que se repite no habrá mucha diferencia de peso (usando gzip).
 
-bc. 
+bc(language-css). 
 .svg .contiene-logo a{
 	background-image: url(../img/content/logo-code-medula-diseno-sprite.svg);
 }
@@ -96,7 +96,7 @@ bc.
 
 Por supuesto que esto lo hice en SASS y se ve de la siguiente manera.
 
-bc(language-css). 
+bc(language-scss). 
 .contiene-logo{
 	a{
 		display: block;
