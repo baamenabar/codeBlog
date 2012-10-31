@@ -42,7 +42,7 @@
 					<header class="contiene-logo">
 						<a href="./"><noscript>
 							<img src="img/content/logo-blog-medula-code.png" alt="Logotipo Médula Diseño Code Blog">
-						</noscript></a></header><article>
+						</noscript></a></header><div class="corporis"><article>
 						<?php require $theArticle->path; ?>
 							<footer>
 								<?php if ( isset($theArticle->tags) && $theArticle->tags ): ?>
@@ -71,7 +71,7 @@
 								</a>
 							</footer>
 						</article><?php include "inc/template/aside-gral.php"; ?>
-
+					</div>
 					</div>
 				<!-- #main-container -->
 

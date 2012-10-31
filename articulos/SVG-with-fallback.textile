@@ -8,7 +8,7 @@ pubDate:2012-10-29 10:46:25
 
 h1. En la práctica: ¿Se puede usar SVG confiablemente como imagen?
 
-h2. Claro que si! Usando una combinación de @<noscript>@, Modernizr y CSS.
+h2. Claro que si! Usando una combinación de __noscript__, Modernizr y CSS.
 </hgroup></header>
 
 h2(#ac1). Preámbulo
@@ -123,7 +123,18 @@ Esto no necesita más javascript más allá de cargar Modernizr, pero con un poc
 
 Si te interesa que escriba sobre cómo hacerlo en JS sin CSS, pues me lo comentas y veré de agregarlo a este artículo.
 
++*EDIT:* He descubierto 2 detalles con esta técnica, un problema y una observación.+ 
+
+h3. Observación en Firefox
+
+En Firefox los fondos en SVG al parecer son convertidos a bitmap y no son re-calculados cuando uno hace zoom *(button)Ctrl* + *(button)+* en la página, por lo que para ese uso no tiene mucho sentido usar SVG, traté de corregirlo cambiando las unidades de medida de px a em, pero nada. Esto no ocurre si usamos una imagen directamente.
+
+h3. Problema en Opera
+
+En Opera 12, al hacer zoom, el fondo se recorta, como si el SVG se escalara a diferente proporción que el contenedor, traté cambiando las unidades de medida de px a em y nada. Luego intenté con diferentes formas de configurar @background-size@ pero tampoco sirvió de mucho, se vio un cambio, pero sigue siendo malo el recorte.
+
++fin del EDIT+
+
 He estado trabajando en un artículo sobre cómo usar **Picturefill** para tener imágenes responsivas en un sitio; pero en la mitad se me ocurrió esto así que lo publico primero.
 
 Por favor, si te sirve esto, coméntame cómo lo quieres usar o lo has usado o si he escrito puras cabezas de pescado.
-

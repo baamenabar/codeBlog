@@ -40,7 +40,8 @@ header('Pragma: no-cache'); ?><!doctype html>
 					<header class="contiene-logo">
 						<a href="./"><noscript>
 							<img src="img/content/logo-blog-medula-code.png" alt="Logotipo Médula Diseño Code Blog">
-						</noscript></a></header><div class="articleGroup">
+						</noscript></a></header><div class="corporis">
+							<div class="articleGroup">
 							<?php foreach ($articleList as $oneArticle): ?>
 								<article>
 									<header>
@@ -59,7 +60,7 @@ header('Pragma: no-cache'); ?><!doctype html>
 								</article>
 							<?php endforeach ?>
 						</div><?php include "inc/template/aside-gral.php"; ?>
-
+						</div>
 					</div>
 				<!-- #main-container -->
 

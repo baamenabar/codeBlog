@@ -1,5 +1,5 @@
 <aside class="otros-post">
-							<section class="grupo caluga recomendados">
+							<section class="caluga recomendados columnasDos">
 								<header class="primero">
 									<h2 class="estrella">Recomendados</h2>
 								</header>
@@ -38,13 +38,13 @@
 										</a>
 									</li>
 								</ul>
-							</section><div class="grupo"><section class="caluga anteriores">
-									<header>
-										<h2>Anteriores</h2>
-									</header>
-									<?php include "inc/template/recientes.php"; ?>
-								</section><section class="caluga acerca-de">
-									<?php printFile("inc/template/acerca-de.txt"); ?>
-								</section>
-							</div>
+							</section><section class="caluga anteriores columnasDos">
+								<header>
+									<h2>Anteriores</h2>
+								</header>
+								<?php include "inc/template/recientes.php"; ?>
+							</section><section class="caluga acerca-de">
+								<?php printFile("inc/template/acerca-de.txt"); ?>
+							</section>
+							
 						</aside>

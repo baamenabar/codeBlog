@@ -23,19 +23,20 @@ i{
 .contiene-logo{
 	a{
 		display: block;
-		min-width: 281px;
-		min-height: 120px;
+		min-width: 17.5625em;
+		min-height: 7.5em;
 		background-repeat: no-repeat;
 		.no-svg &{
 			background-image: url(../img/content/logo-blog-medula-code.png);
 		}
 		.svg &{
 			background-image: url(../img/content/logo-code-medula-diseno-sprite.svg);
+			//background-size: cover;//17.5625em auto;
 			&:link, &:visited{
 				background-position: 0 0;
 			}
 			&:hover, &:active, &:focus{
-				background-position: 0 -120px;
+				background-position: 0 -7.5em;
 			}
 		}
 	}
@@ -147,7 +148,7 @@ article {
 	}
 	.caluga{
 		width:auto;
-		margin-right: 9px;
+		//margin-right: 9px;
 		padding-top: 18px;
 		padding-bottom: 1px;
 		line-height: 1.125em;
@@ -227,13 +228,40 @@ article {
 		margin-top: 0.25em;
 	}
 }
-@media (min-width: 31em){//desde 31ems hacia arriba
+.corporis{
+	@include inline-block;
+}
+
+
+@media all and (min-width: 31em){//desde 31ems hacia arriba
 	h1{
 		font-size: 3em;
 	}
 	article{
 		margin: 0 1.25em;
 	}
+	.otros-post{
+		background-color:$grisClaro0;
+		//min-width:269px;
+		width:33%;
+		padding:13px 0 13px 9px;
+		.grupo{
+			margin-bottom: 18px;
+		}
+		.caluga{
+			//width:260px;
+			margin-right: 9px;
+			padding-top: 18px;
+			margin-bottom: 13px;
+			@include inline-block;
+			vertical-align:top;
+		}
+	}
+	.otros-post, article, .articleGroup{
+		@include inline-block;
+		vertical-align: top;
+	}
+	.articleGroup article{display:block;}
 }
 @media screen and (min-width: 900px) {
 	.wrapper{
@@ -246,29 +274,33 @@ article {
 		vertical-align:top;
 		padding:1em;
 	}
-	.otros-post, .otros-post .grupo, article, .articleGroup{
-		@include inline-block;
-		vertical-align: top;
-	}
-	.articleGroup article{display:block;}
+	
+}
+@media screen and (max-width: 961px){
 	.otros-post{
-		background-color:$grisClaro0;
-		width:269px;
-		padding:13px 0 13px 9px;
-		.grupo{
-			margin-bottom: 18px;
+		width: auto;
+		.columnasDos{
+			display: block;
 		}
-		.caluga{
-			width:260px;
-			margin-right: 9px;
-			padding-top: 18px;
-			margin-bottom: 13px;
-		}
+	}
+	article{
+		max-width: 85%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+}
+@media screen and (max-width: 580px){
+	article{
+		max-width: 100%;
+		margin: 0 2%;
 	}
 }
 @media screen and (min-width: 1276px) {
     .otros-post{
     	width:538px;
+		.columnasDos{
+			width: 260px;	
+		}
 	}
 }
 

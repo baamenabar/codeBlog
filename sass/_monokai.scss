@@ -87,7 +87,7 @@ border: $prism-border;
 
 // Inline code
 :not(pre) > code[class*="language-"] {
-padding: .15em .2em .05em;
+padding: 2px 3px 1px 3px;
 border-radius: .3em;
 border: 1px solid hsl(30,20%,40%);
 box-shadow: 1px 1px .3em -.1em black inset;
