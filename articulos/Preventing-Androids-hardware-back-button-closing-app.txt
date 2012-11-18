@@ -1,6 +1,5 @@
 title: Preventing Android's hardware back button closing a Sencha app
 subtitle: It also applies to any Cordova (Phonegap) app
-author: Agustín Amenabar
 classes: language-javascript
 pubDate:2012-10-11 02:09:46
 

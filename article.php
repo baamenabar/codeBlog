@@ -76,9 +76,12 @@
 				<!-- #main-container -->
 
 				<div id="footer-container">
-					<footer class="wrapper">
-						<h3>Artículos recientes</h3>
+					<footer>
+						<h1>Artículos recientes</h1>
 						<?php include "inc/template/recientes.php"; ?>
+						<h1>Code Blog de <a href="http://medula.cl">Médula Diseño</a></h1>
+						<p>Editado por Agustín Amenábar</p>
+						<p><a href="https://twitter.com/baamenabar">@baamenabar</a> en español <i lang="en">&amp; <a href="https://twitter.com/ImINaBAR">@ImINaBAR</a> in english</i></p>
 					</footer>
 				</div>
 

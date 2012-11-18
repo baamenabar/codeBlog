@@ -10,8 +10,8 @@ $grisClaro1:#E6E6E6;
 @import "compass/css3";
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
 @import "_normals";
-//@import "_prism";
-@import "_monokai";
+@import "_prism";
+//@import "_monokai";
 
 i{
 	font-family: "pt-serif",serif;
@@ -131,6 +131,11 @@ article {
 	img{ 
 		max-width:100%;
 	}
+	footer{
+		background: none;
+		border: 1px solid transparent;
+		padding: 0;
+	}
 }
 .articleGroup article{
 	h1{margin-bottom:0.2em;}
@@ -230,6 +235,16 @@ article {
 }
 .corporis{
 	@include inline-block;
+}
+footer{
+	background-color: $grisClaro0;
+	border: 1px solid $grisClaro0;
+	padding: 0 1.25em;
+	h1{
+		a{text-decoration: none;}
+		font-size: 1.5em;
+	}
+
 }
 
 

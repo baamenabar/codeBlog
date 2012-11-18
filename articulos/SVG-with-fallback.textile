@@ -1,6 +1,5 @@
 title: En la práctica: ¿Se puede usar SVG confiablemente como imagen?
 subtitle: Nuestra respuesta, durante mucho tiempo, había sido: NO, porque IE y Android no lo ven; sólo se podía en los estilos como una mejora de CSS. Pero estábamos equivocados. Sólo necesitamos un poco de Modenizr.
-author: Agustín Amenabar
 classes: language-markup
 pubDate:2012-10-29 10:46:25
 

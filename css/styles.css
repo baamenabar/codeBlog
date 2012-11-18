@@ -164,54 +164,56 @@ body { font: 16px/26px "PT Sans", sans-serif, Helvetica, Helvetica Neue, Arial; 
 /* line 78, ../sass/_normals.scss */
 .wrapper { width: 90%; margin: 0 5%; }
 
-/**
-* prism.js Monokai theme for CSS & Sass/Scss
-*
-* @todo test for JavaScript & HTML
-*
-* @author @MoOx
-*/
-/* line 39, ../sass/_monokai.scss */
-code[class*="language-"], pre[class*="language-"] { -moz-tab-size: 4; -o-tab-size: 4; tab-size: 4; -webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; hyphens: none; white-space: pre; white-space: pre-wrap; word-break: break-all; word-wrap: break-word; line-height: 18px; color: #76d9e6; text-shadow: 0 1px 0 black; }
+/** prism.js default theme for JavaScript, CSS and HTML Based on dabblet (http://dabblet.com) @author Lea Verou */
+/* line 8, ../sass/_prism.scss */
+code[class*="language-"], pre[class*="language-"] { color: black; text-shadow: 0 1px white; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; -moz-tab-size: 4; -o-tab-size: 4; tab-size: 4; -webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; hyphens: none; }
 
-/* line 65, ../sass/_monokai.scss */
-pre[class*="language-"], :not(pre) > code[class*="language-"] { background: #222222; }
+/* Code blocks */
+/* line 28, ../sass/_prism.scss */
+pre[class*="language-"] { padding: 1em; margin: .5em 0; overflow: auto; }
 
-/* line 70, ../sass/_monokai.scss */
-pre[class*="language-"] { padding: 12px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; border: 1px solid #e1e1e8; }
+/* line 35, ../sass/_prism.scss */
+:not(pre) > code[class*="language-"], pre[class*="language-"] { background: #f0f2f2; }
 
-/* line 89, ../sass/_monokai.scss */
-:not(pre) > code[class*="language-"] { padding: 2px 3px 1px 3px; border-radius: .3em; border: 1px solid #7a6652; box-shadow: 1px 1px 0.3em -0.1em black inset; white-space: nowrap; }
+/* Inline code */
+/* line 40, ../sass/_prism.scss */
+:not(pre) > code[class*="language-"] { padding: .1em; border-radius: .3em; }
 
-/* line 97, ../sass/_monokai.scss */
+/* line 48, ../sass/_prism.scss */
+.token.comment, .token.prolog, .token.doctype, .token.cdata { color: slategray; }
+
+/* line 52, ../sass/_prism.scss */
+.token.punctuation { color: #999; }
+
+/* line 56, ../sass/_prism.scss */
 .namespace { opacity: .7; }
 
-/* line 105, ../sass/_monokai.scss */
-.token.comment, .token.prolog, .token.doctype, .token.cdata { color: #6f705e; }
-/* line 112, ../sass/_monokai.scss */
-.token.null, .token.operator, .token.boolean, .token.number { color: #a77afe; }
-/* line 117, ../sass/_monokai.scss */
-.token.attr-name, .token.string { color: #e6d06c; }
-/* line 124, ../sass/_monokai.scss */
-.token.entity, .token.url, .language-css .token.string, .style .token.string { color: #e6d06c; }
-/* line 128, ../sass/_monokai.scss */
-.token.selector { color: #a6e22d; }
-/* line 138, ../sass/_monokai.scss */
-.token.atrule, .token.attr-value, .token.keyword, .token.control, .token.directive, .token.important, .token.unit { color: #f12770; }
-/* line 143, ../sass/_monokai.scss */
-.token.regex, .token.statement { color: #76d9e6; }
-/* line 148, ../sass/_monokai.scss */
-.token.placeholder, .token.variable { color: white; }
-/* line 153, ../sass/_monokai.scss */
-.token.property, .token.tag { font-style: italic; }
-/* line 158, ../sass/_monokai.scss */
-.token.important, .token.statement { font-weight: bold; }
-/* line 181, ../sass/_monokai.scss */
-.token.punctuation { color: #bebec5; }
-/* line 185, ../sass/_monokai.scss */
+/* line 63, ../sass/_prism.scss */
+.token.property, .token.tag, .token.boolean, .token.number { color: #905; }
+
+/* line 69, ../sass/_prism.scss */
+.token.selector, .token.attr-name, .token.string { color: #690; }
+
+/* line 77, ../sass/_prism.scss */
+.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string { color: #a67f59; background: rgba(255, 255, 255, 0.5); }
+
+/* line 86, ../sass/_prism.scss */
+.token.atrule, .token.attr-value, .token.keyword, .token.function, .token.constant { color: #07a; }
+
+/* line 90, ../sass/_prism.scss */
+.token.deliminator { font-weight: bold; }
+
+/* line 96, ../sass/_prism.scss */
+.token.regex, .token.important, .token.variable { color: #e90; }
+
+/* line 100, ../sass/_prism.scss */
+.token.important { font-weight: bold; }
+
+/* line 104, ../sass/_prism.scss */
 .token.entity { cursor: help; }
-/* line 190, ../sass/_monokai.scss */
-.token.debug { color: red; }
+
+/* line 108, ../sass/_prism.scss */
+.token.deliminator { font-weight: bold; }
 
 /* line 16, ../sass/styles.scss */
 i { font-family: "pt-serif",serif; font-style: italic; }
@@ -267,93 +269,102 @@ article figure { font-family: "pt-serif","PT Sans",sans-serif; background: #FFF;
 article figure img { max-width: 100%; border: 1px dotted #DDD; }
 /* line 131, ../sass/styles.scss */
 article img { max-width: 100%; }
-
-/* line 136, ../sass/styles.scss */
-.articleGroup article h1 { margin-bottom: 0.2em; }
-
-/* line 138, ../sass/styles.scss */
-.contiene-logo { padding: 0.5em 1em; }
+/* line 134, ../sass/styles.scss */
+article footer { background: none; border: 1px solid transparent; padding: 0; }
 
 /* line 141, ../sass/styles.scss */
+.articleGroup article h1 { margin-bottom: 0.2em; }
+
+/* line 143, ../sass/styles.scss */
+.contiene-logo { padding: 0.5em 1em; }
+
+/* line 146, ../sass/styles.scss */
 .otros-post { background-color: #f0f0f0; }
-/* line 142, ../sass/styles.scss */
+/* line 147, ../sass/styles.scss */
 .boxshadow .otros-post { -webkit-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2); -moz-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2); box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2); }
-/* line 149, ../sass/styles.scss */
+/* line 154, ../sass/styles.scss */
 .otros-post .caluga { width: auto; padding-top: 18px; padding-bottom: 1px; line-height: 1.125em; }
-/* line 155, ../sass/styles.scss */
-.otros-post .caluga header { background-color: #FFF; min-height: 44px; padding-top: 22px; margin-right: 5px; }
 /* line 160, ../sass/styles.scss */
+.otros-post .caluga header { background-color: #FFF; min-height: 44px; padding-top: 22px; margin-right: 5px; }
+/* line 165, ../sass/styles.scss */
 .otros-post .caluga header.primero { margin-right: 0; }
-/* line 161, ../sass/styles.scss */
+/* line 166, ../sass/styles.scss */
 .boxshadow .otros-post .caluga header { -webkit-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2); -moz-box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2); box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2); }
-/* line 164, ../sass/styles.scss */
-.otros-post .caluga header h2 { font-size: 24px; font-style: italic; margin: 0 0.5em 0 0.5em; }
 /* line 169, ../sass/styles.scss */
+.otros-post .caluga header h2 { font-size: 24px; font-style: italic; margin: 0 0.5em 0 0.5em; }
+/* line 174, ../sass/styles.scss */
 .otros-post .caluga header h2.estrella:before { content: '★'; font-style: normal; color: #fac116; }
-/* line 177, ../sass/styles.scss */
+/* line 182, ../sass/styles.scss */
 .otros-post .caluga.recomendados { background-color: #45bcd2; }
-/* line 180, ../sass/styles.scss */
-.otros-post .caluga.anteriores { background-color: #fcc212; }
-/* line 183, ../sass/styles.scss */
-.otros-post .caluga.acerca-de { background-color: #e6e6e6; }
 /* line 185, ../sass/styles.scss */
-.otros-post .caluga.acerca-de p { margin: 1.5em; }
+.otros-post .caluga.anteriores { background-color: #fcc212; }
+/* line 188, ../sass/styles.scss */
+.otros-post .caluga.acerca-de { background-color: #e6e6e6; }
 /* line 190, ../sass/styles.scss */
-.otros-post ul { padding: 0; }
-/* line 191, ../sass/styles.scss */
-.otros-post li { list-style: none; margin: 1.5em; }
-/* line 194, ../sass/styles.scss */
-.otros-post li h4 { margin: 0; }
+.otros-post .caluga.acerca-de p { margin: 1.5em; }
 /* line 195, ../sass/styles.scss */
-.otros-post li p { margin: 0; }
+.otros-post ul { padding: 0; }
 /* line 196, ../sass/styles.scss */
+.otros-post li { list-style: none; margin: 1.5em; }
+/* line 199, ../sass/styles.scss */
+.otros-post li h4 { margin: 0; }
+/* line 200, ../sass/styles.scss */
+.otros-post li p { margin: 0; }
+/* line 201, ../sass/styles.scss */
 .otros-post li a { color: #FFF; text-decoration: none; display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; -webkit-transition: color 0.2s ease-in-out; -webkit-transition-delay: 0; -moz-transition: color 0.2s ease-in-out 0; -o-transition: color 0.2s ease-in-out 0; transition: color 0.2s ease-in-out 0; }
-/* line 202, ../sass/styles.scss */
+/* line 207, ../sass/styles.scss */
 .otros-post li a:hover, .otros-post li a:active, .otros-post li a:focus { text-decoration: underline; color: #565656; }
 
-/* line 209, ../sass/styles.scss */
+/* line 214, ../sass/styles.scss */
 .button, .boton { background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #cccccc)); background-image: -webkit-linear-gradient(#eeeeee, #cccccc); background-image: -moz-linear-gradient(#eeeeee, #cccccc); background-image: -o-linear-gradient(#eeeeee, #cccccc); background-image: linear-gradient(#eeeeee, #cccccc); -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.5); border: 1px solid #666; padding: 0 0.25em; }
 
-/* line 216, ../sass/styles.scss */
+/* line 221, ../sass/styles.scss */
 .pubDate { margin-top: 0; color: #777; }
-/* line 219, ../sass/styles.scss */
+/* line 224, ../sass/styles.scss */
 .pubDate time { font-style: italic; }
 
-/* line 224, ../sass/styles.scss */
+/* line 229, ../sass/styles.scss */
 .mainContainer *[lang] { font-style: italic; display: inline-block; line-height: 1.25em; margin-top: 0.25em; }
 
-/* line 231, ../sass/styles.scss */
+/* line 236, ../sass/styles.scss */
 .corporis { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; }
 
-@media all and (min-width: 31em) { /* line 237, ../sass/styles.scss */
+/* line 239, ../sass/styles.scss */
+footer { background-color: #f0f0f0; border: 1px solid #f0f0f0; padding: 0 1.25em; }
+/* line 243, ../sass/styles.scss */
+footer h1 { font-size: 1.5em; }
+/* line 244, ../sass/styles.scss */
+footer h1 a { text-decoration: none; }
+
+@media all and (min-width: 31em) { /* line 252, ../sass/styles.scss */
   h1 { font-size: 3em; }
-  /* line 240, ../sass/styles.scss */
+  /* line 255, ../sass/styles.scss */
   article { margin: 0 1.25em; }
-  /* line 243, ../sass/styles.scss */
+  /* line 258, ../sass/styles.scss */
   .otros-post { background-color: #f0f0f0; width: 33%; padding: 13px 0 13px 9px; }
-  /* line 248, ../sass/styles.scss */
+  /* line 263, ../sass/styles.scss */
   .otros-post .grupo { margin-bottom: 18px; }
-  /* line 251, ../sass/styles.scss */
+  /* line 266, ../sass/styles.scss */
   .otros-post .caluga { margin-right: 9px; padding-top: 18px; margin-bottom: 13px; display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; vertical-align: top; }
-  /* line 260, ../sass/styles.scss */
+  /* line 275, ../sass/styles.scss */
   .otros-post, article, .articleGroup { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; vertical-align: top; }
-  /* line 264, ../sass/styles.scss */
+  /* line 279, ../sass/styles.scss */
   .articleGroup article { display: block; } }
-@media screen and (min-width: 900px) { /* line 267, ../sass/styles.scss */
+@media screen and (min-width: 900px) { /* line 282, ../sass/styles.scss */
   .wrapper { width: auto; display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; margin: 0 2%; }
-  /* line 272, ../sass/styles.scss */
+  /* line 287, ../sass/styles.scss */
   .contiene-logo { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; vertical-align: top; padding: 1em; } }
-@media screen and (max-width: 961px) { /* line 280, ../sass/styles.scss */
+@media screen and (max-width: 961px) { /* line 295, ../sass/styles.scss */
   .otros-post { width: auto; }
-  /* line 282, ../sass/styles.scss */
+  /* line 297, ../sass/styles.scss */
   .otros-post .columnasDos { display: block; }
-  /* line 286, ../sass/styles.scss */
-  article { max-width: 85%; margin-left: 5%; margin-right: 5%; } }
-@media screen and (max-width: 580px) { /* line 293, ../sass/styles.scss */
-  article { max-width: 100%; margin: 0 2%; } }
-@media screen and (min-width: 1276px) { /* line 299, ../sass/styles.scss */
-  .otros-post { width: 538px; }
   /* line 301, ../sass/styles.scss */
+  article { max-width: 85%; margin-left: 5%; margin-right: 5%; } }
+@media screen and (max-width: 580px) { /* line 308, ../sass/styles.scss */
+  article { max-width: 100%; margin: 0 2%; } }
+@media screen and (min-width: 1276px) { /* line 314, ../sass/styles.scss */
+  .otros-post { width: 538px; }
+  /* line 316, ../sass/styles.scss */
   .otros-post .columnasDos { width: 260px; } }
 /* Welcome to Compass. Use this file to define print styles. Import this file using the following HTML or equivalent: <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
 /* ============================================================================= Print Styles ========================================================================== */

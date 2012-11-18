@@ -327,11 +327,11 @@ FileETag None
 # FollowSymLinks must be enabled for this to work.
 
 <IfModule mod_rewrite.c>
-#  Options +FollowSymlinks
-#  RewriteEngine On
-#  RewriteOptions MaxRedirects=10
+  Options +FollowSymlinks
+  RewriteEngine On
+  RewriteOptions MaxRedirects=10
 #  RewriteRule ^\.css$ - [S=1]
-#  RewriteRule ^(.*)_(.*)?(.*)$ ?t=$1&a=$2&$3 [NC]
+  RewriteRule ^(.*)_(.*)?(.*)$ ?t=$1&a=$2&$3 [NC]
 </IfModule>
 
 

@@ -1,6 +1,5 @@
 title: Imágenes responsivas con Picturefill
 subtitle: Diagramar un sitio de modo “responsive“ es sólo una parte, no menos importante es el manejo de imágenes, con picturefill tenemos una herramienta para controlar las imágenes en diferentes formatos y resoluciones.
-author: Agustín Amenabar
 classes: language-markup
 pubDate:2012-10-23 11:06:27
 draft: true

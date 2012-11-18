@@ -1,8 +1,8 @@
 title: In practice: ¿Can SVG be used as an img with a fallback?
 subtitle: Our answer was for a while had been NO, beacuse IE and Android have trouble with it; one can use it only as an enhancement on the styles. But we were wrong. We just need a bit of Modernizr.
-author: Agustín Amenabar
 classes: language-markup
 draft: true
+pubDate:2012-10-31 18:37:45
 
  <header><hgroup> 
 

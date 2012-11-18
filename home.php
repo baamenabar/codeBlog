@@ -16,7 +16,7 @@ header('Pragma: no-cache'); ?><!doctype html>
 <head>
 
 				<title>Code Médula &ndash; Blog de código</title>
-				<meta name="description" content="Artículos relacionados con el desarrollo de página, aplicacciones y temas web en general.">
+				<meta name="description" content="Artículos relacionados con el desarrollo de páginas web, aplicacciones y temas web en general.">
 				<meta name="author" content="B. Agustín Amenabar L.">
 
 				<meta name="viewport" content="width=device-width">
@@ -45,7 +45,7 @@ header('Pragma: no-cache'); ?><!doctype html>
 							<?php foreach ($articleList as $oneArticle): ?>
 								<article>
 									<header>
-										<a href="?t=article&a=<?php echo urlencode( $oneArticle['cleanname'] ); ?>"><h1><?php echo $oneArticle['title']; ?></h1>
+										<a href="./article_<?php echo urlencode( $oneArticle['cleanname'] ); ?>.html"><h1><?php echo $oneArticle['title']; ?></h1>
 											<?php if (isset($oneArticle['subtitle'])): ?>
 											<h2><?php echo $oneArticle['subtitle']; ?></h2>	
 											<?php endif ?></a>
@@ -56,7 +56,7 @@ header('Pragma: no-cache'); ?><!doctype html>
 									<p><?php if (isset($oneArticle['intro'])): ?>
 										<?php echo $oneArticle['intro'] ?>
 									<?php endif ?>
-									<a href="?t=article&a=<?php echo urlencode( $oneArticle['cleanname'] ); ?>"><i lang="en">Read more</i> / Leer más</a></p>
+									<a href="./article_<?php echo urlencode( $oneArticle['cleanname'] ); ?>.html"><i lang="en">Read more</i> / Leer más</a></p>
 								</article>
 							<?php endforeach ?>
 						</div><?php include "inc/template/aside-gral.php"; ?>
@@ -65,9 +65,10 @@ header('Pragma: no-cache'); ?><!doctype html>
 				<!-- #main-container -->
 
 				<div id="footer-container">
-					<footer class="wrapper">
-						<h3>footer</h3>
-						<p>Todavía no tengo claro qué quiero poner aquí.</p>
+					<footer>
+						<h1>Code Blog de <a href="http://medula.cl">Médula Diseño</a></h1>
+						<p>Editado por Agustín Amenábar</p>
+						<p><a href="https://twitter.com/baamenabar">@baamenabar</a> en español <i lang="en">&amp; <a href="https://twitter.com/ImINaBAR">@ImINaBAR</a> in english</i></p>
 					</footer>
 				</div>
 

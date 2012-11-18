@@ -2,7 +2,7 @@
 <ul>
 										<?php foreach ($recientes as $ua): ?>
 										<li>
-											<a href="?t=article&a=<?php echo urlencode($ua['cleanname']); ?>"<?php if (isset($ua['subtitle'])): ?>
+											<a href="./article_<?php echo urlencode($ua['cleanname']); ?>.html"<?php if (isset($ua['subtitle'])): ?>
 													title="<?php echo $ua['subtitle']; ?>"
 												<?php endif ?>><?php echo $ua['title']; ?></a>
 										</li>
