@@ -19,7 +19,7 @@ header('Pragma: no-cache'); ?><!doctype html>
 				<meta name="description" content="Artículos relacionados con el desarrollo de páginas web, aplicacciones y temas web en general.">
 				<meta name="author" content="B. Agustín Amenabar L.">
 
-				<meta name="viewport" content="width=device-width">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
 
 				<link rel="stylesheet" href="css/styles.css?ck=<?php echo filemtime("css/styles.css"); ?>">
 

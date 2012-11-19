@@ -21,7 +21,7 @@
 				<?php endif ?>
 				<meta name="author" content="B. Agustín Amenabar L.">
 
-				<meta name="viewport" content="width=device-width">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
 
 				<link rel="stylesheet" href="css/styles.css?ck=<?php echo filemtime("css/styles.css"); ?>">
 
