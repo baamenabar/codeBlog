@@ -92,7 +92,7 @@ figure{
 	}
 } 
 article {
-	max-width:595px;
+	max-width:660px;
 	margin:0 2%;
 	header {
 		border-bottom:1px solid #B3B3B3;
@@ -234,7 +234,7 @@ article {
 	}
 }
 .corporis{
-	@include inline-block;
+	//@include inline-block;
 }
 .pictureList{
 	ul{
@@ -264,7 +264,8 @@ footer{
 		font-size: 3em;
 	}
 	article{
-		margin: 0 1.25em;
+		margin: 0 3%;
+		width: 60%;
 	}
 	.otros-post{
 		background-color:$grisClaro0;
@@ -287,7 +288,7 @@ footer{
 		@include inline-block;
 		vertical-align: top;
 	}
-	.articleGroup article{display:block;}
+	.articleGroup article{display:block; width:auto;}
 }
 @media screen and (min-width: 900px) {
 	.wrapper{
@@ -300,7 +301,6 @@ footer{
 		vertical-align:top;
 		padding:1em;
 	}
-	
 }
 @media screen and (max-width: 961px){
 	.otros-post{
@@ -310,14 +310,20 @@ footer{
 		}
 	}
 	article{
-		max-width: 85%;
+		//max-width: 85%;
 		margin-left: 5%;
 		margin-right: 5%;
+		width: auto;
+	}
+}
+@media screen and (max-width: 741px){
+	article{
+		max-width: 90%;
 	}
 }
 @media screen and (max-width: 580px){
 	article{
-		max-width: 100%;
+		
 		margin: 0 2%;
 	}
 }
@@ -327,6 +333,12 @@ footer{
 		.columnasDos{
 			width: 260px;	
 		}
+	}
+	.corporis{
+		@include inline-block;
+	}
+	article{
+		width: 48%;
 	}
 }
 

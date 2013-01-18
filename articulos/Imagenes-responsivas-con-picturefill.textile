@@ -1,7 +1,7 @@
 title: Imágenes responsivas con Picturefill
 subtitle: Diagramar un sitio de modo “responsive“ es sólo una parte, no menos importante es el manejo de imágenes, con picturefill tenemos una herramienta para controlar las imágenes en diferentes formatos y resoluciones.
 classes: language-markup
-pubDate:2012-10-23 11:06:27
+pubDate:2013-01-18 21:43:19
 
  <header><hgroup>
 
@@ -14,11 +14,21 @@ p(pubDate). __Published__ / Publicado : <time datetime="2012-10-11 02:09:46">201
 
 h2(#ac1). Preámbulo
 
+"Saltarse esta lata":#ac2
+
 h3. Teoría de lo que vamos a usar
 
-p(intro). No todas las pantallas son iguales, no tienen el mismo tamaño, resolución, ni tienen la misma orientación; en muy poco casos es necesario cargar la *imagen de súper resolución HD para pantallas _retina_ de 2800 pixeles de ancho*. ¿Por qué entonces entregársela a todos los dispositivos sin discriminación de tamaño? A veces sólo necesitamos la imágen a 240px de ancho. Para eso usaremos *Picturefill* y generaremos imágenes __[en]responsive__.
+p(intro). Asumiendo que todo el concepto _Responsive Web Design_, o diseño web responsivo está entendido, un aspecto práctico bien importante es el manejo de imágenes. 
 
-Asumiendo que todo el concepto _Responsive Web Design_, o diseño web responsivo está entendido, un aspecto práctico bien importante es el manejo de imágenes. En este caso elegimos Picturefill, dado que es de las pocas soluciones relativamente semánticas que contempla el caso de uso de *dirección de arte* en las imágenes responsivas. Además que "Scott Jehl":https://twitter.com/scottjehl y "Mat “Wilto” Marquis":https://twitter.com/wilto han sido muy "persuasivos y polémicos":http://timkadlec.com/2012/05/wtfwg/ promoviendo este "_polyfill_(definición de polyfill en la wikipedia)":http://en.wikipedia.org/wiki/Polyfill por lo que estaba buscando la excusa de probarlo.
+-- Eso es cuento viejo! en CSS se pone: @img{ max-width:100%; }@ y listo!
+
+Si, pero no todas las pantallas son iguales, no tienen el mismo tamaño, resolución, ni tienen la misma orientación; en muy poco casos es necesario cargar la *imagen de súper resolución HD para pantallas _retina_ de 2800 pixeles de ancho*. ¿Por qué entonces entregársela a todos los dispositivos sin discriminación de tamaño? A veces sólo necesitamos la imágen a 240px de ancho. 
+
+-- OK, pero igual eso se hace en CSS, cambias el fondo según el ancho u otro __[en]media query__ y listo!
+
+Si, pero no todas las imágenes son presenctacionales, o sea, muchas pertenecen al contenido y deben estar en el HTML y no en la hoja de estilos. Para eso usaremos *Picturefill* y generaremos imágenes __[en]responsive__.
+
+En este caso elegimos Picturefill, dado que es de las pocas soluciones relativamente semánticas que contempla el caso de uso de *dirección de arte* en las imágenes responsivas. Además que "Scott Jehl":https://twitter.com/scottjehl y "Mat “Wilto” Marquis":https://twitter.com/wilto han sido muy "persuasivos y polémicos":http://timkadlec.com/2012/05/wtfwg/ promoviendo este "_polyfill_(definición de polyfill en la wikipedia)":http://en.wikipedia.org/wiki/Polyfill por lo que estaba buscando la excusa de probarlo.
 
 Desde que salió el _polyfill_ original se ha incluido @<picture>@ como una “propuesta de extensión” de la especificación HTML con algunas modificaciones a la propuesta inicial que incluyen el atributo @srcset@; _Wilto_ hizo un buen ejemplo con una "corta pero buena explicación(Visitar la página del ejemplo explicado)":http://wil.to/picturefill/ del uso de los atributos @srcset@ y @media@ propuestos y como funcionaría de estar implementado. 
 
@@ -32,18 +42,19 @@ Vamos a replicar un poco el @index.html@ del repositorio de **picturefill** para
 
 * Un HTML para contener todo; lo único que *debe* tener es el @<meta name="viewport" content="width=device-width,initial-scale=1">@.
 * La biblioteca "Picturefill(Página del proyecto en Github)":https://github.com/scottjehl/picturefill
-* Un "build base de Modernizr":http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-flexboxlegacy-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-canvas-localstorage-shiv-teststyles-testprop-testallprops-prefixes-domprefixes-load para tomar los shivs y mini ayudas que trae, que uno usa siempre, ojo que tiene que ir sin detección de de mediaQueries, porque vamos a cargar una especial para IE a continuación.
+* Un "build base de Modernizr":http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-flexboxlegacy-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-canvas-localstorage-shiv-teststyles-testprop-testallprops-prefixes-domprefixes-load para tomar los shivs y mini ayudas que trae, que uno usa siempre, ojo que tiene que ir sin detección de __[en]media queries__, porque vamos a cargar una especial para IE a continuación.
 * La "rama especial de matchMedia.js(Página del repositorio en github)":https://github.com/benschwarz/matchMedia.js/tree/IE7-8 para IE7 y 8, "sin la cual picturefill será ignorado en IE7 y 8(Página del issue nº 33)":https://github.com/scottjehl/picturefill/issues/33
+* El _[en]polyfill_ CSS3 Media queries JS "http://code.google.com/p/css3-mediaqueries-js/":http://code.google.com/p/css3-mediaqueries-js/ para reemplazar Respond JS, porque entra en conflicto con la versión para IE8 o menor de MatchMedia.js 
 * Dos series de imágenes en diferentes tamaños y recortes.
 
 Todo esto está en el "repositorio del demo":https://github.com/baamenabar/article-picturefill .
 
 
-h2(#ac3). Las imágenes
+h3(#ac2a). Las imágenes
 
 Haremos el ejercicio con 2 imágenes en sus diferentes versiones.
 
-h3(#ac3a). Callampas
+h4(#ac2a1). Callampas
 
  <div class="pictureList">
 * !img/content/ricpf/thumbs/callampas-430.jpg!:img/content/ricpf/callampas-430.jpg
@@ -53,11 +64,11 @@ h3(#ac3a). Callampas
 * !img/content/ricpf/thumbs/callampas-2000.jpg!:img/content/ricpf/callampas-2000.jpg
  </div>
 
-h3(#ac3b). Flores amarillas
+h4(#ac2a2). Flores amarillas
 
 Este segundo set incluye versión 2x (para __retina__) en la mayoría de las versiones e intencionalmente tiene las imágenes recortadas de diferentes maneras.
  
- <div class="pictureList">
+ <div class="pictureList"><!-- Un manchón de flores Calceolaria filicaulis, en la Cordillera Nevada, Lago Ranco, Chile -->
 * !img/content/ricpf/thumbs/flores-full-full.jpg!:img/content/ricpf/flores-full-full.jpg
 * !img/content/ricpf/thumbs/flores-huge.jpg!:img/content/ricpf/flores-huge.jpg
 * !img/content/ricpf/thumbs/flores-big.jpg!:img/content/ricpf/flores-big.jpg
@@ -86,22 +97,132 @@ bc..
 
 p. Picturefill realmente necesita sólo @picturefill.js@. Presonalmente prefiero ponerlo dentro del @<head>@ del documento junto al resto de los scripts que hacen funcionar mínimamente la página, aunque igual espera a que el documento esté cargado.
 
-Si queremos que funcione en navegadores sin @media queries@, como Internet Explorer 8 o menor, debemos agregar esta versión para IE 7y8 de @matchmedia.js@. Si no queremos usar un matchmedia especial o por alguna razón entra en conflicto con otro script está la opción _oficial_ para que funcione en IE 7 y 8 que veremos más abajo.
+Si queremos que funcione en navegadores sin __[en]media queries__, como Internet Explorer 8 o menor, debemos agregar esta versión para IE 7y8 de @matchmedia.js@. Si no queremos usar un matchmedia especial o por alguna razón entra en conflicto con otro script está la opción _oficial_ para que funcione en IE 7 y 8 que veremos más abajo.
 
 Sólo nos queda agregar **Modernizr** y soporte __[en]responsive__ para IE8 o menor.
 
 bc.. 
 <head>
 <!-- [...] -->
+
 <script src="modernizr.custom.89870.js"></script>
 <script src="matchmedia.js"></script>
 <script src="picturefill.js"></script>
 <!-- [if lt IE 9]>
     <script src="css3-mediaqueries.js"></script>
 <![endif]-->
+
 <!-- [...] -->
 </head>
 
 p. Modernizr siempre al principio, para que tengamos inmediatamente disponibles sus métodos y clases en caso de necesitarlas.
 
-Advertencia! Para quienes quieren que su diagramación __[en]responsive__ funcione en IE deben saber que "Respond.js":https://github.com/scottjehl/Respond (él script más usado para eso) entra en conflicto con la versión de "Matchmedia.js":https://github.com/benschwarz/matchMedia.js/tree/IE7-8 que estamos usando, por lo que de
+*Advertencia!* Para quienes quieren que su diagramación __[en]responsive__ funcione en IE, como cuando se hace un diseño móvil primero. Deben saber que "Respond.js":https://github.com/scottjehl/Respond (el script más usado para eso) entra en conflicto con la versión de "Matchmedia.js":https://github.com/benschwarz/matchMedia.js/tree/IE7-8 que estamos usando; por lo que debemos usar el __[en]polyfill__ @css3-mediaqueries.js@ que es bastante más pesado, pero con los condicionales de IE lo haremos cargar sólo cuando sea necesario.
+
+Sólo nos queda advertir que en el @<head>@, para ver correctamente lo que estamos haciendo en un dispositivo móvil, *debe* ir lo siguiente: @<meta name="viewport" content="width=device-width,initial-scale=1">@ o algo similar (si sabes de qué se trata).
+
+h2(#ac5). Markup tipo &lt;picture>
+
+h3(#ac6). Simple primero
+
+Picturefill es una colección de elementos @<div>@ con @data-attributes@ que son leídos por Javascript e inserta la imagen que corresponda según se cumplan diferentes __[en]media queries__. En el cuerpo del documento pegamos lo siguiente.
+
+bc.. 
+<div data-picture data-alt="Callampas, probablemente Deconica coprophila, encontradas en la Cordillera Nevada, Lago Ranco, Chile.">
+<!-- la primera opción, móvil primero, sin match-media -->
+<div data-src="imgs/callampas-430.jpg"></div>
+<!-- Opción dos, cualquier cosa más grande de 480px de ancho se gana una foto tamaño mediano -->
+<div data-src="imgs/callampas-570.jpg"  data-media="(min-width: 480px)"></div>
+<!-- Opción tres, cualquier cosa más grande de 760px de ancho (como un iPad en vertical): se gana una foto tamaño tableta -->
+<div data-src="imgs/callampas-770.jpg"  data-media="(min-width: 760px)"></div>
+<!-- Opción cuatro, cualquier cosa más grande de 960px de ancho (como un iPad en horizontal): se gana una foto tamaño escritorio -->
+<div data-src="imgs/callampas-1024.jpg" data-media="(min-width: 960px)"></div>
+<!-- Opción cinco, cualquier cosa más grande de 1280px de ancho se gana una foto tamaño gigante -->
+<div data-src="imgs/callampas-2000.jpg" data-media="(min-width: 1280px)"></div>
+<!-- Contenido alternativo para navegadores sin JS. La misma fuente de la imagen inicial. -->
+<noscript>
+<img src="imgs/callampas-430.jpg" alt="Callampas, probablemente Deconica coprophila, encontradas en la Cordillera Nevada, Lago Ranco, Chile.">
+</noscript>
+</div>
+
+p. Se puede ver este "demo funcionando aquí":http://baamenabar.github.com/article-picturefill/v1.html . En el código de arriba tenemos un @<div>@ contenedor con el atributo @data-picture@ que están reemplazando al elemento @<picture>@. Dentro de éste hay otros __[html]div__ con los atributos @data-src@ y algunos con @data-media@ que hacen las veces del elemento @<source>@ con sus atributos:
+
+p. @data-src@ define la imagen a cargar si se cumplen las condiciones definidas en el atributo @data-media@ igual como un @ ==@media== @ de CSS.
+
+h3(#ac7). ¿Y las pantallas retina o HD?
+
+Lo anterior está muy bien, pero cuando se tienen estas super pantallas de alta definición (__retina__ o similar), hay sacarles el jugo, pero la idea es hacerlo sin castigar a los dispositivos de más baja resolución. Para eso en el atributo @data-media@ haremos __[en]media queries__ para que las pantallas de alta resolución carguen imágenes con más pixeles. Hasta hace poco hacer una sola condición para pantallas retina terminaba en algo como lo siguiente:[2]
+
+bc(language-css).. 
+@media
+screen and (-webkit-min-device-pixel-ratio: 2),
+screen and (   min--moz-device-pixel-ratio: 2),
+screen and (     -o-min-device-pixel-ratio: 2/1),
+screen and (        min-device-pixel-ratio: 2),
+screen and (                min-resolution: 192dpi) { 
+  
+  /* cosas para retina */
+
+}
+
+p. Lo que ni siquiera consideraba ancho u otras combinaciones. Afortunadamente el CSS WC re-definió el tema de la resolución y los navegadores lo han adoptado en su gran mayoría. El __[en]media query__ es @min-resolution@ y se mide en **dpi** . Usar dpi (puntos por pulgada) me parece un poco anacrónico y corto de vista; afortunadamente no he sido el único y una nueva forma de medir la resolución en CSS viene en camino: @min-resolution@ medido en dppx (__[en]dots per pixel__ o puntos por pixel) que se puede usar hoy, pero tiene algunas implementaciones raras, así que lo evitaremos por el momento.[2]
+
+Entonces, según lo anterior, hacemos el siguiente armado de picturefill para probar nuestros dispositivos, sus navegadores y la sintaxis que estamos usando:
+
+bc.. 
+<div data-picture data-alt="Un manchón de flores Calceolaria filicaulis, en la Cordillera Nevada, Lago Ranco, Chile.">
+<!-- la primera opción, móvil primero, sin match-media -->
+<div data-src="imgs/flores-small.jpg"></div>
+<!-- Opción dos, sólo si detectamos resolución alta cargar la versión 2x -->
+<div data-src="imgs/flores-small-2x.jpg"    data-media="(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)"></div>
+<noscript>
+<img src="imgs/flores-small.jpg" alt="Un manchón de flores Calceolaria filicaulis, en la Cordillera Nevada, Lago Ranco, Chile.">
+</noscript>
+</div>
+
+p. El "demo funcionando está aquí":http://baamenabar.github.com/article-picturefill/v2.html y es bastante simple; sólo detecta la resolución del dispositivo y carga la imagen *2x* si cumple con el mínimo de resolución establecido en el __[en]media query__. Si usamos @-webkit-min-device-pixel-ratio: 2@ sólo estaremos apuntando a las pantallas retina, personalmente aún no me entero de un Android o Windows que tenga tan alta resolución, por eso prefiero usar *1.5*.
+
+Poco chiste tiene esto, por eso ahora vamos a darle todo el rango de anchos para alta y baja resolución, "el resultado lo podemos ver aquí":http://baamenabar.github.com/article-picturefill/v2.html .
+
+bc.. 
+<div data-picture data-alt="Un manchón de flores Calceolaria filicaulis, en la Cordillera Nevada, Lago Ranco, Chile.">
+<!-- la primera opción, móvil primero, sin match-media -->
+<div data-src="imgs/flores-small.jpg"></div>
+<div data-src="imgs/flores-small-2x.jpg"    data-media="(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)"></div>
+
+<div data-src="imgs/flores-medium.jpg"      data-media="(min-width: 480px)"></div>
+<div data-src="imgs/flores-medium-2x.jpg"   data-media="(min-width: 480px) and (-webkit-min-device-pixel-ratio: 1.5), 
+                                                        (min-width: 480px) and (min-resolution: 144dpi)"></div>
+
+<div data-src="imgs/flores-big.jpg"         data-media="(min-width: 780px)"></div>
+<div data-src="imgs/flores-big-2x.jpg"      data-media="(min-width: 780px) and (-webkit-min-device-pixel-ratio: 1.5), 
+                                                        (min-width: 780px) and (min-resolution: 144dpi)"></div>
+
+<div data-src="imgs/flores-huge.jpg"        data-media="(min-width: 1280px)"></div>
+<div data-src="imgs/flores-full-full.jpg"   data-media="(min-width: 1280px) and (-webkit-min-device-pixel-ratio: 1.5), 
+                                                        (min-width: 1280px) and (min-resolution: 144dpi)"></div>
+<!--[if (lt IE 9) & (!IEMobile)]>
+<div data-src="imgs/flores-big.jpg"></div>
+<![endif]-->
+<noscript>
+<img src="imgs/flores-small.jpg" alt="Un manchón de flores Calceolaria filicaulis, en la Cordillera Nevada, Lago Ranco, Chile.">
+</noscript>
+</div>
+
+p. Hemos agregado aquí la otra alternativa para entregar contenido a IE8 o menor, mediante los condicionales de IE. Asumiendo que IE7-8 está funcionando en un escritorio y que no estamos haciendo una diagramación *móvil primero*, le entregamos una imagen grande, sin esto y sin el match-media especial, lo que vería un Internet Explorer sería la primera de la lista, la que no tiene @data-media@. 
+
+Y esto es sólo el principio, se puede definir según orientación, si el dispositivo es blanco y negro, si es impresión o pantalla, etc. 
+
+h2(#ac8). Epílogo
+
+Llevo casi 3 meses escribiendo este artículo, desde que empecé hasta ahora han pasado muchas cosas, como que me he unido al "Responsive Image Comunity Group":http://responsiveimages.org/ y leo ávidamente el mailing list. He hecho unos pequeños aportes para el proyecto y estoy trabajando en más. La propuesta del elemento @<picture>@ tiene bastante que madurar aún, y no es una propuesta menor, significa cambiar un montón de cosas en los navegadores, por eso ha habido tanta resistencia.
+
+En el camino me he metido con lo que es formatos de imágenes más modernos (SVG o webP) y cómo usarlos hoy en día, más sobre eso, pronto.
+
+h2(#ac9). Algunas fuentes
+
+fn2. "CSS WG Blog -- How To Unprefix -webkit-device-pixel-ratio":http://www.w3.org/blog/CSS/2012/06/14/unprefix-webkit-device-pixel-ratio/ 
+
+fn2. "Chris Coyier's Blog":http://css-tricks.com/snippets/css/retina-display-media-query/ 
+
+"Responsive Images":http://responsiveimages.org/

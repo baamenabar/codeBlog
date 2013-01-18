@@ -248,7 +248,7 @@ samp { background-color: #e6e6e6; border: 1px solid #ccc; -webkit-border-radius:
 figure pre { word-break: normal; -webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; hyphens: none; overflow: auto; overflow-y: hidden; white-space: pre; }
 
 /* line 94, ../sass/styles.scss */
-article { max-width: 595px; margin: 0 2%; }
+article { max-width: 660px; margin: 0 2%; }
 /* line 97, ../sass/styles.scss */
 article header { border-bottom: 1px solid #B3B3B3; }
 /* line 99, ../sass/styles.scss */
@@ -326,9 +326,6 @@ article footer { background: none; border: 1px solid transparent; padding: 0; }
 /* line 229, ../sass/styles.scss */
 .mainContainer *[lang] { font-style: italic; display: inline-block; line-height: 1.25em; margin-top: 0.25em; }
 
-/* line 236, ../sass/styles.scss */
-.corporis { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; }
-
 /* line 240, ../sass/styles.scss */
 .pictureList ul { padding: 0; }
 /* line 243, ../sass/styles.scss */
@@ -344,33 +341,39 @@ footer h1 a { text-decoration: none; }
 @media all and (min-width: 31em) { /* line 263, ../sass/styles.scss */
   h1 { font-size: 3em; }
   /* line 266, ../sass/styles.scss */
-  article { margin: 0 1.25em; }
-  /* line 269, ../sass/styles.scss */
+  article { margin: 0 3%; width: 60%; }
+  /* line 270, ../sass/styles.scss */
   .otros-post { background-color: #f0f0f0; width: 33%; padding: 13px 0 13px 9px; }
-  /* line 274, ../sass/styles.scss */
+  /* line 275, ../sass/styles.scss */
   .otros-post .grupo { margin-bottom: 18px; }
-  /* line 277, ../sass/styles.scss */
+  /* line 278, ../sass/styles.scss */
   .otros-post .caluga { margin-right: 9px; padding-top: 18px; margin-bottom: 13px; display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; vertical-align: top; }
-  /* line 286, ../sass/styles.scss */
+  /* line 287, ../sass/styles.scss */
   .otros-post, article, .articleGroup { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; vertical-align: top; }
-  /* line 290, ../sass/styles.scss */
-  .articleGroup article { display: block; } }
-@media screen and (min-width: 900px) { /* line 293, ../sass/styles.scss */
+  /* line 291, ../sass/styles.scss */
+  .articleGroup article { display: block; width: auto; } }
+@media screen and (min-width: 900px) { /* line 294, ../sass/styles.scss */
   .wrapper { width: auto; display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; margin: 0 2%; }
-  /* line 298, ../sass/styles.scss */
+  /* line 299, ../sass/styles.scss */
   .contiene-logo { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; vertical-align: top; padding: 1em; } }
 @media screen and (max-width: 961px) { /* line 306, ../sass/styles.scss */
   .otros-post { width: auto; }
   /* line 308, ../sass/styles.scss */
   .otros-post .columnasDos { display: block; }
   /* line 312, ../sass/styles.scss */
-  article { max-width: 85%; margin-left: 5%; margin-right: 5%; } }
-@media screen and (max-width: 580px) { /* line 319, ../sass/styles.scss */
-  article { max-width: 100%; margin: 0 2%; } }
-@media screen and (min-width: 1276px) { /* line 325, ../sass/styles.scss */
+  article { margin-left: 5%; margin-right: 5%; width: auto; } }
+@media screen and (max-width: 741px) { /* line 320, ../sass/styles.scss */
+  article { max-width: 90%; } }
+@media screen and (max-width: 580px) { /* line 325, ../sass/styles.scss */
+  article { margin: 0 2%; } }
+@media screen and (min-width: 1276px) { /* line 331, ../sass/styles.scss */
   .otros-post { width: 538px; }
-  /* line 327, ../sass/styles.scss */
-  .otros-post .columnasDos { width: 260px; } }
+  /* line 333, ../sass/styles.scss */
+  .otros-post .columnasDos { width: 260px; }
+  /* line 337, ../sass/styles.scss */
+  .corporis { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; }
+  /* line 340, ../sass/styles.scss */
+  article { width: 48%; } }
 /* Welcome to Compass. Use this file to define print styles. Import this file using the following HTML or equivalent: <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
 /* ============================================================================= Print Styles ========================================================================== */
 @media print { /* line 9, ../sass/_print.scss */
