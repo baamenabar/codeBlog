@@ -236,6 +236,17 @@ article {
 .corporis{
 	@include inline-block;
 }
+.pictureList{
+	ul{
+		padding: 0;
+	}
+	li{
+		list-style: none;
+		@include inline-block;
+		vertical-align: top;
+		margin:0.5em;
+	}
+}
 footer{
 	background-color: $grisClaro0;
 	border: 1px solid $grisClaro0;

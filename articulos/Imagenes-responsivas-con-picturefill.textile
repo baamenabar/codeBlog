@@ -2,7 +2,6 @@ title: Imágenes responsivas con Picturefill
 subtitle: Diagramar un sitio de modo “responsive“ es sólo una parte, no menos importante es el manejo de imágenes, con picturefill tenemos una herramienta para controlar las imágenes en diferentes formatos y resoluciones.
 classes: language-markup
 pubDate:2012-10-23 11:06:27
-draft: true
 
  <header><hgroup>
 
@@ -17,11 +16,11 @@ h2(#ac1). Preámbulo
 
 h3. Teoría de lo que vamos a usar
 
-p(intro). Como no todas las pantallas son iguales, no tienen el mismo tamaño, o resolución, ni tienen la misma orientación; en muy poco casos es necesario cargar la *imagen de súper resolución HD para pantallas _retina_ de 2800 pixeles de ancho*. ¿Por qué entonces entregársela a todos los dispositivos sin discriminación de tamaño? A veces sólo necesitamos la imágen a 240px de ancho. Para eso usaremos *Picturefill* y generaremos imágenes __[en]responsive__.
+p(intro). No todas las pantallas son iguales, no tienen el mismo tamaño, resolución, ni tienen la misma orientación; en muy poco casos es necesario cargar la *imagen de súper resolución HD para pantallas _retina_ de 2800 pixeles de ancho*. ¿Por qué entonces entregársela a todos los dispositivos sin discriminación de tamaño? A veces sólo necesitamos la imágen a 240px de ancho. Para eso usaremos *Picturefill* y generaremos imágenes __[en]responsive__.
 
-Asumiendo que todo el concepto _Responsive Web Design_, o diseño web responsivo está entendido, un aspecto práctico bien importante es el manejo de imágenes. En este caso elegimos Picturefill, dado que es de las pocas soluciones relativamente semánticas que contempla el caso de uso de *dirección de arte* en las imágenes responsivas. Además que "Scott Jehl":https://twitter.com/scottjehl y "Mat Marquis":https://twitter.com/wilto han sido muy persuasivos y polémicos promoviendo este "_polyfill_(definición de polyfill en la wikipedia)":http://en.wikipedia.org/wiki/Polyfill por lo que estaba buscando la excusa de probarlo.
+Asumiendo que todo el concepto _Responsive Web Design_, o diseño web responsivo está entendido, un aspecto práctico bien importante es el manejo de imágenes. En este caso elegimos Picturefill, dado que es de las pocas soluciones relativamente semánticas que contempla el caso de uso de *dirección de arte* en las imágenes responsivas. Además que "Scott Jehl":https://twitter.com/scottjehl y "Mat “Wilto” Marquis":https://twitter.com/wilto han sido muy "persuasivos y polémicos":http://timkadlec.com/2012/05/wtfwg/ promoviendo este "_polyfill_(definición de polyfill en la wikipedia)":http://en.wikipedia.org/wiki/Polyfill por lo que estaba buscando la excusa de probarlo.
 
-Desde que salió el _polyfill_ original se ha incluido @<picture>@ como una “propuesta de extensión” de la especificación HTML con algunas modificaciones a la propuesta inicial que incluyen el atributo @srcset@; Mat hizo un buen ejemplo con una "corta pero buena explicación(Visitar la página del ejemplo explicado)":http://wil.to/picturefill/ del uso de los atributos @srcset@ y @media@ propuestos y como funcionaría de estar implementado. 
+Desde que salió el _polyfill_ original se ha incluido @<picture>@ como una “propuesta de extensión” de la especificación HTML con algunas modificaciones a la propuesta inicial que incluyen el atributo @srcset@; _Wilto_ hizo un buen ejemplo con una "corta pero buena explicación(Visitar la página del ejemplo explicado)":http://wil.to/picturefill/ del uso de los atributos @srcset@ y @media@ propuestos y como funcionaría de estar implementado. 
 
 Inicialmente estaba muy emocionado de poder usar el nuevo elemento @<picture>@ pero es "*tan* complicado":https://github.com/scottjehl/picturefill/issues/29#issuecomment-6880729 que no vale la pena en esta etapa, así que nos quedaremos con los DIVs. 
 
@@ -29,12 +28,80 @@ También existe la opción de usar el __[en]branch__ @div-markup-currentprop@ de
 
 h2(#ac2). __[fr]Mise en place__, utensilios de trabajo
 
-Vamos a replicar un poco el @index.html@ del repositorio de **picturefill** para hacer una pueba de concepto, para eso necesitaremos:
+Vamos a replicar un poco el @index.html@ del repositorio de **picturefill** para hacer una pueba de concepto, pero con 2 juegos de imágenes, para eso necesitaremos:
 
-* Un HTML para contener todo.
+* Un HTML para contener todo; lo único que *debe* tener es el @<meta name="viewport" content="width=device-width,initial-scale=1">@.
 * La biblioteca "Picturefill(Página del proyecto en Github)":https://github.com/scottjehl/picturefill
 * Un "build base de Modernizr":http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-flexboxlegacy-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-canvas-localstorage-shiv-teststyles-testprop-testallprops-prefixes-domprefixes-load para tomar los shivs y mini ayudas que trae, que uno usa siempre, ojo que tiene que ir sin detección de de mediaQueries, porque vamos a cargar una especial para IE a continuación.
 * La "rama especial de matchMedia.js(Página del repositorio en github)":https://github.com/benschwarz/matchMedia.js/tree/IE7-8 para IE7 y 8, "sin la cual picturefill será ignorado en IE7 y 8(Página del issue nº 33)":https://github.com/scottjehl/picturefill/issues/33
-* Una serie de imágenes en diferentes tamaños y recortes.
-* Otras cosas que iremos agregando si las necesitamos.
+* Dos series de imágenes en diferentes tamaños y recortes.
 
+Todo esto está en el "repositorio del demo":https://github.com/baamenabar/article-picturefill .
+
+
+h2(#ac3). Las imágenes
+
+Haremos el ejercicio con 2 imágenes en sus diferentes versiones.
+
+h3(#ac3a). Callampas
+
+ <div class="pictureList">
+* !img/content/ricpf/thumbs/callampas-430.jpg!:img/content/ricpf/callampas-430.jpg
+* !img/content/ricpf/thumbs/callampas-570.jpg!:img/content/ricpf/callampas-570.jpg
+* !img/content/ricpf/thumbs/callampas-770.jpg!:img/content/ricpf/callampas-770.jpg
+* !img/content/ricpf/thumbs/callampas-1024.jpg!:img/content/ricpf/callampas-1024.jpg
+* !img/content/ricpf/thumbs/callampas-2000.jpg!:img/content/ricpf/callampas-2000.jpg
+ </div>
+
+h3(#ac3b). Flores amarillas
+
+Este segundo set incluye versión 2x (para __retina__) en la mayoría de las versiones e intencionalmente tiene las imágenes recortadas de diferentes maneras.
+ 
+ <div class="pictureList">
+* !img/content/ricpf/thumbs/flores-full-full.jpg!:img/content/ricpf/flores-full-full.jpg
+* !img/content/ricpf/thumbs/flores-huge.jpg!:img/content/ricpf/flores-huge.jpg
+* !img/content/ricpf/thumbs/flores-big.jpg!:img/content/ricpf/flores-big.jpg
+* !img/content/ricpf/thumbs/flores-big-2x.jpg!:img/content/ricpf/flores-big-2x.jpg
+* !img/content/ricpf/thumbs/flores-medium.jpg!:img/content/ricpf/flores-medium.jpg
+* !img/content/ricpf/thumbs/flores-medium-2x.jpg!:img/content/ricpf/flores-medium-2x.jpg
+* !img/content/ricpf/thumbs/flores-small-landscape.jpg!:img/content/ricpf/flores-small-landscape.jpg
+* !img/content/ricpf/thumbs/flores-small-2x-landscape.jpg!:img/content/ricpf/flores-small-2x-landscape.jpg
+* !img/content/ricpf/thumbs/flores-small.jpg!:img/content/ricpf/flores-small.jpg
+* !img/content/ricpf/thumbs/flores-small-2x.jpg!:img/content/ricpf/flores-small-2x.jpg
+ </div>
+
+h2(#ac4). Instalando
+
+Al documento HTML le agregaremos los siguientes scripts en el @head@:
+
+bc.. 
+<head>
+<!-- [...] -->
+
+<script src="matchmedia.js"></script>
+<script src="picturefill.js"></script>
+
+<!-- [...] -->
+</head>
+
+p. Picturefill realmente necesita sólo @picturefill.js@. Presonalmente prefiero ponerlo dentro del @<head>@ del documento junto al resto de los scripts que hacen funcionar mínimamente la página, aunque igual espera a que el documento esté cargado.
+
+Si queremos que funcione en navegadores sin @media queries@, como Internet Explorer 8 o menor, debemos agregar esta versión para IE 7y8 de @matchmedia.js@. Si no queremos usar un matchmedia especial o por alguna razón entra en conflicto con otro script está la opción _oficial_ para que funcione en IE 7 y 8 que veremos más abajo.
+
+Sólo nos queda agregar **Modernizr** y soporte __[en]responsive__ para IE8 o menor.
+
+bc.. 
+<head>
+<!-- [...] -->
+<script src="modernizr.custom.89870.js"></script>
+<script src="matchmedia.js"></script>
+<script src="picturefill.js"></script>
+<!-- [if lt IE 9]>
+    <script src="css3-mediaqueries.js"></script>
+<![endif]-->
+<!-- [...] -->
+</head>
+
+p. Modernizr siempre al principio, para que tengamos inmediatamente disponibles sus métodos y clases en caso de necesitarlas.
+
+Advertencia! Para quienes quieren que su diagramación __[en]responsive__ funcione en IE deben saber que "Respond.js":https://github.com/scottjehl/Respond (él script más usado para eso) entra en conflicto con la versión de "Matchmedia.js":https://github.com/benschwarz/matchMedia.js/tree/IE7-8 que estamos usando, por lo que de

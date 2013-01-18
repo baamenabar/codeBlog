@@ -6,6 +6,12 @@ require "SlypMore.php";//set of loose functions
 
 $sly = new SlypCore();
 
+if( isset( $g['new'] ) && $g['new'] ){
+	echo '<br><pre>' . $sly->newArticle( $g['new'] ) . '</pre><br>';
+	if($sly->getError())print_r($sly->getErrorList());
+	exit();
+}
+
 if(isset($g['update']))$sly->processContents(true);
 $articleList = $sly->getArticleList();
 

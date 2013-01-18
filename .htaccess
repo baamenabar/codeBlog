@@ -330,7 +330,6 @@ FileETag None
   Options +FollowSymlinks
   RewriteEngine On
   RewriteOptions MaxRedirects=10
-#  RewriteRule ^\.css$ - [S=1]
   RewriteRule ^(.*)_(.*)?(.*)$ ?t=$1&a=$2&$3 [NC]
 </IfModule>
 

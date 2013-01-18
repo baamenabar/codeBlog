@@ -36,6 +36,8 @@ class SlypCore{
 	protected $nombreMarca = 'Code Blog Médula';
 	protected $mailAministrador = 'agustin@fliin.com';
 	protected $_templateDir = '';
+	protected $_articlesFolder = "./articulos";
+	protected $_pagesFolder = "./paginas";
 	protected $_cachedHtml = './articulos/cached/';
 	protected $_possibleExtensions = array('textile','txt','md');
 	protected $articleList;
@@ -99,7 +101,7 @@ class SlypCore{
 		$this->articleList = array();
 		foreach ($fileList as $oneArticle) {
 			$leyendoEncabezados = true;
-			$articleRawFile = "./articulos/".$oneArticle['filename'];
+			$articleRawFile = $this->_articlesFolder . "/" . $oneArticle['filename'];
 			$articleRawFilesize = filesize( $articleRawFile );
 			$fhandl = fopen($articleRawFile, 'r+b');
 			$lastpos = 0;
@@ -184,7 +186,7 @@ class SlypCore{
 	}
 
 	private function getFileList(){
-		$directory = new DirectoryIterator("./articulos");
+		$directory = new DirectoryIterator( $this->_articlesFolder );
 		$fileList = Array();
 		foreach ($directory as $fileinfo) {
 		    if ($fileinfo->isFile()) {
@@ -278,6 +280,39 @@ class SlypCore{
 
 	public function getErrorList(){
 		return $this->_errors;
+	}
+
+	public function newArticle( $filename ){
+		$type = 'article';
+		if( isset( $_GET['type'] ) && $_GET['type'] == 'page' )$type='page';
+		if(isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'],'localhost')===false){
+			$emsg = "This operation can only be done on a development evironment (localserver)";
+			$this->_errors['permiso'] = $emsg;
+			return $emsg;
+		}
+		$src_dir = $this->_articlesFolder;
+		if( $type == 'page' )$src_dir = $this->_pagesFolder;
+		if ( is_file( $src_dir . "/" . $filename . ".textile") || is_file( $src_dir . "/" . $filename . ".txt") || is_file( $src_dir . "/" . $filename . ".md") ) {
+			return 'The document: “' . $filename . '” already exist.';
+		}
+		$theTitle = implode(' ',	explode('-', $filename));
+		$toSave='title:' . $theTitle . "\n";
+		$toSave.='subtitle:' . "\n";
+		$toSave.='classes: language-markup' . "\n";
+		$toSave.="\n\n";
+		$toSave.=' <header><hgroup>
+
+h1. '.$theTitle.'
+
+h2. Subtitle
+</hgroup></header>' . "\n";
+		$rs = file_put_contents($src_dir . "/" . $filename . ".textile", $toSave);
+		if ( $rs === false ) {
+			$emsg = "The document: “ $filename ” could not be created on the documents folder.";
+			$this->_errors['permiso'] = $emsg;
+			return $emsg;
+		}
+		return "The document: “ $filename ” has been created.";
 	}
 }
 
