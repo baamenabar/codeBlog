@@ -15,7 +15,7 @@
 <head>
 				<meta charset="utf-8">
 
-				<title><?php echo $theArticle->title; ?>Code Médula &ndash; Blog de código</title>
+				<title><?php echo $theArticle->title; ?> &ndash; Code Médula &ndash; Blog de código</title>
 				<?php if (isset($theArticle->subtitle)): ?>
 					<meta name="description" content="<?php echo $theArticle->subtitle; ?>">
 				<?php endif ?>
