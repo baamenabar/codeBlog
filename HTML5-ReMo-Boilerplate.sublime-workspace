@@ -1,0 +1,1313 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"p",
+				"p	padding"
+			],
+			[
+				"va",
+				"va:m	vertical-align:middle"
+			],
+			[
+				"lis",
+				"list-style"
+			],
+			[
+				"file_c",
+				"file_put_contents"
+			],
+			[
+				"the",
+				"theTitle"
+			],
+			[
+				"php-p",
+				"php-pubfunc	PHP-public-function"
+			],
+			[
+				"temp",
+				"template"
+			],
+			[
+				"td",
+				"td:n	text-decoration:none"
+			],
+			[
+				"b",
+				"bgz	background-size"
+			],
+			[
+				"margi",
+				"margin-left"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"ar",
+				"article"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"nor",
+				"no-repeat"
+			],
+			[
+				"hove",
+				"hover-sass	SASS-hover-active-focus"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"hea",
+				"header"
+			],
+			[
+				"pict",
+				"picture"
+			],
+			[
+				"prin",
+				"printFile"
+			],
+			[
+				"arti",
+				"articleHtml"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"online",
+				"onlinechange"
+			],
+			[
+				"ur",
+				"urlencode"
+			],
+			[
+				"bo",
+				"border-radius"
+			],
+			[
+				"get",
+				"getErrorList  (function)"
+			],
+			[
+				"url",
+				"urldecode"
+			],
+			[
+				"isfile",
+				"is_file"
+			],
+			[
+				"if",
+				"if	if …"
+			],
+			[
+				"array_s",
+				"array_splice"
+			],
+			[
+				"ti",
+				"title	<title>"
+			],
+			[
+				"The",
+				"theArticle"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"fo",
+				"foreach	foreach …"
+			],
+			[
+				"gee",
+				"getArticleList  (function)"
+			],
+			[
+				"ph",
+				"php-getr	PHP-GET-request-array"
+			],
+			[
+				"unser",
+				"unserializedT"
+			],
+			[
+				"unse",
+				"unserializedT"
+			],
+			[
+				"file_",
+				"file_get_contents"
+			],
+			[
+				"proce",
+				"processContents"
+			],
+			[
+				"this",
+				"this-php	PHP-this"
+			],
+			[
+				"isfil",
+				"is_file"
+			],
+			[
+				"thi",
+				"this-php	PHP-this"
+			],
+			[
+				"art",
+				"articleRawFilesize"
+			],
+			[
+				"fil",
+				"filesize"
+			],
+			[
+				"mod",
+				"modDate"
+			],
+			[
+				"intro",
+				"introParagraph"
+			],
+			[
+				"info",
+				"infoParagraph"
+			],
+			[
+				"js",
+				"json_encode"
+			],
+			[
+				"artic",
+				"articleHtml  (variable)"
+			],
+			[
+				"tex",
+				"TextileThis  (function)"
+			],
+			[
+				"isf",
+				"is_file"
+			],
+			[
+				"article",
+				"articleList"
+			],
+			[
+				"buff",
+				"buffer"
+			],
+			[
+				"strp",
+				"strpos"
+			],
+			[
+				"fge",
+				"fgets"
+			],
+			[
+				"getFi",
+				"getFileList"
+			],
+			[
+				"strto",
+				"strtolower"
+			],
+			[
+				"php",
+				"php-req	PHP-require-in-source"
+			],
+			[
+				"bb",
+				"bdb	border-bottom"
+			],
+			[
+				"li",
+				"lis	list-style"
+			],
+			[
+				"l",
+				"lh	line-height"
+			],
+			[
+				"w",
+				"whs	white-space"
+			],
+			[
+				"cont",
+				"contiene-logo"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"gris",
+				"grisClaro1"
+			],
+			[
+				"ama",
+				"amarilloMedulaFondo"
+			],
+			[
+				"F",
+				"F0F0F0"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"mh",
+				"mih	min-height"
+			],
+			[
+				"bg",
+				"bgc	background-color"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"v",
+				"va	vertical-align"
+			],
+			[
+				"ov",
+				"ovx	overflow-x"
+			],
+			[
+				"bac",
+				"background-position"
+			],
+			[
+				"dat",
+				"data"
+			],
+			[
+				"pro",
+				"protected"
+			],
+			[
+				"lo",
+				"loadedImage"
+			],
+			[
+				"en",
+				"endHeight"
+			],
+			[
+				"end",
+				"endWidth"
+			],
+			[
+				"new",
+				"newHeight"
+			],
+			[
+				"sr",
+				"srcX"
+			],
+			[
+				"src",
+				"srcY"
+			],
+			[
+				"ne",
+				"newAspectRatio"
+			],
+			[
+				"str_s",
+				"str_split"
+			],
+			[
+				"horizon",
+				"horizontal"
+			],
+			[
+				"asp",
+				"currentAspectRatio"
+			],
+			[
+				"_",
+				"_GET"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"sour",
+				"sourceFolder"
+			],
+			[
+				"err",
+				"error_reporting"
+			],
+			[
+				"ca",
+				"cachedFile"
+			],
+			[
+				"cro",
+				"cropType"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"sq",
+				"square"
+			],
+			[
+				"cach",
+				"cachedFile"
+			],
+			[
+				"def",
+				"defaults"
+			],
+			[
+				"na",
+				"name"
+			],
+			[
+				"cac",
+				"cachedFile"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"er",
+				"getError  (function)"
+			],
+			[
+				"ts",
+				"tsPagado"
+			],
+			[
+				"actu",
+				"actualiza"
+			],
+			[
+				"avi",
+				"avisaWebmaster"
+			],
+			[
+				"utf",
+				"utf8_decode"
+			],
+			[
+				"ap",
+				"appendTo"
+			],
+			[
+				"orde",
+				"ordenOpciones"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"edita",
+				"editaOpcion"
+			],
+			[
+				"array",
+				"Array"
+			],
+			[
+				"cur",
+				"curBoton"
+			],
+			[
+				"sum",
+				"sumaNumero"
+			],
+			[
+				"btn",
+				"btnGuardaVariante"
+			],
+			[
+				"for",
+				"foreach"
+			],
+			[
+				"tip",
+				"tipoFieldset"
+			],
+			[
+				"id",
+				"idcp"
+			],
+			[
+				"arr",
+				"array	$… = array (…)"
+			],
+			[
+				"ex",
+				"execute"
+			],
+			[
+				"OR",
+				"ORDER"
+			],
+			[
+				"prod",
+				"prods_caracteristicas_val"
+			],
+			[
+				"else",
+				"elseif	elseif …"
+			],
+			[
+				"val",
+				"valvarcar"
+			],
+			[
+				"th",
+				"this	this"
+			],
+			[
+				"redire",
+				"redirigeA"
+			],
+			[
+				"di",
+				"dir"
+			],
+			[
+				"data",
+				"data-id"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"case",
+				"Convert Case: Title Case"
+			],
+			[
+				"php-inc",
+				"Snippet: PHP-include"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"php-fi",
+				"Snippet: PHP-echo-filemtime"
+			],
+			[
+				"$",
+				"Snippet: $('select DOM Element')"
+			],
+			[
+				"textil",
+				"Set Syntax: Textile"
+			],
+			[
+				"html5",
+				"Snippet: html-minimal-html5-document"
+			],
+			[
+				"synta te",
+				"Set Syntax: Textile"
+			],
+			[
+				"synta text",
+				"Set Syntax: Textile"
+			],
+			[
+				"set syn tex",
+				"Set Syntax: Textile"
+			],
+			[
+				"set sy te",
+				"Set Syntax: Textile"
+			],
+			[
+				"set text",
+				"Set Syntax: Textile"
+			],
+			[
+				"set texti",
+				"Set Syntax: Textile"
+			],
+			[
+				"set tex",
+				"Set Syntax: Textile"
+			],
+			[
+				"mit",
+				"Snippet: Add the MIT license to a plain text file"
+			],
+			[
+				"set synt tx",
+				"Set Syntax: Textile"
+			],
+			[
+				"doc",
+				"Snippet: DOCTYPE HTML"
+			],
+			[
+				"html",
+				"Snippet: html"
+			],
+			[
+				"git",
+				"Git: Commit"
+			],
+			[
+				"snipdo",
+				"Snippet: DOCTYPE HTML"
+			],
+			[
+				"s echo",
+				"Snippet: <?php echo … ?>"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wor",
+				"Word Wrap: Toggle"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint Current File"
+			],
+			[
+				"linter",
+				"SublimeLinter: Extract Annotations"
+			],
+			[
+				"conve",
+				"Convert Case: Upper Case"
+			],
+			[
+				"lin",
+				"Snippet: link - stylesheet"
+			],
+			[
+				"Set HT",
+				"Set Syntax: HTML"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 129.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/htdocs/temp/picturefill/final.html",
+		"/C/htdocs/medula/code-articulos-git/article-picturefill/README.md",
+		"/C/htdocs/medula/code-articulos-git/article-picturefill/index.html",
+		"/C/htdocs/medula/code-articulos-git/article-picturefill/v2.html",
+		"/C/htdocs/medula/code-articulos-git/article-picturefill/v1.html",
+		"/C/htdocs/medula/code-articulos-git/article-picturefill/v3.html",
+		"/C/htdocs/medula/code-articulos-git/article-picturefill/v2x.html",
+		"/C/htdocs/medula/code-articulos-git/article-picturefill/picturefill.js",
+		"/C/htdocs/medula/code/article.php",
+		"/C/htdocs/medula/code/inc/template/aside-gral.php",
+		"/C/htdocs/medula/code/inc/template/acerca-de.txt",
+		"/C/htdocs/medula/code/articulos/SVG-image-with-fallback.textile",
+		"/C/htdocs/medula/code/inc/template/creditos.php",
+		"/C/htdocs/medula/code/inc/template/recientes.php",
+		"/C/htdocs/medula/code/.htaccess",
+		"/C/htdocs/medula/code/js/script.js",
+		"/C/htdocs/medula/code/articulos/Pie-de-pagina-microformats.textile",
+		"/C/htdocs/medula/code/articulos/Imagenes-en-formato-WebP-hoy.textile",
+		"/C/htdocs/medula/code/sass/_monokai.scss",
+		"/C/htdocs/medula/code/css/monokai.css",
+		"/C/htdocs/medula/code/sass/monokai.scss",
+		"/C/htdocs/medula/code/config.rb",
+		"/C/htdocs/medula/code/articulos/Git+github+ServiceHooks_eq_new_workflow_in_PHP.txt",
+		"/C/htdocs/medula/code/articulos/Picture-capture-and-uploader-app-with-ST2.txt",
+		"/C/htdocs/prism/sass-theme-monokai/prism-monokai.scss",
+		"/C/htdocs/medula/code/sass/_prism.scss",
+		"/C/htdocs/medula/code/articulos/Primeros-pasos-con-Sencha-Touch-2-y-Phonegap.txt",
+		"/C/htdocs/medula/code/sass/_normals.scss",
+		"/C/htdocs/medula/code/inc/template/recomendados.txt",
+		"/C/htdocs/medula/code/articulos/Propuesta-de-Normas-de-desarrollo.txt",
+		"/C/htdocs/miup/app.json",
+		"/C/htdocs/medula/code/articulos/localstorage-sencha-touch-2.txt",
+		"/C/htdocs/medula/code/home.php",
+		"/C/htdocs/medula/code/articulos/cached/.htaccess",
+		"/C/Users/Propietario/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/htdocs/medula/code/articulos/Git+github+ServiceHooks_eq_new_workflow_in_PHP.html",
+		"/C/htdocs/medula/code/articulos/cached/localstorage-sencha-touch-2.txt1349134326.html",
+		"/C/htdocs/medula/index.php",
+		"/C/htdocs/medula/code/articulos/cached/localstorage-sencha-touch-2.txt1349134148.html",
+		"/C/Users/Propietario/AppData/Roaming/Sublime Text 2/Packages/User/html-minimal-html5-document.sublime-snippet",
+		"/C/htdocs/medula/blog posts/Git+dreamhost+bitbucket.html",
+		"/C/htdocs/HTML5-ReMo-Boil/minimal-empty.html",
+		"/C/htdocs/medula/blog/wp-content/themes/toolbox/style.css",
+		"/C/htdocs/medula/blog posts/Discreet-Spiral-Espiral-Disecreta.html",
+		"/C/htdocs/medula/code/index.php",
+		"/C/htdocs/m0/img/Liquen.php",
+		"/C/htdocs/m0/img/Lichen.php",
+		"/C/Users/Propietario/Downloads/TEMP/skuto-0.1/skuto.php",
+		"/C/htdocs/pazvial/extranet/amfphp/classes/image_res.php",
+		"/C/htdocs/pazvial/inc/footer.php",
+		"/C/htdocs/pazvial/index.php",
+		"/C/htdocs/pazvial/_/classes/SesionUsuario.php",
+		"/C/htdocs/pazvial/_/classes/Direcciones.php",
+		"/C/htdocs/pazvial/_/classes/CarroCompras.php",
+		"/C/htdocs/pazvial/humans.txt",
+		"/C/htdocs/medula/blog posts/integracion-web-pay-php.html",
+		"/C/htdocs/pazvial/_/inc/datos-globales.php",
+		"/C/htdocs/pazvial/cgi-bin-tb/datos/tbk_config.dat",
+		"/C/htdocs/pazvial/item.php",
+		"/C/htdocs/pazvial/contacto.php",
+		"/C/htdocs/pazvial/pago.php",
+		"/C/htdocs/pazvial/seguro/cierre.php",
+		"/C/htdocs/pazvial/exito.php",
+		"/C/htdocs/pazvial/css/style.css",
+		"/C/htdocs/pazvial/falla.php",
+		"/C/htdocs/pazvial/_/classes/PagoWebPay.php",
+		"/C/htdocs/pazvial/js/soloItems.js",
+		"/C/htdocs/pazvial/cgi-bin-tb/log/cmts1340328529.2836.txt",
+		"/C/htdocs/pazvial/cgi-bin-tb/log/TBK_EVN20120621.log",
+		"/C/htdocs/pazvial/cgi-bin-tb/log/tbk_bitacora_TR_NORMAL_0621.log",
+		"/C/htdocs/pazvial/seguro/cierre_ag.php",
+		"/C/htdocs/pazvial/sftp-config.json",
+		"/C/htdocs/pazvial/colores.php",
+		"/C/htdocs/pazvial/cgi-bin/datos/tbk_config.dat",
+		"/C/htdocs/pazvial/extranet/css/layout.css",
+		"/C/htdocs/pazvial/extranet/item.php",
+		"/C/htdocs/pazvial/extranet/caracteristicasYopciones.php",
+		"/C/htdocs/pazvial/_/classes/Caracteristicas.php",
+		"/C/htdocs/pazvial/_/js/functions-en.js",
+		"/C/htdocs/pazvial/_/model/funciones.php",
+		"/C/Users/Propietario/Downloads/jquerypp.custom.js",
+		"/C/htdocs/pazvial/_/view/javascript-al-pie.php",
+		"/C/htdocs/pazvial/_/js/libs/jquery-ui-1.8.16.custom.min.js",
+		"/C/htdocs/pazvial/extranet/js/libs/jquery-ui-1.8.16.custom.min.js",
+		"/C/htdocs/pazvial/extranet/inc/formBorrarOpcion.php",
+		"/C/htdocs/assaabloy/admin/application/controllers/backend/productos.php",
+		"/C/htdocs/assaabloy/admin/application/controllers/backend/usuarios.php",
+		"/C/htdocs/pazvial/cgi-bin/log/TBK_EVN20120515.log",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-15-14",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-15-15",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-15-19",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-15-23",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-15-22",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-15-21",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-15-20",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-15-18",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-15-17",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-15-16",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-15-13",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-15-12",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-03-15-22",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-03-15-21",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-03-15-19",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-03-15-18",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-03-15-17",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-03-15-16",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-03-15-15",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-03-15-14",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-03-15-13",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-03-15-12",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-16-12",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-16-13",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-16-22",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-16-23",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-16-21",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-16-20",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-16-19",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-16-14",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-16-17",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-16-16",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-16-15",
+		"/C/htdocs/pazvial/cgi-bin/log/access_log-2012-05-16-18",
+		"/C/htdocs/pazvial/cgi-bin/datos/tbk_param.txt",
+		"/C/htdocs/pazvial/.htaccess",
+		"/C/htdocs/pazvial/_/model/mto/dbsqldats.php",
+		"/C/htdocs/pazvial/extranet/index.php",
+		"/C/htdocs/pazvial/inc/header-carro.php",
+		"/C/htdocs/scollege/.htaccess"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\">Imagen",
+			"data-media",
+			"big",
+			"780px",
+			"medium",
+			"480px",
+			"(",
+			"only",
+			"Callampas, probablemente Deconica coprophila, encontradas en la Cordillera Nevada, Lago Ranco, Chile.",
+			") ",
+			"iPad",
+			"flores-small",
+			"media",
+			"Media",
+			"media",
+			"Media",
+			"media",
+			"media query",
+			".jpg",
+			"g",
+			"_pagesFolder",
+			"fileName",
+			"filename",
+			"all",
+			"1.5",
+			"ratio",
+			"800",
+			"src",
+			"2.0",
+			"h3",
+			"article",
+			"locality",
+			"?\n",
+			"__noscript__",
+			"filename",
+			"font-size",
+			"/.*)/(.*)$",
+			"svg",
+			"&",
+			"background",
+			"small",
+			"external/",
+			".txt",
+			"<i>",
+			"bc.",
+			"bc..",
+			"__",
+			"h2.",
+			"Developer",
+			"intro",
+			"0,",
+			"1px",
+			"h3.",
+			"blockquote",
+			"font-size",
+			"20px",
+			"$_GET",
+			"urldecode",
+			"./articulos/cached/",
+			"\"./articulos/cached/\"",
+			"php",
+			"bname",
+			"_errores",
+			"$_errors",
+			"_errors",
+			"$articleList",
+			"articleCachedUri",
+			"modDate",
+			"$filesize",
+			"order",
+			"$this",
+			"global",
+			"infoParagraph",
+			"\"inc",
+			"articleList",
+			"after",
+			"before",
+			"after",
+			"before",
+			"after",
+			"<li>",
+			"</h3>",
+			"<li>",
+			"</p>",
+			"<p>",
+			"* ",
+			"</p>",
+			"<p>",
+			"p>",
+			"2",
+			".",
+			"<h2",
+			"h2",
+			"aside",
+			"<img src=\"img",
+			"favicon",
+			"pre>",
+			"fff",
+			"footer",
+			"nombrePro",
+			"=",
+			"fileTypesShorthand",
+			"extension",
+			"$data",
+			"$shorthand",
+			"$_GET",
+			"$",
+			"Lichen",
+			"max",
+			"min",
+			"short",
+			"rel",
+			"$newWidth",
+			"$newHeight",
+			"$end",
+			"percentage",
+			"max_height",
+			"max_width",
+			"=	",
+			"	=",
+			"$info",
+			"endHeight",
+			"endWidth",
+			"width",
+			"$newAspectRatio",
+			"overwriteCached",
+			"overrideCached",
+			"$sourceFolder.'/'"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"<img src=\"../img",
+			"maxHeight",
+			"maxWidth",
+			"= ",
+			" ="
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.git":
+	{
+		"height": 88.0
+	},
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"arti",
+				"code/article.php"
+			],
+			[
+				"reciente",
+				"code/inc/template/recientes.php"
+			],
+			[
+				"recient",
+				"code/inc/template/recientes.php"
+			],
+			[
+				"propues",
+				"code/articulos/Propuesta-de-Normas-de-desarrollo.txt"
+			],
+			[
+				"_norm",
+				"code/sass/_normals.scss"
+			],
+			[
+				"_pris",
+				"code/sass/_prism.scss"
+			],
+			[
+				"_prism",
+				"code/sass/_prism.scss"
+			],
+			[
+				"_normal",
+				"code/sass/_normals.scss"
+			],
+			[
+				"jsscript",
+				"code/js/script.js"
+			],
+			[
+				"codeindex",
+				"code/index.php"
+			],
+			[
+				"index",
+				"index.php"
+			],
+			[
+				"sencha",
+				"blog posts/Primeros pasos con Sencha Touch 2 y Phonegap.html"
+			],
+			[
+				"style",
+				"code/sass/styles.scss"
+			],
+			[
+				"sesio",
+				"_/classes/SesionUsuario.php"
+			],
+			[
+				"cierr",
+				"seguro/cierre.php"
+			],
+			[
+				"fall",
+				"falla.php"
+			],
+			[
+				"cont",
+				"contacto.php"
+			],
+			[
+				"foot",
+				"inc/footer.php"
+			],
+			[
+				"usua",
+				"_/classes/SesionUsuario.php"
+			],
+			[
+				"dire",
+				"_/classes/Direcciones.php"
+			],
+			[
+				"carro",
+				"_/classes/CarroCompras.php"
+			],
+			[
+				"web",
+				"_/classes/PagoWebPay.php"
+			],
+			[
+				"datos",
+				"_/inc/datos-globales.php"
+			],
+			[
+				"solo",
+				"js/soloItems.js"
+			],
+			[
+				"function",
+				"_/js/functions-en.js"
+			],
+			[
+				"alpie",
+				"_/view/javascript-al-pie.php"
+			],
+			[
+				"16us",
+				"extranet/js/libs/jquery-ui-1.8.16.custom.min.js"
+			],
+			[
+				"16custom",
+				"_/js/libs/jquery-ui-1.8.16.custom.min.js"
+			],
+			[
+				"javasc",
+				"_/view/javascript-al-pie.php"
+			],
+			[
+				"funi",
+				"_/model/funciones.php"
+			],
+			[
+				"formbo",
+				"extranet/inc/formBorrarOpcion.php"
+			],
+			[
+				"caracte",
+				"_/classes/Caracteristicas.php"
+			],
+			[
+				"opcio",
+				"extranet/caracteristicasYopciones.php"
+			],
+			[
+				"item",
+				"extranet/item.php"
+			],
+			[
+				"layo",
+				"extranet/css/layout.css"
+			],
+			[
+				"funci",
+				"_/model/funciones.php"
+			],
+			[
+				"base",
+				"_/classes/Base.php"
+			],
+			[
+				"sessio",
+				"_/classes/SesionUsuario.php"
+			],
+			[
+				"layout",
+				"extranet/css/layout.css"
+			],
+			[
+				"hea",
+				"inc/header-carro.php"
+			],
+			[
+				"scrip",
+				"js/script.js"
+			],
+			[
+				"sty",
+				"css/style.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"jz",
+				"/C/Users/Propietario/Documents/jzmusic-2012.sublime-project"
+			],
+			[
+				"agro",
+				"/C/Users/Propietario/Documents/agroprodex.sublime-project"
+			],
+			[
+				"paz",
+				"/C/Users/Propietario/Documents/Pazvial.cl.sublime-project"
+			],
+			[
+				"svg",
+				"/C/Users/Propietario/Documents/SVG fallback.sublime-project"
+			],
+			[
+				"scoll",
+				"/C/Users/Propietario/Documents/Scollege.sublime-project"
+			],
+			[
+				"",
+				"/C/Users/Propietario/Documents/agroprodex.sublime-project"
+			],
+			[
+				"scol",
+				"/C/Users/Propietario/Documents/Scollege.sublime-project"
+			],
+			[
+				"pazvi",
+				"/C/Users/Propietario/Documents/Pazvial.cl.sublime-project"
+			],
+			[
+				"lique",
+				"/C/htdocs/m0/img/Liquen.sublime-project"
+			],
+			[
+				"dwit",
+				"/C/Users/Propietario/Documents/DWIT-mobile-driver.sublime-project"
+			],
+			[
+				"htrs",
+				"/C/Users/Propietario/Documents/htrsllc.sublime-project"
+			],
+			[
+				"dwi",
+				"/C/Users/Propietario/Documents/DWIT-mobile-driver.sublime-project"
+			],
+			[
+				"dw",
+				"/C/Users/Propietario/Documents/DWIT-mobile-driver.sublime-project"
+			],
+			[
+				"driver",
+				"/C/Users/Propietario/Documents/Driver-general.sublime-project"
+			],
+			[
+				"cata",
+				"/C/htdocs/cataamenabar/catalina amenabar.sublime-project"
+			],
+			[
+				"ass",
+				"/C/htdocs/assaabloy/AssaAbloy.sublime-project"
+			],
+			[
+				"jqu",
+				"/C/Users/Propietario/Documents/jquery-upload-and-crop.sublime-project"
+			],
+			[
+				"lomg",
+				"/C/htdocs/lomg/lomg.sublime-project"
+			],
+			[
+				"htr",
+				"/C/Users/Propietario/Documents/htrsllc.sublime-project"
+			],
+			[
+				"sench",
+				"/C/htdocs/sencha/sencha-varios.sublime-project"
+			],
+			[
+				"sen",
+				"/C/htdocs/pazvial/cgi-bin-tb/sencha varios.sublime-project"
+			],
+			[
+				"sencha",
+				"/C/htdocs/sencha/sencha-varios.sublime-project"
+			],
+			[
+				"medu",
+				"/C/htdocs/pazvial/_/model/medula.cl.sublime-project"
+			],
+			[
+				"driv",
+				"/C/htdocs/driver/portal/Portal Driver.sublime-project"
+			],
+			[
+				"med",
+				"/C/htdocs/pazvial/_/model/medula.cl.sublime-project"
+			],
+			[
+				"a",
+				"/C/htdocs/assaabloy/AssaAbloy.sublime-project"
+			],
+			[
+				"muel",
+				"/C/Users/Propietario/Documents/muellerChile.sublime-project"
+			],
+			[
+				"muell",
+				"/C/Users/Propietario/Documents/muellerChile.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 286.0,
+	"status_bar_visible": true
+}

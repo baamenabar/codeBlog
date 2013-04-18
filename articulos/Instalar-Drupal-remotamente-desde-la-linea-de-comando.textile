@@ -1,0 +1,25 @@
+title:Instalar Drupal usando SSH
+subtitle: 
+classes: language-markup
+pubDate:2013-03-28 18:52:32
+draft: true
+
+ <header><hgroup>
+
+h1. Cómo descargar e instalar Drupal remotamente usando SSH
+
+h2. Lo siguiente más rápido a instalar Drupal usando 1-click install
+</hgroup></header>
+
+h2(#ac1). Preámbulo
+
+"Saltarse esta lata":#ac2
+
+Como los 1-click installs a veces te limitan un montón y en algunos servidores te dan problemas al actualizar, la alternativa es instalarlo uno. Pero eso siempre significa descargar un archivo, descomprimirlo, subirlo por FTP y recién ahí se puede instalar, en cualquier caso es bastante lento. Pero hay una alternativa, hacerlo todo en la línea de comando, es rapidísimo, se hace todo en el mismo lugar y ni tocas tu computador.
+
+h2(#ac2). __[fr]Mise en place__
+
+Lo que debes tener es:
+ 
+ * Acceso SSH a tu servidor, yo uso PuTTY (en Mac y Linux se usa la línea de comando).
+ * Tener los datos de la base de datos (servidor, nombre, usuario, contraseña)
