@@ -257,29 +257,17 @@ h3. El archivo PHP
 									Los iconitos delatan que aún tengo a Dreamweaver como editor predeterminado para PHP :$
 								</figcaption>
 							</figure>
-							Abrimos el archivo y escribimos lo siguiente:
+							Abrimos el archivo y escribimos lo siguiente (dentro de un tag de php):
 							<figure>
-								<pre><code class="language-markup">
-&lt;?php
-`git pull`;
-?>
- 	</code></pre>
+<code class="language-php">
+ exec('git pull'); 
+</code>
 								<figcaption>Si, eso es todo.</figcaption>
 							</figure>
 							
-								Ojo que no es una cadena, el caracter que lo envuelve no es
-								<q>
-									<kbd>&#39;</kbd>
-								</q>
-								la típica comilla simple, si no que es
-								<q>
-									<kbd>&#96;</kbd>
-								</q>
-								un tilde grave (al revés del normal). Cuando se usan esas comillas es lo mismo que meter una cadena dentro de
-								<q>
-									<code>bash_exec(); </code>
-								</q>
 								. +EDIT: hasta el monento no me ha resultado hacer esto automatizado en Dreamhost+
+
+								. +EDIT 2: Ya lo he logrado! Era porque estaba usando tildes graves en vez de <q><code>exec()</code></q>; por alguna razón a Dreamhost no le gustaba el comando con tildes graves+
 							
 							Se hace un nuevo commit y push a Github.
 							
