@@ -182,7 +182,7 @@ bc..
 
 p. El "demo funcionando está aquí":http://baamenabar.github.com/article-picturefill/v2.html y es bastante simple; sólo detecta la resolución del dispositivo y carga la imagen *2x* si cumple con el mínimo de resolución establecido en el __[en]media query__. Si usamos @-webkit-min-device-pixel-ratio: 2@ sólo estaremos apuntando a las pantallas retina, personalmente aún no me entero de un Android o Windows que tenga tan alta resolución, por eso prefiero usar *1.5*.
 
-Poco chiste tiene esto, por eso ahora vamos a darle todo el rango de anchos para alta y baja resolución, "el resultado lo podemos ver aquí":http://baamenabar.github.com/article-picturefill/v2.html .
+Poco chiste tiene esto, por eso ahora vamos a darle todo el rango de anchos para alta y baja resolución, "el resultado lo podemos ver aquí":http://baamenabar.github.com/article-picturefill/v3.html .
 
 bc.. 
 <div data-picture data-alt="Un manchón de flores Calceolaria filicaulis, en la Cordillera Nevada, Lago Ranco, Chile.">
