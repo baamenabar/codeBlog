@@ -6,7 +6,9 @@ draft: true
 
  <header><hgroup>
 
-h1. JS a PHP usando JSON
+h1. Datos desde JS a PHP usando JSON
 
-h2. Subtitle
+h2. Enviando datos complejos desde Javascript PHP de manera simple, salvando los errores comunes.
 </hgroup></header>
+
+p(intro). Muchas veces serializar un formulario con jQuery no basta 
