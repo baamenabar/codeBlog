@@ -1,0 +1,12 @@
+title:De Javascript a PHP usando JSON
+subtitle: Enviando datos complejos desde javascript a PHP
+classes: language-markup
+draft: true
+
+
+ <header><hgroup>
+
+h1. JS a PHP usando JSON
+
+h2. Subtitle
+</hgroup></header>
