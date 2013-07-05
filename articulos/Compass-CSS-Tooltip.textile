@@ -11,9 +11,7 @@ h1. Accesible CSS Tooltip in Compass
 h2. Screen-reader, legacy, touch and keyboard friendly
 </hgroup></header>
 
-<!-- p(intro). Si, un __[en]snippet__ más al millón que ya hay de __[en]tooltips__. Este es compatible con IE7 y superior, probablemente con IE6 también. Es accesible desde el teclado y en dispositivos touch también funciona. Hasta tiene una pequeña animación.
-
-Aquí aparece funcionando en Codepen: -->
+notextile. <!-- p(intro). Si, un __[en]snippet__ más al millón que ya hay de __[en]tooltips__. Este es compatible con IE7 y superior, probablemente con IE6 también. Es accesible desde el teclado y en dispositivos touch también funciona. Hasta tiene una pequeña animación. Aquí aparece funcionando en Codepen: -->
 
 p(intro). Yes, yet again revisiting the ubiquitous _tooltip_ snippet. This one works on IE7+  probably on IE6 too. Is accessible with the keyboard and touch devices, semantic, and screen reader can read it. It also comes with a bit of styling and animation.
 
