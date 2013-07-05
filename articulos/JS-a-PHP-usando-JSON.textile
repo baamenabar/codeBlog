@@ -2,6 +2,7 @@ title:De Javascript a PHP usando JSON
 subtitle: Enviando datos complejos desde javascript a PHP
 classes: language-markup
 draft: true
+pubDate:2013-07-05 15:06:47
 
 
  <header><hgroup>
