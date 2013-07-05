@@ -1,4 +1,4 @@
-title: Compass CSS accesible Tooltip
+title: Accesible CSS Tooltip in Compass
 subtitle: A tooltip that works with IE7+, screen readers and touch devices. A simple class made on Compass pre-processor.
 classes: language-markup
 pubDate:2013-07-05 15:07:58
