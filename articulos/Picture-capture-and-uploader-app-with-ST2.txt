@@ -19,7 +19,7 @@ p(intro). For an app we are building, came the need for taking pictures as part 
 
 This is being developed in Sencha Touch 2 (ST2) and I'll be making a proof of concept app to test and debug all the problems I'm going to have, without messing up the rest of the big application.
 
-Here is the final app folder with server-side code in a github repo: "$":https://github.com/baamenabar/MIUp-sencha-app-
+Here is the final app folder with server-side code in a github repo: "$":https://github.com/baamenabar/MIUp-sencha-app-/
 
 Let's create the app from the sencha dir: <kbd>sencha generate app MIUp ../miup</kbd> this created a folder @miup@ (*MIUp* stands for Mobile Image Upload) with an empty ST2 app in my localhost folder.
 
