@@ -112,6 +112,14 @@ article {
 		&:hover, &:active, &:focus{
 			border-bottom-color:$azulHover;
 		}
+		&.boton{
+			&:link, &:visited{
+				border-bottom-color:#666;
+			}
+			&:hover, &:active, &:focus{
+				border-bottom-color:$azulHover;
+			}
+		}
 	}
 	figure{
 		font-family:"pt-serif","PT Sans",sans-serif;
@@ -223,11 +231,14 @@ article {
   border: 1px solid #666;
   padding: 0 0.25em;
 }
-.pubDate{
+.pubDate,.startDate,.modDate{
 	margin-top:0;
 	color:#777;
 	time{
 		font-style:italic;
+	}
+	.article &{
+		margin-bottom: 0;
 	}
 }
 .mainContainer{

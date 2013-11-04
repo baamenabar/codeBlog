@@ -115,7 +115,7 @@ class SlypCore{
 				//echo "\nbuff=".trim($buffer).';';
 				if(!trim($buffer)){
 					if( !isset($oneArticle['pubDate']) ){//si el artículo no tiene fecha de publicación guardada, guardamos la última modificación como fecha de publicación
-						$oneArticle['pubDate'] = date('Y-m-d H:i:s',$oneArticle['modDate']);
+						$oneArticle['pubDate'] = date('c',$oneArticle['modDate']);;//date('Y-m-dTH:i:sZ',$oneArticle['modDate']);
 						$agregado = 'pubDate:'.$oneArticle['pubDate'].PHP_EOL.PHP_EOL;
 						$theRest = fread($fhandl, $articleRawFilesize);
 						fseek($fhandl, $lastpos);

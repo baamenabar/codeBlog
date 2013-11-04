@@ -1,4 +1,4 @@
-<?php $recientes = getMostRecent($articleList,4); ?>
+<?php $recientes = getMostRecent($articleList,6); ?>
 <ul>
 										<?php foreach ($recientes as $ua): ?>
 										<li>

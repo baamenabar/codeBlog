@@ -1,16 +1,19 @@
-<!doctype html>
+<?php 
+$documentLang = 'en';
+if(isset($theArticle->lang) && $theArticle->lang)$documentLang = $theArticle->lang;
+?><!doctype html>
 <!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="<?php echo $documentLang; ?>">
 	<![endif]-->
 	<!--[if IE 7]>
-	<html class="no-js lt-ie9 lt-ie8" lang="en">
+	<html class="no-js lt-ie9 lt-ie8" lang="<?php echo $documentLang; ?>">
 		<![endif]-->
 		<!--[if IE 8]>
-		<html class="no-js lt-ie9" lang="en">
+		<html class="no-js lt-ie9" lang="<?php echo $documentLang; ?>">
 			<![endif]-->
 			<!--[if gt IE 8]>
 			<!-->
-			<html class="no-js<?php if(isset($theArticle->classes))echo ' '.$theArticle->classes ;?>" lang="en">
+			<html class="no-js<?php if(isset($theArticle->classes))echo ' '.$theArticle->classes ;?>" lang="<?php echo $documentLang; ?>">
 				<!--<![endif]-->
 <head>
 				<meta charset="utf-8">
@@ -27,16 +30,7 @@
 
 				<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 </head>
-<body>
-				<!--[if lt IE 7]>
-				<p class=chromeframe>
-					Your browser is <em>ancient!</em>
-					<a href="http://browsehappy.com/">Upgrade to a different browser</a>
-					or
-					<a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>
-					to experience this site.
-				</p>
-				<![endif]-->
+<body class="article">
 
 				<div class="mainContainer">
 					<header class="contiene-logo">
@@ -45,6 +39,29 @@
 						</noscript></a></header><div class="corporis"><article>
 						<?php require $theArticle->path; ?>
 							<footer>
+								<?php if (isset($theArticle->pubDate)): ?>
+									<p class="pubDate"><span><?php if ($documentLang=='es'): ?>
+										Publicado
+										<?php else: ?>
+										Published
+									<?php endif ?>:</span> <time datetime="<?php echo $theArticle->pubDate ?>" pubdate><?php echo $theArticle->pubDate ?></time></p>
+									
+									<?php if (isset($theArticle->startDate)): ?>
+									<p class="startDate"><span><?php if ($documentLang=='es'): ?>
+										Fecha de inicio
+										<?php else: ?>
+										Start date
+									<?php endif ?>:</span> <time datetime="<?php echo $theArticle->startDate ?>"><?php echo $theArticle->startDate ?></time></p>	
+									<?php endif ?>
+
+									<?php if (isset($theArticle->modDate)): ?>
+									<p class="modDate"><span><?php if ($documentLang=='es'): ?>
+										Última edición
+										<?php else: ?>
+										Last modified
+									<?php endif ?>:</span> <time datetime="<?php echo date('c',$theArticle->modDate); ?>"><?php echo date('c',$theArticle->modDate); ?></time></p>	
+									<?php endif ?>
+								<?php endif ?>
 								<?php if ( isset($theArticle->tags) && $theArticle->tags ): ?>
 									<h2>Tags: <?php echo $theArticle->tags; ?></h2>
 								<?php endif ?>

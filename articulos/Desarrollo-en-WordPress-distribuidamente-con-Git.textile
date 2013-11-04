@@ -1,8 +1,10 @@
 title:Desarrollo distribuido de WordPress usando Github
 subtitle:Flujo de trabajo para equipos remotos usando versionamiento de wordpres y lidiando con la base de datos.
 classes: language-markup
+lang:es
 draft: true
-pubDate:2013-08-12 19:29:57
+startDate:2013-08-12 19:29:57
+pubDate:2013-11-03T21:35:31+00:00
 
 
  <header>
@@ -17,11 +19,14 @@ Actualizar mi branch con lo que hay en el master
 
 Una vez agregado SASS, si quiero evitar que .sass-cache quede versionado
 
+
 @git rm -r -f wp-content/themes/nombredeltheme/.sass-cache --cached@
 
 h3. Nueva branch
 
-Lo hacemos en Github y luego localmente sólo hacemos @git fetch@
+Lo hacemos en Github y luego localmente sólo hacemos @git fetch@ o @git pull@
+
+O podemos hacer @git checkout -b nueva-rama@ y se hace un _push_ con @git push origin nuvea-rama@
 
 h3. Borrando un branch
 
@@ -38,5 +43,9 @@ h3. Eliminar todos los cambios desde el último commit
 bc. 
 git checkout .
 
-h3. 
+h3. Volver a un commit anterior
 
+bc.
+git reset --hard HEAD~4
+
+El número después del @~@ es la cantidad de commits hacia atrás que estamos volviendo.

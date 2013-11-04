@@ -1,0 +1,30 @@
+title:Beginnings tribulation and mistakes with Ember.js
+subtitle: Getting the handle on EmberJS with a project on 8 hours.
+classes: language-markup
+startedAt:2013-10-28T04:47:57+00:00
+pubDate:2013-10-28T05:39:59+00:00
+draft:true
+
+
+
+ <header><hgroup>
+
+h1. Beginnings tribulation &amp; mistakes with Ember.js
+
+h2. Getting the handle (bar?) on EmberJS with a project light on the model side and heavy on the views, without Ruby.
+</hgroup></header>
+
+p(intro). Once again I find myself starting on yet another MVC framework hoping this one is different. "Yehuda Katz":https://twitter.com/wycats promised it would be so, at his presentation at the Startechconf <time datetime:"2013-10-26">2 days ago</time> ("Slides Here":https://docs.google.com/a/medula.cl/presentation/d/1y5AZN0qbjkMuyxxicfV_XPe_aLePdnkuR69tUOQTVo0/edit#slide=id.p). As usual, I won't be building the typical beginners example, I'll be building with real client work.
+
+h2(#ac1). __[fr]Mise en place__
+
+* *Ember inspector* for the chrome developer tools, from the chrome webstore
+* "*Ember starter kit*":http://emberjs.com/ (this one is 1.1.2)
+* Optional: Some css framework, they suggest twitter bootstrap, I'll be rolling my own css.
+* "*Showdown.js*":http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js for converting markdown to html
+
+h2(#ac3). The simple begining
+
+# We start by copying @index.html@, @css@ and @js@ from the _starter kit_ to your working directory.
+# Delete all but the first line in the @js/app.js@ file.
+# 

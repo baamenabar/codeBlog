@@ -51,7 +51,7 @@ header('Pragma: no-cache'); ?><!doctype html>
 											<?php endif ?></a>
 									</header>
 									<?php if (isset($oneArticle['pubDate'])): ?>
-										<p class="pubDate">Publicado: <time datetime="<?php echo $oneArticle['pubDate'] ?>"><?php echo $oneArticle['pubDate'] ?></time><?php if (isset($oneArticle['author'])): ?> | <?php echo $oneArticle['author'] ?> <?php endif ?></p>
+										<p class="pubDate">Publicado: <time datetime="<?php echo $oneArticle['pubDate'] ?>" pubdate><?php echo $oneArticle['pubDate'] ?></time><?php if (isset($oneArticle['author'])): ?> | <?php echo $oneArticle['author'] ?> <?php endif ?></p>
 									<?php endif ?>
 									<p><?php if (isset($oneArticle['intro'])): ?>
 										<?php echo $oneArticle['intro'] ?>
