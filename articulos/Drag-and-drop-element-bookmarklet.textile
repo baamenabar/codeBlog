@@ -21,7 +21,8 @@ This bookmarklet loads from the jQuery CDN: jQuery UI and jQuery (if not already
 
 The rest is just UI to write the selector for the elements you want to drag and drop.
 
-notextile. <p>Dragg the <a href="javascript:(function(){var v = '1.8';if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {var done = false;var script = document.createElement('script');script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/' + v + '/jquery.min.js';script.onload = script.onreadystatechange = function(){if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {done = true;loadDraggable();}};document.getElementsByTagName('head')[0].appendChild(script);} else {loadDraggable();}function loadDraggable() {var done = false;var script = document.createElement('script');script.src = 'http://code.jquery.com/ui/1.10.3/jquery-ui.js';script.onload = script.onreadystatechange = function(){if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {done = true;initMyBookmarklet();}};document.getElementsByTagName('head')[0].appendChild(script);}function initMyBookmarklet() {(window.myBookmarklet = function() {$('<div id=dndrQueryForm style=&quot;width:420px;padding:5px 10px;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;background:#f0f0f0;position:fixed;top:0px;left:50%;border:1px solid #999;border-top:none;-webkit-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.3);-moz-box-shadow:2px 2px 4px rgba(0, 0, 0, 0.3);box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);z-index:990;&quot;><label>selector: <strong>$(&acute;</strong><input type=text id=selectorInput><strong>&acute;).</strong></label> <button id=makeElementsDnDble>make Draggable!</button></div>').appendTo('body').on('click','#makeElementsDnDble',function(eve){var selectorString = $('#selectorInput').val();if(!selectorString)return;$(selectorString).draggable();});})();}})();" class="boton">Draggable bookmarklet</a> to your favourites bar.</p>
+notextile. <p>Dragg the 
+<a href="javascript:(function(){if(window.draggableBookmarklet!==undefined){draggableBookmarklet();}else{document.body.appendChild(document.createElement('script')).src='https://raw.github.com/baamenabar/draggable-bookmarklet/master/drag-and-drop.js';}})();" class="boton">Draggable bookmarklet</a> to your favourites bar.</p>
 
 I'm opening a repo on github for this bookmarklet. Now that I've tested a few cases, I have plenty ideas for it, for starters, host the whole code in the repo, so it get updated automatically. For now it'll be just one file.
 
@@ -30,3 +31,5 @@ The repo on gitbu is: "$":https://github.com/baamenabar/draggable-bookmarklet
 This also may help with moving things around for clients at meetings.
 
 If it's been done before, I've never seen it, I googled, and nothing, so I built it, mostly based on what was published by smashing magazine in "$":http://coding.smashingmagazine.com/2010/05/23/make-your-own-bookmarklets-with-jquery/ 
+
+UPDATE: I have moved the code to the repo, debugging the bookmarklet was becoming painful.

@@ -1,9 +1,8 @@
 title:Starting a static site with Jekyll
 subtitle: Building a static site with Jekyll from Windows, and all the trouble I encountered.
 classes: language-markup
-startedAt: 2013-10-17 12:34:08 GMT
-pubDate:2013-10-17 13:37:08 GMT
-draft:true
+startedAt: 2013-10-17T12:34:08+00:00
+draft: true
 
 
  <header><hgroup>
@@ -13,7 +12,7 @@ h1. Starting a static site with Jekyll
 h2. From cero to published in one post, with all the pitfalls I fell into.
 </hgroup></header>
 
-p(intro). I have to make my resume, the first impulse was Markdown on GitHub... hmmmm ...now I have the excuse to try out Jekyll. The idea is to make my personal site, with it's domain and a small portfolio, run from Jekyll using GitHub pages. Let's get on with it.
+p(intro). I had to make my CV (or __[lang=fr]resumé__), the first impulse was Markdown on GitHub... hmmmm ...now I have the excuse to try out Jekyll. The idea is to make my personal site, with it's domain and a small portfolio, run from Jekyll using GitHub pages. Let's get on with it.
 
 h2(#ac1). __[fr]Mise en place__ (what we'll need)
 
@@ -162,8 +161,49 @@ Then we must create a folder and file: @_plugins/jekyll-utf8.rb@ with the folowi
 bc. 
 require 'jekyll-utf8.rb'
 
-Now we run @jekyll serve@ ... Ok, now it's working with proper encoding. Still, that's no fun, I want to write in Markdown and get html output. For that we need the @_layouts@ folder and a layout template in it.
+Now we run @jekyll serve@ ... Still no. Filed an issue with the developer of the gem, but he sayd it was not for Windows. Oh well I'll have to stick @<meta charset="utf-8">@ in the head.
+
+If we try now, it's working, it spits the html we placed in the @index.html@, but that's no fun, I want to write in Markdown and get html output. For that we need the @_layouts@ folder and a layout template in it.
 
 h3. Enter Liquid
 
-The first time I read _“templating engine”_ I ran away, only came back after months. But it's as friendly as starting with LESS or SASS.
+The first time I read _“templating engine”_ I ran away, only came back after months. But, so far, Liquid has been as friendly as starting with LESS or SASS.
+
+But for a simple one-pager, it's almost more complicated than to actually write the html instead the Markdown. First we need to add a couple of files
+
+bc. 
+.
+├── README.md
+├── cv.md
+├── index.html
+├── _sites
+|   ├── README.md
+|   ├── cv.md
+|   ├── index.html
+├── _layouts
+|   ├── default.html
+├── _includes
+|   ├── cv.md
+
+@_layouts/deafaults.html@ will be a pretty barebones html file
+
+bc. 
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Some title</title>
+    </head>
+    <body>
+          {{ content }}
+    </body>
+</html>
+
+and the @index.html@ will only have
+
+bc. 
+
+
+bc. 
+Generating... error: undefined method `fetch' for "layout:default":String.
+
