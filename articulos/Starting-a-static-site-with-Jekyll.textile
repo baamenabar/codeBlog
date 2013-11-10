@@ -1,8 +1,8 @@
 title:Starting a static site with Jekyll
 subtitle: Building a static site with Jekyll from Windows, and all the trouble I encountered.
 classes: language-markup
-startedAt: 2013-10-17T12:34:08+00:00
-draft: true
+startDate: 2013-10-17T12:34:08+00:00
+pubDate:2013-11-10T21:25:29+00:00
 
 
  <header><hgroup>
@@ -165,7 +165,7 @@ Now we run @jekyll serve@ ... Still no. Filed an issue with the developer of the
 
 If we try now, it's working, it spits the html we placed in the @index.html@, but that's no fun, I want to write in Markdown and get html output. For that we need the @_layouts@ folder and a layout template in it.
 
-h3. Enter Liquid
+h3(#ac7). Enter Liquid
 
 The first time I read _“templating engine”_ I ran away, only came back after months. But, so far, Liquid has been as friendly as starting with LESS or SASS.
 
@@ -175,7 +175,7 @@ bc.
 .
 ├── README.md
 ├── cv.md
-├── index.html
+├── index.md
 ├── _sites
 |   ├── README.md
 |   ├── cv.md
@@ -199,11 +199,51 @@ bc.
     </body>
 </html>
 
-and the @index.html@ will only have
+We must change the extension of @index.html@ to @index.md@. The extension must be changed if you want the included files to be processed as markdown. This file will have very little code also.
 
 bc. 
+---
+layout: default
+---
+{% include cv.md %}
 
+Now we do @jekyll build@. If you ever get a message like this.
 
 bc. 
 Generating... error: undefined method `fetch' for "layout:default":String.
 
+It is because you must put a space after the colon. I honestly don't know why the parser can't understand it without the space, my parser doesn't care (for this blog engine).
+
+Now the build works, and we have one page generated with Markdown.
+
+After adding some css the site is presentable.
+
+h2(#ac8). Publishing with GitHub pages
+
+If you use Git, it's easy. If you have the project in a repo, just create a new branch from the master called @gh-pages@ and push to github.
+
+bc. 
+git checkout -b gh-pages
+git push origin gh-pages
+
+That's all, now you just have to visit the GitHub Pages URL for the repository, in my case it's "$":http://baamenabar.github.io/cv/
+
+h2(#ac9). Setting GitHub Pages as a domain
+
+The official GitHub instructions are here: "$":https://help.github.com/articles/setting-up-a-custom-domain-with-pages basically you have to do setup in two places: the repo and in your domain registrar.
+
+h3(#ac10). Setup the domain in the repository
+
+Create a file called @CNAME@ with your domain in it, in my case it's @iminabar.com@
+
+h3(#ac11). Setup the domain in the registrar
+
+We must create a type @A@ record with the value @204.232.175.78@. I use dreamhost for my @.com@ domains, so here is a screenshot.
+
+!img/content/starting-jekyll-DNS-at-dreamhost.png(Setting up the A record in Dreamhost)!
+
+It's odd that it must be an @A@ record and not a @CNAME@, actually it being an A record makes sense, what doesn't make sense is that GitHub asks for a file called CNAME and not @A@ or @A-record@ or something like that in the repo.
+
+That should be all, if I ever encounter mor errors in this process I'll add them to this post.
+
+Hope this helps someone.
