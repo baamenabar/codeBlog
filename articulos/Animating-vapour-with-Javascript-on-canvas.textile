@@ -13,7 +13,7 @@ h1. Animating vapour with JavaScript on canvas
 h2. Particle animation rendered on the canvas element
 </hgroup></header>
 
-p(intro). As my day to day development must include support for IE8 and sometimes even IE7 playing with the recent toys is not possible, unless they degrade gracefully. But with mobile development, the story is different, now I have to replicate a vapour animation done in flash, but in regular HTML/Javascript. Enter @<canvas>@ All my experience with canvas has been just a few shapes a few years ago, it seemed really similar to the ActionScript drawing API and Bitmap Classes, today I'll put that to the test.
+p(intro). As my day to day development must include support for IE8 and sometimes even IE7 playing with the recent toys is not possible, unless they degrade gracefully. But with mobile development, the story is different, now I have to replicate a vapour animation done in flash, but in regular HTML/Javascript. Enter @<canvas>@... All my experience with canvas has been just a few shapes a few years ago, it seemed really similar to the ActionScript drawing API and Bitmap Classes, today I'll put that to the test.
 
 h2(#ac1). __[fr]Mise en place__
 
@@ -432,6 +432,7 @@ animationLoop();
 
 This rather dramatic concoction looks better for this image than a white vaporous cloud.
 
-This is just the basics with @<canvas>@ and I must say, I'm impressed with the performance.
 
-I did a codepen “"Gradient particles on canvas":http://cdpn.io/ACDbI” with this code, where you can play with the variables.
+I did a codepen "Gradient particles on canvas":http://cdpn.io/ACDbI with this code, where you can play with the variables.
+
+This is just the basics with @<canvas>@ and I must say: I'm impressed with the performance; in the end the math behind particles are always the same, the drawing API wasn't complicated and easier than others I've seen.
