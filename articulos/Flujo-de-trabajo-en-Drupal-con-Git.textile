@@ -4,6 +4,13 @@ classes:language-php
 startDate:2014-01-27T13:35:00+00:00
 pubDate:2014-01-27T13:35:00+00:00
 
+<header><hgroup>
+
+h1. Flujo de trabajo en Drupal con Git
+
+h2. Cómo trabajar en un proyecto de Drupal en equipo y no morir en el intento
+</hgroup></header>
+
 *Autor:* Nikolas Peralta Rumié - "@nikoskip":https://twitter.com/nikoskip
 
 p(intro). Todo equipo cuenta con su flujo de trabajo establecido, lo más seguro es que hoy en día gran parte de ellos trabajen con algún sistema de control de versiones como Git o SVN, permitiendo no pisarse la cola unos a otros. Comúnmente todo funciona perfecto, ya que todo el proyecto es desarrollado por el mismo equipo, pero es un poco distinto cuando se trabaja sobre un proyecto que viene desde terceros, que no es pequeño, y que recibe actualizaciones constantemente: Drupal. Muchos tienden a colapsar cuando tienen que actualizar un módulo o el core del sistema, típicamente por problemas de incompatibilidad entre la nueva versión del core y el módulo.
