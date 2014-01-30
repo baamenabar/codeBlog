@@ -1,6 +1,7 @@
 
 # Do ignore these
 /.sass-cache
+/assets
 /articulos/cached/*
 
 # Do not ignore these files...
