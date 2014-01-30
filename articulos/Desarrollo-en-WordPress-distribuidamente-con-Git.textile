@@ -43,9 +43,32 @@ h3. Eliminar todos los cambios desde el último commit
 bc. 
 git checkout .
 
+h3. Eliminar todos los archivos nuevos desde el último commit
+
+bc. 
+git clean -d -f
+
+@-d@ es para directorios y @-f@ es para forzarlo si no te deja hacerlo sin usar -f. Git clean está bien documentado en "La documentación de Linux para Git":https://www.kernel.org/pub/software/scm/git/docs/git-clean.html 
+
+Igual siempre hago @git clean -f -d -n@ para ver qué voy a borrar.
+
 h3. Volver a un commit anterior
+
+bc.
+git reset HEAD~4
+
+El número después del @~@ es la cantidad de commits hacia atrás que estamos volviendo, o en vez del @HEAD~n@ puede ir el SHA identificador del commit. 
+
+Esto retrocederá el commit que elegiste, pero no eliminará los cambios hechos en los archivos, por lo que tendrás que hacer:
+
+bc.
+git checkout .
+git clean -d -f
+
+Si revisaste los cambios y quieres volver a tu último commit... pues no lo he descubierto aún, yo hago @git pull origin master@ (si estoy en master).
+
+Se habla mucho de @git reset --hard@ pero eso no te da la posibilidad de hacer fast forward y volver a commit más recientes, simplemente elimina los commits hechos hasta ahí.
 
 bc.
 git reset --hard HEAD~4
 
-El número después del @~@ es la cantidad de commits hacia atrás que estamos volviendo.
