@@ -80,3 +80,21 @@ bc.
 git reset --hard HEAD~4
 
 Aunque siempre puedes hacer pull desde origin.
+
+h3. Los comunes de Nikolas
+
+Renombrar branch
+
+bc. 
+git branch -m old_branch new_branch
+
+Y luego en el remote borrar la otra si existe y subir la nueva
+
+bc. 
+git push
+git push origin :old_branch
+
+Cambiar mensaje al ultimo commit
+
+bc. 
+git commit --amend -m "New commit message"
