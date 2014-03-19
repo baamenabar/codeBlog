@@ -12,6 +12,8 @@ h1. Apuntes de comandos de GIT para trabajo en equipos remotos
 
 </header>
 
+*Autores:* B. Agustín Amenábar L. – "@baamenabar":https://twitter.com/baamenabar & Nikolas Peralta Rumié – "@nikoskip":https://twitter.com/nikoskip
+
 p(intro). Somos 2 personas trabajando en el código de múltiples sitios y proyectos; uno está viendo backend y el otro frontend —Aunque nos mezclamos bastante las tareas. Aquí voy poniendo apuntes de los típicos comandos que usamos mientras trabajamos usando GIT.
 
 Actualizar mi branch con lo que hay en el master @git merge master@ .
