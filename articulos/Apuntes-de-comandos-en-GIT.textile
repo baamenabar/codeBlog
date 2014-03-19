@@ -1,0 +1,82 @@
+title:Apuntes de comandos de GIT para trabajo distribuido.
+subtitle:Flujo de trabajo para equipos remotos usando versionamiento de código con GIT.
+classes: language-markup
+lang:es
+startDate:2013-08-12 19:29:57
+pubDate:2014-03-19T14:37:04+00:00
+
+
+ <header>
+
+h1. Apuntes de comandos de GIT para trabajo en equipos remotos
+
+</header>
+
+p(intro). Somos 2 personas trabajando en el código de múltiples sitios y proyectos; uno está viendo backend y el otro frontend —Aunque nos mezclamos bastante las tareas. Aquí voy poniendo apuntes de los típicos comandos que usamos mientras trabajamos usando GIT.
+
+Actualizar mi branch con lo que hay en el master @git merge master@ .
+
+Una vez agregado SASS, si quiero evitar que .sass-cache quede versionado
+
+
+bc. 
+git rm -r -f wp-content/themes/nombredeltheme/.sass-cache --cached
+
+Lo de arriba significa: 
+
+bc. 
+git remueve recursivamente fuerza la_carpeta_y_contenidos --pero dejando una copia en el disco.
+
+
+
+h3. Nueva branch
+
+Lo hacemos en Github y luego localmente sólo hacemos @git fetch@ o @git pull@
+
+O podemos hacer @git checkout -b nueva-rama@ y se hace un _push_ con @git push origin nuvea-rama@
+
+h3. Borrando un branch
+
+Localmente: @git branch -D nombre_del_branch@
+
+Remoto: @git push origin --delete nombre_del_branch@
+
+h3. Cancelando un merge
+
+Si la versión de git es mayor o igual a 1.7.4 se puede hacer @git merge --abort@
+
+h3. Eliminar todos los cambios desde el último commit
+
+bc. 
+git checkout .
+
+h3. Eliminar todos los archivos nuevos desde el último commit
+
+bc. 
+git clean -d -f
+
+@-d@ es para directorios y @-f@ es para forzarlo si no te deja hacerlo sin usar -f. Git clean está bien documentado en "La documentación de Linux para Git":https://www.kernel.org/pub/software/scm/git/docs/git-clean.html 
+
+Igual siempre hago @git clean -f -d -n@ para ver qué voy a borrar.
+
+h3. Volver a un commit anterior
+
+bc. 
+git reset HEAD~4
+
+El número después del @~@ es la cantidad de commits hacia atrás que estamos volviendo, o en vez del @HEAD~n@ puede ir el SHA identificador del commit. 
+
+Esto retrocederá el commit que elegiste, pero no eliminará los cambios hechos en los archivos, por lo que tendrás que hacer:
+
+bc. 
+git checkout .
+git clean -d -f
+
+Si revisaste los cambios y quieres volver a tu último commit... pues no lo he descubierto aún, yo hago @git pull origin master@ (si estoy en master).
+
+Se habla mucho de @git reset --hard@ pero eso no te da la posibilidad de hacer fast forward y volver a commit más recientes, simplemente elimina los commits hechos hasta ahí.
+
+bc. 
+git reset --hard HEAD~4
+
+Aunque siempre puedes hacer pull desde origin.
