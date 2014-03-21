@@ -47,10 +47,54 @@ h3. Cancelando un merge
 
 Si la versión de git es mayor o igual a 1.7.4 se puede hacer @git merge --abort@
 
+h3. Hacer un merge sólo un archivo
+
+A veces tienes un archivo en un branch que necesitas actualizar en otro branch, por ejemplo.
+
+En el branch @nuevo_catalogo@ tienes un archivo @credenciales-db.inc@ con credenciales a una nueva base de datos y necesitas actualizar esas credenciales en @master@, entonces los comandos serían los siguientes:
+
+bc. 
+git checkout master
+git checkout --patch nuevo_catalogo credenciales-db.inc
+
+El primero es para ir al branch en el que quieres hacer la modificación, el segundo copia desde el otro branch los cambios al archivo que quieres actualizar.
+
+Cuando aprietes <kbd>enter</kbd> mostrará un dif del cambio y preguntará: @Apply this hunk to index and worktree [y,n,q,a,d,/,s,e,?]?@
+
+Aprienta <kbd>y</kbd> (yes) y <kbd>enter</kbd>, eso hará el cambio en el branch. Este es el significado de las primeras 4 opciones.
+
+y - (__[en]yes__) si, aplicar los cambios al arbol de trabajo de este branch
+n - (__[en]no__) *no*, aplicar los cambios al arbol de trabajo de este branch
+q - (__[en]quit__) salir; no aplicar cambios en este archivo ni en ninguno de los restantes (para cuando se hace un patch de varios)
+a - (__[en]apply__) aplicar cambios en este archivo y en todos los restantes (para cuando se hace un patch de varios)
+
+h4. La corta
+
+bc. 
+git checkout --theirs nuevo_catalogo credenciales-db.inc
+
+Eso hace el cambio sin preguntar, esté en stage, tenga cambios o no, simplemente lo reescribe.
+
+refs: 
+
+* "$":http://stackoverflow.com/questions/10784523/how-do-i-merge-changes-to-a-single-file-rather-than-merging-commits
+* "$":http://chimera.labs.oreilly.com/books/1230000000561/ch07.html#_resolving_merge_conflicts 
+* "$":http://git-scm.com/docs/git-format-patch
+
+
 h3. Eliminar todos los cambios desde el último commit
 
 bc. 
 git checkout .
+
+Solo sirve para los cambios que no han sido __[en]staged__.
+
+Para __[en]unstage__ los archivos en un branch, digamos @master@, hay que escribir lo siguiente:
+
+bc. 
+git reset master
+
+Y luego se puede hacer @git checkout .@ para devolver el branch completamente a como estaba en el útimo commit.
 
 h3. Eliminar todos los archivos nuevos desde el último commit
 
@@ -82,6 +126,7 @@ bc.
 git reset --hard HEAD~4
 
 Aunque siempre puedes hacer pull desde origin.
+
 
 h3. Los comunes de Nikolas
 

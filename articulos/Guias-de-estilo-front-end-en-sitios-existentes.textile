@@ -1,0 +1,16 @@
+title:Guías de estilo front-end en sitios existentes
+subtitle: Una aproximación a generar guías de estilo en sitios web existentes
+classes: language-markup
+draft: true
+pubDate:2014-03-20T21:58:15+00:00
+
+
+ <header><hgroup>
+
+h1. Guías de estilo __[en]front-end__ para sitios existentes
+
+h2. Una auditoría de código CSS en un sitio web antes de continuar construyendo.
+</hgroup></header>
+
+p(intro). Desde que trabajamos con la "Paz Vial":http://pazvial.cl , todos los años hacemos cambios en el sitio, este año estamos trabajando en grandes cambios, pero tenemos un legado de 3 años de modificaciones al CSS y entremedio adoptamos SASS, hay que hacer orden y limpieza, especialmente documentando los estilos de la marca. Acabo de terminarme la “Guía de bolsillo” __Front-end Style Guides__ de "Anna Debenham":http://maban.co.uk/ Es una confirmación de algo que sospechaba hace tiempo. Además da un montón de buenos recursos (mencionaré varios aquí).
+
