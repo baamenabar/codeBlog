@@ -388,9 +388,12 @@ background: linear-gradient(to right, #f0f0f0 0%,#ffffff 100%); /* W3C */
 </div>
 </notextile>
 
-Haciendo esta prueba noto varias falencias en mi hoja de estilos, hay varios usos que no contempla. Pero en general estoy impresionado de lo completo que construí la hoja de estilos.
+Haciendo esta prueba en este blog noto varias falencias en mi hoja de estilos, hay varios usos que no contempla; pero en términos generales estoy bastante contento con lo completa que construí la hoja de estilos.
 
-Una vez pegado los típicos elementos se pueden seguir agregando otras cosas que se hayan creado para el sitio, como navegación, footer y cualquier elemento que necesite tener estilos.
+Haciendo el mismo ejercicio para el sitio de la Paz Vial, noto errores en los estilos básicos, varios de los cuales me habría ahorrado de haber usado Normalize en vez de un __[lang=en]reset__ de
+CSS, pero no existía normalize.css en esa época. El resultado del ejercicio lo pueden ver en: "$":http://estilos.pazvial.cl/ .
+
+En este caso usamos los elementos existentes en el sitio, durante el re-diseño iremos agregando correcciones y el esqueleto de aquí arriba. Una vez pegado los típicos elementos se pueden seguir agregando otras cosas que se hayan creado para el sitio, como navegación, footer y cualquier elemento que necesite tener estilos.
 
 Otra cosa que es práctico agregar es el uso del logotipo de la marca, poner todas las versions disponibles, y si hay mútiples formatos de archivo, almenos agregar links a ellos. Es también un buen lugar para mantener los manuales de normas gráficas.
 
