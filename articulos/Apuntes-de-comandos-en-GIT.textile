@@ -31,23 +31,23 @@ git remueve recursivamente fuerza la_carpeta_y_contenidos --pero dejando una cop
 
 
 
-h3. Nueva branch
+h3(#ac1). Nueva branch
 
 Lo hacemos en Github y luego localmente sólo hacemos @git fetch@ o @git pull@
 
 O podemos hacer @git checkout -b nueva-rama@ y se hace un _push_ con @git push origin nuvea-rama@
 
-h3. Borrando un branch
+h3(#ac2). Borrando un branch
 
 Localmente: @git branch -D nombre_del_branch@
 
 Remoto: @git push origin --delete nombre_del_branch@
 
-h3. Cancelando un merge
+h3(#ac3). Cancelando un merge
 
 Si la versión de git es mayor o igual a 1.7.4 se puede hacer @git merge --abort@
 
-h3. Hacer un merge sólo un archivo
+h3(#ac4). Hacer un merge sólo un archivo
 
 A veces tienes un archivo en un branch que necesitas actualizar en otro branch, por ejemplo.
 
@@ -68,7 +68,7 @@ n - (__[en]no__) *no*, aplicar los cambios al arbol de trabajo de este branch
 q - (__[en]quit__) salir; no aplicar cambios en este archivo ni en ninguno de los restantes (para cuando se hace un patch de varios)
 a - (__[en]apply__) aplicar cambios en este archivo y en todos los restantes (para cuando se hace un patch de varios)
 
-h4. La corta
+h4(#ac5). La corta
 
 bc. 
 git checkout --theirs nuevo_catalogo credenciales-db.inc
@@ -82,7 +82,7 @@ refs:
 * "$":http://git-scm.com/docs/git-format-patch
 
 
-h3. Eliminar todos los cambios desde el último commit
+h3(#ac6). Eliminar todos los cambios desde el último commit
 
 bc. 
 git checkout .
@@ -96,7 +96,7 @@ git reset master
 
 Y luego se puede hacer @git checkout .@ para devolver el branch completamente a como estaba en el útimo commit.
 
-h3. Eliminar todos los archivos nuevos desde el último commit
+h3(#ac7). Eliminar todos los archivos nuevos desde el último commit
 
 bc. 
 git clean -d -f
@@ -105,7 +105,7 @@ git clean -d -f
 
 Igual siempre hago @git clean -f -d -n@ para ver qué voy a borrar.
 
-h3. Volver a un commit anterior
+h3(#ac8). Volver a un commit anterior
 
 bc. 
 git reset HEAD~4
@@ -128,7 +128,7 @@ git reset --hard HEAD~4
 Aunque siempre puedes hacer pull desde origin.
 
 
-h3. Los comunes de Nikolas
+h3(#ac9). Los comunes de Nikolas
 
 Renombrar branch
 
@@ -145,3 +145,36 @@ Cambiar mensaje al ultimo commit
 
 bc. 
 git commit --amend -m "New commit message"
+
+h3(#ac10). @Add, commit y push@ en una línea
+
+Resulta que hay un concatenador de comandos: @&&@ , así de simple. Entonces ahora en vez de escribir:
+
+bc. 
+git add -A
+git commit -m "parche al reactor n.9"
+git push origin master
+
+... y tener que esperar que se ejecute cada comando antes de escribir el siguiente, sólo hay que escribir:
+
+bc. 
+git add -A && git commit -m "parche al reactor n.9" && git push origin master
+
+h4(#ac11). @alias@ Más conveniente aún
+
+Se puede guardar una combinación de comandos en un alias para que en vez de 2 comandos sea uno solo, así.
+
+bc. 
+git config --global alias.add-commit '!git add -A && git commit'
+
+Ahora se agrega y hacen commits con un solo comando, así:
+
+bc. 
+git add-commit -m "parche al reactor n.9"
+
+ref:
+* "$":http://stackoverflow.com/questions/4298960/git-add-a-git-commit-in-one-command 
+
+h2. Conclusión
+
+Hay un montón de trucos y comandos que te simplifican la vida en git, aquí iremos agregando a medida que los vayamos encontrando.
