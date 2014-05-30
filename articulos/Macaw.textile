@@ -1,0 +1,71 @@
+title:Macaw
+subtitle:Impresiones luego de haber probado este diseñador web
+classes:language-php
+startDate:2014-04-30T13:35:020+55:00
+pubDate:2014-04-30T13:35:20+55:00
+<header><hgroup>
+h1. Macaw
+
+h2. Impresiones luego de haber probado este diseñador web
+</hgroup></header>
+
+*Autor:* Nikolas Peralta Rumié - "@nikoskip":https://twitter.com/nikoskip
+
+p(intro). Me encargaron la tarea de probar "Macaw":http://macaw.co/, una herramienta para diseñar sitios web la cual profetiza "**para de escribir código, empieza a dibujarlo**". Pensé "*Bah... otra herramienta mas del tipo WYSIWYG*". Uno suele tener ciertos traumas con estos tipos de herramientas, quizás venga de lo mal que lo hacía Dreamweaver, o que da la sensación de que compiten por cual termina produciendo el peor código, códigos que vienen del mismo infierno, lleno de *tags* vacíos, *id's* hasta en el *&lt;body&gt;* y un sin fin de clases CSS.
+
+Después de hacer un poco de memoria, me di cuenta que hace unos 5 o 6 meses atrás había visto un "video del proyecto":http://vimeo.com/70771444, cuando aún no estaba disponible al público, que simplemente me encantó.
+
+Así que claro, había que darle una oportunidad, y que mejor ahora que ya estaba disponible a todo el público. Si bien es un programa pagado, cuenta con una versión de pruebas que dura 30 días y cuenta con todas las funcionalidades de la versión pagada ($179USD).
+
+Para hacer las pruebas pertinentes, me tocó maquetear un diseño estático para un nuevo sitio web que estamos desarrollando. Destaco que yo **no soy diseñador**, y cuando entré a trabajar a Medula si bien entré como back-end, el trabajo diario me ha hecho desarrollar mis *skills* de front-end. Por lo que soy un buen conejillo de indias, no sé de diseño, pero me defiendo bastante con HTML/CSS.
+
+
+h2. Experiencia e impresiones
+
+Luego de descargar (v1.0.6), crearme una cuenta gratuita y abrir el programa, se siente como estar trabajando en algún programa de Adobe. La interfaz es muy similar, y yo creo que los diseñadores lo agradecen. Lo primero que hice antes de meter mano, fue ver "los videos":http://macaw.co/videos/ que tienen en el sitio web. Es un excelente punto de partida, de igual manera la "documentación oficial de Macaw":http://docs.macaw.co/ (que me acabo de dar cuenta que existe).
+
+Mis primeros intentos fueron un poco frustrantes, tanto así que estuve a punto de escribir un pésimo comentario sobre Macaw en esta entrada. El mayor problema que tuve fue trabajar con el panel *Outline*, que vendría siendo como el panel de capas en Photoshop. Me costó entender el tema del *foco* de éstas. Es como si uno fuese entrando a una capa, y luego a otra, y a otra, pero al momento de seleccionar una capa externa, que esta fuera de *foco*, Macaw no lo permite, entonces tienes que volver hacía atrás presionando ESC.
+
+!http://i58.tinypic.com/2la524j.png!
+
+Lo que se ve oscuro en la imagen, se encuentra fuera de foco, lo que está claro está dentro del foco. Por lo que si yo quisiera seleccionar el elemento *header* para editarlo, tendría que salirme del foco actual en dos niveles hacia arriba.
+
+Me fue frustrante también añadir elementos donde yo quería, ya que me costó entender que estos eran añadidos al mismo nivel del foco actual. Por lo que si quería añadir un *div* dentro de un contenedor, debería primero hacer foco en el contenedor y luego añadirlo. Al principio se me agregaban los elementos en el nivel más alto, y con el mouse debía moverlo donde yo lo deseaba. Muy tedioso.
+
+Después de un rato, me di cuenta que los elementos de los que habla Macow por defecto son todos *&lt;div&gt;*. ¿Pero que pasa si no queremos un *&lt;div&gt;* y queremos una lista *&lt;ul&gt;*?. Hay que agregar el elemento, que como dije por defecto es *&lt;div&gt;*, ir al *Outline*, hacer doble clic sobre el nombre del elemento y editarlo por *div.element* a *ul* o a cualquier otro elemento que queramos agregar.
+
+!http://i58.tinypic.com/9i5yqp.gifg!
+
+Por defecto, también cada elemento creado viene con una clase. Por ejemplo, si agregan una imagen, quedará en la lista como *img.image*. Ocupa la notación de puntos para definir en primer lugar el tipo de elemento y luego la clase asignada. Cada elemento tiene sus propias características, pudiendo definir por ejemplo para un párrafo tipo de fuente, tamaño, alto de línea, espaciado entre letras, entre palabras, alineado, etc, hay opciones de efectos, que por el momento sólo permite agregar sombras, manejo de bordes, padding, alto y ancho máximo de un elemento, color, fondo, etc. También se pueden definir transiciones y transformaciones.
+
+Permite tener control de clases, que al igual de CSS, reúnen ciertos estilos. Lo malo, es que no se comportan como yo creo debería comportarse. Si tengo un estilo llamado *.borde-rojo* dentro de Macaw, lo puedo agregar a todos los elementos que quiera, pero esto lo único que hace es copiar esos estilos dentro de la propia clase del elemento. Por lo que finalmente, en vez de tener una clase CSS re-utilizable, terminamos con código repetido en otras clases, y al publicar en el CSS nunca veremos la clase *.borde-rojo*.
+
+El diseño que necesitaba pasar a HTML tenía que ser responsive. Macaw viene con soporte para diseñar sitios responsive y poder definir puntos de quiebre en el diseño de acuerdo a lo que necesitemos. El único pero, es que no tiene soporte para *mobile-first*, ya que en resoluciones pequeñas, Macaw bloquea la edición del DOM (no permite añadir ni eliminar elementos), por lo que es imposible partir de un diseño *mobile* a un diseño para *desktop*, sino que debe ser a la inversa. Esto no me parece bien, ya que al terminar el diseño por completo de la página principal, y definir un punto de quiebre de 320px (iPhone 2G/3GS y equipos gama baja) todo quedó completamente desparramado. Y  no digo que eso no tuvo que haber pasado, al contrario, es el comportamiento correcto de acuerdo a los estilos definidos, lo que me molesta, es que es más trabajo empezar a acomodar todo de esa forma, que haciéndolo de la forma *mobile-first*. Aun así hay cosas que rescato respecto al soporte responsive de Macaw, como que por ejemplo tiene soporte para el manejo de imágenes retina, optimiza las imágenes automáticamente y utiliza una librería para cambiar el *src* de éstas de acuerdo al viewport, todo esto *built-in*.
+
+Por otro lado, una funcionalidad que me gustó, es el sistema de grillas incluido, donde el número de columnas puede ser definido a gusto propio y finalmente genera un archivo CSS con la grilla utilizada. Otra cosa que también me agrado y me ahorró trabajo, son los *Componentes*. Permiten encapsular varios elementos y poder replicarlos dentro del diseño.
+
+El proceso de publicar el sitio es sumamente rápido, basta presionar *Control+P* y Macaw abrirá una ventana tipo-navegador, que de acuerdo a lo que leí, es el motor de Chrome incrustado, donde podrán ver el código HTML y CSS generado. Pero no permite nada más que eso, aunque no sería necesario, ya que hay un botón para abrir en tu navegador la página actual, donde ahí ya podemos empezar a inspeccionar el documento de mejor manera.
+
+h2. Lo malo
+
+De acuerdo a mi experiencia y luego de dos días de uso y de prueba y error continuo (no hay mucho contenido en la web), esto es lo malo de Macaw:
+
+* No tiene soporte para *mobile-first*.
+* No se puede cambiar el *src* de una imagen por otra, hay que eliminarla y volver a poner la nueva imagen en el mismo lugar de la anterior. Si la imagen anterior tenía estilos, hay que replicarlos en la nueva.
+* Fue muy tedioso manejar el proceso de seleccionar el elemento que realmente quiero, en especial cuando el diseño empieza a aumentar en complejidad y terminas con algo como *header > div > p + div > p + img*. Confieso que aún tengo problemas con este tema.
+* No puedo tener propiedades CSS específicas para los elementos más allá de las opciones que Macaw me da por elemento, por ejemplo dejar una imagen como *display: block`*. Tampoco puedo crear reglas CSS a gusto propio, es lo que Macaw publica.
+* Hay veces que las propiedades "Set Origin to.." se pierden al modificar el layout.
+* En casos al mover un elemento afecta la posición de otro que esta muuy lejos del que estoy moviendo.
+* El orden de las capas no se respeta al momento de generar el HTML, la da mayor importancia al *z-index* de los elementos a imprimir el HTML en el orden correcto. En mi proyecto tenía *header + div.content + footer* y el *&lt;header&gt;* terminaba al final del HTML con un margin-top de -4070px (para que quede pegado arriba).
+* No puedes declarar un pedazo de texto como *&lt;strong&gt;* o *&lt;i&gt;*, etc, dentro de un párrafo.
+* Tiene problemas de rendimiento, muchas veces se vuelve lento y el programa deja de responder a las interacciones
+* No puedes importar un HTML
+* Problemas compatibilidad navegadores. El proyecto que desarrollé tiene algunas diferencias en Chrome 34 e IE11, por lo que me hace pensar que no se preocupa al 100% de generar un CSS cross-browser.
+
+h2. Lo bueno (y conclusión)
+
+Principalmente que es un programa nuevo (lleva un mes con acceso a público), lo que me hace pensar que va a mejorar mucho, y que han partido con un producto que si bien cumple su cometido, faltan algunas cosas. Estuve revisando "los foros":http://forum.macaw.co/ y hay muchas cosas en las cuales están trabajando para futuras versiones. Estoy seguro que si siguen con el proyecto y escuchando a la comunidad, terminarán desarrollando un producto excelente, y que todo desarrollador web querrá tener.
+
+Quizás en esta entrada pude haber dicho más cosas malas que buenas, quizás probé el programa con las expectativas muy altas de acuerdo a lo que mostraban en sus videos, pero finalmente concluyo en que actualmente Macaw no es una herramienta para poder desarrollar al 100% un sitio, sino que es una ayuda, un paso más de todo el proceso de desarrollo, que puede llegar a ahorrar harto trabajo, pero no entrega un producto final (por ahora).
+
+Le veo mucho sentido para realizar prototipos o diseñar directamente en Macaw. Un diseñador que tenga muy poco conocimiento de HTML/CSS de seguro puede aprender a utilizar Macaw y entregar al desarrollador un producto mucho más acabado, que de seguro agradecerá.
