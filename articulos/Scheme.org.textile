@@ -1,0 +1,385 @@
+title: Schema.org: datos estructurados
+subtitle: Como utilizarlos y sacar provecho en una tienda on-line
+classes: language-markup
+pubDate:2014-06-27 12:49:00
+
+<header><hgroup>
+
+h1. Schema.org: datos estructurados
+
+h2. Como utilizarlos y sacar provecho en una tienda on-line
+</hgroup></header>
+
+*Autor:* Nikolas Peralta Rumié - "@nikoskip":https://twitter.com/nikoskip
+
+p(intro). Los documentos de un sitio web por lo general no son más que textos, imágenes y enlaces. Pero nosotros somos los encargados de darle significado semántico a ese contenido, para que un buscador pueda discernir y entender de qué trata realmente un documento, logrando finalmente jerarquizar los datos y de esa manera entregar resultados de búsqueda certeros a los usuarios. Mientras más significado le demos a los datos de un documento mejor, y en caso como una tienda on-line, mientras más datos pueda ver un usuario de tu producto sin siquiera entrar a tu sitio web, si no que directamente en un buscador, mejor.
+
+Me refiero a algo como esto:
+
+!http://nikoskip.me/ss/410010420140626.png!
+
+Podemos ver en ese resultado que no sólo nos muestra la descripción de un producto, sino que también el precio e inclusive reviews de los usuarios. Un dato tan importante como el precio (mientras sea competitivo) puede generar un _inbound_ de usuarios hacia el sitio que lo más seguro no se logre sin mostrar ese dato en el buscador. Y bien, ¿cómo logramos esto?
+
+h2. Schema.org: datos estructurados
+
+Los datos estructurados permiten declara explícitamente el significado de un dato en específico. Por lo que el buscador dejará de “suponer” que es lo que está leyendo. Imagina un documento sin el elemento @<title>@, ¿cómo sabrá un buscador cual es el título de tu documento? "Schema.org":http://schema.org/ es un esfuerzo entre los principales buscadores (Google, Yahoo y Bing) por estandarizar el uso de fragmentos enriquecidos como "microformatos":https://support.google.com/webmasters/answer/answer.py?answer=146897 o "RDFa":https://support.google.com/webmasters/answer/answer.py?answer=146898. Hay que tener en consideración que "_…no todos los tipos de información del sitio schema.org aparecerán en los resultados de búsqueda, aunque puedes tener la seguridad de que con el tiempo se utilizará una mayor cantidad de datos de muchas otras formas…_". Le decimos explicitamente a un buscador "_¡Oye buscador!, esto es una película y estos son sus datos: genéro, sinopsis, actores, director, etc._". Inclusive esto permite que aplicaciones externas puedan interactuar con estos datos, haciendo la web mucho más verbosa y entendible para el difícil mundo de las máquinas.
+
+En resumidas cuentas, a los buscadores les encantan los datos estructurados, debido a que los entienden fácilmente y pueden sacar información sumamente útil de ellos. Existen definiciones para estructurar casi cualquier cosa, desde una organización y sus  empleados hasta los discos de una banda y todas sus canciones.
+
+h2. Estructurando productos
+
+Siguiendo el ejemplo de la imagen superior, vamos a trabajar sobre la página de un producto ficticio *Trampa para Correcaminos* de la marca *ACME*, con un dudoso precio de *US $0.99* y ubicado en la categoría *Trampas > Correcaminos* de la tienda on-line de *ACME*.
+
+En Schema.org contamos con *objetos*, los cuales "se encuentran jerarquizados":http://schema.org/docs/full.html, de tal manera que casi cualquier cosa que queramos estructurar se encuentra definida. En este caso nuestro objeto es del tipo *Product*, por lo que debemos guiarnos de acuerdo a "las propiedades del schema Product":http://schema.org/Product. Hasta donde tengo entendido, ninguna propiedad es obligatoria, si no que todas son opcionales. Aunque solamente declaremos el nombre del producto, el schema sigue siendo válido.
+
+Cuando deseas comprar un producto ingresas en un sitio web y ves que el producto tiene un *nombre*, una *marca*, tiene un *precio*, pueda estar con stock o sin stock (*disponibilidad*), puede ser nuevo o usado (*condición*), comúnmente se encuentra bajo cierta *categoría*, cuenta con un identificador (*sku* u otro), hasta puede tener un *color* y un sin fin de otras propiedades (dimensiones, peso, etc). Todo lo que he nombrado son propiedades de un producto, y son estas propiedades las que debemos estructurar. Si nos fijamos en "las propiedades del schema Product":http://schema.org/Product muchas de las propiedades que yo nombre  están presentes:
+
+
+* *Nombre*: name - Text
+* *Marca*: brand - Brand u Organization
+* *Precio*: ¿?
+* *Disponibilidad*: ¿?
+* *Condición*: ¿?
+* *Categoría*: ¿?
+* *SKU*: sku - Text
+* *Color*: color- Text
+
+Podemos ver que cada propiedad cuenta con una descripción y un *Expected Type*, el cuál indica cual es el tipo de dato que esa propiedad debe contener. Algunas propiedades no están, como por ejemplo el *precio*. Un producto debe tener un precio, ¿no?. Pues claro, aunque sea un regalo, el precio es $0, pero lo tiene. Bien, si nos fijamos en la descripción de *Product*, dice que trata de "..._cualquier producto o servicio ofrecido..._". Si nos fijamos en las propiedades, hay una llamada *offers*, la cual nos permite "ofrecer" este producto. Por lo que hasta el momento, hemos definido el producto o servicio como tal, pero no su "oferta".
+
+Ahora debemos trabajar sobre "el objeto *Offer*":http://schema.org/Offer, si revisamos sus propiedades encontraremos las demás que habían quedado pendiente: precio, disponibilidad, condición y categoría. Esto nos hace entender que los diferentes objetos pueden interactuar entre si y existe jerarquía entre ellos: un producto contiene ofertas y también es parte de una marca. El *producto*, *oferta* y *marca* son objetos relacionados entre si, y esta relación se arma de acuerdo al *Expected Type* de cada propiedad de un objeto. Espero vayan entiendo como se va armando este árbol de datos.
+
+Lo primero que debemos hacer para empezar a armar nuestros datos estructurados para el producto, es identificar en que sección del documento se encuentra el elemento HTML que encierra el producto. Digamos que tenemos lo siguiente:
+
+bc.. <!doctype html>
+<html>
+<head>
+    <title>Trampa para Correcaminos - ACME Store</title>
+</head>
+<body>
+    <div>
+        <h1>Trampa para Correcaminos</h1>
+        <img  src="http://acme.com/imgs/trampas/correcaminos.jpg">
+        <p>La mejor trampa que un Coyote puede comprar para atrapar un Correcaminos.</p>
+
+        <ul>
+            <li>
+                <span>Trampa Correcaminos - pequeña</span>
+                <span>$0,99</span>
+            </li>
+            <li>
+                <span>Trampa Correcaminos - grande</span>
+                <span>$1,49</span>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        ACME Co.
+    </footer>
+</body>
+</html>
+
+p. Bien, podemos ver que el tag @<div>@ es el que finalmente encierra nuestro producto. También es totalmente válido decir que @<body>@ lo hace, pero no lo haremos en este caso.
+
+Ahora que sabemos quien encierra nuestro producto u objeto, debemos añadir el atributo *itemscope* a este elemento, quedando:
+
+bc.. <div itemscope>
+<!-- Nuestro producto -->
+</div>
+
+p. Pero un *itemscope* sin decir que tipo de objeto contiene ese elemento no lo es nada, por lo que debemos declararlo:
+
+bc.. <div itemscope itemtype="http://schema.org/Product">
+<!-- Nuestro producto -->
+</div>
+
+p. Ahora los buscadores sabrán que dentro de ese @<div>@ se encuentra un objeto del tipo *Product* y obtendrán desde la URL declarada las propiedades válidas para ese objeto.
+
+Es hora de empezar a declarar propiedades, utilizando el atributo *itemprop*:
+
+bc.. <div itemscope itemtype="http://schema.org/Product">
+    <span itemprop="name">Trampa para Correcaminos</span>
+    <img itemprop="image" src="http://acme.com/imgs/trampas/correcaminos.jpg" />
+    <span itemprop="description">La mejor trampa que un Coyote puede comprar para atrapar un Correcaminos.</span>
+    <ul>
+        <li>
+            <span>Trampa Correcaminos - pequeña</span>
+            <span>$0,99</span>
+        </li>
+        <li>
+            <span>Trampa Correcaminos - grande</span>
+            <span>$1,49</span>
+        </li>
+    </ul>
+</div>
+
+p. Cada *itemprop* tomará el valor que envuelva el **tag** donde fue declarado. Por el contrario, si deseas que se haga referencia a otro valor, mostrando un texto a tus visitantes y otro a las "máquinas", puedes utilizar el atributo *content*, de esta manera:
+
+bc.. <span itemprop="name" content="Nombre para las máquinas">Nombre para humanos</span>
+
+p. Hasta el momento hemos declarado el *nombre*, *imagen* y *descripción* del producto, pero nos faltan declarar sus variantes, que vendrían siendo "ofertas" del producto:
+
+bc.. <div itemscope itemtype="http://schema.org/Product">
+    <span itemprop="name">Trampa para Correcaminos</span>
+    <img itemprop="image" src="http://acme.com/imgs/trampas/correcaminos.jpg" />
+    <span itemprop="description">La mejor trampa que un Coyote puede comprar para atrapar un Correcaminos.</span>
+    <ul>
+        <li itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <span itemprop="name">Trampa Correcaminos - pequeña</span>
+            <span itemprop="price">$0,99</span>
+        </li>
+        <li itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <span itemprop="name">Trampa Correcaminos - grande</span>
+            <span itemprop="price">$1,49</span>
+        </li>
+    </ul>
+</div>
+
+p. Esto ya va tomando forma y es una versión básica del uso de datos estructurados. Pero vamos más allá, declaremos más propiedades para poder entregar más datos a los buscadores. Nos quedan pendiente la *disponibilidad* y *condición* de las ofertas:
+
+bc.. <div itemscope itemtype="http://schema.org/Product">
+    <span itemprop="name">Trampa para Correcaminos</span>
+    <img itemprop="image" src="http://acme.com/imgs/trampas/correcaminos.jpg" />
+    <span itemprop="description">La mejor trampa que un Coyote puede comprar para atrapar un Correcaminos.</span>
+    <ul>
+        <li itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <link itemprop="availability" href="http://schema.org/InStock">
+            <link itemprop="itemCondition" href="http://schema.org/NewCondition">
+            <span itemprop="name">Trampa Correcaminos - pequeña</span>
+            <span itemprop="price">$0,99</span>
+        </li>
+        <li itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <link itemprop="availability" href="http://schema.org/InStock">
+            <link itemprop="itemCondition" href="http://schema.org/NewCondition">
+            <span itemprop="name">Trampa Correcaminos - grande</span>
+            <span itemprop="price">$1,49</span>
+        </li>
+    </ul>
+</div>
+
+p. Podemos ver que he agregado los *itemprop* *availability* y *itemCondition*. Estos dos atributos los podríamos llamar _especiales_, pero se conocen como *Enumeraciones*. Son propiedades que puedan tomar sólo ciertos posibles valores y se declaran mediante una URL. En el caso de la *condición* de un producto y sus posibles valores pueden ser encontrados revisando el "schema de *OfferItemCondition*":http://schema.org/OfferItemCondition, por lo que no son enlaces inventados por mi, son parte del schema.
+
+Estamos casi con esto. Nos faltaría indicar la categoría del producto y por qué no el tipo de moneda en la cual está expresado el precio:
+
+bc.. <div itemscope itemtype="http://schema.org/Product">
+    <span itemprop="name">Trampa para Correcaminos</span>
+    <img itemprop="image" src="http://acme.com/imgs/trampas/correcaminos.jpg" />
+    <span itemprop="description">La mejor trampa que un Coyote puede desear para atrapar un Correcaminos.</span>
+    <ul>
+        <li itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <link itemprop="availability" href="http://schema.org/InStock">
+            <link itemprop="itemCondition" href="http://schema.org/NewCondition">
+            <meta itemprop="priceCurrency" content="USD">
+            <meta itemprop="category" content="Trampas > Correcaminos">
+            <span itemprop="name">Trampa Correcaminos - pequeña</span>
+            <span itemprop="price">$0,99</span>
+        </li>
+        <li itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <link itemprop="availability" href="http://schema.org/InStock">
+            <link itemprop="itemCondition" href="http://schema.org/NewCondition">
+            <meta itemprop="priceCurrency" content="USD">
+            <meta itemprop="category" content="Trampas > Correcaminos">
+            <span itemprop="name">Trampa Correcaminos - grande</span>
+            <span itemprop="price">$1,49</span>
+        </li>
+    </ul>
+</div>
+
+p. Se darán cuenta que he agregado dos *meta tags* en cada producto. Éstos pueden ser utilizados para incluir datos estructurados sin que un visitante tenga acceso visible a estos. No es recomendable ocultar estos datos dentro de algún @<div>@ oculto o algo por el estilo, de acuerdo a lo investigado, al menos Google no toma en cuenta datos estructurados que están ocultos de esa forma para los visitantes.
+
+Por último, nos falta declarar la marca de nuestro producto. De acuerdo al schema, la marca debe ser del tipo *Brand* u *Organization*. Si se fijan en el HTML original, hay un footer en el cual está escrito el nombre de la marca, vamos a utilizar ese footer para declarar nuestra marca y ligarla a nuestro producto. De esa forma, podemos declarar la marca de forma global en el sitio y hacer referencia a ella cuando lo necesitemos:
+
+bc.. <!doctype html>
+<html>
+<head>
+    <title>Trampa para Correcaminos - ACME Store</title>
+</head>
+<body>
+    <div itemscope itemtype="http://schema.org/Product">
+        <meta itemprop="brand" itemscope itemtype="http://schema.org/Brand" itemref="schema_brand">
+        <span itemprop="name">Trampa para Correcaminos</span>
+        <img itemprop="image" src="http://acme.com/imgs/trampas/correcaminos.jpg" />
+        <span itemprop="description">La mejor trampa que un Coyote puede desear para atrapar un Correcaminos.</span>
+        <ul>
+            <li itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <link itemprop="availability" href="http://schema.org/InStock">
+                <link itemprop="itemCondition" href="http://schema.org/NewCondition">
+                <meta itemprop="priceCurrency" content="USD">
+                <meta itemprop="category" content="Trampas > Correcaminos">
+                <span itemprop="name">Trampa Correcaminos - pequeña</span>
+                <span itemprop="price">$0,99</span>
+            </li>
+            <li itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <link itemprop="availability" href="http://schema.org/InStock">
+                <link itemprop="itemCondition" href="http://schema.org/NewCondition">
+                <meta itemprop="priceCurrency" content="USD">
+                <meta itemprop="category" content="Trampas > Correcaminos">
+                <span itemprop="name">Trampa Correcaminos - grande</span>
+                <span itemprop="price">$1,49</span>
+            </li>
+        </ul>
+    </div>
+
+    <footer id="schema_brand">
+        <span itemprop="name">ACME Co.</span>
+        <meta itemprop="logo" content="http://acme.com/logo.png">
+        <meta itemprop="url" content="http://acme.com">
+    </footer>
+</body>
+</html>
+
+p. Hemos asignado un *ID* a nuestro footer y declarado ciertos *itemprop* dentro, pero sin haber especificado el objeto en ningún lugar, ya que el significado del objeto se lo da el *itemprop* que hace referencia al @<footer>@, que en este caso es un @<meta>@ dentro del objeto *Product*:
+
+bc.. <meta itemprop="brand" itemscope itemtype="http://schema.org/Brand" itemref="schema_brand">
+
+p. Entonces, decimos que *itemprop* es _brand_, y de acuerdo al schema se debe especificar un *Brand* u *Organization*, por lo cual debemos declarar el atributo *itemscope* al igual que un *itemtype*. La gracia está en el atributo *itemref*, donde le indicamos que los datos de la marca, los va a obtener del elemento llamado *schema_brand*.
+
+Si ocupamos la "Herramienta de pruebas de datos estructurados de Google":http://www.google.com/webmasters/tools/richsnippets?q=uploaded:8004fcca591d7f603df1336fdd3217d5&hl=es, nos muestra como los buscadores interpretarán nuestros datos y como sería el resultado cuando nuestra página aparezca en la pantalla de un usuario dentro del buscador:
+
+!http://nikoskip.me/ss/400010720140627.png!
+
+Existen otras propiedades bastante interesantes para los productos, como *isConsumableFor*, que nos permite decir que este producto es un consumible de otro. Por ejemplo un cartucho de tinta, es un consumible de una impresora. Los invito a leer todas las propiedades posibles, de seguro encuentran más cosas interesantes.
+
+h2. Estructurando direcciones
+
+Continuado con el ejemplo de la tienda *ACME*, podemos suponer que ésta cuenta con varias sucursales a lo largo del mundo y que no todas tienen los mismos horarios de atención. Tomando lo aprendido, vamos a estructurar estas direcciones:
+
+bc.. <ul>
+    <li>
+        <h3>Fábrica</h3>
+        <address>
+            Gran Cañón del Colorado s/n,
+            Parque Nacional del Gran Cañón,
+            Arizona,
+            Estados Unidos
+        </address>
+        <p>Abierto las 24 horas, todos los días del año</p>
+        <p>Teléfono: (+1) 222 222 22</p>
+    </li>
+    <li>
+        <h3>Sucursal NY</h3>
+        <address>
+            10 Stanton St,
+            New York,
+            NY,
+            Estados Unidos
+        </address>
+        <p>Lunes a viernes 7am-17pm, domingos 12pm-19pm</p>
+        <p>Teléfono: (+1) 444 444 44</p>
+    </li>
+    <li>
+        <h3>Sucursal Chile</h3>
+        <address>
+            Bellavista 10,
+            Providencia,
+            RM,
+            Chile
+        </address>
+        <p>Lunes a viernes 10am-19pm</p>
+        <p>Teléfono: (+56) 333 333 33</p>
+    </li>
+    <li>
+        <h3>Sucursal Cuba</h3>
+        <address>
+            Lamparilla 2,
+            Cuba Tacón,
+            Havana,
+            Cuba
+        </address>
+        <p>Sólo abierto los meses de enero a marzo, 14pm-18pm</p>
+        <p>Teléfono: (+53) 555 555 55</p>
+    </li>
+</ul>
+
+p. Tenemos la fábrica principal y sucursales en 3 distintos países y todos con distintos horarios, inclusive, la sucursal de Cuba sólo abre los meses de enero a marzo. Como estamos hablando de tiendas que atienden público, vamos a utilizar el "schema de Store":http://schema.org/Store. Luego de leer las propiedades disponibles podemos empezar a estructurar nuestros datos. Voy a partir con la fábrica de ACME:
+
+bc.. <li itemscope itemtype="http://schema.org/Store">
+    <meta itemprop="name" content="ACME - Fábrica">
+    <h3>Fábrica</h3>
+    <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="streetAddress">Gran Cañón del Colorado s/n</span>,
+        <span itemprop="addressLocality">Parque Nacional del Gran Cañón</span>,
+        <span itemprop="addressRegion">Arizona</span>, <span itemprop="addressCountry">US</span>
+    </address>
+    <p><time itemprop="openingHours" datetime="Mo-Su">Todos los días 10am-21pm</time></p>
+    <p><span itemprop="telephone" content="+122222222">Teléfono (+1) 222 222 22</span></p>
+</li>
+
+p. Si se dan cuenta, he dejado el nombre de la tienda en un @<meta>@ debido a que si lo declaraba dentro del @<h3>@ no se entiende completamente que la tienda es la "Fábrica de ACME". Un visitante lo entenderá, pero una máquina probablemente no. Luego he declarado el "schema de PostalAddress":http://schema.org/PostalAddress para estructurar los datos de la dirección. Si leyeron la definición de este schema, se darán cuenta que sólo la propiedad *addressCountry* requiere un objeto del tipo *Country*, pero dice que podemos utilizar el código de dos letras ISO 3166-1 de los países. Por último, hemos declarado al teléfono de la tienda y el horario de atención, donde *no* declaramos que está abierto 24 horas, si no que al omitir ese dato, automáticamente se entiende que está abierto las 24 horas en el rango de días ingresado (Mo-Su: lunes a domingo). Los días deben ser escrito en formato de dos letras de acuerdo al idioma inglés y las horas en formato 24 horas.
+
+Veamos las siguientes dos direcciones:
+
+bc.. <li itemscope itemtype="http://schema.org/Store">
+    <meta itemprop="name" content="ACME - Sucursal NY">
+    <h3>Sucursal NY</h3>
+    <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="streetAddress">10 Stanton St</span>,
+        <span itemprop="addressLocality">New York</span>,
+        <span itemprop="addressRegion">New York</span>, <span itemprop="addressCountry">US</span>
+    </address>
+    <p>
+        <time itemprop="openingHours" datetime="Mo-Fr 07:00-17:00">Lunes a viernes 7am-17pm</time>,
+        <time itemprop="openingHours" datetime="Su 12:00-19:00">domingos 12pm-19pm</time>
+    </p>
+    <p><span itemprop="telephone" content="+144444444">Teléfono (+1) 444 444 44</span></p>
+</li>
+
+<li itemscope itemtype="http://schema.org/Store">
+    <meta itemprop="name" content="ACME - Sucursal Chile">
+    <h3>Sucursal Chile</h3>
+    <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="streetAddress">Bellavista 10</span>,
+        <span itemprop="addressLocality">Providencia</span>,
+        <span itemprop="addressRegion">RM</span>, <span itemprop="addressCountry">CL</span>
+    </address>
+    <p><time itemprop="openingHours" datetime="Mo-Fr 10:00-19:00">Lunes a viernes 10am-19pm</time></p>
+    <p><span itemprop="telephone" content="+144444444">Teléfono (+1) 444 444 44</span></p>
+</li>
+
+p. Bastante similar a lo anterior. Hemos agregado ahora las horas en las cuales las tiendas abren. Un caso especial es la tienda de NY, ya que he declarado dos propiedades *openingHours*, una para el horario de lunes a viernes y la otra para el horario de los domingos. No hay problema alguno en repetir esta propiedad y los buscadores las entienden perfectamente.
+
+Por último, nos queda la sucursal de Cuba, que sólo abre en los meses de enero a marzo:
+
+bc.. <li itemscope itemtype="http://schema.org/Store">
+    <meta itemprop="name" content="ACME - Sucursal Cuba">
+    <h3>Sucursal Cuba</h3>
+    <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="streetAddress">Lamparilla 2</span>,
+        <span itemprop="addressLocality">Cuba Tacón</span>,
+        <span itemprop="addressRegion">Havana</span>, <span itemprop="addressCountry">CU</span>
+    </address>
+    <p itemprop="openingHoursSpecification" itemscope itemtype="http://schema.org/OpeningHoursSpecification">
+        <meta itemprop="validFrom" content="2015-01-01">
+        <meta itemprop="validThrough" content="2015-03-31">
+        <meta itemprop="opens" content="14:00">
+        <meta itemprop="closes" content="18:00">
+        Abierto sólo entre los meses de enero y marzo, 14pm-18pm
+    </p>
+    <p><span itemprop="telephone" content="+144444444">Teléfono (+53) 555 555 55</span></p>
+</li>
+
+p. Lo único nuevo en esta dirección es el uso de la propiedad *openingHoursSpecification* en vez de la propiedad *openingHours* y el uso del "schema *OpeningHoursSpecification*":http://schema.org/OpeningHoursSpecification. Esto nos permite especificar horarios de atención variables para ciertas fechas del año. Por ejemplo, pudiese haber otra tienda que abre las 24 horas el día, todos los días, como la fábrica. Pero en navidad, abre hasta las 16:00 horas, para ello debemos declarar la propiedad *openingHours* indicando que abre todo el año, todo el día, pero también utilizar *openingHoursSpecification* para *especificar* que el día de navidad, sólo abre hasta las 16:00 horas.
+
+Para terminar con el asunto de las direcciones, ¿recuerdan el @<footer>@ que teníamos en los productos con ID _schema_brand_?. Bien, ese @<footer>@ tenía las propiedades de una marca u organización (es válido para los dos). Si suponemos que ese @<footer>@ está disponible en todas las páginas, podemos hacer referencia de que las tiendas son sucursales de esa marca en especial. Bastaría agrega un @<meta>@ utilizando la propiedad *branchOf*:
+
+bc.. <meta itemprop="branchOf" itemscope itemtype="http://schema.org/Organization" itemref="schema_brand">
+
+p. s
+
+h2. Cerrando el tema
+
+Nunca pensé que iba a escribir tanto, pero la verdad es que no es para menos. El tema de los datos estructurados puede asustar en primara instancia, pero finalmente es fácil de entender su lógica, más aún cuando se logran guiar por lo que dice el schema. Además, en el sitio de "Schema.org:"http://schema.org en casi todos los casos existen ejemplos prácticos al pie de cada definición. No hay mucha información en internet al respecto como me gustaría, ni en "StackOverflow se Schema.org":http://stackoverflow.com/questions/tagged/schema.org, pero Google cuenta con un par de buenos contenidos que sirven mucho de guía (los dejaré más abajo).
+
+Se dice mucho que el estructurado de datos sirve para *SEO*, pero la verdad es que al menos Google nunca habla de que tu página posicionará mejor ni mejorará tu _pagerank_, por el momento habla de entegar "resultados enriquecidos a los usuarios". Pero de seguro en un futuro no muy lejano los datos estructurados van a ser claves para el posicionamiento web, ya que tiene sentido. A los buscadores les interesa el contenido, y que mejor que entregarles contenido estructurado y explícito, sin que tengan que adivinar mediante maléficos algoritmos que es cada cosa.
+
+*Para leer:*
+
+* "Documentación oficial - Partiendo con schema.org":http://schema.org/docs/gs.html
+* "Preguntas frecuentes sobre schema.org":https://support.google.com/webmasters/answer/1211158?hl=es
+* "schema.org examples for location pages":https://developers.google.com/webmasters/business-location-pages/schema.org-examples
+* "Tipos de datos estructurados":https://support.google.com/webmasters/topic/4599102?hl=es&ref_topic=4598337
+
+*Herramientas:*
+
+* "Herramienta de pruebas de datos estructurados":http://www.google.com/webmasters/tools/richsnippets
+* "Schema Creator":http://schema-creator.org
