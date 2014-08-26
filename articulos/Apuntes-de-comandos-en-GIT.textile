@@ -172,8 +172,23 @@ Ahora se agrega y hacen commits con un solo comando, así:
 bc. 
 git add-commit -m "parche al reactor n.9"
 
+Y para borrar el alias si ya no gusta o uno quiere cambiarlo:
+
+bc. 
+git config --global --unset alias.add-commit
+
 ref:
 * "$":http://stackoverflow.com/questions/4298960/git-add-a-git-commit-in-one-command 
+
+h3(#ac12). Revisar detalle de los cambios
+
+Para ver el detalle de los nuevos archivos que se van a agregar en un @add@
+
+bc. 
+git status -u
+
+ref:
+* "$":https://www.kernel.org/pub/software/scm/git/docs/git-status.html
 
 h2. Conclusión
 

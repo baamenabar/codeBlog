@@ -1,27 +1,56 @@
-title: Segundos tropiezos con Sencha Touch 2
-subtitle: Un registro de errores, soluciones y links al empezar a trabajar con Sencha Touch 2, para el desarrollo de aplicaciones móviles.
-pubDate:2013-09-04 01:24:02
-draft:true
+title: New Stumbling Baby Steps into Sencha Touch 2
+subtitle: A record of problems, errors, solutions and links while beginning to work with Sencha Touch 2, for developing mobile apps.
+startDate:2014-05-13T02:57:01+00:00
+classes: language-markup
+lang: en
+draft: true
+pubDate:2014-05-13T02:57:01+00:00
 
+ <header><hgroup>
 
-h1. Primeros tropiezos con Sencha Touch 2
+h1. Stumbling first steps in Sencha Touch 2
 
-Luego de un año de haber empezado con sencha touch, hice un par de apps, funcinaron pero no me encantaron, así que seguí con lo mío. Ahora, casi un año después necesito hacer un app demo, así que retomo Sencha Touch 2 nuevamente, desde cero.
+h2. ...again
+</hgroup></header>
 
-Esto va a doler.
+More than a year ago I learnt some Sencha Touch 2, having done a couple of apps, which worked, but I was not thrilled about them; so I stuck to what I knew, RWD and the occasional webapp. But now I have a new project for which I need to build a prototype app, hence here I'm relearning Sencha Touch 2, from scratch, but this time I have a better understanding of a lot of stuff.
 
-Descargué sencha, que <em>hay</em> que descomprimir en una carpeta del servidor local (yo uso WAMP)
+This is still going to hurt.
 
-<!--<blockquote>
-	<code>C:\htdocs\sencha</code>
-</blockquote>-->
+h2(#ac1). __[fr]Mise en place__ (what we'll need)
+
+Just like before there's no clear way to "Get started", there are many many guides, tutorials, videos and hello world apps, from which you can get started. Many of which have different approaches to actually get started. 
+
+* Downloaded Sencha, now on version 2.3.1; it promises to be a much more mature development process. 
+* Also download the former SDK, now called Sencha Cmd.
+* First unzip Sencha Touch to your development folder, like @C:\htdocs\sencha@
+* Then install Sencha Cmd, easy compared to the painful install of the old SDK.
+* Open a @cmd@ window and type <kbd>sencha</kbd>, it should return something like <samp>Sencha Cmd v4.0.4.48</samp> and a lot more text. If this doesn't work, check that you have the Java RE and Java SDK if you plan on compiling an Android app.
+* You might also need Ruby installed with SASS and COMPASS if you want to properly play with the CSS styles and themes.
+
+I'll be working with 3 official “guides” to build my own app, no idea which one will teach me more, so I'll do them all, together.
+
+* "Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1)":http://www.sencha.com/blog/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/
+* "Creating Your First App (for 2.3.1)":http://docs.sencha.com/touch/2.3.1/#!/guide/first_app
+* "Getting Started with Sencha Touch (for 2.3.2)":http://docs.sencha.com/touch/2.3.2/#!/guide/getting_started
+
+h2(#ac2). Generating the app
+
+*Note:* I have an Apache server running with wamp, but you don't need one, Sencha Cmd, now comes packed with a Jetty web server you can make run for your project. I'm sticking to my Apache.
+
+With the command line open (I like git bash). Create the folder you are going to work with, in my case it's @c:/htdocs/vas@. Navigate to the sencha folder @c:/htdocs/sencha@ and type something like the following:
 
 bc. 
-C:\htdocs\sencha
+sencha generate app -name guiaVAS -path ../vas
 
- Navegas hasta la carpeta <code>http://localhost/sencha/</code> y aparece una página de bienvenida con un video de "Primeros pasos" en inglés y en un MAC.
+Which will generate a demo app, with lots useful of scafolding. One can do the same from the folder of the app with the following command:
 
- Yo tengo un PC con windows 7 de 64 bits, con un suspiro apreté play.
+bc. 
+sencha -sdk ../sencha generate app guiaVAS .
+
+Where <kbd>-sdk ../sencha</kbd> is the argument for the path to the sencha library, and <kbd>guiaVAS</kbd> is the name of the app and <kbd> .</kbd> (a period) is the path where to generate it.
+
+In both cases lots of text goes by and we are ready. If we visit @http://localhost/vas@ we can see the staple 3 dots animating while the Sencha App loads, and then a welcome screen (it used to have an image with the logo).
 
  Cinco segundos y ya estaba abierta la línea de comando,  en el video navegan hasta la carpeta donde está instalado sencha y parten inicalizando una carpeta con el siguiente comando
 
