@@ -50,9 +50,9 @@ We tried hard with google talk/chat/hangout/whatever* and Atlassian's Hipchat in
 
 h2. Enter Sqwiggle
 
-Squiggle is like a virtual office space, with people present but silently working in the background. Where if you want to talk to them, you just click or tap on their picture.
+Sqwiggle is like a virtual office space, with people present but silently working in the background. Where if you want to talk to them, you just click or tap on their picture.
 
-!img/content/squiggle-app.jpg(Screenshot of the Squiggle app in Chrome)!
+!img/content/squiggle-app.jpg(Screenshot of the Sqwiggle app in Chrome)!
 
 And the picture is updated every minute, so you get a sense if that person is in front of the computer and how concentrated or frustrated with something they are.
 
@@ -67,8 +67,11 @@ It comes with a chat which has just enough functionality to be useful and not di
 
 They have just added:
 
-* screen sharing
 * timeline search
+
+Comming soon:
+
+* screen sharing
 
 Just like in a physical space, you can tap someone's picture (or shoulder) and start a conversation. But it can be used for a lot more. Sometimes when I'm away, my wife sends the kids to where I work and points the camera to them, so she can keep an eye on them and call their attention if she sees anything unusual. **Now with the iPad app it's even easier.**
 
@@ -76,21 +79,21 @@ h2. Why we prefer Sqwiggle
 
 It's mostly **seeing the faces of the people you work with**, the green dot in a chat telling you that the person is available or not has never been very reliable.
 
-We tried with Google talk... chat... hangout... whatever-they-are-calling-it-now* and it feels detached after working with squiggle, you miss "seeing the people", seeing their expression change. And with Google sending files is not as straightforward, not to speak it doesn't have code with syntax highlighting. Good for getting something out of the way, but not an everyday tool. 
+We tried with Google talk... chat... hangout... whatever-they-are-calling-it-now* and it feels detached after working with Sqwiggle, you miss "seeing the people", seeing their expression change. And with Google sending files is not as straightforward, not to speak it doesn't have code with syntax highlighting. Good for getting something out of the way, but not an everyday tool. 
 
-Oh, support is very nice. Very nice people, the **actual** people who work in squiggle get in touch with you.
+Oh, support is very nice. Very nice people, the **actual** people who work in Sqwiggle get in touch with you.
 
 h3. Why we ditched Hipchat
 
-Don't get me wrong, Atlassian's tool is very powerful tool, way more powerful than squiggle, has tons of features, but it feels like having a meeting in a Starbucks inside a groceries store; too much stuff you will try to use that you don't actually need. 
+Don't get me wrong, Atlassian's tool is very powerful tool, way more powerful than Sqwiggle, has tons of features, but it feels like having a meeting in a Starbucks inside a groceries store; too much stuff you will try to use that you don't actually need. 
 
 We don't need a colorful notification when someone has commited code to repository-n, branch-x. Your team mate can just as easily type: @Just pushed several changes to fix this or that@ , he knows to do so only when it relevant to the team. 
 
-You get far less noise when humans decide what to share with the team. Even though Hipchat has a nice Android app and good integratin with tons of stuff Sqwiggle feels more natural, it's clean and out of the way.
+You get far less noise when humans decide what to share with the team. Even though Hipchat has a nice Android app and good integration with tons of APIs, Sqwiggle feels more natural, it's clean and out of the way.
 
 h2. What we miss from Sqwiggle
 
-Mostly, a smartphone app. Most other things that we wanted have been steadily being added. Like the screen sharing, and timeline search. 
+Mostly, a smartphone app. Most other things that we wanted have been steadily being added. Like timeline search and screen sharing that is coming out soon.
 
 h2. In short
 
@@ -104,4 +107,4 @@ We even paid for the app when there was no free plan.
 
 h2. Disclaimer
 
-Even though I had been contemplating for a while writing about Squiggle, it was when they contacted me to get my feedback on the app, that Michael gave me the final nudge to write this. Apart from that I have no relationship with Sqwiggle, (I'm even on the free plan).
+Even though I had been contemplating for a while writing about Sqwiggle, it was when they contacted me to get my feedback on the app, that Michael gave me the final nudge to write this. Apart from that I have no relationship with Sqwiggle, (I'm even on the free plan).
