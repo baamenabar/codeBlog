@@ -46,7 +46,7 @@ You don't actually need that much flow of constant information.
 h3. Messenger/chat apps
 
 From IRC to Snapchat there's plenty to choose from, some have quite good search capabilities.
-We tried hard with google talk/chat/hangout/whatever* and Atlassian's Hipchat in combination with voice/video calls. But they where still "calls" and are always somehow disconnected from the rest of the conversation. (more on that later)
+We tried hard with Google talk/chat/hangout/whatever* and Atlassian's Hipchat in combination with voice/video calls. But they where still "calls" and are always somehow disconnected from the rest of the conversation. (more on that later)
 
 h2. Enter Sqwiggle
 
@@ -69,7 +69,7 @@ They have just added:
 
 * timeline search
 
-Comming soon:
+Coming soon:
 
 * screen sharing
 
@@ -87,7 +87,7 @@ h3. Why we ditched Hipchat
 
 Don't get me wrong, Atlassian's tool is very powerful tool, way more powerful than Sqwiggle, has tons of features, but it feels like having a meeting in a Starbucks inside a groceries store; too much stuff you will try to use that you don't actually need. 
 
-We don't need a colorful notification when someone has commited code to repository-n, branch-x. Your team mate can just as easily type: @Just pushed several changes to fix this or that@ , he knows to do so only when it relevant to the team. 
+We don't need a colorful notification when someone has committed code to repository-n, branch-x. Your team mate can just as easily type: @Just pushed several changes to fix this or that@ , he knows to do so only when it relevant to the team. 
 
 You get far less noise when humans decide what to share with the team. Even though Hipchat has a nice Android app and good integration with tons of APIs, Sqwiggle feels more natural, it's clean and out of the way.
 
