@@ -5,35 +5,35 @@
 								</header>
 								<ul>
 									<li>
-										<a href="./article_Picture-capture-and-uploader-app-with-ST2.html">
-											<h4>Upload camera pictures with Sencha Touch 2</h4>
+
+										<a href="./article_Apuntes-de-comandos-en-GIT.html">
+											<h4>Apuntes de comandos GIT</h4>
 											<p>
-												Using Apache Cordova (Phonegap) and ST2 to compile a native Android image uploader.
+												Lo más útil para trabajo en equipo, y dónde poner especial cuidado.
 											</p>
 										</a>
 									</li>
 									<li>
 
-										<a href="./article_SVG-with-fallback.html">
-											<h4>¿Se puede usar SVG confiablemente como imagen?</h4>
-											<p>
-												Antes pensábamos que NO, porque IE y Android no leen SVG y degrada mal. Pero estábamos equivocados. Sólo necesitamos un poco de Modenizr.
-											</p>
-										</a>
-									</li>
-									<li>
-
-										<a href="./article_Primeros-pasos-con-Sencha-Touch-2-y-Phonegap.html">
-											<h4>Primeros pasos con Sencha Touch 2</h4>
-											<p>Y los típicos errores con los que uno se encuentra.</p>
+										<a href="./article_Animating-vapour-with-Javascript-on-canvas.html">
+											<h4>Begin particle animation rendered on the canvas element.</h4>
+											<p>Animating vapour with JavaScript on canvas.</p>
 										</a>
 									</li>
 									<li>
 
 										<a href="./article_Git-plus-github-plus-ServiceHooks-equals-new-workflow-in-PHP.html">
-											<h4>Git + github + Service Hooks = new workflow in PHP</h4>
+											<h4>Schema.org: datos estructurados</h4>
 											<p>
-												Primeros pasos para reemplazar el FTP por GIT (Tutorial de noob para noobs).
+												Como utilizarlos y sacar provecho en una tienda on-line.
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="./article_Picture-capture-and-uploader-app-with-ST2.html">
+											<h4>Upload camera pictures with Sencha Touch 2</h4>
+											<p>
+												Using Apache Cordova (Phonegap) and ST2 to compile a native Android image uploader.
 											</p>
 										</a>
 									</li>

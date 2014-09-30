@@ -8,7 +8,7 @@ $grisClaro1:#E6E6E6;
 //"museo-sans", "PT Sans", "ubuntu-mono", "pt-serif"
 
 @import "compass/css3";
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
+@import url("http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic");
 @import "_normals";
 @import "_prism";
 //@import "_monokai";
@@ -92,7 +92,7 @@ figure{
 	}
 } 
 article {
-	max-width:660px;
+	max-width:760px;
 	margin:0 2%;
 	header {
 		border-bottom:1px solid #B3B3B3;
@@ -138,6 +138,7 @@ article {
 	}
 	img{ 
 		max-width:100%;
+		height:auto;
 	}
 	footer{
 		background: none;
@@ -274,20 +275,43 @@ footer{
 
 }
 
+/************* 
+             main layout
+****************/
 
-@media all and (min-width: 31em){//desde 31ems hacia arriba
+@media all and (min-width: 41em){//desde 31ems hacia arriba
+	article{
+		margin: 0 3%;
+		width:61%;
+	}
+	.otros-post{
+		width: 32.9%;
+		//min-width: 548px;
+		box-sizing: border-box;
+	}
+	.articleGroup{
+		width: 57%;
+		article{display:block; width:auto;}
+	}
+	.otros-post, article, .articleGroup{
+		@include inline-block;
+		vertical-align: top;
+	}
+}
+
+@media all and (min-width: 51em){//desde 31ems hacia arriba
 	h1{
 		font-size: 3em;
 	}
 	article{
 		margin: 0 3%;
-		width: 60%;
+		width:51%;
 	}
 	.otros-post{
 		background-color:$grisClaro0;
-		//min-width:269px;
-		width:33%;
-		padding:13px 0 13px 9px;
+		width: 42.9%;
+		padding: 13px 0 13px 9px;
+		max-width: 548px;
 		.grupo{
 			margin-bottom: 18px;
 		}
@@ -300,11 +324,10 @@ footer{
 			vertical-align:top;
 		}
 	}
-	.otros-post, article, .articleGroup{
-		@include inline-block;
-		vertical-align: top;
+	.articleGroup{
+		width: 57%;
+		article{display:block; width:auto;}
 	}
-	.articleGroup article{display:block; width:auto;}
 }
 @media screen and (min-width: 900px) {
 	.wrapper{
@@ -318,9 +341,9 @@ footer{
 		padding:1em;
 	}
 }
-@media screen and (max-width: 961px){
+/*@media screen and (max-width: 961px){
 	.otros-post{
-		width: auto;
+		//width: auto;
 		.columnasDos{
 			display: block;
 		}
@@ -331,7 +354,7 @@ footer{
 		margin-right: 5%;
 		width: auto;
 	}
-}
+}*/
 @media screen and (max-width: 741px){
 	article{
 		max-width: 90%;
@@ -345,7 +368,7 @@ footer{
 }
 @media screen and (min-width: 1276px) {
     .otros-post{
-    	width:538px;
+    	//width:538px;
 		.columnasDos{
 			width: 260px;	
 		}
