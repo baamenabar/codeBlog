@@ -187,6 +187,13 @@ Para ver el detalle de los nuevos archivos que se van a agregar en un @add@
 bc. 
 git status -u
 
+Y si el output es muy largo uno puede usar:
+
+bc. 
+git status -u | less
+
+Ahí te mete en una especie de vi, para salir hay que salir como en vi: @:q@ .
+
 ref:
 * "$":https://www.kernel.org/pub/software/scm/git/docs/git-status.html
 
