@@ -110,7 +110,7 @@ if(isset($theArticle->lang) && $theArticle->lang)$documentLang = $theArticle->la
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-23469330-1']);
-  _gaq.push(['_setDomainName', 'medula.cl']);
+  _gaq.push(['_setDomainName', 'code.medula.cl']);
   _gaq.push(['_trackPageview']);
 
   (function() {

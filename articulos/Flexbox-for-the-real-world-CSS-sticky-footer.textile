@@ -1,0 +1,35 @@
+title:Flexbox for the real world: Sticky footer fallback
+subtitle: Take advantage of flexbox for layout while still providing support for older browsers.
+classes: language-markup
+startDate:2014-10-13T03:58:28+00:00
+pubDate:2014-10-13T05:11:32+00:00
+
+
+ <header><hgroup>
+
+h1. Flexbox for the real world: Sticky footer
+
+h2. Case nº1: Graceful fallbacks for browsers without support for flexbox.
+</hgroup></header>
+
+p(intro). Flexbox has long been the promise of a revolution, had it been specified as it is today, when the original proposal came out, the adoption today would be complete. I've been playing with flexbox since the original syntax came out, and I loved it, specially coupled with @media-queries@, there was even a polyfill for IE. But as I tried to use it in production, I spent a week trying to figure things out, found big inconsistencies and bugs in the implementations that made it impossible to use it in production, with a disillusioned heart I dropped it. Four years later it's ready for everyday use (with the proper fall-backs).
+
+Much has been "demoed":http://philipwalton.github.io/solved-by-flexbox/ and "written":http://css-tricks.com/snippets/css/a-guide-to-flexbox/ about how to use flexbox, it now gracefully solves problems that where impossible or too complicated to solve in CSS. 
+
+There also has been a huge effort to find out how to write CSS in order to "cater for each of the 3 implemented syntaxes":http://css-tricks.com/using-flexbox/. Today, with "autoprefixer":https://github.com/postcss/autoprefixer all I need to write is the modern syntax and the preprocessor takes care of it all.
+
+h2(#ac1). What about non-supporting browsers?
+
+Well, the general strategy has been "let's ignore them" or "hack your fix with javaScript". So I'll be writing a series of articles and demos showing possible fallbacks for common @flexbox@ use cases. This is the first one.
+
+h2(#ac2). Sticky footer fallback tactics for @flexbox@
+
+It's the classic case where the content is so small that the footer is no where near the actual footer of the window. In the past, if you knew the height of the footer and if it stayed the same there was a "smart trick":http://ryanfait.com/resources/footer-stick-to-bottom-of-page/, sadly the trick is scarcely relevant now.
+
+In modern day _responsive_ world you never know the @height@ of your footer. Even if you don't build _responsive_ layouts, if you use a CMS, the odds are that the footer content is editable by the site owner, so you'll never be certain of the height.
+
+Here "flexbox comes to the rescue":http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ . But what to do without flexbox? or how to fall it back?
+
+"Here are some options":http://baamenabar.github.io/real-world-flexbox/sticky-footer.html, not ideal, but better than nothing.
+
+I'll explain soon how each option works.
