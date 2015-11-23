@@ -1,0 +1,27 @@
+title: Choosing font loading strategies to avoid FOIT
+subtitle: A set of front-end strategies to deliver fonts as fast as possible.
+classes: language-markup
+draft:true
+startDate:2015-11-23T22:09:53+00:00
+pubDate:2015-11-23T22:12:40+00:00
+
+
+ <header><hgroup>
+
+h1. Font loading strategies to prevent FOIT
+
+h2. Frontend performance for Typogaphic heavy sites
+</hgroup></header>
+
+p(intro). Typography is pretty, webfonts empower designers, type distiguishes a brand, fonts can comunicate a lot, webfonts are much lighter than rendered text in images, **but...** webfonts _can_ be a performance bottleneck. We will explore diferent strategies for loading multiple webfonts in a site, this site. We will compare loading and rendering performance of different approaches for loading fonts.
+
+h2. Preamble
+
+Much has been said about fonts slowing page load and rendering, and many proposals have been made to deal with this, all have drawbacks. We will put them to the test and I'll try to put together the best possible solution.
+
+h3. This is not intended for:
+
+* Sites using Typekit (though we will benchmark)
+* Sites using only one or two font files
+* Sites that don't have a license to use their fonts as webfonts
+* Developers that want to install a package and be done with it (maybe in the future)
