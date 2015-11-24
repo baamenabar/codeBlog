@@ -25,3 +25,7 @@ h3. This is not intended for:
 * Sites using only one or two font files
 * Sites that don't have a license to use their fonts as webfonts
 * Developers that want to install a package and be done with it (maybe in the future)
+
+h2. Benchmark
+
+We have to measure against something. I'll take the current state of one article of this blog, one that uses many fonts, images and the like. After that we will
