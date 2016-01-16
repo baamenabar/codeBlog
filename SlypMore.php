@@ -9,8 +9,10 @@ function getMostRecent($list,$limit=5){
 function printFile($toprint,$dontPrintJustReturn=false){
 	if(!is_file( $toprint ))return;
 	$fileRawText = file_get_contents($toprint);
-	$textile = new Textile('html5');
-	$articleHtml = $textile->TextileThis($fileRawText);
+	$textileParser = new \Netcarver\Textile\Parser();
+	$articleHtml = 	$textileParser
+	    			->setDocumentType('html5')
+					->parse($fileRawText);
 	echo $articleHtml;
 }
 ?>

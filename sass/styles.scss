@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 $azulHover:#06e;
 $amarilloMedula:#FAC116;
 $amarilloMedulaFondo:#FCC212;
@@ -60,8 +62,8 @@ h3{
 kbd{
     background-color:#333;
     border:1px solid #ccc;
-    @include border-radius(3px);
-    @include single-box-shadow(rgba(0,0,0,1), 1px, 1px, 3px, 0, true);
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px 0 rgba(0,0,0,1) true;
     color:#DDD;
     display:inline-block;
     margin:0 .1em;
@@ -72,7 +74,7 @@ samp{
     background-color:$grisClaro1;
     border:1px solid #ccc;
     @include border-radius(3px);
-    @include single-box-shadow(rgba(0,0,0,0.3), 1px, 1px, 3px, 0, true);
+    @include single-box-shadow(1px, 1px, 3px, 0, rgba(0,0,0,0.3), true);
     color:#333;
     display:inline-block;
     margin:0 .1em;
@@ -129,7 +131,7 @@ article {
 		margin:0 -1em 1em -1em;
 		.boxshadow &{
 			border:none;
-			@include single-box-shadow(rgba(0,0,0,0.3),1px, 1px, 3px, 1px);
+			@include single-box-shadow(1px, 1px, 3px, 1px, rgba(0,0,0,0.3));
 		}
 		img{ 
 			max-width:100%;
@@ -159,7 +161,7 @@ article {
 }
 .otros-post{
 	.boxshadow &{
-		@include single-box-shadow(rgba(0,0,0,0.2),3px, 3px, 6px, 0);
+		@include single-box-shadow(3px, 3px, 6px, 0, rgba(0,0,0,0.2));
 	}
 	background-color:$grisClaro0;
 	.grupo{
@@ -178,7 +180,7 @@ article {
 			margin-right:5px;
 			&.primero{margin-right:0}
 			.boxshadow &{
-				@include single-box-shadow(rgba(0,0,0,0.2),3px, 3px, 6px, 0);
+				@include single-box-shadow(3px, 3px, 6px, 0, rgba(0,0,0,0.2));
 			}
 			h2{
 				font-size:24px;

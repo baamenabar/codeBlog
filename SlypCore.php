@@ -46,7 +46,9 @@ class SlypCore{
 	
 	function __construct()
 	{
-		require "inc/libs/classTextile.php";
+		require 'inc/libs/Netcarver/Textile/Parser.php';
+		require 'inc/libs/Netcarver/Textile/DataBag.php';
+		require 'inc/libs/Netcarver/Textile/Tag.php';
 		require "inc/libs/markdown.php";
 		require "inc/libs/simple_html_dom.php";
 	}
@@ -156,8 +158,10 @@ class SlypCore{
 					$articleRawText = fread( $fhandl, $articleRawFilesize );
 					if(!$articleRawText)$articleRawText = 'ERROR: no file could be read by fread.';
 					if(!isset($oneArticle['markdown'])){
-						$textile = new Textile('html5');
-						$articleHtml = $textile->TextileThis($articleRawText);
+						$textileParser = new \Netcarver\Textile\Parser();
+						$articleHtml = 	$textileParser
+						    			->setDocumentType('html5')
+										->parse($articleRawText);
 					}else{
 						$articleHtml = Markdown($articleRawText);
 					}
