@@ -1,9 +1,9 @@
 title: Choosing font loading strategies to avoid FOIT
 subtitle: A set of front-end strategies to deliver fonts as fast as possible.
 classes: language-markup
-draft:false
 startDate:2015-11-23T22:09:53+00:00
 pubDate:2015-11-23T22:12:40+00:00
+draft:true
 
 
  <header><hgroup>

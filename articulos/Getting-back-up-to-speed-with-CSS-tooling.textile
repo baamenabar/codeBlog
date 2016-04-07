@@ -1,0 +1,203 @@
+title:PostCSS with Gulp: up to speed with CSS tooling
+subtitle: Specific guide to set up PostCSS with Gulp, choose plugins and keep working with good 'ol Sass (without loosing too much time).
+classes: language-markup
+startDate:2016-04-03T22:58:24+02:00
+pubDate:2016-04-03T23:01:38+02:00
+
+
+ <header><hgroup>
+
+h1. Up to speed with PostCSS + Gulp
+
+h2. Specific guide to set up PostCSS with Gulp, choose plugins and keep working with good 'ol Sass (without loosing too much time).
+</hgroup></header>
+
+p(intro). PostCSS is easy, they said; you should do it, they said; it's fast, they said; it's the future, they said. For me it was confusing enough that I'm writing this guide to put all the variables in some order and ponder different aspects to have in consideration when choosing different plugins needed for a relatively simple project, but also with the experience of huge projects.
+
+h2(#ac2). __[fr]Mise en place__, a list of expectations
+
+PostCSS can do too many things, better *start with what you know you need* and what you want. So far, for small and medium projects @Gulp + Sass@ have floated my boat just fine, but I've seen that in big project's thats far from enough, so we'll make a list of what we need our CSS setup to do. Later I'll explain each of this items.
+
+* Read and compile Sass
+* Lint Sass
+* Autoprefix standard CSS
+* Concatenate 
+* Minify
+* Generate source-maps for debugging minified CSS
+* CSS Modules (this is just to play with)
+* CSS Next (also to play)
+
+Many of the things on the list are new for me, and I guess postCSS is a good way to start playing with them.
+
+If you don't already have it, we need to install gulp globally and locally as a development dependency. We'll also install right away postCSS.
+
+bc. npm install -g gulp
+npm install --save-dev gulp gulp-postcss
+
+h2(ac#5). The Folders
+
+!img/content/file-structure-postcss-guide.png!
+
+bc(language-javascript).. var gulp = require('gulp');
+var postcss = require('gulp-postcss');
+
+gulp.task('css', function () {
+
+  // Array of transformations to pass into post CSS.
+  // This could end up in it's own file if it grows too big.
+  var transformations = [];
+
+  return gulp.src('src/css/*.css')
+  .pipe(postcss(transformations))
+  .pipe(gulp.dest('dist/css'));
+});
+
+p. This works, but it will just copy any @.css@ file from @src@ to @dist@. Not very useful so far, but very reassuring in the sense that we can clearly see there is no black magic at play here. 
+
+h2(#ac3). With or without Sass?
+
+Sass is our baseline, the minimum this thing has to do to be useful, but it was far from straightforward. Every introduction and tutorial speak of postCSS (and it's plugins) as a replacement of Sass, even those claiming it doesn't want to replace Sass. All you find is collections of plugins that put together resemble working with Sass, most notably "precss":https://github.com/jonathantneal/precss gets recommended a lot. 
+
+Then you start realizing *you don't need Sass, you need features from it*, sometimes very few. So, the question is: Which features do you need from Sass? For starting a project I would need:
+
+* *imports*
+* *variables*
+* *nesting* (just a little)
+* *nesting media-queries* (for organization's sake). 
+
+Does @precss@ fit the bill? Let's try with the following file:
+
+bc(language-css).. @import 'partials/vars';
+
+.one-box {
+    border-bottom: $border solid $color-red;
+
+    // comment justifying nesting
+    p {
+        color: $color-grey;
+    }
+
+    @media screen and (min-width: 30em) {
+        background-color: #DDD;
+    }
+}
+
+p. Impressive, it almost does it, *almost*: it choked on the double slash comment, but after changing to valid css comment this is the output.
+
+bc(language-css). .one-box {
+    border-bottom: 1px solid #922;
+}
+/* comment justifying nesting */
+.one-box p {
+    color: #888;
+}
+    @media screen and (min-width: 30em) {
+    .one-box {
+        background-color: #DDD;
+    }
+    }
+
+Of course there is a way to support *double slash or inline comments* there is a couple of plugins for it, after some testing and reading the best was "postcss-strip-inline-comments":https://github.com/mummybot/postcss-strip-inline-comments , although this has a dependency on "*postcss-scss*":https://github.com/postcss/postcss-scss which outlines the underlying issue. PostCSS is for CSS, if we want it to read SCSS we need yet another plugin to set as the syntax interpreter.
+
+bc. npm install postcss-strip-inline-comments postcss-scss --save-dev
+
+Then just pass it as the interpreter in the options of @postcss@ in your processors array.
+
+bc(language-javascript).. var transformations = [
+    require('postcss-strip-inline-comments')
+    precss({ /*options*/ })
+    ];
+
+  return gulp.src('src/css/*.css')
+  .pipe(postcss(transformations, {syntax:require('postcss-scss')} ))
+  .pipe(gulp.dest('dist/css'));
+
+p. Yes! we get working valid css code, this took me 3 hours of fiddling with plugins and configuration. 
+
+h3. I don't like where this is going
+
+Right now it's doing what I need it to do now. But this will most certainly change, I will need another feature, and I might not have 2 spare hours to fiddle with my gulp file, but I could learn and have the setup ready and have many recipes for different combination of features, but there are two things bothering me, a lot.
+
+h4. 1. I'm writing SCSS on a @.css@ file
+
+I need to manually tell my text editor that it should use SCSS syntax, not CSS.
+
+I'm sure there's a plugin out there, and I'll have it running in a few minutes, I could even make gulp rename the file and then pass it on... but it's yet another configuration to fiddle with.
+
+h4. 2. I'm depending too much on small projects
+
+With Sass I just need Sass, even if gulp disappeared from npm I can just use sass from the command line and be on my merry way.
+
+With PostCSS on the other hand I'm depending on the following packages:
+
+* postcss
+* postcss-scss
+* postcss-strip-inline-comments
+* precss (actually a wrapper for many postcss plugins)
+** postcss-partial-import
+** postcss-mixins
+** postcss-advanced-variables
+** postcss-custom-selectors
+** postcss-custom-media
+** postcss-custom-properties
+** postcss-media-minmax
+** postcss-color-function
+** postcss-nesting
+** postcss-nested
+** postcss-atroot
+** postcss-property-lookup
+** postcss-extend
+** postcss-selector-matches
+** postcss-selector-not
+
+Just a week after the "*npm kik and left-pad* outage/issue":http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm* I wonder which of the two scenarios below is more likely to happen within 1 year.
+
+A. All the developers working on Sass AND libsass stop working and updating *both* projects
+B. Any of the teams (or single developers) stop working and updating in *any* of the above 19 projects
+
+In theory they would still work, until you do an npm update and one of the libraries changes an API, or you need something from a newer version, but it's not compatible with something else... we've already been there several times, it doesn't take years, just months. But on the other hand, I am way more confident that I can pick up any of those plugins and manage to fix a bug. Not so with Sass.
+
+ *I am aware that the kik/left-pad issue is less likely to happen again as it did.
+
+I must also note that my experience with libsass has not been flawless, there have always been weird issues on different environments. So, for the sake of fairness let's review how this happens with sass.
+
+h3. With Sass
+
+Whatever the outcome, the purpose of this article is to get a whole postCSS setup working with or without Sass
+
+Install the "gulp-sass":https://github.com/dlmanning/gulp-sass plugin and add it to the task.
+
+bc. npm install gulp-sass --save-dev
+
+We should rename the files to @.scss@ and after postcss just rename them. 
+
+bc(language-javascript).. var sass = require('gulp-sass');
+
+gulp.task('sass', function () {
+  var transformations = [];
+
+  return gulp.src('src/css/*.scss')
+  .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+  .pipe(postcss(transformations))
+  .pipe(gulp.dest('dist/css'));
+});
+
+p. The first time running the task all runs fine, and even faster.
+
+!img/content/postcss-css-vs-sass-output.gif!
+
+h2. This is just the preface
+
+This seemingly simple post has become way more complex than expected. I will continue the PostCSS saga with other posts, stay tuned...
+
+h2(#ac4). Credits 
+
+p. To get here I followed several guides and read the install instructions of many packages, most notably:
+
+"Smashing Magazine: An Introduction To PostCSS By Drew Minns":https://www.smashingmagazine.com/2015/12/introduction-to-postcss/ Very introductory, but left me with a lot of questions. 
+
+"postCSS-starter repo":https://github.com/drewminns/postCSS-starter/tree/master/gulp
+
+"Extending Sass with PostCSS by Ashley Nolan":http://ashleynolan.co.uk/blog/extend-sass-with-postcss A plain and short explanation how you can still use Sass and PostCSS
+
+"JS Jabber episode on postCSS":https://devchat.tv/js-jabber/206-jsj-postcss-with-ben-briggs Casually this episode came out just as I was writing this article.
