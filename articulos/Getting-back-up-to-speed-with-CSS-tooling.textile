@@ -23,8 +23,6 @@ PostCSS can do too many things, better *start with what you know you need* and w
 * Autoprefix standard CSS
 * Minify
 * Generate source-maps for debugging minified CSS
-* CSS Modules (this is just to play with)
-* CSS Next (also to play)
 
 Many of the things on the list are new for me, and I guess postCSS is a good way to start playing with them.
 
