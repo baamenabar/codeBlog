@@ -1,0 +1,41 @@
+title:Learn Docker setup for an images microservice server
+subtitle:Guide for setting up and troubleshooting our first steps into using docker for developing microservices or dev environments.
+classes: language-markup
+startDate:2016-04-18T22:59:24+02:00
+pubDate:2016-04-18T23:19:08+02:00
+
+
+ <header><hgroup>
+
+h1. Learn Docker setup for an images microservice server
+
+h2. Setting up and troubleshooting our first steps into docker on windows.
+</hgroup></header>
+
+
+p(intro). Yopu must probably be fedup already with all the talk about Docker, and how it is the future, how it's so easy to work with... Well for me it's just the means to an end. The end is to have a server that resizes and crops images on the fly, storing a cached version to avoid generating it each time. Currently, for this, you can use *cloudinary* or some other services, but I like to use open source alternatives and own my own my data. I'll setup a little server to do so. The first step is done with this guide, get Docker working on your machine.
+
+Actually, a simple docker instance is faily simple to have running, but it's not very flexible or extensible, we will be using some extra sugar to make our magic work. This guide is aimed at windows users, but for most of it, it works also for mac or linux users.
+
+h2(#ac1). __[fr]Mise en place__, the tools we will use
+
+* Some decent console (like Cmder or Cygwin) 
+* "Docker toolbox":https://www.docker.com/products/docker-toolbox A bundled Docker environment
+* "fly-image":https://github.com/sadok-f/fly-image (WIP) a image conversion/compression microservice project (take a look for now, we'll clone later)
+
+h2(#ac2). Docker setup
+
+Download and install Docker Toolbox, I didn't have to change anything from the defaults, but check on your case.
+
+
+
+!img/content/file-structure-postcss-guide.png(This will be the alt text)!
+
+After the image, some code:
+
+bc(language-javascript). var someObject = {
+	part:true,
+	follow: "false"
+};
+
+And another paragraph

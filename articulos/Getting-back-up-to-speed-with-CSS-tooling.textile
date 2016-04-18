@@ -2,7 +2,7 @@ title:PostCSS with Gulp: up to speed with CSS tooling
 subtitle: Guide to set up CSS transformations with PostCSS and Gulp, choose plugins and keep working with good 'ol Sass (without loosing too much time).
 classes: language-markup
 startDate:2016-04-03T22:58:24+02:00
-pubDate:2016-04-03T23:01:38+02:00
+pubDate:2016-04-11T23:01:38+02:00
 
 
  <header><hgroup>
@@ -383,7 +383,7 @@ bc(language-javascript).. gulp.task('css', function () {
   .pipe(postcss(transformations, {syntax:scssSyntax} ))
   .pipe(rename({ extname: '.css' }))
   .pipe(sourcemaps.write('.'))//this path is relative to the outputed css file
-  .pipe(gulp.dest('public/css'));
+  .pipe(gulp.dest('dest/css'));
 });
 
 h3. @sass@ (PostCSS with Sass)
@@ -403,7 +403,7 @@ bc(language-javascript).. gulp.task('sass', function () {
   .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
   .pipe(postcss(postTransformations))
   .pipe(sourcemaps.write('.'))//this path is relative to the outputed css file
-  .pipe(gulp.dest('public/scss'));
+  .pipe(gulp.dest('dest/scss'));
 });
 
 p. They are more or less about the same amount of code.

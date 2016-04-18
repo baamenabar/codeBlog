@@ -297,7 +297,7 @@ class SlypCore{
 		$src_dir = $this->_articlesFolder;
 		if( $type == 'page' )$src_dir = $this->_pagesFolder;
 		if ( is_file( $src_dir . "/" . $filename . ".textile") || is_file( $src_dir . "/" . $filename . ".txt") || is_file( $src_dir . "/" . $filename . ".md") ) {
-			return 'The document: “' . $filename . '” already exist.';
+			return 'ERROR: The document: “' . $filename . '” already exist.';
 		}
 		$theTitle = implode(' ',	explode('-', $filename));
 		$toSave='title:' . $theTitle . "\n";
@@ -309,7 +309,25 @@ class SlypCore{
 h1. '.$theTitle.'
 
 h2. Subtitle
-</hgroup></header>' . "\n";
+</hgroup></header>' . "\n" .'
+
+p(intro). This is the intro that will be lloked up for the lead text of an article.
+
+h2(#ac2). __[fr]Mise en place__, first subtitle
+
+Here goes some text with a "link to this header":#ac2 followed by an image
+
+!img/content/file-structure-postcss-guide.png(This will be the alt text)!
+
+After the image, some code:
+
+bc(language-javascript). var someObject = {
+	part:true,
+	follow: "false"
+};
+
+And another paragraph
+';
 		$rs = file_put_contents($src_dir . "/" . $filename . ".textile", $toSave);
 		if ( $rs === false ) {
 			$emsg = "The document: “ $filename ” could not be created on the documents folder.";
