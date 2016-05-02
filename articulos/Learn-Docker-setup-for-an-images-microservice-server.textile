@@ -19,7 +19,6 @@ Actually, a simple docker instance is faily simple to have running, but it's not
 
 h2(#ac1). __[fr]Mise en place__, the tools we will use
 
-* Some decent console (like Cmder or Cygwin) 
 * "Docker toolbox":https://www.docker.com/products/docker-toolbox A bundled Docker environment
 * "fly-image":https://github.com/sadok-f/fly-image (WIP) a image conversion/compression microservice project (take a look for now, we'll clone later)
 
@@ -27,15 +26,62 @@ h2(#ac2). Docker setup
 
 Download and install Docker Toolbox, I didn't have to change anything from the defaults, but check on your case.
 
+You can run the **Docker Quickstart Terminal** that gets added to your start menu, you'll get a cute terminal looking like this:
 
+!img/content/docker-setup-first-console-output.png!
 
-!img/content/file-structure-postcss-guide.png(This will be the alt text)!
+The cute whale lets you know all is ready to go. Although the defaults are fine, we will do this with a little more complexity.
 
-After the image, some code:
+We will create an entirely new machine, as if you already had one virtual machine running with docker, but you want to leave it alone for work projects, this one will be for experimenting and testing things. Let's call it **munich** just because that's where I'm now.
 
-bc(language-javascript). var someObject = {
-	part:true,
-	follow: "false"
-};
+bc. docker-machine create --driver virtualbox munich
 
-And another paragraph
+You will get some output and now you can check if you have a virtualmachine ready to connect:
+
+bc. docker-machine ls
+
+I get a list with @default@ and @munich@.
+
+bc. docker-machine env munich
+
+Will output a command you need to copy, paste and run:
+
+What this means is that it's setting up the environment to be hooked to the machine you specified, meaning that the docker commands will be run only for that machine. You need to run this on every console window you open. It looks like a hastle, but you get used to it.
+
+h2. Docker Compose
+
+The repo we are using depends on you having Docker Compose to run several containers to make the server work.
+
+Cd into a folder and clone the repo:
+
+bc.  git clone git@github.com:sadok-f/fly-image.git
+# some output....
+cd fly-image
+
+Now @docker-compose@ will take care of everything.
+
+bc. docker-compose build
+
+The first time you run it, it will take a while to download and build the image, from then on, just seconds! The livong Docker promise of fast containers.
+
+bc. docker-compose up -d
+
+This will up the containers, after runing this, you can list your containers with 
+
+bc. docker ps
+
+This command will be your best friend while working with docker.
+
+Now you can connect to your machine, from a browser. For that you need your VM's IP (virtual machine's IP).
+
+bc. docker-machine ip munich
+# will output something like: 
+192.168.99.211
+
+with that IP you can make your first call to the fly-image server.
+
+http://your.vm.ip.address:8080/upload/w_500,h_500,q_90/https://www.mozilla.org/media/img/firefox/firefox-256.e2c1fc556816.jpg
+
+If you get a file not found error...
+
+!img/content/docker-setup-file-not-found.png!
