@@ -51,12 +51,12 @@ header('Pragma: no-cache'); ?><!doctype html>
 											<?php endif ?></a>
 									</header>
 									<?php if (isset($oneArticle['pubDate'])): ?>
-										<p class="pubDate">Publicado: <time datetime="<?php echo $oneArticle['pubDate'] ?>" pubdate><?php echo $oneArticle['pubDate'] ?></time><?php if (isset($oneArticle['author'])): ?> | <?php echo $oneArticle['author'] ?> <?php endif ?></p>
+										<p class="pubDate">Published: <time datetime="<?php echo $oneArticle['pubDate'] ?>" pubdate><?php echo $oneArticle['pubDate'] ?></time><?php if (isset($oneArticle['author'])): ?> | <?php echo $oneArticle['author'] ?> <?php endif ?></p>
 									<?php endif ?>
 									<p><?php if (isset($oneArticle['intro'])): ?>
 										<?php echo $oneArticle['intro'] ?>
 									<?php endif ?>
-									<a href="./article_<?php echo urlencode( $oneArticle['cleanname'] ); ?>.html"><i lang="en">Read more</i> / Leer más</a></p>
+									<a href="./article_<?php echo urlencode( $oneArticle['cleanname'] ); ?>.html">Read more</a></p>
 								</article>
 							<?php endforeach ?>
 						</div><?php include "inc/template/aside-gral.php"; ?>
