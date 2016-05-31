@@ -1,0 +1,8 @@
+
+<header> <h2>About</h2> </header>
+
+This blog was started as the development blog of stuff we discovered working at <a href="http://medula.cl" title="Our website portfolio untill 2014." target="_blank">Médula Diseño</a> and we wanted to share.
+
+Today my blog ( Agustín Amenabar L ). The theme of this blog is code, development and bit of ops in the different flavours I encounter.
+
+This blog I keep as a static site (or nearly) without a database articles can be written in Textile or Markdown and it has "it's own repo on Github":https://github.com/baamenabar/codeBlog , so if I mess up, you can file an issue on github and, of course, comment. It is very basic but let's me spin up an article in no time, with great flexibility; so it serves it's purpose.
