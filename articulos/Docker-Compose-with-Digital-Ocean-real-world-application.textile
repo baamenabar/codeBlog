@@ -1,0 +1,103 @@
+title:Docker Compose on Digital Ocean: A real world application
+subtitle:Setup the fly-image project to convert, compress, cache and serve your images on the fly.
+classes: language-markup
+startDate:2016-05-31T23:15:09+02:00
+pubDate:2016-05-31T23:18:01+02:00
+
+
+ <header><hgroup>
+
+h1. Docker Compose with Digital Ocean real world application
+
+h2. Step two of this Docker series with fly-image
+</hgroup></header>
+
+
+p(intro). Since we learnt that the dockerized @fly-image@ project runs smoothly on a local envionment. We can set it up for production work on a Digital Ocean Droplet.
+
+h2(#ac2). __[fr]Mise en place__, What we'll need
+
+* A Digital Ocean account (the account itself it's free)
+* "fly-image":https://github.com/sadok-f/fly-image (WIP) a image conversion/compression microservice project (take a look for now, we'll clone later)
+
+The rest we'll write up from scratch.
+
+Go to our Digital Ocean dashboard and just create a new droplet.
+
+!img/content/digi-ocean-docker-compose-create-droplet-button.png!
+
+For best Docker compatibility use Ubuntu 14 x64. Ubuntu because Docker was built originally for Ubuntu. Version 14 because most documentation is for 14, so we'll just choose that too, but it should not be different for other versions. Choose the closest region to you or our audience.
+
+To have an initial config of users and libraries we will take advantage of the *cloud-config* field available, where we can add YAML instructions to provision the server.
+
+bc. 
+#cloud-config
+users:
+  - name: leopold
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+package_upgrade: true
+packages:
+  - git
+  - python-pip
+
+Also add your SSH key in the fields so you can ssh as a root user without password.
+
+Just put a name to our server (in my case @flyimage@) and start the droplet.
+
+After the image is created and the server started we have to ssh to our machine with root and set up the user that will use Docker.
+
+h2(#ac4). Setting up the user for Docker
+
+Half the works was already done by the @cloud-config@ script, we need to setup keys and passwords only.
+
+Once logged in as root, we can set the password for the user leopold:
+
+bc. password leopold
+# ...and follow instructions
+
+Or even better add our public ssh key for leopold (I'm assuming you have an ssh key already on your system). For that we create the @.ssh@ directory and inside we add our key to the user's trusted keys.
+
+bc. su leopold
+cd ~
+mkdir .ssh
+chmod 700 .ssh
+vim .ssh/authorized_keys
+# the last line doesn't have to be vim, use whatever you like.
+
+Here add the public key from our machine, we only need to declare the contents of the list on the first line, then paste the contents of your public key, it should look like this:
+
+bc. id_rsa.pub contents
+ssh-rsa AVKKEuah+pFS/1/and/a/lot/more/characters/bXBnkjuYgG9hhh me@local.machine
+
+Save and exit, now we re-set permissions for the permisionis list.
+
+bc. chmod 600 .ssh/authorized_keys
+# and exit the user leopold
+exit
+# we are now as root user
+
+Since user @leopold@ is already in the sudoers list we can just block access to login with root. This is a best practice for every server.
+
+bc. vim /etc/ssh/sshd_config
+
+Look for the line with: @PermitRootLogin yes@ and change it to @PermitRootLogin no@ . Save and close vim.
+
+Now we restart @ssh@ service to the changes apply. And on a separate console window or session you should check that login in works with *leopold*.
+
+bc. ssh leopold@123.45.6.7
+
+If so, just close the root session and continue in the *leopold* session.
+
+h2(#ac5). Installing Docker and Docker Compose
+
+*Important:* These steps must be done on a user, not on root.
+
+
+
+h2(#ac3). Links and credits
+
+* "How To Install and Use Docker Compose on Ubuntu 14.04":https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-14-04 by Nik van der Ploeg. Prety much the original instructions on which this is based.
+* "An Introduction to Cloud-Config Scripting":https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting by Justin Ellingwood. This helped me create the provisioning script for the host server.
+* "Initial Server Setup with Ubuntu 14.04":https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04 by Justin Ellingwood. Here we setup basic config to the host machine.
