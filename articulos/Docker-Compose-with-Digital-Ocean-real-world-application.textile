@@ -94,6 +94,36 @@ h2(#ac5). Installing Docker and Docker Compose
 
 *Important:* These steps must be done on a user, not on root.
 
+Download and install Docker (will ask for )
+
+bc. wget -qO- https://get.docker.com/ | sh
+
+Add @leopold@ user to docker group. Actually the docker install script also suggests this and even gives you the line to copy and paste.
+
+bc. sudo usermod -aG docker $(whoami)
+
+Exit your session on the server and log back in (to update the user changes). Then install *Docker Compose*.
+
+bc. sudo pip install docker-compose
+
+Now we are finally ready to take advantage of Docker, from here on we can bring in any image we want and jut run. But we will spin up the images server.
+
+h2(#ac7). Installing Fly Image Server
+
+Now we finally clone the project on a new folder.
+
+bc. git clone git://github.com/sadok-f/fly-image.git
+
+We cd into the project and build the containers
+
+bc. cd fly-image
+docker-compose build
+
+This will take a few minutes. If you have any apt-get errors just run the command again. Once done we *up* the containers and check them.
+
+bc. docker-compose up -d
+docker ps
+
 
 
 h2(#ac3). Links and credits
