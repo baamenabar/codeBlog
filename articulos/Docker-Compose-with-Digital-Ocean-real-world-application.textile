@@ -1,0 +1,173 @@
+title:Docker Compose on Digital Ocean: A real world application
+subtitle:Setup the fly-image project to convert, compress, cache and serve your images on the fly.
+classes: language-markup
+draft:true
+startDate:2016-05-31T23:15:09+02:00
+pubDate:2016-05-31T23:18:01+02:00
+
+
+ <header><hgroup>
+
+h1. Docker Compose with Digital Ocean real world application
+
+h2. Step two of this Docker series with fly-image
+</hgroup></header>
+
+
+p(intro). Since we learnt that the dockerized @fly-image@ project runs smoothly on a local envionment. We can set it up for production work on a Digital Ocean Droplet.
+
+h2(#ac2). __[fr]Mise en place__, What we'll need
+
+* A Digital Ocean account (the account itself it's free)
+* "fly-image":https://github.com/sadok-f/fly-image (WIP) a image conversion/compression microservice project (take a look for now, we'll clone later)
+
+The rest we'll write up from scratch.
+
+Go to our Digital Ocean dashboard and just create a new droplet.
+
+!img/content/digi-ocean-docker-compose-create-droplet-button.png!
+
+For best Docker compatibility use Ubuntu 14 x64. Ubuntu because Docker was built originally for Ubuntu. Version 14 because most documentation is for 14, so we'll just choose that too, but it should not be different for other versions. Choose the closest region to you or our audience.
+
+To have an initial config of users and libraries we will take advantage of the *cloud-config* field available, where we can add YAML instructions to provision the server.
+
+bc. 
+#cloud-config
+users:
+  - name: leopold
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+package_upgrade: true
+packages:
+  - git
+  - python-pip
+
+Also add your SSH key in the fields so you can ssh as a root user without password.
+
+Just put a name to our server (in my case @flyimage@) and start the droplet.
+
+After the image is created and the server started we have to ssh to our machine with root and set up the user that will use Docker.
+
+h2(#ac4). Setting up the user for Docker
+
+Half the works was already done by the @cloud-config@ script, we need to setup keys and passwords only.
+
+Once logged in as root, we can set the password for the user leopold:
+
+bc. password leopold
+# ...and follow instructions
+
+Or even better add our public ssh key for leopold (I'm assuming you have an ssh key already on your system). For that we create the @.ssh@ directory and inside we add our key to the user's trusted keys.
+
+bc. su leopold
+cd ~
+mkdir .ssh
+chmod 700 .ssh
+vim .ssh/authorized_keys
+# the last line doesn't have to be vim, use whatever you like.
+
+Here add the public key from our machine, we only need to declare the contents of the list on the first line, then paste the contents of your public key, it should look like this:
+
+bc. id_rsa.pub contents
+ssh-rsa AVKKEuah+pFS/1/and/a/lot/more/characters/bXBnkjuYgG9hhh me@local.machine
+
+Save and exit, now we re-set permissions for the permisionis list.
+
+bc. chmod 600 .ssh/authorized_keys
+# and exit the user leopold
+exit
+# we are now as root user
+
+Since user @leopold@ is already in the sudoers list we can just block access to login with root. This is a best practice for every server.
+
+bc. vim /etc/ssh/sshd_config
+
+Look for the line with: @PermitRootLogin yes@ and change it to @PermitRootLogin no@ . Save and close vim.
+
+Now we restart @ssh@ service to the changes apply. And on a separate console window or session you should check that login in works with *leopold*.
+
+bc. ssh leopold@123.45.6.7
+
+If so, just close the root session and continue in the *leopold* session.
+
+h2(#ac5). Installing Docker and Docker Compose
+
+*Important:* These steps must be done on a user, not on root.
+
+Download and install Docker (will ask for )
+
+bc. wget -qO- https://get.docker.com/ | sh
+
+Add @leopold@ user to docker group. Actually the docker install script also suggests this and even gives you the line to copy and paste.
+
+bc. sudo usermod -aG docker $(whoami)
+
+Exit your session on the server and log back in (to update the user changes). Then install *Docker Compose*.
+
+bc. sudo pip install docker-compose
+
+Now we are finally ready to take advantage of Docker, from here on we can bring in any image we want and jut run. But we will spin up the images server.
+
+h2(#ac7). Installing Fly Image Server
+
+Now we finally clone the project on a new folder.
+
+bc. git clone git://github.com/sadok-f/fly-image.git
+
+We cd into the project and build the containers
+
+bc. cd fly-image
+docker-compose build
+
+This will take a few minutes. If you have any apt-get errors just run the command again. Once done we *up* the containers and check them.
+
+bc. docker-compose up -d
+docker ps
+
+bc. CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS              PORTS                         NAMES
+ddf7a9ddc6a7        flyimage_nginx             "nginx -g 'daemon off"   5 hours ago          Up 5 hours           0.0.0.0:8080->80/tcp, 443/tcp nginx
+71292b62b451        flyimage_fpm               "docker/php7-fpm/init"   5 hours ago          Up 5 hours           9000/tcp                      fpm
+910170bcc0a5        flyimage_redis-commander   "redis-commander --re"   5 hours ago          Up 5 hours           0.0.0.0:8090->8081/tcp        redis-commander
+49f131887913        flyimage_redis             "/usr/bin/redis-serve"   5 hours ago          Up 5 hours           6379/tcp                      redis
+
+This will show us the running containers. The first few minutes the @fpm@ container runs, it will be installing dependencies with @php composer@ running on the background. After that you can start using the server with the IP of the server. But it would be prettier to have a domain.
+
+h2(#ac8). Use a domain instead of an IP and port
+
+This is simple, you just need to tell you registrar to create a CNAME DNS registry pointing to the IP of your droplet, it should be available in a few minutes.
+
+In this case we have the subdomain "img.medula.cl":http://img.medula.cl/ pointed to the server. But by default it is available only from the port 8080, to change that we must update our @docker-compose.yml@ so nginx serves from port 80.
+
+In the nginx section, look for the line that has: @- "8080:80"@ and replace that with @- "80:80"@, then stop the containers, rebuild and start them again.
+
+bc. docker-compose stop
+docker-compose build
+docker-compose up -d
+
+Now you can try accessing the domain directly and you get the "Hello from Docker!" message.
+
+h2(#ac9). Changing the defaults
+
+By default we can fetch images from any URL, resize, compress and serve them right back. That is easy to abuse. Also I want to have a bunch of source images in this same server, it comes with at least 20GB to play with. Later we will even add an image uploader. 
+
+To restrict the domain we need to edit @config/parameters.yml@ file and change.
+
+bc. restricted_domains: true
+
+to 
+
+bc. restricted_domains: false
+whitelist_domains:
+    - www.mozila.org
+    - medula.cl
+
+There's no need to restart the server, we can just test by trying to fetch an image from flick, like this one: "https://c2.staticflickr.com/1/362/19293294393_cbde92e205_k.jpg":https://c2.staticflickr.com/1/362/19293294393_cbde92e205_k.jpg . If we pass it to the server "http://img.medula.cl/upload/w_201,h_201,q_90/https://c2.staticflickr.com/1/362/19293294393_cbde92e205_k.jpg":http://img.medula.cl/upload/w_201,h_201,q_90/https://c2.staticflickr.com/1/362/19293294393_cbde92e205_k.jpg it should return a 403 response, but it returns a 500.
+
+
+
+h2(#ac3). Links and credits
+
+* "How To Install and Use Docker Compose on Ubuntu 14.04":https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-14-04 by Nik van der Ploeg. Prety much the original instructions on which this is based.
+* "An Introduction to Cloud-Config Scripting":https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting by Justin Ellingwood. This helped me create the provisioning script for the host server.
+* "Initial Server Setup with Ubuntu 14.04":https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04 by Justin Ellingwood. Here we setup basic config to the host machine.

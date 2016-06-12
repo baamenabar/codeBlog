@@ -449,6 +449,64 @@ When you have your first kid you ask yourself: _how could you ever take love awa
 
 Just be ready for double the amount of diapers (errors) on crappy days (deadlines).
 
+h2(#ac11). All together
+
+Now all together would be something like this:
+
+h3. For Sass
+
+bc. npm install --save-dev gulp gulp-sass gulp-postcss postcss-scss stylelint autoprefixer cssnano gulp-sourcemaps gulp-task-listing gulp-livereload
+
+First we install all, *inluding livereload*. Next, assuming you already have a ".stylelintrc":https://github.com/stylelint/stylelint/blob/master/docs/user-guide/example-config.md file for stylelint, then, in the @gulpfile.js@ paste the following.
+
+bc(language-javascript).. var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    postcss = require('gulp-postcss'),
+    scssSyntax = require('postcss-scss'),
+    stylelint = require('stylelint'),
+    autoprefixer = require('autoprefixer'),
+    cssnano = require('cssnano'),
+    sourcemaps = require('gulp-sourcemaps'),
+    livereload = require('gulp-livereload');
+
+//configs 
+
+var nanoConfig = {
+        safe:false,
+        autoprefixer: false
+      };
+var autoprefixerConfig = { browsers: ['> 1%', 'last 3 versions', 'Android >= 4', 'iOS >= 7'] };
+
+// Styles
+gulp.task('sass', function () {
+
+  var preTransformations = [
+    stylelint()
+  ];
+  var postTransformations = [
+    autoprefixer(autoprefixerConfig),
+    cssnano(nanoConfig)
+  ];
+
+  return gulp.src('src/css/*.scss')
+  .pipe(postcss(preTransformations, {syntax:scssSyntax}))
+  .pipe(sourcemaps.init())
+  .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+  .pipe(postcss(postTransformations))
+  .pipe(sourcemaps.write('.'))//this path is relative to the outputed css file
+  .pipe(gulp.dest('css'))
+  .pipe(livereload());
+});
+
+// Watch
+gulp.task('watch', function() {
+    livereload.listen();
+    gulp.watch('src/scss/**/*.scss', ['sass']);
+});
+
+// Add a "help" task to output the available tasks
+gulp.task('help', require('gulp-task-listing'));
+
 h2(#ac4). Credits 
 
 p. To get here I followed several guides and read the install instructions of many packages, most notably:
