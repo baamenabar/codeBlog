@@ -1,6 +1,7 @@
 title:Docker Compose on Digital Ocean: A real world application
 subtitle:Setup the fly-image project to convert, compress, cache and serve your images on the fly.
 classes: language-markup
+draft:true
 startDate:2016-05-31T23:15:09+02:00
 pubDate:2016-05-31T23:18:01+02:00
 
@@ -123,6 +124,45 @@ This will take a few minutes. If you have any apt-get errors just run the comman
 
 bc. docker-compose up -d
 docker ps
+
+bc. CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS              PORTS                         NAMES
+ddf7a9ddc6a7        flyimage_nginx             "nginx -g 'daemon off"   5 hours ago          Up 5 hours           0.0.0.0:8080->80/tcp, 443/tcp nginx
+71292b62b451        flyimage_fpm               "docker/php7-fpm/init"   5 hours ago          Up 5 hours           9000/tcp                      fpm
+910170bcc0a5        flyimage_redis-commander   "redis-commander --re"   5 hours ago          Up 5 hours           0.0.0.0:8090->8081/tcp        redis-commander
+49f131887913        flyimage_redis             "/usr/bin/redis-serve"   5 hours ago          Up 5 hours           6379/tcp                      redis
+
+This will show us the running containers. The first few minutes the @fpm@ container runs, it will be installing dependencies with @php composer@ running on the background. After that you can start using the server with the IP of the server. But it would be prettier to have a domain.
+
+h2(#ac8). Use a domain instead of an IP and port
+
+This is simple, you just need to tell you registrar to create a CNAME DNS registry pointing to the IP of your droplet, it should be available in a few minutes.
+
+In this case we have the subdomain "img.medula.cl":http://img.medula.cl/ pointed to the server. But by default it is available only from the port 8080, to change that we must update our @docker-compose.yml@ so nginx serves from port 80.
+
+In the nginx section, look for the line that has: @- "8080:80"@ and replace that with @- "80:80"@, then stop the containers, rebuild and start them again.
+
+bc. docker-compose stop
+docker-compose build
+docker-compose up -d
+
+Now you can try accessing the domain directly and you get the "Hello from Docker!" message.
+
+h2(#ac9). Changing the defaults
+
+By default we can fetch images from any URL, resize, compress and serve them right back. That is easy to abuse. Also I want to have a bunch of source images in this same server, it comes with at least 20GB to play with. Later we will even add an image uploader. 
+
+To restrict the domain we need to edit @config/parameters.yml@ file and change.
+
+bc. restricted_domains: true
+
+to 
+
+bc. restricted_domains: false
+whitelist_domains:
+    - www.mozila.org
+    - medula.cl
+
+There's no need to restart the server, we can just test by trying to fetch an image from flick, like this one: "https://c2.staticflickr.com/1/362/19293294393_cbde92e205_k.jpg":https://c2.staticflickr.com/1/362/19293294393_cbde92e205_k.jpg . If we pass it to the server "http://img.medula.cl/upload/w_201,h_201,q_90/https://c2.staticflickr.com/1/362/19293294393_cbde92e205_k.jpg":http://img.medula.cl/upload/w_201,h_201,q_90/https://c2.staticflickr.com/1/362/19293294393_cbde92e205_k.jpg it should return a 403 response, but it returns a 500.
 
 
 
