@@ -110,8 +110,8 @@ to
 bc. restricted_domains: false
 
 and add the domain or domains you want 
-whitelist_domains:
-    - www.mozila.org
+
+bc. whitelist_domains:
     - medula.cl
     - m0.cl
 
