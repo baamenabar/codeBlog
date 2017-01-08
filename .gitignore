@@ -3,6 +3,7 @@
 /.sass-cache
 /assets
 /articulos/cached/*
+.DS_Store
 
 # Do not ignore these files...
 !/articulos/cached/.htaccess
