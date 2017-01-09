@@ -103,11 +103,11 @@ bc. leopold@flyimg:~$ vim flyimg/config/parameters.yml
 
 Change the @restricted_domains@ line
 
-bc. restricted_domains: true
+bc. restricted_domains: false
 
 to 
 
-bc. restricted_domains: false
+bc. restricted_domains: true
 
 and add the domain or domains you want 
 
