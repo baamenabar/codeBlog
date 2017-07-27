@@ -455,7 +455,7 @@ Now all together would be something like this:
 
 h3. For Sass
 
-bc. npm install --save-dev gulp gulp-sass gulp-postcss postcss-scss stylelint autoprefixer cssnano gulp-sourcemaps gulp-task-listing gulp-livereload
+bc. npm install --save-dev gulp gulp-sass gulp-postcss postcss-scss stylelint autoprefixer cssnano gulp-sourcemaps gulp-task-listing gulp-livereload gulp-filter
 
 First we install all, *inluding livereload*. Next, assuming you already have a ".stylelintrc":https://github.com/stylelint/stylelint/blob/master/docs/user-guide/example-config.md file for stylelint, then, in the @gulpfile.js@ paste the following.
 
@@ -467,6 +467,7 @@ bc(language-javascript).. var gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
     sourcemaps = require('gulp-sourcemaps'),
+    filter = require('gulp-filter'),
     livereload = require('gulp-livereload');
 
 //configs 
@@ -495,6 +496,7 @@ gulp.task('sass', function () {
   .pipe(postcss(postTransformations))
   .pipe(sourcemaps.write('.'))//this path is relative to the outputed css file
   .pipe(gulp.dest('css'))
+  .pipe(filter('**/*.css'))// this prevents livereload from reloading the whole page because of the sourcemaps @see: https://stackoverflow.com/questions/34273127/gulp-livereload-reloads-the-entire-page-when-only-css-has-changed
   .pipe(livereload());
 });
 
