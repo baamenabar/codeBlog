@@ -72,7 +72,7 @@ header('Pragma: no-cache'); ?><!doctype html>
 
 				<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 				<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
-				<script type="text/javascript" src="http://use.typekit.com/zod4yoy.js"></script>
+				<script type="text/javascript" src="https://use.typekit.com/zod4yoy.js"></script>
 				<script type="text/javascript">try{Typekit.load();}catch(e){}</script><!---->
 			<script src="js/script.js"></script>
 			<script>
