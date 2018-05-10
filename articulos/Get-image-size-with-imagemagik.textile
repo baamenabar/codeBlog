@@ -1,0 +1,29 @@
+title:Get image size with imagemagik
+subtitle:
+classes: language-markup
+
+
+ <header><hgroup>
+
+h1. Get image size with imagemagik
+
+h2. Subtitle
+</hgroup></header>
+
+
+p(intro). This is the intro that will be lloked up for the lead text of an article.
+
+h2(#ac2). __[fr]Mise en place__, first subtitle
+
+Here goes some text with a "link to this header":#ac2 followed by an image
+
+!img/content/file-structure-postcss-guide.png(This will be the alt text)!
+
+After the image, some code:
+
+bc(language-javascript). var someObject = {
+	part:true,
+	follow: "false"
+};
+
+And another paragraph
