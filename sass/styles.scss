@@ -92,6 +92,14 @@ figure{
 		overflow-y:hidden;
 		white-space: pre;
 	}
+}
+h2, h3 {
+&.subtitle{
+			color:$cyanMedula;
+			font-size:20px;
+			margin:0;
+		border-bottom:1px solid #B3B3B3;
+} 
 } 
 article {
 	max-width:960px;
