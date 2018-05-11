@@ -1,31 +1,22 @@
 title:Recover a deleted and overwritten branch in Git
-subtitle:
 classes: language-markup
-draft:true
-pubDate:2018-05-11T08:28:47-07:00
+pubDate:2016-06-03T08:28:47-07:00
 
-
- <header><hgroup>
 
 h1. Recover a deleted and overwritten branch in Git
 
-h2. Subtitle
-</hgroup></header>
+p(intro). If you delete a branch @git reflog@ is your friend, even after a day or two of adding code and moving branches around in the repo.
 
+bc. git reflog --no-abbrev
 
-p(intro). This is the intro that will be lloked up for the lead text of an article.
+Git reflog stores everything that’s happened, even checkouts. Everything has a hash, so you can checkout to that state, even if that branch was later deleted, you can go back to that point in the history.
 
-h2(#ac2). __[fr]Mise en place__, first subtitle
+I wanted to go back to a branch that got deleted because of broken code, I searched by commit message and quickly could find the point where I wanted to be. If the branch was called: feature/tickets/DF-777
 
-Here goes some text with a "link to this header":#ac2 followed by an image
+bc. git reflog --no-abbrev | grep DF-777
 
-!img/content/file-structure-postcss-guide.png(This will be the alt text)!
+Then I could check where in history I want to be, then I just checkout the branch, or even create a new branch from that state.
 
-After the image, some code:
+Reflog does get garbage collected so don’t rely on it as a storage medium.
 
-bc(language-javascript). var someObject = {
-	part:true,
-	follow: "false"
-};
-
-And another paragraph
+This I discovered at: http://stackoverflow.com/questions/3640764/can-i-recover-branch-after-its-deletion-in-git 
