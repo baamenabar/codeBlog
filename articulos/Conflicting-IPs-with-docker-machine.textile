@@ -1,6 +1,8 @@
 title:Conflicting IPs with docker machine
 subtitle:
 classes: language-markup
+pubDate:2018-05-10T07:24:13-07:00
+draft:true
 
 
  <header><hgroup>

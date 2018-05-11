@@ -2,6 +2,7 @@ title:Getting file md5 checksums in different OSs
 subtitle:
 classes: language-markup
 draft:true
+pubDate:2018-05-11T08:28:47-07:00
 
 
  <header><hgroup>

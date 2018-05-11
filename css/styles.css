@@ -553,7 +553,7 @@ figure pre {
 }
 /* added by hand */
 h2.subtitle, h3.subtitle {
-  color:$cyanMedula;
+  color:#45BCD2;
   font-size:20px;
   margin:0;
   border-bottom:1px solid #B3B3B3;

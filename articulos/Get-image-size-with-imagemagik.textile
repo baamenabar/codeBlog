@@ -2,6 +2,7 @@ title:Get image size with imagemagik
 subtitle:
 classes: language-markup
 draft:true
+pubDate:2018-05-11T08:28:47-07:00
 
 
  <header><hgroup>
