@@ -1,6 +1,7 @@
 title:Force a file download from the browser with Blob
 subtitle:
 classes: language-markup
+draft:true
 
 
  <header><hgroup>

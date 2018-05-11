@@ -1,6 +1,7 @@
 title:Setting up Prettier as External tools in PhpStorm on windows with WSL
 subtitle:
 classes: language-markup
+draft:true
 
 
  <header><hgroup>

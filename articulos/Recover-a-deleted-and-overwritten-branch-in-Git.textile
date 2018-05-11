@@ -1,6 +1,7 @@
 title:Recover a deleted and overwritten branch in Git
 subtitle:
 classes: language-markup
+draft:true
 
 
  <header><hgroup>

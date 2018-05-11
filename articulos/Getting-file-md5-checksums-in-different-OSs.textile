@@ -1,6 +1,7 @@
 title:Getting file md5 checksums in different OSs
 subtitle:
 classes: language-markup
+draft:true
 
 
  <header><hgroup>

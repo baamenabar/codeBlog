@@ -1,6 +1,7 @@
 title:SVG basic markup and syntax
 subtitle:
 classes: language-markup
+draft:true
 
 
  <header><hgroup>

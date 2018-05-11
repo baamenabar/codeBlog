@@ -1,6 +1,7 @@
 title:Suddently Virtual Box throws network error on Windows 10
 subtitle:
 classes: language-markup
+draft:true
 
 
  <header><hgroup>

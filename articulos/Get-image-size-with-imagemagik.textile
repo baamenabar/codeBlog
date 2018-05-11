@@ -1,6 +1,7 @@
 title:Get image size with imagemagik
 subtitle:
 classes: language-markup
+draft:true
 
 
  <header><hgroup>

@@ -1,29 +1,39 @@
 title:Passing arguments from the console to Gulp
-subtitle:
+subtitle:In node scripts (like Gulp) you sometimes need to pass arguments, here is how.
 classes: language-markup
+pubDate:2016-04-16T19:35:20+01:00
 
-
- <header><hgroup>
 
 h1. Passing arguments from the console to Gulp
 
-h2. Subtitle
-</hgroup></header>
+h2(subtitle). Node scripts you need to pass arguments, getting them can be cumbersome.
 
+p(intro). If you want to run a task with certain parts turned **off** or **on**, or even pass a value from the command line to gulp, by default you can’t. Well you can, but it’s a node thing: @process.argv@ it is just an array, so it's a bit limited, so there is a module to abstract the mess: "yargs":https://www.npmjs.com/package/yargs .
 
-p(intro). This is the intro that will be lloked up for the lead text of an article.
+bc. npm install —save-dev yargs
 
-h2(#ac2). __[fr]Mise en place__, first subtitle
+Then you require it.
 
-Here goes some text with a "link to this header":#ac2 followed by an image
+bc(language-javascript). var argv = require('yargs').argv;
 
-!img/content/file-structure-postcss-guide.png(This will be the alt text)!
+Now you have access to the arguments or flags passes from the console. Something like:
 
-After the image, some code:
+bc. gulp css —verbose
 
-bc(language-javascript). var someObject = {
-	part:true,
-	follow: "false"
-};
+will be available in the gulpfile as @argv.verbose@, or
 
-And another paragraph
+bc. gulp html —lang=es
+
+will be reachable in the gulpfile with @argv.lang@ and you’ll get the string.
+
+h2. no dependencies option
+
+For simple flags that are either there or not you can just filter for them, without the need to install a package.
+
+bc. gulp css --no-minification
+
+can be checked inthe script as follows
+
+bc(language-javascript). const = noMinification = process.argv.filter(item => item === 'no-minification');
+
+...and that's all, it does not scale well for more configuration flags, and options, but is cleaner than adding a dependency.

@@ -551,6 +551,13 @@ figure pre {
   overflow-y: hidden;
   white-space: pre;
 }
+/* added by hand */
+h2.subtitle, h3.subtitle {
+  color:$cyanMedula;
+  font-size:20px;
+  margin:0;
+  border-bottom:1px solid #B3B3B3;
+}
 
 /* line 96, ../sass/styles.scss */
 article {
