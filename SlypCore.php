@@ -303,6 +303,7 @@ class SlypCore{
 		$toSave='title:' . $theTitle . "\n";
 		$toSave.='subtitle:' . "\n";
 		$toSave.='classes: language-markup' . "\n";
+		$toSave.='draft: true' . "\n";
 		$toSave.="\n\n";
 		$toSave.=' <header><hgroup>
 

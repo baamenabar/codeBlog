@@ -28,16 +28,6 @@
 				<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 </head>
 <body>
-				<!--[if lt IE 7]>
-				<p class=chromeframe>
-					Your browser is <em>ancient!</em>
-					<a href="http://browsehappy.com/">Upgrade to a different browser</a>
-					or
-					<a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>
-					to experience this site.
-				</p>
-				<![endif]-->
-
 				<div class="mainContainer">
 					<header class="contiene-logo">
 						<a href="./"><noscript>
@@ -57,15 +47,15 @@
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
         </script>
 								<noscript>
 									Please enable JavaScript to view the
-									<a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+									<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
 								</noscript>
-								<a href="http://disqus.com" class="dsq-brlink">
+								<a href="https://disqus.com" class="dsq-brlink">
 									comments powered by
 									<span class="logo-disqus">Disqus</span>
 								</a>
@@ -83,7 +73,7 @@
 					</footer>
 				</div>
 
-				<script type="text/javascript" src="http://use.typekit.com/zod4yoy.js"></script>
+				<script type="text/javascript" src="https://use.typekit.com/zod4yoy.js"></script>
 				<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 				<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 				<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
