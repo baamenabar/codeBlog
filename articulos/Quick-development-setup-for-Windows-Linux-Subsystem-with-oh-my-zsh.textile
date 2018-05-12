@@ -34,10 +34,11 @@ I will not explain that
 
 h2. 2. Activate the Window Linuxs Subsystem
 
-First Open PowerShell ISE (as Administrator), which is quite nice I might say, it reconizes stuff like `pwd` or `ls` and has an interesting command completion.
+First Open PowerShell ISE (as Administrator), which is quite nice I might say, it reconizes stuff like @pwd@ or @ls@ and has an interesting command completion.
 
 Then activate the Window Linux Subsystem (WSL) from the terminal with the follwing command.
-bc(language-sh).
+
+bc(language-sh). 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 
 You will be prompted to restart your machine.
