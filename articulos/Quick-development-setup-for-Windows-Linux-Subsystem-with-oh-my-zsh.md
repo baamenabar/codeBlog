@@ -1,0 +1,217 @@
+title:Quick development setup for Windows Linux Subsystem with oh-my-zsh
+subtitle:How to set up a Windows 10 development environment for web apps with a capable, friendly terminal and nodejs.
+classes: language-markup
+pubDate:2018-03-18T21:18:17-01:00
+
+
+# Quick development setup for Windows Linux Subsystem with oh-my-zsh
+
+After 3 years working on a mac and a Windows machines separately (mostly on the mac). I recently fully switched to Windows and found myself with a few days to setup my development environment. 
+
+The time has come, where Windows 10 software ecosystem has reached a point where I can setup my development environment and claim the following:
+
+### I like my dev environment more on windows than on the mac.
+
+Now on how to set up a Windows 10 development environment for web apps with a capable, friendly terminal (I really liked iTerm2 on mac).
+
+## Overview of the steps
+
+- Update windows
+- Activate the Window Linus Subsystem
+- Install Sublime (or any editor you like)
+- Install chocolatey
+- Install cmder and git
+- Install Ubuntu
+- Install pull your dotfiles
+- Install zsh and oh-my-zsh
+- Install the themes and colorschemes
+- Generate your ssh keys, and add them to your windows.
+- Install nvm
+
+## 1. Update your windows to the latest version
+I will not explain that
+
+## 2. Activate the Window Linuxs Subsystem
+First Open PowerShell ISE (as Administrator), which is quite nice I might say, it reconizes stuff like `pwd` or `ls` and has an interesting command completion.
+
+Then activate the Window Linux Subsystem (WSL) from the terminal with the follwing command.
+```sh
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+You will be prompted to restart your machine.
+I learnt that the term "elevated prompt" or "elevated something" is refered to a program running as an Administrator (right click-> run as Administrator).
+
+## 3. Install Cocolatey
+It's like Brew, but for windows, and just like brew, it does not solve all, but it works for a lot of stuff.
+Go to https://chocolatey.org/install and follow the instructions.
+Close and re-open your PowerShell (As admin).
+Run the following command to allow chocolatey to make a confirmation prompt when installing stuff.
+
+```sh
+choco feature enable -n allowGlobalConfirmation
+```
+
+## 4. Install cmder
+Cmder is a very nice, fast and complete terminal for windows, from which you can spin pretty much any command line available in windows.
+
+From an "elevated command shell" (running as admin), use chocolatey to get cmder + git version. Instructions are at: http://cmder.net/ but basically just run the following from your powerShell:
+
+```sh
+choco install cmder
+```
+
+This will also install git for you. Open cmder by searching it in the windows menu, or by closing and opening your terminal and running `cmder` and check how is it working for you.
+
+## Install Ubuntu fom the windows store
+Simple as that, search for Ubuntu in the Windows store and install it.
+
+Open the bash terminal to your Ubuntu. It will make a bunch of updates the first time, then setup your user and password.
+
+Before anything else run `sudo apt-get update`.
+
+## Tangent: Open files with Sublime Text directly from the terminal
+Either you are awesome at nano or vim from the box, or you will want to open files with your editor of choice from the command line. To do that, with Sublime, you have to add Sublime Text to your Path.
+
+* Hit `WIN` + `R`, type `SystemPropertiesAdvanced` and hit Enter.
+* Select the button **Environment variables**.
+* Select `path` in the list from the top and push the **Edit** button.
+* Click **Add**, then click **Browse**...
+* Navigate where your Sublime Text is installed, the path added should look similar to this: `C:\Program Files\Sublime Text 3`
+
+Now on any console you can use `subl some-file.js` and sublime will open it.
+
+## Add your dotfiles
+Since we probably have not yet generated any ssh keys, we just need to pull the repo via `https` (without authentication).
+
+To test that everything is running smoothly, close all conseles, then open cmder, then type `bash`, enter, then the console would be bash inside the WSL.
+
+```bash
+mkdir projects
+cd projects
+git clone https://github.com/baamenabar/dotfiles.git
+```
+
+This will create the folderl and pull the files in both linux and windows, since windows folder is "mounted".
+
+```
+vim .gitconfig
+```
+
+We edit the .gitconfig to our pleasing then we copy it to the user's folder.
+
+```
+cp .gitconfig ~/.gitconfig
+```
+
+Then we logout (`ctrl` + `d`) and we can use the same config in the windows environment, using the same command. Then we check the config.
+
+```
+cp .gitconfig ~/.gitconfig
+git config -l --show-origin
+```
+
+The other files you can add in a simmilar way, but first, let's add zsh and oh-my-zsh extensions.
+
+## Installing zsh and oh-my-zsh
+
+Pretty straightforward, just follow any tutorial on the web that does this on linux.
+
+The only catch is to make it the default loaded shell and not bash, we only need to add the following inside the `~/.bashrc` file.
+
+```
+# Launch Zsh
+if [ -t 1 ]; then
+exec zsh
+fi
+```
+
+Next time we start bash, it will actually be zsh (all credit to [Daniel Godigna](https://medium.com/@danielgodigna/how-to-install-zsh-oh-my-zsh-and-themes-in-ubuntu-on-windows-933489b6d6e0) for his article on Medium).
+
+Now for oh-my-zsh
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+## Install the themes and colorschemes
+
+Install the Menlo for Powerline Font in your windows machine https://github.com/abertsch/Menlo-for-Powerline (It gives you awesome icons and a nice look for the _agnoster_ theme).
+
+Now config zsh to your taste `vim ~/.zshrc` I like adding a couple of aliases and small configs.
+
+```
+# show dots while searching auto complete
+COMPLETION_WAITING_DOTS="true"
+
+# hide user from the prompt
+DEFAULT_USER=`whoami`
+
+# personal preferences
+# Super powerful customized ls alias
+alias ll="ls -lhpA --time-style='+%Y-%m-%d %H:%M:%S' --group-directories-first"
+```
+
+Save and log out of zsh. You can now add the `ll` alias to cmder in windows itself. Just run the following without the ticks, it will be persisted in the config.
+
+```
+alias ll=ls -lhpA --time-style="+%Y-%m-%d %H:%M:%S" --group-directories-first
+```
+
+Now just add the ConEmu.xml coloschemes to the coloscheme section in the `<key name="Colors" ` section of the `C:\tools\cmder\vendor\conemu-maximus5\ConEmu.xml` file. Reload the config and we can select any of the new the color schemes available.
+
+## Installing nodejs with nvm
+
+Make your live easier with nvm, you can test bleeding edge node tech, and also keep the sanity by using LTS on production code.
+
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+```
+
+Then add the following to your `~/.zshrc` file.
+
+```
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+
+Close your shell and reopen it so nvm is loaded in the environment. Then install your first node environment:
+
+```
+nvm install v8
+```
+v8 is the current LTS
+
+## Generating SSH keys
+
+Generating keys in windows was once so complicated that once I generated one, I would copy it from install to install. But with the Linux subsystem it´s a no-brainer (probably with cmder is easy too).
+
+```
+ ssh-keygen -t rsa -b 4096 -C "baamenabar@gmail.com"
+```
+
+For the ´-C´ param you can use your email, although I have never seen a use for that.
+
+Follow the instructions in the prompts. When it's generated you will give a message with the location of the keys, copy the address of the public key and do:
+
+```
+cat /home/agustin/.ssh/id_rsa.pub
+```
+
+Copy the output and got to github, there open your account settings and under the SSH and GPA keys section "Add a Key" by pasting the public key string.
+
+You are now ready to push to github from your Linux, to also be able to push from regular windows, you need to create a .ssh folder inside your Windows user root and copy de the keys inside. So assuming cmder logged you inside your mounted user folder:
+
+```
+mkdir .ssh
+cp ~/.ssh/id_rsa.pub .ssh/id_rsa.pub
+cp ~/.ssh/id_rsa .ssh/id_rsa
+```
+
+And that's all you need to get a basic development environment going on windows.
+
+
+## Sources & Links
+* Activate wsl https://docs.microsoft.com/en-us/windows/wsl/install-win10
+* Chocolatey gallery for Cmder: https://chocolatey.org/packages/Cmder
+* Setting up zsh on WSL: https://medium.com/@danielgodigna/how-to-install-zsh-oh-my-zsh-and-themes-in-ubuntu-on-windows-933489b6d6e0
+* Adding Sublime Text to Path: https://forum.sublimetext.com/t/cant-seem-to-open-sublime-text-3-with-cmd-win-10/21931/4
+* NVM project: https://github.com/creationix/nvm

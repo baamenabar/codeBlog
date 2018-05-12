@@ -4,6 +4,7 @@
 /assets
 /articulos/cached/*
 .DS_Store
+.vscode/
 
 # Do not ignore these files...
 !/articulos/cached/.htaccess
