@@ -17,7 +17,7 @@ Now on how to set up a Windows 10 development environment for web apps with a ca
 h2. Overview of the steps
 
 * Update windows
-* Activate the Window Linus Subsystem
+* Activate the Window Linux Subsystem
 * Install Sublime (or any editor you like)
 * Install chocolatey
 * Install cmder and git
@@ -129,8 +129,7 @@ Next time we start bash, it will actually be zsh (all credit to [Daniel Godigna]
 
 Now for oh-my-zsh
 
-bc. 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+bc. sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 h2. Install the themes and colorschemes
 
@@ -151,8 +150,7 @@ alias ll="ls -lhpA --time-style='+%Y-%m-%d %H:%M:%S' --group-directories-first"
 
 p. Save and log out of zsh. You can now add the @ll@ alias to cmder in windows itself. Just run the following without the ticks, it will be persisted in the config.
 
-bc. 
-alias ll=ls -lhpA --time-style="+%Y-%m-%d %H:%M:%S" --group-directories-first
+bc. alias ll=ls -lhpA --time-style="+%Y-%m-%d %H:%M:%S" --group-directories-first
 
 Now just add the ConEmu.xml coloschemes to the coloscheme section in the @<key name="Colors" @ section of the @C:\tools\cmder\vendor\conemu-maximus5\ConEmu.xml@ file. Reload the config and we can select any of the new the color schemes available.
 
@@ -160,19 +158,16 @@ h2. Installing nodejs with nvm
 
 Make your live easier with nvm, you can test bleeding edge node tech, and also keep the sanity by using LTS on production code.
 
-bc. 
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+bc. curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 
 Then add the following to your @~/.zshrc@ file.
 
-bc. 
-export NVM_DIR="$HOME/.nvm"
+bc. export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 Close your shell and reopen it so nvm is loaded in the environment. Then install your first node environment:
 
-bc.
-nvm install v8
+bc. nvm install v8
 
 v8 is the current LTS
 
@@ -180,27 +175,23 @@ h2. Generating SSH keys
 
 Generating keys in windows was once so complicated that once I generated one, I would copy it from install to install. But with the Linux subsystem it´s a no-brainer (probably with cmder is easy too).
 
-bc. 
- ssh-keygen -t rsa -b 4096 -C "baamenabar@gmail.com"
+bc. ssh-keygen -t rsa -b 4096 -C "baamenabar@gmail.com"
 
 For the @-C@ param you can use your email, although I have never seen a use for that.
 
 Follow the instructions in the prompts. When it's generated you will give a message with the location of the keys, copy the address of the public key and do:
 
-bc. 
-cat /home/agustin/.ssh/id_rsa.pub
+bc. cat /home/agustin/.ssh/id_rsa.pub
 
 Copy the output and got to github, there open your account settings and under the SSH and GPA keys section "Add a Key" by pasting the public key string.
 
 You are now ready to push to github from your Linux, to also be able to push from regular windows, you need to create a .ssh folder inside your Windows user root and copy de the keys inside. So assuming cmder logged you inside your mounted user folder:
 
-bc. 
-mkdir .ssh
+bc. mkdir .ssh
 cp ~/.ssh/id_rsa.pub .ssh/id_rsa.pub
 cp ~/.ssh/id_rsa .ssh/id_rsa
 
 And that's all you need to get a basic development environment going on windows.
-
 
 h2. Sources & Links
 
