@@ -1,31 +1,29 @@
 title:Suddently Virtual Box throws network error on Windows 10
-subtitle:
 classes: language-markup
-draft:true
 pubDate:2017-08-17T22:20:44-02:00
 
 
- <header><hgroup>
-
 h1. Suddently Virtual Box throws network error on Windows 10
 
-h2. Subtitle
-</hgroup></header>
+p(intro). I've been working with virtuabox on my Windows machine (Vagrant and Docker environments).
+When I tried to start a machine (munich) I get a criptic network error.
 
+cb.. λ docker-machine start munich
+Starting "munich"...
+(munich) Check network to re-create if needed...
+Unable to start the VM: C:\Program Files\Oracle\VirtualBox\VBoxManage.exe startvm munich --type headless failed:
+VBoxManage.exe: error: Failed to open/create the internal network 'HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adapter #6' (VERR_INTNET_FLT_IF_NOT_FOUND).
+VBoxManage.exe: error: Failed to attach the network LUN (VERR_INTNET_FLT_IF_NOT_FOUND)
+VBoxManage.exe: error: Details: code E_FAIL (0x80004005), component ConsoleWrap, interface IConsole
 
-p(intro). This is the intro that will be lloked up for the lead text of an article.
+Details: 00:00:01.748287 Power up failed (vrc=VERR_INTNET_FLT_IF_NOT_FOUND, rc=E_FAIL (0X80004005))
 
-h2(#ac2). __[fr]Mise en place__, first subtitle
+After much googling and reading, the solution is:
 
-Here goes some text with a "link to this header":#ac2 followed by an image
+Go to your *control panel* > *Network and shred resources center* > *Network connections*
 
-!img/content/file-structure-postcss-guide.png(This will be the alt text)!
+Here you will see a bunch of network connections icons. Amongst them: *VirtualBox Host-Only Network #6* 
 
-After the image, some code:
+Double click it and open it's properties. A new window will show up, with a list. The item *VirtualBox NDIS 6 Bridged Networking Driver* Will be unchecked. Check it and click OK.
 
-bc(language-javascript). var someObject = {
-	part:true,
-	follow: "false"
-};
-
-And another paragraph
+Try to start your virtual machine again, it should work now.
