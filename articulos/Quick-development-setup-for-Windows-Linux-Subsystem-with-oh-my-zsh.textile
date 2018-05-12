@@ -51,7 +51,7 @@ Go to https://chocolatey.org/install and follow the instructions.
 Close and re-open your PowerShell (As admin).
 Run the following command to allow chocolatey to make a confirmation prompt when installing stuff.
 
-bc(language-sh).
+bc(language-sh). 
 choco feature enable -n allowGlobalConfirmation
 
 
@@ -61,7 +61,7 @@ Cmder is a very nice, fast and complete terminal for windows, from which you can
 
 From an "elevated command shell" (running as admin), use chocolatey to get cmder + git version. Instructions are at: http://cmder.net/ but basically just run the following from your powerShell:
 
-bc(language-sh).
+bc(language-sh). 
 choco install cmder
 
 
@@ -83,7 +83,7 @@ Either you are awesome at nano or vim from the box, or you will want to open fil
 * Select the button **Environment variables**.
 * Select @path@ in the list from the top and push the **Edit** button.
 * Click **Add**, then click **Browse**...
-* Navigate where your Sublime Text is installed, the path added should look similar to this: `C:\Program Files\Sublime Text 3`
+* Navigate where your Sublime Text is installed, the path added should look similar to this: @C:\Program Files\Sublime Text 3@
 
 Now on any console you can use @subl some-file.js@ and sublime will open it.
 
@@ -93,25 +93,22 @@ Since we probably have not yet generated any ssh keys, we just need to pull the 
 
 To test that everything is running smoothly, close all conseles, then open cmder, then type `bash`, enter, then the console would be bash inside the WSL.
 
-bc(language-sh).
+bc(language-sh). 
 mkdir projects
 cd projects
 git clone https://github.com/baamenabar/dotfiles.git
 
 This will create the folderl and pull the files in both linux and windows, since windows folder is "mounted".
 
-bc. 
-vim .gitconfig
+bc. vim .gitconfig
 
 We edit the .gitconfig to our pleasing then we copy it to the user's folder.
 
-bc.
-cp .gitconfig ~/.gitconfig
+bc. cp .gitconfig ~/.gitconfig
 
 Then we logout (@ctrl@ + @d@) and we can use the same config in the windows environment, using the same command. Then we check the config.
 
-bc.
-cp .gitconfig ~/.gitconfig
+bc. cp .gitconfig ~/.gitconfig
 git config -l --show-origin
 
 
@@ -121,10 +118,9 @@ h2. Installing zsh and oh-my-zsh
 
 Pretty straightforward, just follow any tutorial on the web that does this on linux.
 
-The only catch is to make it the default loaded shell and not bash, we only need to add the following inside the `~/.bashrc` file.
+The only catch is to make it the default loaded shell and not bash, we only need to add the following inside the @~/.bashrc@ file.
 
-bc. 
-# Launch Zsh
+bc. # Launch Zsh
 if [ -t 1 ]; then
 exec zsh
 fi
