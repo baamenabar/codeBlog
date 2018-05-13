@@ -1,0 +1,24 @@
+title: Test running in background for an Angular CLI project.
+classes: language-markup
+pubDate:2018-04-25T20:11:03+02:00
+
+h1. Test running in background for an Angular CLI project
+
+h2. TL;DR:
+
+1. Install @karma-cli@ globally with npm or yarn
+2. Run @karma start --single-run=false --auto-watch=true --coverage@ 
+
+That will overwrite the deafult behaviour of running Karma from the Angular CLI @ng test@ and loading the karma.conf.js
+
+The which is like running the @ng test --code-coverage@ 
+
+You can also set it up more granularly in the @karma.conf.js@ file.
+
+h2.  Skip from code coverage
+
+Some things you don´t have to test, like mocks, to prevent them from ruining your coverage use:
+
+bc. /* istanbul ignore next */
+
+for istambul to ignore the next line
