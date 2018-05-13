@@ -2,19 +2,7 @@
 $documentLang = 'en';
 if(isset($theArticle->lang) && $theArticle->lang)$documentLang = $theArticle->lang;
 ?><!doctype html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="<?php echo $documentLang; ?>">
-	<![endif]-->
-	<!--[if IE 7]>
-	<html class="no-js lt-ie9 lt-ie8" lang="<?php echo $documentLang; ?>">
-		<![endif]-->
-		<!--[if IE 8]>
-		<html class="no-js lt-ie9" lang="<?php echo $documentLang; ?>">
-			<![endif]-->
-			<!--[if gt IE 8]>
-			<!-->
 			<html class="no-js<?php if(isset($theArticle->classes))echo ' '.$theArticle->classes ;?>" lang="<?php echo $documentLang; ?>">
-				<!--<![endif]-->
 <head>
 				<meta charset="utf-8">
 
@@ -29,6 +17,8 @@ if(isset($theArticle->lang) && $theArticle->lang)$documentLang = $theArticle->la
 				<link rel="stylesheet" href="css/styles.css?ck=<?php echo filemtime("css/styles.css"); ?>">
 
 				<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+				<script type="text/javascript" src="https://use.typekit.com/zod4yoy.js"></script>
+				<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body class="article">
 
@@ -100,8 +90,6 @@ if(isset($theArticle->lang) && $theArticle->lang)$documentLang = $theArticle->la
 					</footer>
 				</div>
 
-				<script type="text/javascript" src="https://use.typekit.com/zod4yoy.js"></script>
-				<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 				<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 				<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 

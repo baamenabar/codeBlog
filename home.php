@@ -1,18 +1,6 @@
 <?php header('Cache-Control: no-store, no-cache, must-revalidate');
 header('Pragma: no-cache'); ?><!doctype html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
-	<![endif]-->
-	<!--[if IE 7]>
-	<html class="no-js lt-ie9 lt-ie8" lang="en">
-		<![endif]-->
-		<!--[if IE 8]>
-		<html class="no-js lt-ie9" lang="en">
-			<![endif]-->
-			<!--[if gt IE 8]>
-			<!-->
-			<html class="no-js" lang="en">
-				<!--<![endif]-->
+			<html class="svg js" lang="en">
 <head>
 
 				<title>Code Médula &ndash; Blog de código</title>
@@ -23,7 +11,8 @@ header('Pragma: no-cache'); ?><!doctype html>
 
 				<link rel="stylesheet" href="css/styles.css?ck=<?php echo filemtime("css/styles.css"); ?>">
 
-				<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+				<script type="text/javascript" src="https://use.typekit.com/zod4yoy.js"></script>
+				<script type="text/javascript">try{Typekit.load();}catch(e){}</script><!---->
 </head>
 <body>
 				<div class="mainContainer">
@@ -62,8 +51,6 @@ header('Pragma: no-cache'); ?><!doctype html>
 
 				<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 				<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
-				<script type="text/javascript" src="https://use.typekit.com/zod4yoy.js"></script>
-				<script type="text/javascript">try{Typekit.load();}catch(e){}</script><!---->
 			<script src="js/script.js"></script>
 			<script>
 /* testing what's available with modernizr
