@@ -1,6 +1,7 @@
 title: Nodejs v10 fsPromises: Let's check if a dir exists, the modern way.
 subtitle:In nodejs you sometimes need to check if a given path is an actual folder or not, since node 10, you can do it with promises, along with a lot of other file system operations.
-classes:language-js
+classes:language-javascript
+pubDate:2018-07-11T15:35:40-07:00
 
 <header><hgroup>
 
@@ -151,8 +152,8 @@ h3. What can be improved?
 
 well, the @isErrorNotFound@ method should be taking care of @throw@ing a fit if the path is not finding anything. Also I'm sure I can come up with more elegant versions of the implementations, but I'm happy with this as a POC.
 
-The whole code can be found as a gist at: https://gist.github.com/baamenabar/d639055caaacd5dbd139c302caf8a4f9 
+The whole code can be found as a gist at: "$":https://gist.github.com/baamenabar/d639055caaacd5dbd139c302caf8a4f9 
 
 h2. Resources
 
-Main resource is the node docs: https://nodejs.org/api/fs.html#fs_fs_promises_api ...aaand of course "MDN":https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function.
+Main resource is the node docs: "$":https://nodejs.org/api/fs.html#fs_fs_promises_api ...aaand of course "MDN":https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function.
