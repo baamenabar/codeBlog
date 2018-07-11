@@ -14,7 +14,7 @@ h2. The browser will always try to read data you give it.
 
 p(intro). You have a bunch of data you just generated in JavaScrip and you want to force the user to download it as a file. How to do it?
 
-h2(#ac2).TL;DR:
+h2(#ac2). TL;DR:
 
 p. From small to medium files (something that fits in your RAM) take advantage of the data URI of <a> elements. And this is how the spec expects it to be handled.
 https://www.w3.org/TR/FileAPI/#requirements
