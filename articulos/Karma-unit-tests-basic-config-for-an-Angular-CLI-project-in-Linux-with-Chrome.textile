@@ -1,6 +1,7 @@
 title: Setting up Karma tests for an Angular CLI project.
 classes: language-markup
 startDate:2018-04-25T20:11:03+02:00
+pubDate:2018-12-27T14:35:40-08:00
 
 h1. Karma (unit) Tests for an Angular CLI project aimed at CI
 
