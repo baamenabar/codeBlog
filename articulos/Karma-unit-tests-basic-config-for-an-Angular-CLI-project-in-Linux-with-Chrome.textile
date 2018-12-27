@@ -94,9 +94,13 @@ browsers: ['ChromeHeadless'],
 
 h2. Code coverage
 
-The defaults for now are fine, I just like to add @text-summary@ to the lists of reporters. So my istambul looks like this.
+The defaults for now are fine, I just like to add @text-summary@ to the lists of reporters. So my istambul reporter config looks like this.
 
-bc(language-javascript). reporters: ['progress', 'kjhtml', 'text-summary'],
+bc(language-javascript). coverageIstanbulReporter: {
+    dir: require('path').join(__dirname, '../coverage'),
+    reports: ['html', 'lcovonly', 'text-summary'],
+    fixWebpackSourcePaths: true,
+},
 
 Some things you don´t have to test, like mocks, to prevent them from ruining your coverage use:
 
@@ -106,4 +110,4 @@ for istambul to ignore the next line
 
 h2. Wrapping up
 
-Now just run your tests @ng test@.
+Now just run your tests @ng test --code-coverage@.
