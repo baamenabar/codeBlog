@@ -1,7 +1,7 @@
 title: Karma + Jasmine unit testing components in Angular 2+
 classes: language-javascript
 startDate:2018-04-25T20:11:03+02:00
-pubDate:2018-12-27T14:35:40-08:00
+pubDate:2019-01-14T23:10:40+02:00
 
 h1. Karma / Jasmine (unit) Tests for components in an Angular project
 
