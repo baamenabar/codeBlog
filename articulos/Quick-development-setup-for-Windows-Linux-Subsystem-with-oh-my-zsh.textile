@@ -127,7 +127,7 @@ fi
 
 Next time we start bash, it will actually be zsh (all credit to [Daniel Godigna](https://medium.com/@danielgodigna/how-to-install-zsh-oh-my-zsh-and-themes-in-ubuntu-on-windows-933489b6d6e0) for his article on Medium).
 
-EDIT: as of late 2018 you don't need this workaround. You can invoque @wsl@ direcly from your Cmder terminal and it will load whatever you configure as your default shell.
+**EDIT:** as of late 2018 you don't need this workaround. You can invoque @wsl@ direcly from your Cmder terminal and it will load whatever you configure as your default shell.
 
 bc. chsh -s $(which zsh)
 
@@ -177,6 +177,20 @@ bc. nvm install v8
 
 v8 is the current LTS
 
+h3. UPDATE on NVM 2019:
+
+Alternatively today exists a faster alternative FNM (Fast Node Manager) which loads much faster on shell startup.
+
+First be sure you have unzip, otherwise install it @sudo apt-get install unzip@ . Then curl to download and run the script:
+
+bc. curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
+
+Although bash is the shell that runs it, it gets installed in your @~/.zshrc@ if it is your default shell. To install node: 
+
+bc. fnm install v10.
+
+Check the FNM repo ( https://github.com/Schniz/fnm ) for more info.
+
 h2. Generating SSH keys
 
 Generating keys in windows was once so complicated that once I generated one, I would copy it from install to install. But with the Linux subsystem it´s a no-brainer (probably with cmder is easy too).
@@ -206,3 +220,4 @@ h2. Sources & Links
 * Setting up zsh on WSL: https://medium.com/@danielgodigna/how-to-install-zsh-oh-my-zsh-and-themes-in-ubuntu-on-windows-933489b6d6e0
 * Adding Sublime Text to Path: https://forum.sublimetext.com/t/cant-seem-to-open-sublime-text-3-with-cmd-win-10/21931/4
 * NVM project: https://github.com/creationix/nvm
+* FNM project: https://github.com/Schniz/fnm
