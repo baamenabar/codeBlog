@@ -127,6 +127,12 @@ fi
 
 Next time we start bash, it will actually be zsh (all credit to [Daniel Godigna](https://medium.com/@danielgodigna/how-to-install-zsh-oh-my-zsh-and-themes-in-ubuntu-on-windows-933489b6d6e0) for his article on Medium).
 
+EDIT: as of late 2018 you don't need this workaround. You can invoque @wsl@ direcly from your Cmder terminal and it will load whatever you configure as your default shell.
+
+bc. chsh -s $(which zsh)
+
+More details at https://github.com/Microsoft/WSL/issues/1724#issuecomment-380155346
+
 Now for oh-my-zsh
 
 bc. sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
